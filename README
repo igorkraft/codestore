@@ -6,5 +6,5 @@ mvn install -Dmaven.test.skip=true
 
 git clone https://github.com/igorkraft/codestore.git
 git add file.txt
-git commit
+git commit -a -m "new code"
 git push

@@ -1,0 +1,67 @@
+Serversteuerung mit:
+sudo service apache2 start|stop|restart
+sudo service ajaxterm start|stop|restart
+
+aktivierte Module anzeigen:
+apachectl -t -D DUMP_MODULES
+
+Module installieren:
+libapache2-mod-proxy-html & libapache2-mod-gnutls
+
+Module aktivieren:
+sudo a2enmod ssl
+sudo a2enmod proxy
+sudo a2enmod proxy_html
+sudo a2enmod proxy_http
+
+jetzt kann der Server nicht mehr gestartet werden:
+
+calle@calle-pc:~$ sudo service apache2 start
+ * Starting web server apache2
+apache2: Syntax error on line 210 of /etc/apache2/apache2.conf: Syntax error on line 1 of /etc/apache2/mods-enabled/proxy_html.load: Cannot load /usr/lib/libxml2.so.2 into server: /usr/lib/libxml2.so.2: cannot open shared object file: No such file or directory
+Action 'start' failed.
+The Apache error log may have more information.
+
+nachinstallieren von libxml2
+
+startet immer noch nicht:
+ * Starting web server apache2
+ apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+httpd (pid 1064) already running
+
+um das zu lösen muss man in die /etc/apache2/httpd.conf das hier eintragen:
+ServerName localhost
+
+jetzt startet er wieder!
+
+Zertifikat erzeugen als root mit:
+mkdir -p /etc/apache2/ssl
+openssl req -new -x509 -days 3650 -nodes -out /etc/apache2/ssl/apache.pem -keyout /etc/apache2/ssl/apache.pem
+ln -sf /etc/apache2/ssl/apache.pem /etc/apache2/ssl/`/usr/bin/openssl x509 -noout -hash < /etc/apache2/ssl/apache.pem`.0
+chmod 600 /etc/apache2/ssl/apache.pem 
+
+SSH aktivieren in der /etc/apache2/ports.conf mit
+<IfModule mod_ssl.c>
+    Listen 443
+</IfModule>
+
+ajaxterm installieren
+
+in die /etc/hosts muss eine Zeile eingetragen werden:
+"127.0.0.1   localhost   calle-pc"
+
+in der /etc/default/ajaxterm müssen PORT und SERVERPORT einkommentiert werden
+
+ganz unten in der /etc/apache2/apache2.conf muss dieser Host konfiguriert werden:
+<virtualhost *:443>
+        DocumentRoot /var/www
+        SSLEngine On
+        SSLCertificateFile /etc/apache2/ssl/apache.pem
+        ProxyRequests Off
+        <Proxy *>
+                Order Deny,allow
+                Allow from all
+        </Proxy>
+        ProxyPass /ajaxterm/ http://localhost:8022/ajaxterm/
+        ProxyPassReverse /ajaxterm/ http://localhost:8022/ajaxterm/
+</virtualhost>

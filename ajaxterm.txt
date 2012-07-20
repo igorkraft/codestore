@@ -65,3 +65,6 @@ ganz unten in der /etc/apache2/apache2.conf muss dieser Host konfiguriert werden
         ProxyPass /ajaxterm/ http://localhost:8022/ajaxterm/
         ProxyPassReverse /ajaxterm/ http://localhost:8022/ajaxterm/
 </virtualhost>
+
+Link für die Homepage:
+<div onclick="window.open('https://' + window.location.hostname + '/ajaxterm/')" style="color:blue;text-decoration:underline;cursor:pointer">ajaxterm</div>

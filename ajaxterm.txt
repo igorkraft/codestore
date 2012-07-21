@@ -64,6 +64,8 @@ ganz unten in der /etc/apache2/apache2.conf muss dieser Host konfiguriert werden
         </Proxy>
         ProxyPass /ajaxterm/ http://localhost:8022/ajaxterm/
         ProxyPassReverse /ajaxterm/ http://localhost:8022/ajaxterm/
+        ProxyPass /mongoose/ http://localhost:8081/
+        ProxyPassReverse /mongoose/ http://localhost:8081/
 </virtualhost>
 
 Link für die Homepage:

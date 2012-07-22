@@ -70,3 +70,7 @@ ganz unten in der /etc/apache2/apache2.conf muss dieser Host konfiguriert werden
 
 Link für die Homepage:
 <div onclick="window.open('https://' + window.location.hostname + '/ajaxterm/')" style="color:blue;text-decoration:underline;cursor:pointer">ajaxterm</div>
+
+zum deaktivieren des Autostarts:
+sudo update-rc.d -f ajaxterm remove
+sudo update-rc.d -f apache2 remove

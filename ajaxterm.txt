@@ -22,7 +22,8 @@ apache2: Syntax error on line 210 of /etc/apache2/apache2.conf: Syntax error on 
 Action 'start' failed.
 The Apache error log may have more information.
 
-nachinstallieren von libxml2
+das System nach libxml2 durchsuchen und eine Verküpfung erstellen:
+/usr/lib/libxml2.so.2
 
 startet immer noch nicht:
  * Starting web server apache2

@@ -1,0 +1,11 @@
+wie man den apache2 installiert steht bei ajaxterm
+
+php5 installieren (apache-Module wird gleich mit installiert)
+um die Installation zu testen eine Datei /var/www/phpinfo.php mit diesem Inhalt anlegen:
+<?php
+phpinfo();
+?>
+aufgerufen wird das dann als http://localhost/phpinfo.php
+
+im virtuellen Host für Port 80 in der /etc/apache2/sites-available/default folgenden hinzufügen:
+DirectoryIndex index.php index.html

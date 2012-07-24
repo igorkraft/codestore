@@ -9,3 +9,5 @@ aufgerufen wird das dann als http://localhost/phpinfo.php
 
 im virtuellen Host für Port 80 in der /etc/apache2/sites-available/default folgenden hinzufügen:
 DirectoryIndex index.php index.html
+
+EyeOS herunterladen von http://www.heise.de/download/eyeos-1150737.html

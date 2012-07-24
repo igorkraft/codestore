@@ -11,3 +11,6 @@ im virtuellen Host für Port 80 in der /etc/apache2/sites-available/default folg
 DirectoryIndex index.php index.html
 
 EyeOS herunterladen von http://www.heise.de/download/eyeos-1150737.html
+und den Inhalt nach /var/www kopieren, im Browser dann http://192.168.1.2/install/index.php aufrufen
+
+die fehlenden Requirements nachinstallieren

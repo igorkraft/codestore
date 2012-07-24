@@ -75,3 +75,10 @@ Link für die Homepage:
 zum deaktivieren des Autostarts:
 sudo update-rc.d -f ajaxterm remove
 sudo update-rc.d -f apache2 remove
+
+php5 installieren (apache-Module wird gleich mit installiert)
+um die Installation zu testen eine Datei /var/www/phpinfo.php mit diesem Inhalt anlegen:
+<?php
+phpinfo();
+?>
+aufgerufen wird das dann als http://localhost/phpinfo.php

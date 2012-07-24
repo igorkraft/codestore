@@ -16,6 +16,7 @@ und den Inhalt nach /var/www kopieren, im Browser dann http://192.168.1.2/instal
 die fehlenden Requirements nachinstallieren
 
 sudo a2enmod rewrite (muss nicht extra installiert werden)
+php5-curl installieren (muss nicht extra aktiviert werden)
 
 mysql-server libapache2-mod-auth-mysql php5-mysql installieren
 unter lubuntu wird man bei der Serverinstallation gefragt, wie das Root-Passwort sein soll

@@ -21,3 +21,6 @@ php5-curl, php5-gd, php5-mcrypt, php5-sqlite installieren (muss nicht extra akti
 mysql-server libapache2-mod-auth-mysql php5-mysql installieren
 unter lubuntu wird man bei der Serverinstallation gefragt, wie das Root-Passwort sein soll
 
+zum testen: 
+<?php echo sqlite_libversion(); echo phpversion(); ?>
+

@@ -21,6 +21,8 @@ php5-curl, php5-gd, php5-mcrypt, php5-sqlite installieren (muss nicht extra akti
 mysql-server libapache2-mod-auth-mysql php5-mysql installieren
 unter lubuntu wird man bei der Serverinstallation gefragt, wie das Root-Passwort sein soll
 
-zum testen: 
-<?php echo sqlite_libversion(); echo phpversion(); ?>
-
+EyeOS scheint sqlite2 zu brauchen, in den Repos gibt es aber nur sqlite3!
+http://stackoverflow.com/questions/4788853/call-to-undefined-function-sqlite-open
+der Installer prüft, ob sqlite_open vorhanden ist! Das Problem hatte andere Menschen auch schon,
+hier ist ein Workaround beschrieben (der allerdings auf dem Raspberry nicht funktionieren wird -> arm vs. x86):
+http://www.chrisge.org/blog/2012-07-11/kurztipp_sqlite_unter_ubuntu_12.04

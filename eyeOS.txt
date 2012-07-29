@@ -28,3 +28,6 @@ hier ist ein Workaround beschrieben (der allerdings auf dem Raspberry nicht funk
 http://www.chrisge.org/blog/2012-07-11/kurztipp_sqlite_unter_ubuntu_12.04
 
 libreoffice und libimage-exiftool-perl installieren
+
+bei der Installation kann keine Verbindung zu mysql hergestellt werden, 
+erstmal emma installieren (grafischer mysql-client) und gucken was los ist

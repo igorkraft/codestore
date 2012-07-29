@@ -31,3 +31,9 @@ libreoffice und libimage-exiftool-perl installieren
 
 bei der Installation kann keine Verbindung zu mysql hergestellt werden, 
 erstmal emma installieren (grafischer mysql-client) und gucken was los ist
+
+mit root und zweimal dessen Passwort kann man sich am DBMS anmelden
+
+mit emma anmelden und "create database eyeos" absetzen
+
+dann läuft die Installation durch und eyeOS funktioniert nicht

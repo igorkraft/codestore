@@ -57,3 +57,5 @@ nun läuft er in eine Timeout-Execption (nach 30 Sekunden):
 Fatal error: Maximum execution time of 30 seconds exceeded in eyeos/system/kernel/libs/utils/jsmin.php on line 84
 In deser Zeile steht das hier:
 if ($this->a === "'" || $this->a === '"') {
+
+Keine Ahnung, wie man den Timeout hoch setzt, aber nach einmal aktualisieren bringt er eine Login-Screen!

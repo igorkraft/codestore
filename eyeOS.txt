@@ -40,3 +40,14 @@ dann läuft die Installation durch und eyeOS funktioniert nicht
 
 hier knallt es (das hat nichts mehr mit eyeOS zu tun - vielleicht ein Ansatz für einen Wrapper):
 eyeos\system\kernel\libs\log4php\log4php.php
+
+Die Datei eyeos/system/conf/libs/log4php/configuration.xml sichern und einen anderen Inhalt einfügen:
+<?xml version="1.0" encoding="UTF-8" ?>
+<log4php:configuration xmlns="http://logging.apache.org/log4php/">
+   <appender name="myConsoleAppender" class="LoggerAppenderConsole" />
+   <root>
+      <level value="ERROR" />
+      <appender_ref ref="myConsoleAppender" />
+   </root>
+</log4php:configuration>
+

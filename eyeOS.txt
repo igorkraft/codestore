@@ -37,3 +37,6 @@ mit root und zweimal dessen Passwort kann man sich am DBMS anmelden
 mit emma anmelden und "create database eyeos" absetzen
 
 dann läuft die Installation durch und eyeOS funktioniert nicht
+
+hier knallt es (das hat nichts mehr mit eyeOS zu tun - vielleicht ein Ansatz für einen Wrapper):
+eyeos\system\kernel\libs\log4php\log4php.php

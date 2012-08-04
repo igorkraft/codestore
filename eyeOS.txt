@@ -59,3 +59,11 @@ In deser Zeile steht das hier:
 if ($this->a === "'" || $this->a === '"') {
 
 Keine Ahnung, wie man den Timeout hoch setzt, aber nach einmal aktualisieren bringt er eine Login-Screen!
+
+Bedauerlicherweise bekommt man, wenn man auf "create an account" klickt eine Meldung:
+Unable to search all data matching $transferObject from database.
+Eine der folgenden Dateien könnte Aufschluss darüber bringen:
+./eyeos/system/kernel/services/UM/implementations/LoginModules/EyeosSQLLoginModule.php
+./settings.php
+Andere Menschen hatten das Problem auch schon:
+http://forums.eyeos.org/index.php?topic=5589.0

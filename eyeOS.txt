@@ -67,3 +67,5 @@ Eine der folgenden Dateien könnte Aufschluss darüber bringen:
 ./settings.php
 Andere Menschen hatten das Problem auch schon:
 http://forums.eyeos.org/index.php?topic=5589.0
+
+In der settings.php steht in Zeile 363 das Passwort für SQL. Dort ist ein falsches Passwort eingetragen

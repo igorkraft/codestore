@@ -70,3 +70,6 @@ http://forums.eyeos.org/index.php?topic=5589.0
 
 In der settings.php steht in Zeile 363 das Passwort für SQL. Dort ist ein falsches Passwort eingetragen.
 Mit dem richtigen Passwort funktionieren Registrierung und Login! Na endlich
+
+Wenn man verhindern möchte, dass andere Menschen Accounts anlegen, dann kann man hier drehen:
+./eyeos/system/conf/services/System/system.xml

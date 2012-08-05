@@ -1,0 +1,33 @@
+python-webdav installieren
+
+Die Beispielini liegt hier: /usr/share/doc/python-webdav/examples/config.ini
+In der config-Datei müssen aber immer alle Attribute angegeben werden
+Start ohne Konfigurationsdatei: 
+davserver -n -H localhost -P 8008 -D /home/calle/Arbeitsfläche/mongoose/content
+
+Die Proxykonfiguration erweitern (/etc/apache2/apache2.conf):
+<virtualhost *:443>
+        DocumentRoot /home/calle/www
+        SSLEngine On
+        SSLCertificateFile /etc/apache2/ssl/apache.pem
+        ProxyRequests Off
+        <Proxy *>
+                Order Deny,allow
+                Allow from all
+        </Proxy>
+        ProxyPass /ajaxterm/ http://localhost:8022/ajaxterm/
+        ProxyPassReverse /ajaxterm/ http://localhost:8022/ajaxterm/
+        ProxyPass /mongoose/ http://localhost:8081/
+        ProxyPassReverse /mongoose/ http://localhost:8081/
+        ProxyPass /webdav/ http://localhost:8008/
+        ProxyPassReverse /webdav/ http://localhost:8008/
+</virtualhost>
+
+Auf der Clientseite davfs2 installieren
+Verbindung kann mit 
+sudo mount -t davfs https://192.168.1.2/webdav ./mnt/
+hergestellt werden (Benutzername und Passwort leer lassen, Zertifikat bestätigen).
+Um Schreibrechte zu erhalten: sudo chown -R user:user ./mnt/
+
+Nun kann man Dateien zu Server übertragen, aber das direktory listing funktioniert nicht.
+Man kann also nicht sehen, was schon in dem Verzeichnis liegt!

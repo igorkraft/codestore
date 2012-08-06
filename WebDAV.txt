@@ -31,3 +31,33 @@ Um Schreibrechte zu erhalten: sudo chown -R user:user ./mnt/
 
 Nun kann man Dateien zu Server übertragen, aber das direktory listing funktioniert nicht.
 Man kann also nicht sehen, was schon in dem Verzeichnis liegt!
+
+Bei der Installation von apache2 sind die WebDAV-Module enthalten. Zum aktivieren:
+sudo a2enmod dav
+sudo a2enmod dav_fs
+
+Der virtuelle Host muss dann so eingerichtet werden:
+<virtualhost *:443>
+        DocumentRoot /home/calle/www
+        SSLEngine On
+        SSLCertificateFile /etc/apache2/ssl/apache.pem
+        ProxyRequests Off
+        <Proxy *>
+                Order Deny,allow
+                Allow from all
+        </Proxy>
+        ProxyPass /ajaxterm/ http://localhost:8022/ajaxterm/
+        ProxyPassReverse /ajaxterm/ http://localhost:8022/ajaxterm/
+        ProxyPass /mongoose/ http://localhost:8081/
+        ProxyPassReverse /mongoose/ http://localhost:8081/
+        Alias /webdav/ "/home/calle/www/webdav/"
+        <Directory "/home/calle/www/webdav/">
+                DAV on
+                Options +Indexes
+        </Directory>
+</virtualhost>
+
+Jetzt funktioniert das directory listing aber es können eine Dateien und Ordner angelegt werden: 
+Eingabe-/Ausgabefehler
+
+Die Option "Options +Indexes" aktiviert das directory listing auch für Webbrowser

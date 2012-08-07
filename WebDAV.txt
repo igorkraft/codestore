@@ -59,5 +59,6 @@ Der virtuelle Host muss dann so eingerichtet werden:
 
 Jetzt funktioniert das directory listing aber es können eine Dateien und Ordner angelegt werden: 
 Eingabe-/Ausgabefehler
+Um das zu lösen muss man die Rechte im Dateisystem anpassen (lesen und schreiben für jedermann)
 
 Die Option "Options +Indexes" aktiviert das directory listing auch für Webbrowser

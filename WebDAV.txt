@@ -62,3 +62,15 @@ Eingabe-/Ausgabefehler
 Um das zu lösen muss man die Rechte im Dateisystem anpassen (lesen und schreiben für jedermann)
 
 Die Option "Options +Indexes" aktiviert das directory listing auch für Webbrowser
+
+Um Basic Authentication zu aktivieren modifiziert man die Directory-Definition:
+<Directory "/home/calle/www/webdav/">
+        DAV on
+        Options +Indexes
+        AuthType Basic
+        AuthName DAV
+        AuthUserFile /etc/apache2/passwords
+        Require valid-user
+</Directory>
+Außerdem muss die Datei /etc/apache2/passwords erzeugt werden (Passwort wird abgefragt):
+sudo htpasswd -c /etc/apache2/passwords <username>

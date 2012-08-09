@@ -73,3 +73,15 @@ Mit dem richtigen Passwort funktionieren Registrierung und Login! Na endlich
 
 Wenn man verhindern möchte, dass andere Menschen Accounts anlegen, dann kann man hier drehen:
 ./eyeos/system/conf/services/System/system.xml
+
+Wenn man einen Demo-Accoutn anbieten möchte, muss man die ./eyeos/apps/login/login.js anpassen:
+   this._loginAsDemo = new qx.ui.form.Button('demo');
+   this._loginAsDemo.setAllowStretchX(false);
+   this._loginAsDemo.addListener('execute', function(e)
+      {
+         this._usernameTextField.setValue("demo");
+         this._passwordTextField.setValue("demo");
+         this._onLogin();
+      }, 
+   this);
+   loginButtonContainer.add(this._loginAsDemo);

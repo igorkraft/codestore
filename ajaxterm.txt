@@ -78,3 +78,52 @@ sudo update-rc.d -f apache2 remove
 
 zum aktivieren des Autostarts:
 sudo update-rc.d apache2 defaults
+
+Ein Script /etc/init.d/ajaxterm_restart anlegen und ausführbar machen
+
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          Was macht das Skript?
+# Required-Start:    
+# Required-Stop:     
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Kurze Beschreibung
+# Description:       Längere Bechreibung
+### END INIT INFO
+# Author: Name <email@domain.tld>
+# Aktionen
+case "$1" in
+    start)
+        nohup /home/calle/Arbeitsfläche/wait &
+        ;;
+    stop)
+        ;;
+    restart)
+        :
+        ;;
+esac
+exit 0
+
+BUM - Boot-Up-Manager installieren und darin das ajaxterm_restart aktivieren
+
+Anschließend ein Script /home/calle/Arbeitsfläche/wait anlegen und ausführbar machen:
+while true ; do
+   if [ -f "/home/calle/Arbeitsfläche/stop" ]; then
+      rm /home/calle/Arbeitsfläche/stop
+      exit 0
+   fi
+   if [ -f "/home/calle/Arbeitsfläche/ajaxterm_restart" ]; then
+      rm /home/calle/Arbeitsfläche/ajaxterm_restart
+      service ajaxterm restart &
+   fi
+   if [ -f "/home/calle/Arbeitsfläche/ajaxterm_start" ]; then
+      rm /home/calle/Arbeitsfläche/ajaxterm_start
+      service ajaxterm start &
+   fi
+   if [ -f "/home/calle/Arbeitsfläche/ajaxterm_stop" ]; then
+      rm /home/calle/Arbeitsfläche/ajaxterm_stop
+      service ajaxterm stop &
+   fi
+   sleep 2
+done

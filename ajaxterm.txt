@@ -75,3 +75,6 @@ Link für die Homepage:
 zum deaktivieren des Autostarts:
 sudo update-rc.d -f ajaxterm remove
 sudo update-rc.d -f apache2 remove
+
+zum aktivieren des Autostarts:
+sudo update-rc.d apache2 defaults

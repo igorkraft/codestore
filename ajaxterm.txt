@@ -127,3 +127,21 @@ while true ; do
    fi
    sleep 2
 done
+
+Dann eine /home/calle/www/ajaxterm_controller.php anlegen:
+<?php
+   if ($_GET['action'] == "restart")
+      shell_exec('touch /home/calle/www/ajaxterm_restart');
+   if ($_GET['action'] == "start")
+      shell_exec('touch /home/calle/www/ajaxterm_start');
+   if ($_GET['action'] == "stop")
+      shell_exec('touch /home/calle/www/ajaxterm_stop');
+   $referer = $_SERVER['HTTP_REFERER'];
+   header("Location: $referer");
+?>
+
+Links für die Hauptseite würde jetzt so aussehen:
+<span onclick="window.open('https://' + window.location.hostname + '/ajaxterm/')" style="color:blue;text-decoration:underline;cursor:pointer">ajaxterm</span>&nbsp;&nbsp;&nbsp;&nbsp;(
+<span onclick="window.location='https://' + window.location.hostname + '/ajaxterm_controller.php?action=restart'" style="color:blue;text-decoration:underline;cursor:pointer">restart</span>
+<span onclick="window.location='https://' + window.location.hostname + '/ajaxterm_controller.php?action=start'" style="color:blue;text-decoration:underline;cursor:pointer">start</span>
+<span onclick="window.location='https://' + window.location.hostname + '/ajaxterm_controller.php?action=stop'" style="color:blue;text-decoration:underline;cursor:pointer">stop</span>)

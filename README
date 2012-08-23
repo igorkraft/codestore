@@ -25,3 +25,7 @@ git clone https://github.com/igorkraft/codestore.git
 git add file.txt
 git commit -a -m "new code"
 git push
+
+Helligkeitssteuerung für Nvidia-Karten:
+# Add to your "Device" section in /etc/X11/xorg.conf and restart X
+Option "RegistryDwords" "EnableBrightnessControl=1"

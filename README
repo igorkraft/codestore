@@ -23,7 +23,7 @@ javascript:window.open();stop();
 mvn install -Dmaven.test.skip=true
 
 git clone https://github.com/igorkraft/codestore.git
-git add file.txt
+git add --all
 git commit -a -m "new code"
 git push
 

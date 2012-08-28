@@ -1,0 +1,36 @@
+Materialfarben:
+
+- Objekt markieren
+- bei Button unter dem Szenengraph 'Material' auswählen
+- Grundfarbe wird unter Diffuse eingestellt
+- Specular definiert das Glanzlicht (Farbe, Stärke, Härte)
+- Objekt kann mit 'Transparency' durchsichtig gemacht werden
+- Lichtbrechung kann unter 'Transparency'->'Raytrace' eingestellt werden (Glas, Wasser)
+- unter 'Mirror' kann die Umgebung am Objekt gespiegelt werden
+  -> sind zwei Spiegel gegenüber, dann spiegeln sie mehrfach ineinander, die Anzahl (Tiefe) wird mit Depth festgelegt
+- F12 für rendern und F11 rendern beenden
+- 'Shadow' definiert, ob auf dem aktuellen Objekt Schatten von anderen Objekten dargestellt werden soll
+- neben 'New' für ein Material ist ein Kreis, der alle Materialien der Szene auswählbar macht
+- steht eine Zahl neben dem Namen des Materials, dann zeigt diese an, wie oft das Material verwendet wird
+- wenn zwei Objekte auf das selbe Material verweisen und man will nur ein Objekt neu einfärben, dann drückt man das Plus neben dem Namen des Materials -> vom gewähltem Material wird eine Kopie erzeugt
+- jedes Obket kann mehrere Materialslots haben und jeder Slot kann auf ein Material zeigen
+- das X neben dem Materialnamen entfernt den Link eines Slots, nicht aber den Slot selbst
+- um einen Slot zu entfernen wird das '-' neben neben der Slotliste verwendet
+- im Projekt werden nur Materialien gespeichert, die auch mit einem Objekt verbunden sind!
+- möchte man ein nicht verwendetes Material speichern, dann muss es mit 'F' neben dem Materialnamen markiert werden
+
+Texturen:
+
+- ein Objekt auswählen, dessen Material mit einer Textur versehen werden soll
+- bei den Buttons unter dem Szenengraph 'Texture' auswählen
+- Texturen sind wie auch Materialfarben eigene Instanzen, die mit Objekten verbunden werden können
+- Shader sind voreingestellte Texturen
+- unter der Vorschau können shaderspezifische Eigenschaften eingestellt werden
+- für eigene Texturen wählt man unter 'Typ' 'Image or Movie' und in den zugehörigen Eigenschaften unter 'Image' dann das darzustellende Bild
+- 'Influence'>'Color' gibt an wie stark die Textur die Materialfarbe überdeckt
+- wenn sich zwei Texturen überlagern sollen, dann wird in einem weitern Slot ein Textur hinzugefügt und ihr 'Influence'>'Color'-Wer nach unten geregelt
+- neben dem Namen des Modus (z.B. Edit Mode) wird der Viewport eingestellt
+- möchte man im Bearbeitungsfenster Texturen sehen, dann muss der Viewport 'Textured' eingestellt werden und in den Einstellungen des Bearbeitungsfensters (Taste 'n') -> Display -> Shading -> GLSL gewählt werden
+- unter 'Mapping' wird die Projektionsart eingestellt (das Bearbeitungsfenster unterstützt nur flache Projektion, die anderen wirken sich erst beim rendern aus)
+- stellt man die Werte unter 'Mapping'->'Size' hoch, wird die Textur kleiner und wiederholt sich (nahtlos aneinander passende Texturen sind geeignet)
+

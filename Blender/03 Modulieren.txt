@@ -1,0 +1,85 @@
+- 'Mausrad' zoomt die Perspektive
+- 'Mausrad' mit 'Strg' scrollt in X
+- 'Mausrad' mit 'Shift' scrollt in Y
+- Selektion mehrere Objekte mit Shift und rechte Maustaste
+- hell-orange ist das primär markierte Objekt die sekundär markierten sind etwas dunkler
+- zum entfernen primär markieren und dann nochmal rechts anklicken
+- zum Fläche markieren 'b' drücken und Rechteck aufziehen
+- 'b' mittlere Maustaste entfernt Objekte aus der Selektion
+- mit 'c' und Mausrad kann man einen Selektionskreis aufspannen
+- 'a' deseletkiert alle Objekte der Szene 
+- erneut 'a' selektiert alle Objekte der Szene
+- Shift+'a' im 3D-Fenster öffnet das 'Add'-Menü für Objekte
+- Mesh-spezifische Eigenschaften werden links neben dem 3D-Fenster angezeigt
+- Transformation beinhaltet Translation 'g', Rotieren 'r' und Skalieren 's'
+- die Button-Leiste 'Transform Orientation' ist unter dem 3D-Fenster in der Mitte
+- möchte man das Objekt Achsenbezogen Transformieren, dann kann man dort eine Transformationsart auswählen
+- um die Transformation anzuwenden, klickt man die bunten Pfeile am Objekt an
+- mit Shift können mehrere Transormationsarten gleichzeitig aktiviert werden (ausgeführt wird aber nur die am Objekt gewählte)
+- kommt man beim Verschieben an den Bildschirmrand, dann springt der Cursor zur gegenüberliegenden Seite
+- 'r' kann mehrfach gedrückt werden, um die Rotationsachse zu verändern (so kann man in allen Richtungen rotieren ohne die Perspektive zu ändern)
+- 'g' 'x' verschiebt nur in X-Richtung (andere Translationen und Achsen analog)
+- 'g' 'x' 'Num-' 'Num5' verschiebt das Objekt in X um -5 (Maussteuerung wird deaktiviert)
+- 'Shift' 'd' dupliziert ein Objekte und Objektgruppen
+- neue Objekte werden dort in die Szene gesetzt, wo der 3D-Cursor steht 
+- zum setzen des 3D-Cursors 'linke_Maus
+- 'Shift'+'c' setzt den 3D-Cursor in den Koordinatenursprung (Kamera zoomt so weit weg bis alle Objekte im Bild sind)
+- 'Shift'+'s' bringt eine Auswahl, wo der 3D-Cursor hingesetzt werden soll (kontextbezogen)
+  -> es können auch Objekte zum Cursor bewegt werden (Abhängig von der aktuellen Perspektive)
+- mit 'Num_3'+'Num_5' wird zur Perspektive parallel zur X-Achse gewechselt (Right-Pers.)
+- mit 'Num_1'+'Num_5' wird zur Perspektive parallel zur Y-Achse gewechselt (Front-Pers.)
+- mit 'Num_7'+'Num_5' wird zur Perspektive parallel zur Z-Achse gewechselt (Top-Pers.)
+- fügt man ein sehr kantiges Mesh hinzu, welches mit glatten Kanten dargestellt werden soll (z.B. eine Kugel), wählt man links 'Shading'->'Smooth'
+  -> zwischen 'Flat' und 'Smooth' kann im Editiermodus auch elementweise gewählt werden
+- im Szenengraph gibt es hinter jedem Objekt eine Kamera, einen Cursor und ein Auge
+  -> Kamera verhindert das das Objekt gerendert wird
+  -> Cursor macht das Objekt unbearbeitbar
+  -> Auge blendet das Objekt im 3D-Fenster aus ('h'-Taste)
+  -> um alle verborgenen Objekt einzublenden 'Alt'+'h'
+
+Editiermodus:
+- Objekt im Objektmodus aus wählen und bei 'Mode' 'Edit Mode' wählen
+- für jeden Modus werden links im Fenster die Funktionen für den Modus angezeigt
+- Objekte in Blender können Daten beinhalten, abhängig vom Objekttyp
+  -> Kameras enthalten Kameradaten, Lichter Lichtdaten und Meshes enthalten Mechdaten (3D-Daten von Polygonen)
+- erweitert man im Szenengraph ein Mesh-Objekt, dann wechselt Blender in den Edit-Modus (weil man die Daten des Objekts ausgewählt hat)
+- der Edit-Modus modifiziert nur die Objektdaten, der Objektmodus modifiziert das Objekt
+- 'Tab' wechselt zwischen Objekt- und Edit-Modus
+- die Schaltflächen 'Select Mode' (unter dem 3D-Fenster) legen fest, welche Meshelementtypen (Punkte,Kanten,Flächen) mit rechter Maustaste markiert werden können
+  -> mit 'Shift' können mehrere Modi gewählt werden
+- wählt man mit 'Shift' zwei benachbarte Punkt aus, so ist ihre Kante ausgewählt (Flächen werden über Markierung all ihrer Eckpunkte gewählt)
+- die Egdeloop-Selektion wird mit 'Alt'+'Linke_Maus' gemacht (alle Kanten auf einer automatisch ermittelten Kreisbahn)
+- hat man mehrere Elemente ausgewählt und möchte löschen, dann wird man gefragt, welches Tupel aus Punkten, Kanten und Flächen man löschen möchte
+- Löscht man einen Punkt, so werden seine Kanten auch gelöscht
+- hat man ein Element ausgewählt, so kann man die Auswahl kreisförmig erweiter mit 'Strg'+'Num_+' (veringern analog)
+- um eine Fläche zwischen drei gewählten Punken als Fläche zu füllen 'Alt' + 'f'
+
+3D-Werkzeuge:
+- 'Limit selection to visible' unter dem 3D-Fenster mache das Objekt im Bearbeitungsmodus durchsichtig
+- Herausheben von Elementen mit 'e' (extrude) -> mit 'x', 'y' oder 'z' wird die Achse angegeben -> Achse doppelt wählen für freie Richtungswahl
+- 'e'->'rechte_Mause', dann wird die Fläche an ihrer Originalposition extruded (es entstehen zwei ineinanderliegende Flächen)
+- 'Strg'+'r' für Loopcut (Objekt wird in Unterobjekte zerschnitten -> grobe Meshes werd verfeinert)
+  -> mit dem Scrollrad wird festgelegt, wie viele Schnitte gemacht werden sollen
+  -> hat man nur eine Schnittkante gewählt, dann kann diese nach dem Linksklick noch verschoben werden
+- für manuellen Schnitt die zu terteilenden Elemente markieren, 'k' halten und mit 'linke_Maus' eine Schnittkante zeichnen
+- um Elemente zu verbinden, werden diese markiert und 'f' wird gedrückt
+- um ein Element regelmäßig zu teilen, wählt man 'w' und dann 'Subdivide' (links wird eingestellt, wie oft man teilen möchte)
+  -> 'Smoothness' wölbt die Teilung (das Objekt bläht auf) und 'Fractal' wellt die Teilung zufällig
+- liegen Flächen in in unregelmäßigen Winkeln aneinander, dann extruded 'e' alle in der Durchschnittsnormalen; soll jedes nach seiner eigenen Normale extruded werden, wählt man links 'Extrude Individual'
+- möchte man, dass bei einer Transformation umliegende Elemente mit transformiert werden (auch nicht markierte Elemente), kann man mit 'o' proportionale Transformation aktivieren (und deaktivieren)
+  -> funktioniert auch im Objektmodus
+  -> wie nah umliegende Elemente für eine Beeinflussung sein müssen, legt der weiße Kreis fest (Scrollen für anderen Radius)
+- mit 'k' aktiviert man im Editmodeus das Kantenschnittwerkzeug
+
+Modifier:
+- der 'Schraubenschlüssel' unter dem Szenengraph zeigt eine Liste mit allen für das Objekt erzeugten Modifiern (jeder hat individuelle Eigenschaften)
+- wendet man den Modifier an ('Apply'), dann wird die virtuelle Kopie in Mesh-Daten umgewandelt und dem Objekt hinzugefügt
+- möchte man den Modifier im 3D-Fenster nicht darstellen, verwendet man den 'Augenbutton'
+- soll der Modifier beim Rendern nicht angewendet werden, verwendet man den 'Kamerabutton'
+- Modifier werden in der Reihenfolge angewendet, in der sie in der Liste stehen (in diese Reihenfolge wirken sie sich auch aufeinander aus)
+- Mirror-> erstellt eine virtuelle Kopie; wird die Originalhälfte im Editmodus bearbeitet, so ändert sich die Kopiehälfte on the fly mit
+  -> sollen sich Punkt auf der Spiegelfläche nicht voneinander entfernen wenn man sie verschiebt, so muss 'Clipping' aktiviert werden
+  -> es können mehrere Spiegelachsen aktiviert werden, so wird das Objekt mehrfach in den Raum gespiegelt
+  -> bei 'Apply' beiden Hälften sind jetzt individuell bearbeitbar
+- Subdivision Surface-> verfeinert ein grobes Mesh virtuell, die groben Grundelemente bleiben im Editmodus erhalten
+  -> Grad der Verfeinerung /Unterteilung wird mit 'View' eingestellt

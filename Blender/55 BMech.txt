@@ -1,0 +1,45 @@
+Editmode:
+- ein Punkt in der Mitte eine Kante hinzufügen -> 'w' dann Subdivide
+  geht auch um Flächen regelmäßig zu teilen
+- um mrkierte Kanten zu einer Fläche zu füllen 'f'
+- auch Punkte können extrudiert werden mit 'e'
+- für den Subdivisionmodifier ist es gut Polygone mit vier Punkten zu haben
+- hat man Kante(n) markiert, drückt 'Space' und gibt ed ein, dann kann man Edge Slide aktivieren
+  dabei fährt die markierte Kante auf den senkrecht angrenzenden Kanten entlang
+- möchte man einen Punkt an einer verbundenen Kante entlanggleiten lassen, dann 'Shift' + 'v'
+  und mit 'Maus_links' eine Kante auswählen
+- um eine Kante zwischen angrenzenden Polygonen zu löschen, markiert man diese drückt 'Entf' und
+  wählt Dissolve -> die Polygone verschmelzen dann zu einem Polygon
+  vorsicht! dabei darf nur die Kante markiert sein und nicht ihre angrenzenden Punkte!! (die werden
+  sonst auch gelöscht)
+- um einen Punkt zwischen zwei Kanten zu löschen, 'Entf' > Dissolve -> die Kanten werden zu einer
+  Kante zusammengefügt
+  grenzt der Punkt an drei Kanten, dann werden die Kanten entfernt und ihre Polygone werden vereint
+- möchte man für ein Objekt alle geraden Flächen, die aus mehreren Polygonen bestehen zu Flächen, die
+  aus genau einem Polgon bestehen umwandeln (angrenzenden Polygone einer Fläche vereinen), dann 
+  markiert man das Objekt, klickt neben der Modusauswahl auf Mesh > Dissolve > Limited Dissolve
+  -> vorsicht!, das gilt auch für Nachbarpolygone, die näherungsweise auf einer Fläche liegen
+  durch den Limited Dissolve werden die Polygonpunkte aber nicht verschoben, das heißt es entsteht
+  eine gekrümmte Fläche
+
+Schnittwerkzeug im Editmodus:
+- 'k' aktiviert Schnittwerkzeug 
+- es können flexible Schnitte zwischen allen Elementen gemacht werden auch mitten in Flächen
+- 'Space' um den markierten Schnitt tatsächlich auszuführen
+- werden zwei Punkte, die an einer Fläche liegen mit 'f' verbunden, so wird die Kante über das
+  Polygon gelegt -> um eine echte Teilung zu machen markiert man die Punkte und drückt 'j'
+- eine Schnittmarkierung kann mit 'Maus_rechts' abgebrochen werden
+- um während eines Markiervorgangs mehrere voneinander getrennte Schnitte zu setzen drück man 'e'
+- Beschreibung der Schnittsteuerung wird in der Statuszeile angezeigt
+- um einen Schnittpunkt in der Mitte einer Kante zu setzen, hält man 'Strg'
+  das geht auch mit nur zwei Schnittpunkten, deren Verbindung über mehrere Kanten geht,
+  jede Kante wird nach 'Space' in der Mitte geschnitten
+- hält man 'Shift', dann kann man verhindern, dass der grüne Cursorpunkt an Kanten und Punkten einrastet
+- 'c' aktiviert den Untermodus für gerade Schnitte in auswählbaren Winkeln zur aktuellen Projektionsebene
+  verwendet Einrastfunktion
+- 'z' aktiviert den Untermodus für einen Durchschnitt durch das ganze Mesh (nicht nur durch die Oberfläche
+  auf der man gerade arbeitet) -> Schnitt entsteht auf der gegenüberliegenden Seite genauso
+- sind einige Polygone markiert, dann kann man mit 'Shift' + 'k' und zwei Schnittpunkten außerhalb der Markierung
+  setzen, aber angewendet wird der Schnitt nur auf der Markierung
+
+weiter bei 14:00

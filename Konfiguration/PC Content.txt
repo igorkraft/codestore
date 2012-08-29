@@ -1,0 +1,26 @@
+zu retten:
+
+  Lesezeichen Firefox
+  Desktop
+
+zu konfigurieren:
+
+  Firefox
+  Nautilus
+  Maus
+  Panels
+  Texteditor
+  Energieverwaltung (Bildschirmschoner)
+  Hintergrund
+  Icons und Cursor
+  Homeverzeichnis (Desktop)
+  Terminalfarben
+  .bashrc
+  Systemsound
+  Shortcuts
+  Paketquellen
+  Werkzeugleisten (Arbeitsflächeneinstellungen->Benutzeroberfläche)
+  Anmeldebildschirm
+  Grub
+  Startprogramme
+  gnome-disk-utility (Laufwerksverwaltung)

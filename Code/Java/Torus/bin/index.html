@@ -1,0 +1,55 @@
+<html>
+<head>
+    <script type="text/javascript">
+   
+	function refreshObject()
+	{
+		var fktApplet = document.all.functionViewer;
+		var radiusSlice = document.getElementById("radiusSlice").value;
+		var pointCountSlice = document.getElementById("pointCountSlice").value;
+		var radiusTorus = document.getElementById("radiusTorus").value;
+		var sliceCount = document.getElementById("sliceCount").value;
+		fktApplet.refreshObject(radiusSlice,pointCountSlice,radiusTorus,sliceCount);
+	}
+	
+	function createVrmlScene()
+	{
+		var fktApplet = document.all.functionViewer;
+		fktApplet.stopRotation();
+		var result = fktApplet.createVrmlScene();
+		document.head.children[0].innerHTML = "";
+		document.body.innerHTML = "";
+		var output = document.createElement("pre");
+		document.body.appendChild(output);
+		output.innerHTML = result;
+	}
+	
+	function startRotation()
+	{
+		var fktApplet = document.all.functionViewer;
+		fktApplet.startRotation();
+	}
+	
+	function stopRotation()
+	{
+		var fktApplet = document.all.functionViewer;
+		fktApplet.stopRotation();
+	}
+    </script>
+</head>
+<body>
+  <h3>Selbstprogrammiertes Nudelgenerator-Applet (Alpha)</h3>
+  <applet name="functionViewer" code="TorusApplet.class" width="400" height="400">
+  </applet>
+  <input type="button" onclick="refreshObject()" value="refreshObject" />
+  <input type="button" onclick="createVrmlScene()" value="createVrmlScene" />
+  <input type="button" onclick="startRotation()" value="startRotation" />
+  <input type="button" onclick="stopRotation()" value="stopRotation" /><br/>
+  Radius des Querschnittskreises<input id="radiusSlice" type="text" value="0.5" /><br/>
+  Punkteanzahl des Querschnittskreises<input id="pointCountSlice" type="text" value="16" /><br/>
+  Abstand des Torusmittelpunks zu den Mittelpunkten der Querschnittsfl&auml;chen<input id="radiusTorus" type="text" value="2" /><br/>
+  Anzahl der Querschnittskreise<input id="sliceCount" type="text" value="16" /><br/>
+  <a href="TorusApplet.java">Applet-Source</a>
+  <div style="width:100%;text-align:right"><a href="index_kaktor.html" style="font-size: 10">Kaktor-society-page</a></div>
+</body>
+</html>

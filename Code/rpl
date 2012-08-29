@@ -1,0 +1,454 @@
+#! /bin/bash
+
+# 06.06.2012
+
+#################################################################
+# Die Anweisung : ist eine leere Anweisung
+# Wird gebraucht, da Funktionen mind. eine Anweisung haben müssen!
+# entfällt nach Programmierung
+#################################################################
+
+# Notwendige Vereinbarungen für spätere Mehrsprachigkeit
+#
+ . gettext.sh
+TEXTDOMAIN=rpl
+export TEXTDOMAIN
+TEXTDOMAINDIR=~/public_html/cgi-bin/bin
+export TEXTDOMAINDIR
+#export LANG=en_US.UTF-8
+
+
+# Definiere wichtige Konstante
+#
+PROG=$(basename $0)
+OIFS=$IFS
+OFF=0
+INFO=1
+DEBUG=2
+LOG_LEVEL=$OFF
+
+syntax() 
+{
+   echo -n $(pod2usage $0 2>&1 | sed -e "s/Usage/$(gettext "Usage")/" \
+                                     -e "s%ENDUNG\] \.\.\.%$(gettext "ENDUNG] ...")%" \
+                                     -e "s%NICHTENDUNG\] \.\.\.%$(gettext "NICHTENDUNG] ...")%" \
+                                     -e "s/PFAD \.\.\./$(gettext "PFAD ...")/" >&2)
+}
+
+# Funktion zur Ausgabe des Manuals
+#
+manual() 
+{
+   export MANPATH=~/public_html/man
+   man rpl
+}
+
+# Fehlerausgabe ohne Parameter im Text
+# 1. Parameter: Bezug des Fehlers
+# 2. Parameter: Fehlertext
+fehler() 
+{
+   echo $PROG: $1: $2 >&2
+   RC=1
+}
+
+# Log-Funktionen
+debugLog()
+{
+   if [ "$LOG_LEVEL" = "$DEBUG" ]; then
+      echo $PROG: $1: $2
+   fi
+}
+
+infoLog()
+{
+   if [ "$LOG_LEVEL" = "$DEBUG" -o "$LOG_LEVEL" = "$INFO" ]; then
+      echo $PROG: $1: $2
+   fi
+}
+
+
+# Prüfe, ob Datei
+# - Textdatei ist (Kommando 'file DATEI' enthält das Wort 'text' nach dem :)
+# - nicht auf ~ endet (Backupdatei)
+# - wegen -e oder -E zu bearbeiten ist oder nicht
+# return 0 oder return 1
+#
+pruefe_dateibearbeitung() 
+{
+   if [ "$OPT_E" ]; then
+      if [ "`echo -e $1 | grep -n -i "$OPT_E"`" ]; then
+         debugLog "$1" "$(gettext 'Datei endet mit einer ausgeschlossenen Endung')"
+         return 1
+      fi
+   fi
+   if [ "$OPT_e" ]; then
+      if [ ! "`echo -e $1 | grep -n -i "$OPT_e"`" ]; then
+         debugLog "$1" "$(gettext 'Datei endet nicht mit einer vorgeschriebenen Endung')"
+         return 1
+      fi
+   fi
+   if [ "`echo -e $1 | grep -n -i '~$'`" ]; then
+      debugLog "$1" "$(gettext 'Es handelt sich um eine Backup-Datei')"
+      return 1
+   fi
+   # prüfen, ob die übergebene Datei eine Textdatei ist
+   if [ ! "`echo -e $(file $1) | grep -n -i '.*:.*text.*'`" ]; then
+      debugLog "$1" "$(gettext 'Es handelt sich nicht um eine Textdatei')"
+      return 1
+   fi
+   return 0
+} 
+
+# Bearbeite eine einzige normale Datei
+# Datei muss les- und schreibbar sein
+# Wenn lesbar, dann prüfe mit pruefe_dateibearbeitung
+# Bei -v gib auch gefundene Zeilen nummeriert eingerückt aus
+# Ersetzung nur wenn nicht -t
+# Temporäre Dateien sollen in ~/tmp liegen
+# Parameter: Datei mit Pfad
+#
+bearbeite_datei() 
+{
+   # Fehlerbehandlung
+   if [ ! -r $1 ]; then
+      fehler "$1" "$(gettext 'Die Datei ist nicht lesbar')"
+      return
+   fi
+   if [ ! -w $1 ]; then
+      fehler "$1" "$(gettext 'Kein Schreibrecht für Datei')"
+      return
+   fi
+   pruefe_dateibearbeitung $1
+   if [ "$?" != "0" ]; then
+      infoLog "$1" "$(gettext 'Die Datei ist nicht für die Bearbeitung freigegeben')"
+      return
+   fi
+   # Geschäftslogik
+   if [ "$OPT_t" -a "$OPT_v" ];then
+      # m1 t=1 v=1 p=?
+      grep -n `if [ "$OPT_i" ]; then echo -i; fi` "$REGEX" $1 | while read INLINE ; do
+         if [ ! $PATH_PRINTED ]; then
+            echo $1
+            PATH_PRINTED=1
+         fi
+         echo "   $INLINE"
+      done
+   fi
+   if [ "$OPT_t" -a -z "$OPT_v" ];then
+      # m2 t=1 v=0 p=?
+      grep -n `if [ "$OPT_i" ]; then echo -i; fi` "$REGEX" $1 | while read INLINE ; do
+         echo $1
+         break
+      done
+   fi
+   if [ -z "$OPT_t" -a "$OPT_v" ];then
+      # m3 t=0 v=1 p=?
+      FOUND_FILE="$HOME/tmp/rpl_found_`uuidgen`"
+      grep -n `if [ "$OPT_i" ]; then echo -i; fi` "$REGEX" $1 | while read INLINE ; do
+         if [ ! $PATH_PRINTED ]; then 
+            echo $1 
+            PATH_PRINTED=1 
+            echo "$1" > $FOUND_FILE
+         fi 
+         echo "   $INLINE" 
+      done
+      FOUND=""
+      read FOUND 2>/dev/null < $FOUND_FILE
+      rm $FOUND_FILE 2>/dev/null
+      if [ "$FOUND" = "$1" ]; then
+         TEMP_FILE="$HOME/tmp/rpl_`uuidgen`.txt"
+         sed -e "s/$REGEX/$TEXT/g$OPT_i" $1 > $TEMP_FILE
+         if [ -f $TEMP_FILE ]; then
+            mv $TEMP_FILE $1
+         fi
+      fi
+   fi
+   if [ -z "$OPT_t" -a -z "$OPT_v" ];then
+      # m4 & m5 t=0 v=0 p=1&0
+      FOUND=`grep -n \`if [ "$OPT_i" ]; then echo -i; fi\` "$REGEX" $1`
+      if [ "$FOUND" != "" ]; then
+         if [ $OPT_p ]; then echo $1; fi
+         TEMP_FILE="$HOME/tmp/rpl_`uuidgen`.txt"
+         sed -e "s/$REGEX/$TEXT/g$OPT_i" $1 > $TEMP_FILE
+         if [ -f $TEMP_FILE ]; then
+            mv $TEMP_FILE $1
+         fi
+      fi
+   fi
+}
+
+# Bearbeite ein Verzeichnis
+# Verzeichnis muss rwx haben
+# Durchlaufe dann alle Dateien des Verzeichnisses
+# Bei test -f: rufe bearbeite_datei
+# Bei test -d: bearbeite_verzeichnis, falls $OPT_R
+# Parameter: Verzeichnis mit Pfad
+bearbeite_verzeichnis() 
+{
+   # Fehlerbehandlung
+   if [ ! -d "$1" ]; then
+      fehler "$1" "$(gettext 'Es handelt sich nicht um ein Verzeichnis')"
+      return
+   fi
+   if [ ! -r "$1" ]; then
+      fehler "$1" "$(gettext 'Das Verzeichnis ist nicht lesbar')"
+      return
+   fi
+   if [ ! -w "$1" ]; then
+      fehler "$1" "$(gettext 'Kein Schreibzugriff auf das Verzeichnis')"
+      return
+   fi
+   if [ ! -x "$1" ]; then
+      fehler "$1" "$(gettext 'Das Verzeichnis ist nicht iterierbar')"
+      return
+   fi
+   # Geschäftslogik
+   for FSO in $1/*; do
+   #for FSO in $(ls -a -d); do
+      # Behandlung von regulären Dateien
+      if [ -f "$FSO" ]; then
+         bearbeite_datei $FSO
+      fi
+      # Behandlung von Verzeichnissen
+      if [ -d "$FSO" -a "$OPT_R" ]; then
+         bearbeite_verzeichnis $FSO
+      fi
+   done
+}
+
+# Beginn der Hauptmethode ############################################################
+
+mkdir $HOME/tmp 2>/dev/null
+
+# Analysiere Optionen
+# OPTSTRING aktualisieren
+#
+while getopts ":e:E:impRtv" OPT; do
+   case $OPT in
+      e) OPT_e="$OPT_e\\$OPTARG";;
+      E) OPT_E="$OPT_E\\$OPTARG";;
+      i) OPT_i=i;;
+      m) OPT_m=1;;
+      p) OPT_p=1;;
+      R) OPT_R=1;;
+      t) OPT_t=1;;
+      v) OPT_v=1;;
+      :) fehler "-$OPTARG" "$(gettext 'Für die Option wurde kein Argument übergeben')"
+         syntax
+         exit 2
+         ;;
+      \?) fehler "-$OPTARG" "$(gettext 'Es wurde eine ungültige Option übergeben')"
+         syntax
+         exit 2
+   esac
+done
+
+# Entferne Optionen
+shift `expr $OPTIND - 1`
+
+# Prüfe, dass nicht -e mit -E
+if [ "$OPT_e" -a "$OPT_E" ]; then
+   fehler "-e -E" "$(gettext 'Zwei widersprüchliche Optionen wurden übergeben')"
+   syntax
+   exit 2
+fi
+
+# Prüfe, dass nicht -t mit -p
+# wäre zwar technisch kein Problem ist aber laut Syntax nicht erlaubt
+if [ "$OPT_t" -a "$OPT_p" ]; then
+   fehler "-t -p" "$(gettext 'Wenn -t angegeben wurde, dann wird -p impliziert und darf laut Syntax nicht explizit angegeben werden')"
+   syntax
+   exit 2
+fi
+
+# Aufbereitung von OPT_e und OPT_E für Verarbeitung als regulärer Ausdruck
+if [ "$OPT_e" ]; then
+   OPT_e=`echo $OPT_e | sed -e 's/\\\\//'`
+   OPT_e="\\."`echo $OPT_e | sed -e 's/\\\\/$\\\\|\\\\./gi'`"$"
+fi
+if [ "$OPT_E" ]; then
+   OPT_E=`echo $OPT_E | sed -e 's/\\\\//'`
+   OPT_E="\\."`echo $OPT_E | sed -e 's/\\\\/$\\\\|\\\\./gi'`"$"
+fi
+
+# Bearbeite -m:
+# OPT_m muss allein stehen
+# Keine anderen Optionen und keine Parameter
+# Nur dann Manual ausgeben
+if [ "$OPT_m" ]; then
+   if [ "$OPT_e$OPT_E$OPT_i$OPT_p$OPT_R$OPT_t$OPT_v" ]; then
+      fehler "-m" "$(gettext 'Das Handbuch darf nicht in Kombination mit weiteren Optionen aufgerufen werden')"
+      syntax
+      exit 2
+   fi
+   if [ "$1" ]; then
+      fehler "-m" "$(gettext 'Das Handbuch darf nicht mit weiteren Parametern aufgerufen werden')"
+      syntax
+      exit 2
+   fi
+   manual
+   exit 0
+fi
+
+
+# Prüfe auf MUSTER und ggf. auf TEXT
+# shifte diese weg
+#  
+if [ "$OPT_t" ]; then
+   if [ ! "$1" ]; then
+      fehler "$(gettext 'Usage')" "$(gettext 'Der Parameter REGEX wurde nicht angegeben')"
+      syntax
+      exit 2
+   fi
+   if [ ! "$2" ]; then
+      fehler "$(gettext 'Usage')" "$(gettext 'Der Parameter PFAD wurde nicht angegeben')"
+      syntax
+      exit 2
+   fi
+   REGEX=$1
+   shift 1
+else
+   if [ ! "$1" ]; then
+      fehler "$(gettext 'Usage')" "$(gettext 'Der Parameter REGEX wurde nicht angegeben')"
+      syntax
+      exit 2
+   fi
+   if [ ! "$2" ]; then
+      fehler "$(gettext 'Usage')" "$(gettext 'Der Parameter TEXT wurde nicht angegeben')"
+      syntax
+      exit 2
+   fi
+   if [ ! "$3" ]; then
+      fehler "$(gettext 'Usage')" "$(gettext 'Der Parameter PFAD wurde nicht angegeben')"
+      syntax
+      exit 2
+   fi
+   REGEX=$1
+   TEXT=$2
+   shift 2
+fi
+
+# Jetzt kommt die eigentliche Bearbeitung
+# Behandle alle Parameter
+# Teste -e, -f, -d, sonst Fehler
+# Bei -f: bearbeite_datei
+# Bei -d: bearbeite_verzeichnis
+#
+IFS=
+for PARA in $*; do
+   if [ -f "$PARA" ]; then
+      bearbeite_datei $PARA
+      continue
+   fi
+   if [ -d "$PARA" ]; then
+      bearbeite_verzeichnis $PARA
+      continue
+   fi
+   fehler "$PARA" "$(gettext 'Der Parameter ist ungültig. Nur reguläre Dateien und Verzeichnisse sind zulässig')"
+done
+
+exit $RC
+
+# Jetzt die POD-Doku
+#
+
+=pod
+
+=head1 NAME
+
+rpl - suche nach MUSTER und ersetze ggf. durch TEXT in Dateien/Verzeichnissen
+
+=head1 SYNOPSIS
+
+B<rpl [-ipRv] [[-e ENDUNG] ... | [-E NICHTENDUNG] ...] REGEX TEXT PFAD...>
+
+B<rpl -t [-ipRv] [[-e ENDUNG] ... | [-E NICHTENDUNG] ...] REGEX PFAD ...>
+
+B<rpl -m>
+
+=head1 DESCRIPTION
+
+Durch rpl kann ein direkt oder durch einen einfachen regulE<auml>ren Ausdruck (Basic regular expression) gegebenes Muster festgelegter Text durch einen anderen Text in Textdateien ersetzt werden. Dabei werden Backup-Dateien mit der Endung ~ ausgenommen. Anstatt Ersetzungen durchzufE<uuml>hren, kann auch nur geprE<uuml>ft werden, in welchen Dateien solche vorzunehmen sind. In letzterem Fall werden immer die Dateinamen ausgegeben. FE<uuml>r weitere ME<ouml>glichkeiten der Ausgabe siehe Optionen.
+
+=head1 OPTIONS
+
+=over 8
+
+=item B<-e ENDUNG>
+
+Ersetze nur in Dateien mit der Endung ENDUNG
+
+=item B<-E NICHTENDUNG>
+
+Ersetze nur, wenn eine Datei nicht die Endung NICHTENDUNG hat
+
+=item B<-i> 
+
+Ignoriere GroE<szlig>-/Kleinschreibung in REGEX
+
+=item B<-m> 
+
+Gib Manual-Seite zu rpl aus
+
+=item B<-p> 
+
+Gib die Pfade der zu bearbeitenden Dateien aus
+
+=item B<-R> 
+
+Arbeite rekursiv auch in Unterverzeichnissen
+
+=item B<-t> 
+
+Teste nur, ob REGEX vorkommt, impliziert die Option p
+
+=item B<-v> 
+
+Verbalisiere - es werden alle Zeilen mit der Zeilennummer ausgegeben, auf die REGEX passt
+
+=back
+
+=head1 RETURNCODES
+
+0 Erfolg
+
+1 Fehler bei Zugriff auf mindestens eine Datei oder ein Verzeichnis
+
+2 Aufruf fehlerhaft
+
+=head1 FILES
+
+TemporE<auml>re Dateien liegen im Unterverzeichnis tmp des HOME-Verzeichnisses. Ihr Name beginnt immer mit rpl_
+
+=head1 EXAMPLES
+
+ 1. rpl Emil Otto datei
+ 
+ 2. rpl -v E..l Otto datei
+       3:Emil ist ein toller Mann
+
+ 3. rpl -pv -e sh pod .
+    makehtmldoc.sh
+       28:pod2html --noindex $1 | htmlmanen2de >  ../../man/$1.html
+       30:rm pod2htm*.tmp   
+    makemandoc.sh
+       17:pod2man --release=1.0beta --date=$(date "+%m/%d/%Y") \
+       22:pod2man --release=1.0beta --date=$(date "+%d.%m.%Y") \
+    
+ 4. rpl -t toller dufte datei
+    datei
+
+ 5. rpl -Rp Bayer Meier verz1
+    verz1/datei11
+    verz1/datei13
+
+=head1 SIEHE AUCH
+
+grep(1) sed(1)
+
+=head1 AUTOR
+
+Igor Kraft
+
+=cut

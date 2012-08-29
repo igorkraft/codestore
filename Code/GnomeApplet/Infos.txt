@@ -1,0 +1,2 @@
+.server muss nach /usr/lib/bonobo/servers
+binary muss nach /usr/lib/gnome-panel

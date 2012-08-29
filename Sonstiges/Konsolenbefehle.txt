@@ -1,0 +1,104 @@
+# ISO/IMG Dateien ins Dateisystem einbinden
+mount -o loop disk.iso /mnt/
+
+# ISO Daten aus dem Dateisystem entfernen
+umount /folder/as/mountpoint
+
+# ISO von CDs erstellen
+cat /dev/cdrom > image.iso
+
+# Daten in eine ISO-Datei schreiben
+genisoimage -J -o daten2.iso -R  Delphi7_Personal.zip
+
+# Diskettenimages erstellen (letzter Parameter ist die Größe in Kilo-Byte)
+mkfs.msdos -C imagefile.img 1440
+
+# alle Prozesse anzeigen
+pc -A
+
+# Suchen
+find -name "*.deb" -o -name "*.rpm"
+
+# nach Dateien suchen, die "Something" beinhalten
+find -exec grep -l "Something" '{}' \;
+
+# Senden
+tar -c Folder/ | gzip | nc -q0 169.254.154.61 17176 (Verzeichnis komprimiert)
+nc -q0 169.254.154.61 17176 < anFile.txt (Datei unkomprimiert)
+
+# Empfangen
+nc -lp 17176 | gunzip | tar -x (Verzeichnis komprimiert)
+nc -lp 17176 > otherFile.txt (Datei unkomprimiert)
+
+# Video zu MP3 konvertieren
+mencoder input.mp4 -ovc frameno -oac mp3lame -of rawaudio -lameopts cbr:br=128 -o output.mp3
+
+# Audiokonfiguration
+alsamixer -c0
+
+# Festplatten-Images einhängen
+sudo mount -t ntfs -o loop,offset=33280,umask=000 Windows.vdi /mnt/
+
+# Dateien zusammenführen
+cat file1 file2 > ziel.tar.gz [oder] cat xa* > ziel.tar.gz
+
+# Dateien spalten
+split -b 1945k quelle.tar.gz
+
+# Prozess mit Aufrufparametern und Laufzeit
+ps -A -C java -F
+
+# Verzeichnismapping
+mount --bind /home/user/Desktop/real/ /mnt
+
+# Passwort von calle ändern
+sudo passwd calle
+
+# WMV to AVI
+mencoder infile.wmv -ofps 23.976 -ovc lavc -oac copy -o outfile.avi
+
+# Grub reparieren (von Live-CD, Boot-Flag setzen)
+sudo grub-install --root-directory=/media/Ubuntu/ hd0,2
+
+# Portlauschen anzeigen
+lsof -i:17000
+
+# Dingoo mounten
+sudo mount /dev/sdc /mnt -t vfat
+
+# mkv2avi
+mencoder film.mkv -vf scale=850:368 -oac mp3lame -lameopts abr:br=128 -alang ger -ovc lavc -ni -lavcopts vcodec=mpeg4:vbitrate=1600:mbd=1:v4mv:trell:vpass=1 -ffourcc DX50 -o film.avi
+
+# verschlüsselte Partition einhängen
+cryptsetup luksOpen /dev/sda2 Ubuntu
+mount /dev/mapper/Ubuntu /media/Ubuntu
+
+# alle Schlüssel einer verschlüsselten Partition anzeigen
+sudo cryptsetup luksDump /dev/sda6
+
+# Schlüssel zur verschlüsselten Partition hinzufügen
+sudo cryptsetup luksAddKey /dev/sda6
+
+# Schlüssel von einer verschlüsselten Partition entfernen (zu löschendes Passwort wird abgefragt)
+sudo cryptsetup luksRemoveKey /dev/sda6
+
+# VDI-UUID setzen
+VBoxManage internalcommands sethduuid Swap2.vdi
+
+# Prozess per ID pausieren
+kill -STOP 24997
+
+# pausierten Prozess weiterlaufen lassen
+kill -CONT 24997
+
+# WebDAV-Verzeichnis einhängen (erfordert davfs2)
+sudo mount -t davfs https://storage.driveonweb.de/probdav /Mountpunkt
+
+# Besitzer des Verzeichnisses mnt und dessen Unterverzeichnissen werden
+sudo chown -R user:user /home/user/Desktop/mnt
+
+# PDF To PNG
+convert -flatten +matte -density 400 IMG_0003.pdf IMG_0003.png
+
+# Textausgabe
+zenity --info "Hallo" --title "HUHU"

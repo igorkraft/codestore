@@ -21,6 +21,10 @@ Editmode:
   -> vorsicht!, das gilt auch für Nachbarpolygone, die näherungsweise auf einer Fläche liegen
   durch den Limited Dissolve werden die Polygonpunkte aber nicht verschoben, das heißt es entsteht
   eine gekrümmte Fläche
+- möchte man die zwei Punkte einer Kante zu einem zusammenfügen, dann 'Entf' und Edge Collapse
+- um einen zusammenhängenden Bereich Punkten, Kanten bzw. Flächen zu markieren, den Cursor über eines
+  dieser Elemente halten und 'l' drücken (Verwendet Floodfill, der aber nur auf den Elementen ausgeführt
+  wird, die auch markiert werden dürfen)
 
 Schnittwerkzeug im Editmodus:
 - 'k' aktiviert Schnittwerkzeug 

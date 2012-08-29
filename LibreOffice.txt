@@ -1,0 +1,10 @@
+Paket für Rechtschreibprüfung:
+- myspell-de-de
+
+Nummerierung:
+- bevor es los geht eine Nummerierung über das Kontextmenü einfügen
+- bei Position unter der ersten Ebene folgendes einfügen:
+  + Leerzeichen, Links, 0,00cm, 0,50cm
+  
+Großschreibung am Satzanfang
+- Extras -> AutoKorrektur-Optionen -> Optionen -> Jeden Satz mit...

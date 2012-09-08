@@ -1,0 +1,9 @@
+Links nach Reihenfolge:
+
+http://sourceforge.net/projects/ogre/files/ogre/1.7/
+http://ogre3d.org/tikiwiki/Building+Ogre
+http://ogre3d.org/tikiwiki/Prerequisites
+http://ogre3d.org/tikiwiki/Installing+the+Ogre+SDK
+http://ogre3d.org/tikiwiki/Setting+Up+An+Application
+http://ogre3d.org/tikiwiki/Building+Your+Projects+With+CMake
+http://ogre3d.org/tikiwiki/Setting+Up+An+Application+-+KDevelop+-+Linux

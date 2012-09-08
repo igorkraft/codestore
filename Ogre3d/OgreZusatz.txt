@@ -1,0 +1,15 @@
+Shader-Sprachen:
+
+CG; HLSL; GLSL
+
+Modellierung:
+
+Blender; May; 3D Max; Wings3D; LightWave; TrueSpace; Softimage/XSI; Google Sketchup; Cinema 4D; Cheetah 3D
+
+GUI-Bibliotheken:
+
+CEGUI; MyGUI; Hikari; Navi; QuickGUI; buttonGUI; BetaGUI; Gorilla
+
+Physik-Wrapper:
+
+OgreNewt; NxOgre; OgreODE; OgreBullet; btOgre; 

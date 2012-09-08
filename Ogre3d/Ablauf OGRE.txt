@@ -1,0 +1,54 @@
+neueste Version herunterladen
+Abhängigkeiten installieren
+cmake und cmake-gui installieren
+mit cmake builden
+make ausführen (im build-Verzeichnis)
+make install ausführen (Engine wird ins System installiert)
+Beispielprojekt herunterladen (clean_ogre_cmake_project.zip)
+dort cmake ausführen
+make ausführen
+make install ausführen
+
+besserer Ablauf:
+- ppa für Ubuntu hinzufügen (https://launchpad.net/~ogre-team/+archive/ogre)
+- ogre-tools installieren (installiert die Engine mit)
+- blender-ogrexml installieren (installiert eine alte, aber funktionierende Version von Blender mit)
+- in der plugins.cfg des Tutorials (clean_ogre_cmake_project.zip von http://www.ogre3d.org/tikiwiki/Building+Your+Projects+With+CMake) PluginFolder=/usr/lib/OGRE setzen
+- KDevelop installieren und Tutorial importieren
+
+Zusammenfassung Tutorial 1:
+
+- Positionen von Szenenknoten sind immer relativ zur Elternknoten!
+- Entitäten, die mehrfach verwendet werden, befinden sich nur einmalig im Speicher
+- zur Rotation dienen die rotate-, pitch-, yaw-, and roll-Funktionen des Szenenknotens (pitch->X-Achse,yaw->Y-Achse,roll->Z-Achse)
+- restetOrientation hebt alle Modifikationen auf
+- der SzenenManager kann sowohl Entitäten, als auch Szenenknoten liefern (über Getter)
+- die Rotationsrichtung wird über die Rechte-Hand-Regel definiert
+- im bin-Ordner des OgreSDK's befinden sich die Bibliotheken für die Auslieferung
+- Plugin-Bibliotheken beinhalten Funktionen, die nur bei Bedarf geladen und ausgeliefert werden
+- in den Konfigurationsdateien ist beschrieben, welche Plugins geladen werden und wo die Ressourcen liegen
+
+Zusammenfassung Tutorial 2:
+
+- der clipping-Abstand einer Kamera definiert, ab welchem Abstand ein Objekt unsichtbar wird (setNearClipDistance und setFarClipDistance)
+- das aspect ratio einer Kamera definiert das Seitenverhältnis
+- Viewports definieren den Bereich des Fensters, in dem das Kameraabbild dargestellt wird (durch sie wird Splitscreening ermöglicht)
+- mit setShadowTechnique legt fest, wie Schatten erzeugt werden (es sind drei Algorithmen vorhanden)
+- setCastShadows definiert, ob Schatten benutzt werden sollen
+- Ebenen-Objecte (Plane) sind durch ihre Normale und einen Abstand zu Ursprung definiert (ist ja wie in Mathe :)
+- eine Ebene wird der createPlane-Mathode des MeshManagers übergeben, hinzu kommen eine Beschreibung für Größe und Ausrichtung
+- createPlane liefert ein abstraktes Mesh, das mit createEntity des SzenenManagers in die Szene instanziert wird
+- mit setMaterialName auf der Ebeneninstanz wird die Textur definiert
+- das ambient light definiert des "Grundlicht" des Szene (es sorgt für eine gleichmäßige Ausleuchtung -> es entstehen keine Schatten)
+- ansonsten gibt es drei weitere Lichtarten: Punktlicht, Lichtkegel (Spotlight), Licht von "weit" entfernten Quellen (directional light)
+
+Zusammenfassung Tutorial 3:
+
+- Ogre::Terrain = a small group of tiles (Ziegel/Dreiecke), lets say 256x256 
+- Terrain kann mit TerrainGroup zu einem großen Gelände zusammengefasst werden
+- Ogre::TerrainPaging = A wrapper to add/remove predetermined Ogre::Terrains on the fly (so you may have lets say 1000 Ogre::Terrains in a TerrainGroup but only the 9 of them around the player is visible at once)
+- PagingManager = general purpose paging handler, not limited to terrain but also supplies functions to page other elements in the scene
+- All terrains you add to a group are loaded.
+- All terrains in the radius LOADRADIUS, centered around the current camera position, will be loaded.
+- Terrains already loaded in the radius HOLDRADIUS will be kept in memory. 
+- genaueres gibt's unter http://www.ogre3d.org/docs/api/html/classOgre_1_1Terrain.html

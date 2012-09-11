@@ -1,4 +1,4 @@
-Bibliotheken (alternativer ppa-Links ist unten):
+Bibliotheken (ppa-Links ist unten):
 
 cmake
 libogre-1.7.3
@@ -6,14 +6,14 @@ libogre-dev
 libois-dev
 KDevelop
 
-- eine neuere Version ist auch im ppa zu finden: https://launchpad.net/~ogre-team/+archive/ogre
-- man die neueste Version auch relativ einfach selbst builden (siehe Wiki)
-- im Paket libogre-dev nachschauen, wohin der cmake-Ordner installiert wurde (wegen FindOGRE.cmake)
+- im Standardrepository ist zwar das SDK enthalten, aber es fehlt ein Plugin um die Executable
+  aus dem clean_project zu starten, daher unbedingt das alternative ppa verwenden:
+  https://launchpad.net/~ogre-team/+archive/ogre
+- man kann die neueste Version auch relativ einfach selbst builden (siehe Wiki)
+- sichern, dass die CMakeLists.txt den richtigen Pfad zur FindOGRE.cmake aus libogre-dev kennt
 - cmake muss mit einem working directory als Parameter aufgerufen werden!
 - das clean_ogre_cmake_project.zip herunterladen: 
   http://www.ogre3d.org/tikiwiki/tiki-index.php?page=Building+Your+Projects+With+CMake
-- in der CMakeLists.txt alle /usr/lib/OGRE/cmake so ersetzen, dass sie auf 
-  den Ordner zeigen, der die FindOGRE.cmake enthält (siehe libogre-dev)
 - einen Buildlauf starten (cmake .)
 - nach dem ersten Build wird ein dist-Verzeichnis angelegt, in dem sich eine plugins.cfg
   befindet. Dort den PluginFolder anpassen (siehe libogre-1.7.3)

@@ -1,20 +1,23 @@
-neueste Version herunterladen
-Abhängigkeiten installieren
-cmake und cmake-gui installieren
-mit cmake builden
-make ausführen (im build-Verzeichnis)
-make install ausführen (Engine wird ins System installiert)
-Beispielprojekt herunterladen (clean_ogre_cmake_project.zip)
-dort cmake ausführen
-make ausführen
-make install ausführen
+Bibliotheken (alternativer ppa-Links ist unten):
 
-besserer Ablauf:
-- ppa für Ubuntu hinzufügen (https://launchpad.net/~ogre-team/+archive/ogre)
-- ogre-tools installieren (installiert die Engine mit)
-- blender-ogrexml installieren (installiert eine alte, aber funktionierende Version von Blender mit)
-- in der plugins.cfg des Tutorials (clean_ogre_cmake_project.zip von http://www.ogre3d.org/tikiwiki/Building+Your+Projects+With+CMake) PluginFolder=/usr/lib/OGRE setzen
-- KDevelop installieren und Tutorial importieren
+cmake
+libogre-1.7.3
+libogre-dev
+libois-dev
+KDevelop
+
+- eine neuere Version ist auch im ppa zu finden: https://launchpad.net/~ogre-team/+archive/ogre
+- man die neueste Version auch relativ einfach selbst builden (siehe Wiki)
+- im Paket libogre-dev nachschauen, wohin der cmake-Ordner installiert wurde (wegen FindOGRE.cmake)
+- cmake muss mit einem working directory als Parameter aufgerufen werden!
+- das clean_ogre_cmake_project.zip herunterladen: 
+  http://www.ogre3d.org/tikiwiki/tiki-index.php?page=Building+Your+Projects+With+CMake
+- in der CMakeLists.txt alle /usr/lib/OGRE/cmake so ersetzen, dass sie auf 
+  den Ordner zeigen, der die FindOGRE.cmake enthält (siehe libogre-dev)
+- einen Buildlauf starten (cmake .)
+- nach dem ersten Build wird ein dist-Verzeichnis angelegt, in dem sich eine plugins.cfg
+  befindet. Dort den PluginFolder anpassen (siehe libogre-1.7.3)
+- um ein Executable zu builden make aufrufen
 
 Zusammenfassung Tutorial 1:
 

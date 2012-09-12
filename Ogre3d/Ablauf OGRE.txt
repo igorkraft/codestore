@@ -8,9 +8,13 @@ KDevelop
 
 Installation und Testbuild:
 
-- im Standardrepository ist zwar das SDK enthalten, aber es fehlt ein Plugin um die Executable
-  aus dem clean_project zu starten, daher unbedingt das alternative ppa verwenden:
+- im Standardrepository sind zwar das SDK und die Bibliothek (Plugins) enthalten, 
+  aber es fehlt ein Plugin um die Executable aus dem clean_project zu starten, daher unbedingt 
+  das alternative ppa verwenden:
   https://launchpad.net/~ogre-team/+archive/ogre
+  -> das fehlende Plugin ist CgProgramManager, das man auch in der plugins.cfg auskommentieren kann
+  -> damit sollte dann auch die Version des Standardrepos laufen
+  -> TODO: bitte testen, ob das stimmt
 - man kann die neueste Version auch relativ einfach selbst builden (siehe Wiki)
 - sichern, dass die CMakeLists.txt den richtigen Pfad zur FindOGRE.cmake aus libogre-dev kennt
 - cmake muss mit einem working directory als Parameter aufgerufen werden!

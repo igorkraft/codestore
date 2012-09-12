@@ -6,6 +6,8 @@ libogre-dev
 libois-dev
 KDevelop
 
+Installation und Testbuild:
+
 - im Standardrepository ist zwar das SDK enthalten, aber es fehlt ein Plugin um die Executable
   aus dem clean_project zu starten, daher unbedingt das alternative ppa verwenden:
   https://launchpad.net/~ogre-team/+archive/ogre
@@ -18,6 +20,15 @@ KDevelop
 - nach dem ersten Build wird ein dist-Verzeichnis angelegt, in dem sich eine plugins.cfg
   befindet. Dort den PluginFolder anpassen (siehe libogre-1.7.3)
 - um ein Executable zu builden make aufrufen
+
+KDevelop:
+
+- in KDevelop die CMakeLists.txt importieren (Standardeinstellungen)
+- mit Project -> Build all Projects das Executable erzeugen
+- dann unter Run -> Configure Launches eine neue Run-Konfiguration für das Projekt erstellen
+  Radiobutton "Executable" wählen und das Executable aus dem build-Verzeichnis wählen
+- im build-Verzeichnis die resources.cfg und die plugins.cfg anpassen
+- "Execute" oder "Debug" zum ausführen
 
 Zusammenfassung Tutorial 1:
 

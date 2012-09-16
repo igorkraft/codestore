@@ -33,3 +33,4 @@ Helligkeitssteuerung für Nvidia-Karten:
 
     # Add to your "Device" section in /etc/X11/xorg.conf and restart X
     Option "RegistryDwords" "EnableBrightnessControl=1"
+![Home](https://raw.github.com/igorkraft/codestore/master/Sonstiges/Home.png "Home")

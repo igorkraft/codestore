@@ -5,5 +5,5 @@
 - man kann für einen bestimmten Frame festlegen, welche Eigenschaften (Location, Rotation, Scaling) 
   bei diesem Frame haben soll
 
-<img src="Blender_2_5_shortcuts.jpg" />
+<img src="https://github.com/igorkraft/codestore/edit/master/Blender/Blender_2_5_shortcuts.jpg" />
 [id]: url/to/image  "Optional title attribute"

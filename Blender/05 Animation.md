@@ -4,3 +4,6 @@
   - dort wird die Framerate 25 (für Deutschland) eingstellt und die Länge des Films in Frames festgelegt
 - man kann für einen bestimmten Frame festlegen, welche Eigenschaften (Location, Rotation, Scaling) 
   bei diesem Frame haben soll
+
+<img src="Blender_2_5_shortcuts.jpg" />
+[id]: url/to/image  "Optional title attribute"

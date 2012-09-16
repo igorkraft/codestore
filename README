@@ -1,3 +1,6 @@
+<html>
+<head></head>
+<body>
 TODO:
 WebDAV und Internet weiterleiten testen (python-webdav installieren)
 http://wiki.ubuntuusers.de/RAM-Disk_erstellen
@@ -30,3 +33,5 @@ git push
 Helligkeitssteuerung für Nvidia-Karten:
 # Add to your "Device" section in /etc/X11/xorg.conf and restart X
 Option "RegistryDwords" "EnableBrightnessControl=1"
+</body>
+</html>

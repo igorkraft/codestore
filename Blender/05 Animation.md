@@ -5,4 +5,17 @@
   - dort wird die Framerate 25 (für Deutschland) eingestellt und die Länge des Films in Frames festgelegt
 - man kann für einen bestimmten Frame festlegen, welche Eigenschaften (Location, Rotation, Scaling) das zu animierende Objekt bei diesem Frame haben soll
   - dazu setzt man den Cursor der Zeitleiste auf den gewünschten Frame und drückt im 3D-Fenster `i`
+  - dann wählt man die Eigenschaften aus, die für den Keyframe gespeichert werden sollen
 - in welchem Frame man sich augenblicklich befindet, wird im 3D-Fenster unter links in Klammern angezeigt und kann unter der Zeitleiste eingestellt werden
+- zwischen den Keyframes wird interpoliert, das heißt, je nachdem, wo der Zeitleistencursor ist, werden die Objekte anders dargestellt
+- die Schaltfläche mit dem roten Kreis unter der Zeitleiste aktiviert das automatische setzen eines Keyframes
+  - der Zeitleistencursor wird gesetzt, das Objekt verändert (was dazu führt, dass automatisch ein neuer Keyframe gesetzt wird) und dann wird der Cursor neu gesetzt und alles beginnt von vorn
+- oben rechts im 3D-Fenster wird angezeigt, mit wieviel FPS die Animation abgespielt wird
+- die Kamera und Lichter können auch animiert werden
+- jedes Objekt hat seine eigenen Keyframes (die werden orange auf der Zeitleiste dargestellt)
+  - wurden mehrere Objekte markiert, dann werden alle Keyframes in die Zeitleiste eingetragen
+- der Cursor der Zeitleiste kann auch mit den Pfeiltasten bewegt werden (oben und unten für größere Schritte)
+- die Schaltfläche zwischen "abspielen" und "an das Ende springen" steuert den nächsten Keyframe an
+- Werte von Objekten können auch animiert werden
+  - dazu wählt man den gewünschten Keyframe und Wert und wählt `Maus_rechts` -> `Insert Keyframe` auf dem Wert
+  - automatisches Keyframe setzen greift auch hier

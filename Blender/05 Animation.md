@@ -19,3 +19,7 @@
 - Werte von Objekten können auch animiert werden
   - dazu wählt man den gewünschten Keyframe und Wert und wählt `Maus_rechts` -> `Insert Keyframe` auf dem Wert
   - automatisches Keyframe setzen greift auch hier
+- um eine Animation zu rendern `Strg`+`F12`
+  - die einzelnen Frames werden nach /tmp gespeichert
+  - um die Frames in ein Video zu konvertieren:
+  mencoder "mf://*.png" -mf fps=25 -o test.avi -ovc lavc -lavcopts vcodec=msmpeg4v2:vbitrate=800

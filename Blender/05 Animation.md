@@ -22,4 +22,4 @@
 - um eine Animation zu rendern `Strg`+`F12`
   - die einzelnen Frames werden nach /tmp gespeichert
   - um die Frames in ein Video zu konvertieren:
-  mencoder "mf://*.png" -mf fps=25 -o test.avi -ovc lavc -lavcopts vcodec=msmpeg4v2:vbitrate=800
+  `mencoder "mf://*.png" -mf fps=25 -o test.avi -ovc lavc -lavcopts vcodec=msmpeg4v2:vbitrate=800`

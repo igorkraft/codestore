@@ -35,6 +35,3 @@
  - ein Ausgabename kann dort auch angegeben werden
 - Animationen werden automatisch beim Rendern auch in den Ausgabeordner gespeichert, Bilder müssen separat gespeichert werden
  - für Bilder nach dem rendern: `Image` -> `Save as`
-
-----------
-weiter mit dem zweiten Video

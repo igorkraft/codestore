@@ -21,6 +21,20 @@
 - im Abschnitt `Shadow` kann verhindert werden, dass Objekte durch dieses Licht einen Schatten werfen
 - `Specular` gibt an, ob stellt ein, ob die Lichtquelle als heller Schein auf den beleuchteten Oberflächen erscheinen soll oder nicht
 - wenn man eine Szene einfach nur aufhellen will, dann fügt man Lampen hinzu und stellt `Shadow` und `Specular` aus
+- die Verknüpfung zu den Lampendaten wird oberhalb des `Preview`-Fensters gemacht (zeigen zwei Lampen auf die selben Daten, dann werden Änderungen auch auf beide Lampen angewendet)
+
+#### Rendereinstellungen
+- unter `Propertiess` in Sektion `Render` kann man unter `Display` einstellen wo das geränderte Bild angezeigt werden soll (neues Fenster, Image-Editor oder Fullscreen)
+- in der oberen rechten Ecke des 3D-Fensters ist eine Schaltfläche mit der man ein neues Nebenfenster öffnen kann, dort kann man den `UV/Image Editor` einstellen und das gerenderte Bild wird immer dort angezeigt
+ - um das Nebenfenster wieder zu schließen, klick man die selbe Schaltfläche und bewegt sie ein Stück in das zu schließende Fenster; dort wird dann ein großer Pfeil eingeblendet, der darauf hinweist, dass das Fenster geschlossen wird, wenn man die Maus loslässt
+- im Abschnitt `Dimensions` stellen die Werte unter `Resolution` die Auflösung des gerenderten Bildes ein (Form des Kameraobjekts wird daran angepasst)
+ - der darunter befindliche Prozentwert gibt an, ob das Bild in voller Größe gerendert werden soll oder in prozentual kleinerer Auflösung (für schnelle Vorschau)
+- im Abschnitt `Anti-Aliasing` kann die Kantenglättung aktiviert werden
+ - die Stärke der Kantenglättung kann mit den Zahlenwerten darunter eingestellt werden
+- im Abschnitt `Output` kann das Bildformat (png, tga, jpg etc.) und der Ausgabeordner eingestellt werden
+ - ein Ausgabename kann dort auch angegeben werden
+- Animationen werden automatisch beim Rendern auch in den Ausgabeordner gespeichert, Bilder müssen separat gespeichert werden
+ - für Bilder nach dem rendern: `Image` -> `Save as`
 
 ----------
 weiter mit dem zweiten Video

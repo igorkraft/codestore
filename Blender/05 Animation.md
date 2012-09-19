@@ -23,3 +23,4 @@
   - die einzelnen Frames werden nach /tmp gespeichert
   - um die Frames in ein Video zu konvertieren:
   `mencoder "mf://*.png" -mf fps=25 -o test.avi -ovc lavc -lavcopts vcodec=msmpeg4v2:vbitrate=800`
+  - Blender kann auch direkt eine Videodatei erstellen: siehe Abschnitt `Output`->`File format` im nächsten Tutorial

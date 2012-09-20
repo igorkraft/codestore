@@ -3,22 +3,20 @@
 # Einstellungen für den Drucker
 # -----------------------------
 # + für vierseitige Bilder (nach Scriptkonvertierung)
-#   - an Rahmen anpassen individuell testen (prüfen, ob Skalierung Auswirkungen hat)
-#   - Normal (schnell)
-#   - langsamtrocknend
-#   - Graustufen
+# - an Rahmen anpassen individuell testen (prüfen, ob Skalierung Auswirkungen hat)
+# - Normal (schnell)
+# - langsamtrocknend
+# - Graustufen
 # + für PDF (vorher vierfach in Datei gedruckt)
-#   - Normal (schnell)
-#   - langsamtrocknend
-#   - Graustufen
-#   - Skalierung 104%
-#
-# um eine Line zu zeichnen: 
-# convert in.png -stroke red -strokewidth 3 -draw "line 5,95 35,5" out.png
+# - Normal (schnell)
+# - langsamtrocknend
+# - Graustufen
+# - Skalierung 104%
 
 convertPdf()
 {
-  input="./merge.pdf"
+  input="./Modul.pdf"
+  TMP="tmp"
   density=368
   margin=2 # Seitenrand zum lochen (Angabe in cm, floats sind erlaubt)
   evenLeft=355 # gibt an, wie viel Rand bei geraden Seiten abgeschnitten werden soll
@@ -29,48 +27,50 @@ convertPdf()
   # h=(sqrt(2)*$width)/(1-$margin/21)
   borderRight=`genius --exec=round\(\(\(1-$margin/21.0\)*sqrt\(2\)*$height-2*$width\)/2\)`
   if [ $borderRight -lt 0 ]
-    then 
-      echo "borderRight < 0! (($borderRight))"
-      exit
+  then
+    echo "borderRight < 0! (($borderRight))"
+    return 1
   fi
   borderHole=`genius --exec=round\(\(3*sqrt\(2\)/21.0\)*$height\)`
-  mkdir test 2>/dev/null
+  mkdir $TMP 2>/dev/null
   count=`identify -format %n "$input"`
-  convert -size $borderRight"x"$height xc:white test/borderRight.png
-  convert -size $borderHole"x"$height xc:white test/borderHole.png
+  convert -size $borderRight"x"$height xc:white $TMP/borderRight.png
+  convert -size $borderHole"x"$height xc:white $TMP/borderHole.png
   page=0
-  date > start_date.txt
+  date
   while [ $page -lt $count ]
   do
-    convert -flatten +matte -density $density "$input"[$page] test/tmp1.png &>/dev/null
-    convert -flatten +matte -density $density "$input"[$(($page+1))] test/tmp2.png &>/dev/null
-    convert -flatten +matte -density $density "$input"[$(($page+2))] test/tmp3.png &>/dev/null
-    convert -flatten +matte -density $density "$input"[$(($page+3))] test/tmp4.png &>/dev/null
-    convert test/tmp1.png -crop $width"x"$height"+"$evenLeft"+"$top test/tmp1.png
-    convert test/tmp2.png -crop $width"x"$height"+"$unevenLeft"+"$top test/tmp2.png
-    convert test/tmp3.png -crop $width"x"$height"+"$evenLeft"+"$top test/tmp3.png
-    convert test/tmp4.png -crop $width"x"$height"+"$unevenLeft"+"$top test/tmp4.png
+    convert -flatten +matte -density $density "$input"[$page] $TMP/tmp1.png &>/dev/null
+    convert -flatten +matte -density $density "$input"[$(($page+1))] $TMP/tmp2.png &>/dev/null
+    convert $TMP/tmp2.png -stroke black -strokewidth 4 -draw "line 0,0 9000,0" $TMP/tmp2.png
+    convert -flatten +matte -density $density "$input"[$(($page+2))] $TMP/tmp3.png &>/dev/null
+    convert -flatten +matte -density $density "$input"[$(($page+3))] $TMP/tmp4.png &>/dev/null
+    convert $TMP/tmp4.png -stroke black -strokewidth 4 -draw "line 0,0 9000,0" $TMP/tmp4.png
+    convert $TMP/tmp1.png -crop $width"x"$height"+"$evenLeft"+"$top $TMP/tmp1.png
+    convert $TMP/tmp2.png -crop $width"x"$height"+"$unevenLeft"+"$top $TMP/tmp2.png
+    convert $TMP/tmp3.png -crop $width"x"$height"+"$evenLeft"+"$top $TMP/tmp3.png
+    convert $TMP/tmp4.png -crop $width"x"$height"+"$unevenLeft"+"$top $TMP/tmp4.png
     if [ $((($page/4)%2)) -eq 0 ]
     then
-      montage -geometry +0+0 -tile 5x2 \
-        test/borderHole.png test/tmp1.png test/borderRight.png test/tmp2.png test/borderRight.png \
-        test/borderHole.png test/tmp3.png test/borderRight.png test/tmp4.png test/borderRight.png \
-        test/result_`printf "%03d" $(($page/4))`.png
+        montage -geometry +0+0 -tile 5x2 \
+        $TMP/borderHole.png $TMP/tmp1.png $TMP/borderRight.png $TMP/tmp2.png $TMP/borderRight.png \
+        $TMP/borderHole.png $TMP/tmp3.png $TMP/borderRight.png $TMP/tmp4.png $TMP/borderRight.png \
+        $TMP/result_`printf "%03d" $(($page/4))`.png
     else
-      montage -geometry +0+0 -tile 5x2 \
-        test/tmp1.png test/borderRight.png test/tmp2.png test/borderRight.png test/borderHole.png \
-        test/tmp3.png test/borderRight.png test/tmp4.png test/borderRight.png test/borderHole.png \
-        test/result_`printf "%03d" $(($page/4))`.png
+        montage -geometry +0+0 -tile 5x2 \
+        $TMP/tmp1.png $TMP/borderRight.png $TMP/tmp2.png $TMP/borderRight.png $TMP/borderHole.png \
+        $TMP/tmp3.png $TMP/borderRight.png $TMP/tmp4.png $TMP/borderRight.png $TMP/borderHole.png \
+        $TMP/result_`printf "%03d" $(($page/4))`.png
     fi
     echo `printf "%03d" $(($page/4))` von `printf "%03d" $(($count/4))` fertig
     page=$(($page+4))
   done
-  rm test/tmp1.png
-  rm test/tmp2.png
-  rm test/tmp3.png
-  rm test/tmp4.png
-  rm test/borderHole.png
-  rm test/borderRight.png
-  date > end_date.txt
+  rm $TMP/tmp1.png
+  rm $TMP/tmp2.png
+  rm $TMP/tmp3.png
+  rm $TMP/tmp4.png
+  rm $TMP/borderHole.png
+  rm $TMP/borderRight.png
 }
+date
 convertPdf

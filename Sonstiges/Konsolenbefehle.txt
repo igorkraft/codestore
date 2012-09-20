@@ -105,3 +105,6 @@ zenity --info "Hallo" --title "HUHU"
 
 # Bildfolge zu Video (für Blender-Animation)
 mencoder "mf://*.png" -mf fps=25 -o test.avi -ovc lavc -lavcopts vcodec=msmpeg4v2:vbitrate=800
+
+# Script debuggen (zeigt Befehle mit Aufrufparametern an)
+bash -x scriptName.sh

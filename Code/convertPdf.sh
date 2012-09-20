@@ -19,11 +19,11 @@ convertPdf()
   TMP="tmp"
   density=368
   margin=2 # Seitenrand zum lochen (Angabe in cm, floats sind erlaubt)
-  evenLeft=355 # gibt an, wie viel Rand bei geraden Seiten abgeschnitten werden soll
-  unevenLeft=355 # gibt an, wie viel Rand bei ungeraden Seiten abgeschnitten werden soll
-  top=146
-  width=2488
-  height=4000
+  evenLeft=360 # gibt an, wie viel Rand bei geraden Seiten abgeschnitten werden soll
+  unevenLeft=360 # gibt an, wie viel Rand bei ungeraden Seiten abgeschnitten werden soll
+  top=104
+  width=2123
+  height=3515
   # h=(sqrt(2)*$width)/(1-$margin/21)
   borderRight=`genius --exec=round\(\(\(1-$margin/21.0\)*sqrt\(2\)*$height-2*$width\)/2\)`
   if [ $borderRight -lt 0 ]
@@ -33,6 +33,7 @@ convertPdf()
   fi
   borderHole=`genius --exec=round\(\(3*sqrt\(2\)/21.0\)*$height\)`
   mkdir $TMP 2>/dev/null
+  rm $TMP/* 2>/dev/null
   count=`identify -format %n "$input"`
   convert -size $borderRight"x"$height xc:white $TMP/borderRight.png
   convert -size $borderHole"x"$height xc:white $TMP/borderHole.png
@@ -42,26 +43,26 @@ convertPdf()
   do
     convert -flatten +matte -density $density "$input"[$page] $TMP/tmp1.png &>/dev/null
     convert -flatten +matte -density $density "$input"[$(($page+1))] $TMP/tmp2.png &>/dev/null
-    convert $TMP/tmp2.png -stroke black -strokewidth 4 -draw "line 0,0 9000,0" $TMP/tmp2.png
     convert -flatten +matte -density $density "$input"[$(($page+2))] $TMP/tmp3.png &>/dev/null
     convert -flatten +matte -density $density "$input"[$(($page+3))] $TMP/tmp4.png &>/dev/null
-    convert $TMP/tmp4.png -stroke black -strokewidth 4 -draw "line 0,0 9000,0" $TMP/tmp4.png
     convert $TMP/tmp1.png -crop $width"x"$height"+"$evenLeft"+"$top $TMP/tmp1.png
     convert $TMP/tmp2.png -crop $width"x"$height"+"$unevenLeft"+"$top $TMP/tmp2.png
     convert $TMP/tmp3.png -crop $width"x"$height"+"$evenLeft"+"$top $TMP/tmp3.png
     convert $TMP/tmp4.png -crop $width"x"$height"+"$unevenLeft"+"$top $TMP/tmp4.png
+    RESULT=$TMP/result_`printf "%03d" $(($page/4))`.png
     if [ $((($page/4)%2)) -eq 0 ]
     then
         montage -geometry +0+0 -tile 5x2 \
         $TMP/borderHole.png $TMP/tmp1.png $TMP/borderRight.png $TMP/tmp2.png $TMP/borderRight.png \
         $TMP/borderHole.png $TMP/tmp3.png $TMP/borderRight.png $TMP/tmp4.png $TMP/borderRight.png \
-        $TMP/result_`printf "%03d" $(($page/4))`.png
+        $RESULT
     else
         montage -geometry +0+0 -tile 5x2 \
         $TMP/tmp1.png $TMP/borderRight.png $TMP/tmp2.png $TMP/borderRight.png $TMP/borderHole.png \
         $TMP/tmp3.png $TMP/borderRight.png $TMP/tmp4.png $TMP/borderRight.png $TMP/borderHole.png \
-        $TMP/result_`printf "%03d" $(($page/4))`.png
+        $RESULT
     fi
+    convert $RESULT -stroke black -strokewidth 4 -draw "line 0,$height 9000,$height" $RESULT
     echo `printf "%03d" $(($page/4))` von `printf "%03d" $(($count/4))` fertig
     page=$(($page+4))
   done
@@ -72,5 +73,5 @@ convertPdf()
   rm $TMP/borderHole.png
   rm $TMP/borderRight.png
 }
-date
 convertPdf
+date

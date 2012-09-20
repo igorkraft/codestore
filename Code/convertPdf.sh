@@ -12,6 +12,9 @@
 #   - langsamtrocknend
 #   - Graustufen
 #   - Skalierung 104%
+#
+# um eine Line zu zeichnen: 
+# convert in.png -stroke red -strokewidth 3 -draw "line 5,95 35,5" out.png
 
 convertPdf()
 {

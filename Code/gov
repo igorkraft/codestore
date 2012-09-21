@@ -2,6 +2,7 @@
 
 # steuert die Taktfrequenz der CPU ondemand ist default
 # zum setzen des powersave-Modus: sudo ./gov powersave
+# um die momentan tatsächliche Taktfrequenz anzuzeigen: cpufreq-info
 
 echo "gov - show or set governor (set requires root privileges)"
 echo "usage: [sudo] gov [o|ondemand|f|performance|p|powersave|c|conservative]"

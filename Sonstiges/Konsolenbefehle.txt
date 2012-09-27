@@ -103,6 +103,9 @@ convert -flatten +matte -density 400 IMG_0003.pdf IMG_0003.png
 # Textausgabe
 zenity --info --text "HUHU"
 
+# Befehle verketten
+T="Ofen ausschalten" ; sleep $((60*60*2)) ; notify-send "$T" ; zenity --info --text "$T"
+
 # Bildfolge zu Video (für Blender-Animation)
 mencoder "mf://*.png" -mf fps=25 -o test.avi -ovc lavc -lavcopts vcodec=msmpeg4v2:vbitrate=800
 

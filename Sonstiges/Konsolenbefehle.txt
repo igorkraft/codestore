@@ -101,7 +101,7 @@ sudo chown -R user:user /home/user/Desktop/mnt
 convert -flatten +matte -density 400 IMG_0003.pdf IMG_0003.png
 
 # Textausgabe
-zenity --info "Hallo" --title "HUHU"
+zenity --info --text "HUHU"
 
 # Bildfolge zu Video (für Blender-Animation)
 mencoder "mf://*.png" -mf fps=25 -o test.avi -ovc lavc -lavcopts vcodec=msmpeg4v2:vbitrate=800

@@ -4,3 +4,5 @@
 - um im Editmode einen zusammenhängenden Teil eines Mesh zu markieren -> ein Element auswählen und 'l' drücken
 - das Add-Fenster kann mit 'Shift' + 'a' geöffnet werden
 - die Pfade der Dateien unter `Recent Files` werden hier gespeichert: /home/user/.blender/2.63/config/recent-files.txt
+- möchte man den Objektmittelpunkt in die geometrische Mitte des Objekts setzen, dann `Object`->`Transform`->`Origin To Geometry`
+ - `Geometry To Origin` gibt es dort auch

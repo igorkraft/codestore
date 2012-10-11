@@ -1,4 +1,5 @@
 - um Objectdaten zweier Objecte in eines zu überführen, 'Strg'+'j' (Join Together)
+- um Daten eines Objekts in zwei Objekte zu teilen `p` im Edit-Mode (Separate)
 - 'Shift' + 'Mausrad_halten' -> Bildausschnitt verschieben
 - 'Strg' + 'Mausrad_halten'  -> Zoomen
 - um im Editmode einen zusammenhängenden Teil eines Mesh zu markieren -> ein Element auswählen und 'l' drücken

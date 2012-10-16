@@ -17,6 +17,8 @@
 - http://mango.blender.org/
 - http://www.twiggystreasures.com/
 - http://entwickler.com/itr/news/psecom,id,62798,nodeid,82.html
+- http://www.youtube.com/watch?v=XsOzyA9XWfI
+- http://www.computerbase.de/news/2009-10/unigine-engine-mit-directx-11-und-tessellation/
 
 -
     NewTab-Bookmark

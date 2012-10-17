@@ -20,6 +20,7 @@
 - http://www.youtube.com/watch?v=XsOzyA9XWfI
 - http://www.computerbase.de/news/2009-10/unigine-engine-mit-directx-11-und-tessellation/
 - http://www.robertsspaceindustries.com/
+- http://www.kickstarter.com/projects/obsidian/project-eternity
 
 -
     NewTab-Bookmark

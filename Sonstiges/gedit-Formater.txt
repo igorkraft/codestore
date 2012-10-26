@@ -57,3 +57,27 @@ sed -e "s/Ü/\&Uuml;/g"  | \
 sed -e "s/ß/\&szlig;/g" | \
 markdown > "$PLUMA_CURRENT_DOCUMENT_PATH.html"
 
+XML comment and uncomment
+
+    #!/bin/sh
+
+    # Tastenkürzel: <Primary><Shift>c
+    # Eingabe: Momentan ausgewählter Text
+    # Ausgabe: Momentan ausgewählten Text ersetzen
+    
+    alterLine()
+    {
+        LINE="<!-- $LINE -->"
+    }
+    
+    IFS=''
+    FIRST_LINE=true
+    while  read -r LINE || [ -n "$LINE" ]; do
+    	alterLine
+    	if $FIRST_LINE ; then
+    		echo -n "$LINE"
+    		FIRST_LINE=false
+    	else
+    		echo -n "\n$LINE"
+    	fi
+    done

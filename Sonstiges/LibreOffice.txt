@@ -1,5 +1,6 @@
-Paket für Rechtschreibprüfung:
+zusätzliche Pakete:
 - myspell-de-de
+- libreoffice-l10n-de
 
 Nummerierung:
 - bevor es los geht eine Nummerierung über das Kontextmenü einfügen

@@ -68,6 +68,9 @@ XML comment and uncomment
     alterLine()
     {
         LINE="<!-- $LINE -->"
+        # for uncomment use
+        # LINE=`echo "$LINE" | sed -e "s/<!-- //"`
+        # LINE=`echo "$LINE" | sed -e "s/ -->//"`
     }
     
     IFS=''

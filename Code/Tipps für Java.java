@@ -1,3 +1,9 @@
+• File to DOM
+
+DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+DocumentBuilder builder = factory.newDocumentBuilder();
+Document document = builder.parse(new FileInputStream("adressen2.xml"));
+
 • Save DOM to File
 javax.xml.transform.TransformerFactory transformerFactory = javax.xml.transform.TransformerFactory.newInstance();
 javax.xml.transform.Transformer transformer = transformerFactory.newTransformer();
@@ -33,4 +39,24 @@ Collections.list(enumeration)
 
 • InputStream -> File
 org.apache.commons.io.FileUtils.writeStringToFile(new File("c:\\result.txt"),org.apache.commons.io.IOUtils.toString(in.getContent().get(0).getAttachment().getDataSource().getInputStream()))
---
+
+• XPath-Helper
+private static String xPathToString(Node node, String expression)
+{
+	try 
+	{
+		XPathExpression expr = XPathFactory.newInstance().newXPath().compile(expression);
+		return (String)expr.evaluate(node, XPathConstants.STRING);
+	} 
+	catch (Exception e) {return null;}
+}
+
+private static NodeList xPathToNodeList(Node node, String expression)
+{
+	try 
+	{
+		XPathExpression expr = XPathFactory.newInstance().newXPath().compile(expression);
+		return (NodeList)expr.evaluate(node, XPathConstants.NODESET);
+	} 
+	catch (Exception e) {return null;}
+}

@@ -13,7 +13,16 @@ import org.w3c.dom.Node;
 
 public class ColladaToCG1
 {
-
+  /*
+    Blender-Export:
+      - Edit-Mode
+      - mark all faces (in face selection mode)
+      - Strg + T to triangulate
+      - extrude individual (no movement)
+      - duplicate (no movement)
+      - select inverse
+      - remove selected faces
+  */
   public static void main(String[] args)
   {
     try 

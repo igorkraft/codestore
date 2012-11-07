@@ -115,6 +115,9 @@ espeak -vde -s 100 "Ofen ausschalten"
 # Bildfolge zu Video (für Blender-Animation)
 mencoder "mf://*.png" -mf fps=25 -o test.avi -ovc lavc -lavcopts vcodec=msmpeg4v2:vbitrate=800
 
+# Bildfolge zu GIF-Animation (delay 4 entspricht 40 Millisekunden)
+convert -delay 4 *.png file.gif
+
 # Script debuggen (zeigt Befehle mit Aufrufparametern an)
 bash -x scriptName.sh
 

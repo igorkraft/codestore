@@ -1,0 +1,55 @@
+<html>
+<head>
+<script type="text/javascript">
+var minute = 40;
+var run = true;
+var m = 65.0;// vertikaler Abstand vom oberen Rand des Ziffernblattes zum Drehpunkt
+var n = 65.0;// horizontaler Abstand vom linken Rand des Ziffernblattes zum Drehpunkt
+var l = 40.0; // vertikaler Abstand vom oberen Rand der Zeigergrafik zum Zeigerdrehpunkt
+var k = 7.0;  // horizontaler Abstand vom linken Rand der Zeigergrafik zum Zeigerdrehpunkt
+var h = 61.0; // Höhe der Zeigergrafik
+var b = 12.0; // Breite der Zeigergrafik
+function init()
+{
+	if (run)
+	{
+		document.getElementById("content").innerHTML=minute;
+		var alpha = 2*Math.PI*minute/60.0;
+		var sinAlpha = Math.sin(alpha);
+		var cosAlpha = Math.cos(alpha);
+		var arrow = document.getElementById("arrow");
+		arrow.filters.item("DXImageTransform.Microsoft.Matrix").M11=cosAlpha;
+		arrow.filters.item("DXImageTransform.Microsoft.Matrix").M12=-sinAlpha;
+		arrow.filters.item("DXImageTransform.Microsoft.Matrix").M21=sinAlpha;
+		arrow.filters.item("DXImageTransform.Microsoft.Matrix").M22=cosAlpha;
+		if (minute <= 15)
+		{
+			arrow.style.left=Math.round(n-k*cosAlpha-(h-l)*sinAlpha)+"px";
+			arrow.style.top= Math.round(m-l*cosAlpha-k*sinAlpha)+"px";
+		}
+		if (minute > 15 && minute <= 30)
+		{
+			arrow.style.left=Math.round(n+(b-k)*cosAlpha-(h-l)*sinAlpha)+"px";
+			arrow.style.top= Math.round(m+(h-l)*cosAlpha-k*sinAlpha)+"px";
+		}
+		if (minute > 30 && minute <= 45)
+		{
+			arrow.style.left=Math.round(n+(b-k)*cosAlpha+l*sinAlpha)+"px";
+			arrow.style.top= Math.round(m+(h-l)*cosAlpha+(b-k)*sinAlpha)+"px";
+		}
+		if (minute > 45)
+		{
+			arrow.style.left=Math.round(n-k*cosAlpha+l*sinAlpha)+"px";
+			arrow.style.top= Math.round(m-l*cosAlpha+(b-k)*sinAlpha)+"px";
+		}
+		minute = (minute + 1)%60;
+	}
+	window.setTimeout("init()", 200);
+}
+</script>
+</head>
+<body onload="init()" style="width: 130px; height:130px;background-color:white">
+<div id="content" style="position:absolute;left:0px;top:0px;width:130px;height:130px;background-color:red"></div>
+<img id="arrow" src="arrow.png" onclick="run=!run" style="position:absolute;left:80px;top:80px;filter: progid:DXImageTransform.Microsoft.Matrix(M11=1, M12=0, M21=0, M22=1, sizingMethod='auto expand');" />
+</body>
+</html>

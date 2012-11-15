@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<gadget>
+  <!-- da muss es hin: C:/Users/user/AppData/Local/Microsoft/Windows Sidebar/Gadgets -->
+  <name>Clock-Gadget</name>
+  <version>1.0.0.0</version> 
+  <hosts>
+    <host name="sidebar">
+      <base type="HTML" apiVersion="1.0.0" src="gadget.html" />
+      <permissions>Full</permissions>
+      <platform minPlatformVersion="1.0" />
+    </host>
+  </hosts>
+</gadget>

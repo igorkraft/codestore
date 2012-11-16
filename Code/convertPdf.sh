@@ -2,6 +2,7 @@
 
 # Einstellungen für den Drucker
 # -----------------------------
+# + es sind 5 Druckdurchläufe mit je 6 Seiten machbar, danach muss neugestartet werden
 # + für vierseitige Bilder (nach Scriptkonvertierung)
 # - an Rahmen anpassen individuell testen (prüfen, ob Skalierung Auswirkungen hat)
 # - Normal (schnell)

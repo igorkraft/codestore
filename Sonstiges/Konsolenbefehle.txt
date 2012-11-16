@@ -106,8 +106,8 @@ zenity --info --text "HUHU"
 # Befehle verketten
 T="Ofen ausschalten" ; sleep $((60*60*2)) ; zenity --info --text "$T" ; 
 
-# Notification einblenden
-notify-send "Ofen ausschalten"
+# Notification einblenden (für 10 Minuten)
+notify-send -t $((1000*60*10)) "Ofen ausschalten"
 
 # Sprachausgabe von Text (-s 100 lässt ihn ein wenig langsamer sprechen default ist 175)
 espeak -vde -s 100 "Ofen ausschalten"

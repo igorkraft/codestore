@@ -1,13 +1,16 @@
 <html>
 <head>
 <script type="text/javascript">
+// Bash:
+// convert -background "#00000000" -rotate 135.256 arrow.png arrow_new.png
+// composite -geometry +1130+10 arrow_new.png ../Background.png result.png
 var minute = 40;
 var run = true;
 var m = 65.0;// vertikaler Abstand vom oberen Rand des Ziffernblattes zum Drehpunkt
 var n = 65.0;// horizontaler Abstand vom linken Rand des Ziffernblattes zum Drehpunkt
 var l = 40.0; // vertikaler Abstand vom oberen Rand der Zeigergrafik zum Zeigerdrehpunkt
 var k = 7.0;  // horizontaler Abstand vom linken Rand der Zeigergrafik zum Zeigerdrehpunkt
-var h = 61.0; // Höhe der Zeigergrafik
+var h = 61.0; // Hï¿½he der Zeigergrafik
 var b = 12.0; // Breite der Zeigergrafik
 function init()
 {

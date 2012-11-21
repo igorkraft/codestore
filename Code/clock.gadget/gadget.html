@@ -1,13 +1,16 @@
 <html>
 <head>
 <script type="text/javascript">
+// Bash:
+// convert -background "#00000000" -rotate 135.256 arrow.png arrow_new.png
+// composite -geometry +1130+10 arrow_new.png ../Background.png result.png
 function setHour(hour)
 {
  var m = 65.0; // vertikaler Abstand vom oberen Rand des Ziffernblattes zum Drehpunkt
  var n = 65.0; // horizontaler Abstand vom linken Rand des Ziffernblattes zum Drehpunkt
  var l = 30.0; // vertikaler Abstand vom oberen Rand der Zeigergrafik zum Zeigerdrehpunkt
  var k =  7.0; // horizontaler Abstand vom linken Rand der Zeigergrafik zum Zeigerdrehpunkt
- var h = 39.0; // Höhe der Zeigergrafik
+ var h = 39.0; // Hï¿½he der Zeigergrafik
  var b = 12.0; // Breite der Zeigergrafik
  var alpha = 2*Math.PI*hour/12.0;
  var sinAlpha = Math.sin(alpha);
@@ -45,7 +48,7 @@ function setMinute(minute)
  var n = 65.0; // horizontaler Abstand vom linken Rand des Ziffernblattes zum Drehpunkt
  var l = 40.0; // vertikaler Abstand vom oberen Rand der Zeigergrafik zum Zeigerdrehpunkt
  var k =  7.0; // horizontaler Abstand vom linken Rand der Zeigergrafik zum Zeigerdrehpunkt
- var h = 61.0; // Höhe der Zeigergrafik
+ var h = 61.0; // Hï¿½he der Zeigergrafik
  var b = 12.0; // Breite der Zeigergrafik
  var alpha = 2*Math.PI*minute/60.0;
  var sinAlpha = Math.sin(alpha);
@@ -79,7 +82,7 @@ function setMinute(minute)
 
 function setDay(day)
 {
- var color = day == 1 ? "#8fc043" : // Mo grün
+ var color = day == 1 ? "#8fc043" : // Mo grï¿½n
             (day == 2 ? "#b82327" : // Di rot
             (day == 3 ? "#f2c61f" : // Mi gelb
             (day == 4 ? "#f56409" : // Do orange

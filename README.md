@@ -26,6 +26,7 @@
 - http://www.xbox.com/de-DE/live/join
 - http://www.youtube.com/watch?v=pV8UuvnQcmE
 - http://mein.tv/
+- http://www.public-republic.de/artist-of-the-week-%E2%80%94-carl-warner.php
 
 -
     NewTab-Bookmark

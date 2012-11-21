@@ -1,58 +1,118 @@
 <html>
 <head>
 <script type="text/javascript">
-// Bash:
-// convert -background "#00000000" -rotate 135.256 arrow.png arrow_new.png
-// composite -geometry +1130+10 arrow_new.png ../Background.png result.png
-var minute = 40;
-var run = true;
-var m = 65.0;// vertikaler Abstand vom oberen Rand des Ziffernblattes zum Drehpunkt
-var n = 65.0;// horizontaler Abstand vom linken Rand des Ziffernblattes zum Drehpunkt
-var l = 40.0; // vertikaler Abstand vom oberen Rand der Zeigergrafik zum Zeigerdrehpunkt
-var k = 7.0;  // horizontaler Abstand vom linken Rand der Zeigergrafik zum Zeigerdrehpunkt
-var h = 61.0; // Hï¿½he der Zeigergrafik
-var b = 12.0; // Breite der Zeigergrafik
+function setHour(hour)
+{
+	var m = 65.0; // vertikaler Abstand vom oberen Rand des Ziffernblattes zum Drehpunkt
+	var n = 65.0; // horizontaler Abstand vom linken Rand des Ziffernblattes zum Drehpunkt
+	var l = 30.0; // vertikaler Abstand vom oberen Rand der Zeigergrafik zum Zeigerdrehpunkt
+	var k =  7.0; // horizontaler Abstand vom linken Rand der Zeigergrafik zum Zeigerdrehpunkt
+	var h = 39.0; // Höhe der Zeigergrafik
+	var b = 12.0; // Breite der Zeigergrafik
+	var alpha = 2*Math.PI*hour/12.0;
+	var sinAlpha = Math.sin(alpha);
+	var cosAlpha = Math.cos(alpha);
+	var pointer = document.getElementById("hour");
+	pointer.filters.item("DXImageTransform.Microsoft.Matrix").M11=cosAlpha;
+	pointer.filters.item("DXImageTransform.Microsoft.Matrix").M12=-sinAlpha;
+	pointer.filters.item("DXImageTransform.Microsoft.Matrix").M21=sinAlpha;
+	pointer.filters.item("DXImageTransform.Microsoft.Matrix").M22=cosAlpha;
+	if (hour <= 3)
+	{
+		pointer.style.left=Math.round(n-k*cosAlpha-(h-l)*sinAlpha)+"px";
+		pointer.style.top= Math.round(m-l*cosAlpha-k*sinAlpha)+"px";
+	}
+	if (hour > 3 && hour <= 6)
+	{
+		pointer.style.left=Math.round(n+(b-k)*cosAlpha-(h-l)*sinAlpha)+"px";
+		pointer.style.top= Math.round(m+(h-l)*cosAlpha-k*sinAlpha)+"px";
+	}
+	if (hour > 6 && hour <= 9)
+	{
+		pointer.style.left=Math.round(n+(b-k)*cosAlpha+l*sinAlpha)+"px";
+		pointer.style.top= Math.round(m+(h-l)*cosAlpha+(b-k)*sinAlpha)+"px";
+	}
+	if (hour > 9)
+	{
+		pointer.style.left=Math.round(n-k*cosAlpha+l*sinAlpha)+"px";
+		pointer.style.top= Math.round(m-l*cosAlpha+(b-k)*sinAlpha)+"px";
+	}
+}
+
+function setMinute(minute)
+{
+	var m = 65.0; // vertikaler Abstand vom oberen Rand des Ziffernblattes zum Drehpunkt
+	var n = 65.0; // horizontaler Abstand vom linken Rand des Ziffernblattes zum Drehpunkt
+	var l = 40.0; // vertikaler Abstand vom oberen Rand der Zeigergrafik zum Zeigerdrehpunkt
+	var k =  7.0; // horizontaler Abstand vom linken Rand der Zeigergrafik zum Zeigerdrehpunkt
+	var h = 61.0; // Höhe der Zeigergrafik
+	var b = 12.0; // Breite der Zeigergrafik
+	var alpha = 2*Math.PI*minute/60.0;
+	var sinAlpha = Math.sin(alpha);
+	var cosAlpha = Math.cos(alpha);
+	var pointer = document.getElementById("minute");
+	pointer.filters.item("DXImageTransform.Microsoft.Matrix").M11=cosAlpha;
+	pointer.filters.item("DXImageTransform.Microsoft.Matrix").M12=-sinAlpha;
+	pointer.filters.item("DXImageTransform.Microsoft.Matrix").M21=sinAlpha;
+	pointer.filters.item("DXImageTransform.Microsoft.Matrix").M22=cosAlpha;
+	if (minute <= 15)
+	{
+		pointer.style.left=Math.round(n-k*cosAlpha-(h-l)*sinAlpha)+"px";
+		pointer.style.top= Math.round(m-l*cosAlpha-k*sinAlpha)+"px";
+	}
+	if (minute > 15 && minute <= 30)
+	{
+		pointer.style.left=Math.round(n+(b-k)*cosAlpha-(h-l)*sinAlpha)+"px";
+		pointer.style.top= Math.round(m+(h-l)*cosAlpha-k*sinAlpha)+"px";
+	}
+	if (minute > 30 && minute <= 45)
+	{
+		pointer.style.left=Math.round(n+(b-k)*cosAlpha+l*sinAlpha)+"px";
+		pointer.style.top= Math.round(m+(h-l)*cosAlpha+(b-k)*sinAlpha)+"px";
+	}
+	if (minute > 45)
+	{
+		pointer.style.left=Math.round(n-k*cosAlpha+l*sinAlpha)+"px";
+		pointer.style.top= Math.round(m-l*cosAlpha+(b-k)*sinAlpha)+"px";
+	}
+}
+
+function setDay(day)
+{
+	var color = day == 1 ? "#8fc043" : // Mo grün
+			   (day == 2 ? "#b82327" : // Di rot
+			   (day == 3 ? "#f2c61f" : // Mi gelb
+			   (day == 4 ? "#f56409" : // Do orange
+			   (day == 5 ? "#8ac7b8" : // Fr blau
+			   (day == 6 ? "#584479" : // Sa violett
+			   (day == 7 ? "#8c603b" : // So braun
+						   "#8c603b"))))));
+	document.getElementById("clock").style.background=color;
+	var dateDiv = document.getElementById("date");
+	dateDiv.innerHTML = day == 1 ? "Mo" : 
+					   (day == 2 ? "Di" :
+					   (day == 3 ? "Mi" :
+					   (day == 4 ? "Do" :
+					   (day == 5 ? "Fr" :
+					   (day == 6 ? "Sa" :
+					   (day == 7 ? "So" : 
+								   "So"))))));
+}
+
 function init()
 {
-	if (run)
-	{
-		document.getElementById("content").innerHTML=minute;
-		var alpha = 2*Math.PI*minute/60.0;
-		var sinAlpha = Math.sin(alpha);
-		var cosAlpha = Math.cos(alpha);
-		var arrow = document.getElementById("arrow");
-		arrow.filters.item("DXImageTransform.Microsoft.Matrix").M11=cosAlpha;
-		arrow.filters.item("DXImageTransform.Microsoft.Matrix").M12=-sinAlpha;
-		arrow.filters.item("DXImageTransform.Microsoft.Matrix").M21=sinAlpha;
-		arrow.filters.item("DXImageTransform.Microsoft.Matrix").M22=cosAlpha;
-		if (minute <= 15)
-		{
-			arrow.style.left=Math.round(n-k*cosAlpha-(h-l)*sinAlpha)+"px";
-			arrow.style.top= Math.round(m-l*cosAlpha-k*sinAlpha)+"px";
-		}
-		if (minute > 15 && minute <= 30)
-		{
-			arrow.style.left=Math.round(n+(b-k)*cosAlpha-(h-l)*sinAlpha)+"px";
-			arrow.style.top= Math.round(m+(h-l)*cosAlpha-k*sinAlpha)+"px";
-		}
-		if (minute > 30 && minute <= 45)
-		{
-			arrow.style.left=Math.round(n+(b-k)*cosAlpha+l*sinAlpha)+"px";
-			arrow.style.top= Math.round(m+(h-l)*cosAlpha+(b-k)*sinAlpha)+"px";
-		}
-		if (minute > 45)
-		{
-			arrow.style.left=Math.round(n-k*cosAlpha+l*sinAlpha)+"px";
-			arrow.style.top= Math.round(m-l*cosAlpha+(b-k)*sinAlpha)+"px";
-		}
-		minute = (minute + 1)%60;
-	}
-	window.setTimeout("init()", 200);
+	var date = new Date(/*"October 13, 2012 19:50:00"/**/);
+	setDay(date.getDay());
+	setHour((date.getHours() % 12) + date.getMinutes() / 60.0);
+	setMinute(date.getMinutes());
+	window.setTimeout("init()", 1000 * 10);
 }
 </script>
 </head>
-<body onload="init()" style="width: 130px; height:130px;background-color:white">
-<div id="content" style="position:absolute;left:0px;top:0px;width:130px;height:130px;background-color:red"></div>
-<img id="arrow" src="arrow.png" onclick="run=!run" style="position:absolute;left:80px;top:80px;filter: progid:DXImageTransform.Microsoft.Matrix(M11=1, M12=0, M21=0, M22=1, sizingMethod='auto expand');" />
+<body onload="init()" style="width: 130px; height:130px;background-color:black">
+	<img id="clock" src="clock.png" style="position:absolute;left:0px;top:0px;width:130px;height:130px" />
+	<div id="date" style="position:absolute;left:55px;top:80px;color:black;font-family:Arial;font-weight:bold"></div>
+	<img id="minute" src="minute.png" style="position:absolute;left:80px;top:80px;filter: progid:DXImageTransform.Microsoft.Matrix(M11=1, M12=0, M21=0, M22=1, sizingMethod='auto expand');" />
+	<img id="hour" src="hour.png" style="position:absolute;left:80px;top:80px;filter: progid:DXImageTransform.Microsoft.Matrix(M11=1, M12=0, M21=0, M22=1, sizingMethod='auto expand');" />
 </body>
 </html>

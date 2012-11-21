@@ -2,7 +2,7 @@
 <gadget>
   <!-- da muss es hin: C:/Users/user/AppData/Local/Microsoft/Windows Sidebar/Gadgets -->
   <name>Clock-Gadget</name>
-  <version>1.0.0.0</version> 
+  <version>1.0.0.0</version>
   <hosts>
     <host name="sidebar">
       <base type="HTML" apiVersion="1.0.0" src="gadget.html" />

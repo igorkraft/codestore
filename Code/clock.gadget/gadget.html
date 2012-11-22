@@ -4,85 +4,48 @@
 // Bash:
 // convert -background "#00000000" -rotate 135.256 arrow.png arrow_new.png
 // composite -geometry +1130+10 arrow_new.png ../Background.png result.png
-function setHour(hour)
-{
- var m = 65.0; // vertikaler Abstand vom oberen Rand des Ziffernblattes zum Drehpunkt
- var n = 65.0; // horizontaler Abstand vom linken Rand des Ziffernblattes zum Drehpunkt
- var l = 30.0; // vertikaler Abstand vom oberen Rand der Zeigergrafik zum Zeigerdrehpunkt
- var k =  7.0; // horizontaler Abstand vom linken Rand der Zeigergrafik zum Zeigerdrehpunkt
- var h = 39.0; // H�he der Zeigergrafik
- var b = 12.0; // Breite der Zeigergrafik
- var alpha = 2*Math.PI*hour/12.0;
- var sinAlpha = Math.sin(alpha);
- var cosAlpha = Math.cos(alpha);
- var pointer = document.getElementById("hour");
- pointer.filters.item("DXImageTransform.Microsoft.Matrix").M11=cosAlpha;
- pointer.filters.item("DXImageTransform.Microsoft.Matrix").M12=-sinAlpha;
- pointer.filters.item("DXImageTransform.Microsoft.Matrix").M21=sinAlpha;
- pointer.filters.item("DXImageTransform.Microsoft.Matrix").M22=cosAlpha;
- if (hour <= 3)
- {
-  pointer.style.left=Math.round(n-k*cosAlpha-(h-l)*sinAlpha)+"px";
-  pointer.style.top= Math.round(m-l*cosAlpha-k*sinAlpha)+"px";
- }
- if (hour > 3 && hour <= 6)
- {
-  pointer.style.left=Math.round(n+(b-k)*cosAlpha-(h-l)*sinAlpha)+"px";
-  pointer.style.top= Math.round(m+(h-l)*cosAlpha-k*sinAlpha)+"px";
- }
- if (hour > 6 && hour <= 9)
- {
-  pointer.style.left=Math.round(n+(b-k)*cosAlpha+l*sinAlpha)+"px";
-  pointer.style.top= Math.round(m+(h-l)*cosAlpha+(b-k)*sinAlpha)+"px";
- }
- if (hour > 9)
- {
-  pointer.style.left=Math.round(n-k*cosAlpha+l*sinAlpha)+"px";
-  pointer.style.top= Math.round(m-l*cosAlpha+(b-k)*sinAlpha)+"px";
- }
-}
 
-function setMinute(minute)
+// description of dimensions array:
+// 0 vertikaler Abstand vom oberen Rand des Ziffernblattes zum Drehpunkt
+// 1 horizontaler Abstand vom linken Rand des Ziffernblattes zum Drehpunkt
+// 2 vertikaler Abstand vom oberen Rand der Zeigergrafik zum Zeigerdrehpunkt
+// 3 horizontaler Abstand vom linken Rand der Zeigergrafik zum Zeigerdrehpunkt
+// 4 Hoehe der Zeigergrafik
+// 5 Breite der Zeigergrafik
+function setPointer(pointerId,alpha,dimensions)
 {
- var m = 65.0; // vertikaler Abstand vom oberen Rand des Ziffernblattes zum Drehpunkt
- var n = 65.0; // horizontaler Abstand vom linken Rand des Ziffernblattes zum Drehpunkt
- var l = 40.0; // vertikaler Abstand vom oberen Rand der Zeigergrafik zum Zeigerdrehpunkt
- var k =  7.0; // horizontaler Abstand vom linken Rand der Zeigergrafik zum Zeigerdrehpunkt
- var h = 61.0; // H�he der Zeigergrafik
- var b = 12.0; // Breite der Zeigergrafik
- var alpha = 2*Math.PI*minute/60.0;
  var sinAlpha = Math.sin(alpha);
  var cosAlpha = Math.cos(alpha);
- var pointer = document.getElementById("minute");
+ var pointer = document.getElementById(pointerId);
  pointer.filters.item("DXImageTransform.Microsoft.Matrix").M11=cosAlpha;
  pointer.filters.item("DXImageTransform.Microsoft.Matrix").M12=-sinAlpha;
  pointer.filters.item("DXImageTransform.Microsoft.Matrix").M21=sinAlpha;
  pointer.filters.item("DXImageTransform.Microsoft.Matrix").M22=cosAlpha;
- if (minute <= 15)
+ if (alpha <= 0.5 * Math.PI)
  {
-  pointer.style.left=Math.round(n-k*cosAlpha-(h-l)*sinAlpha)+"px";
-  pointer.style.top= Math.round(m-l*cosAlpha-k*sinAlpha)+"px";
+  pointer.style.left=Math.round(dimensions[1]-dimensions[3]*cosAlpha-(dimensions[4]-dimensions[2])*sinAlpha)+"px";
+  pointer.style.top= Math.round(dimensions[0]-dimensions[2]*cosAlpha-dimensions[3]*sinAlpha)+"px";
  }
- if (minute > 15 && minute <= 30)
+ if (alpha > 0.5 * Math.PI && alpha <= Math.PI)
  {
-  pointer.style.left=Math.round(n+(b-k)*cosAlpha-(h-l)*sinAlpha)+"px";
-  pointer.style.top= Math.round(m+(h-l)*cosAlpha-k*sinAlpha)+"px";
+  pointer.style.left=Math.round(dimensions[1]+(dimensions[5]-dimensions[3])*cosAlpha-(dimensions[4]-dimensions[2])*sinAlpha)+"px";
+  pointer.style.top= Math.round(dimensions[0]+(dimensions[4]-dimensions[2])*cosAlpha-dimensions[3]*sinAlpha)+"px";
  }
- if (minute > 30 && minute <= 45)
+ if (alpha > Math.PI && alpha <= 1.5 * Math.PI)
  {
-  pointer.style.left=Math.round(n+(b-k)*cosAlpha+l*sinAlpha)+"px";
-  pointer.style.top= Math.round(m+(h-l)*cosAlpha+(b-k)*sinAlpha)+"px";
+  pointer.style.left=Math.round(dimensions[1]+(dimensions[5]-dimensions[3])*cosAlpha+dimensions[2]*sinAlpha)+"px";
+  pointer.style.top= Math.round(dimensions[0]+(dimensions[4]-dimensions[2])*cosAlpha+(dimensions[5]-dimensions[3])*sinAlpha)+"px";
  }
- if (minute > 45)
+ if (alpha > 1.5 * Math.PI)
  {
-  pointer.style.left=Math.round(n-k*cosAlpha+l*sinAlpha)+"px";
-  pointer.style.top= Math.round(m-l*cosAlpha+(b-k)*sinAlpha)+"px";
+  pointer.style.left=Math.round(dimensions[1]-dimensions[3]*cosAlpha+dimensions[2]*sinAlpha)+"px";
+  pointer.style.top= Math.round(dimensions[0]-dimensions[2]*cosAlpha+(dimensions[5]-dimensions[3])*sinAlpha)+"px";
  }
 }
 
 function setDay(day)
 {
- var color = day == 1 ? "#8fc043" : // Mo gr�n
+ var color = day == 1 ? "#8fc043" : // Mo gruen
             (day == 2 ? "#b82327" : // Di rot
             (day == 3 ? "#f2c61f" : // Mi gelb
             (day == 4 ? "#f56409" : // Do orange
@@ -104,10 +67,11 @@ function setDay(day)
 
 function init()
 {
- var date = new Date(/*"October 13, 2012 19:50:00"/**/);
+ var date = new Date(/*"October 13, 2012 19:20:00"/**/);
  setDay(date.getDay());
- setHour((date.getHours() % 12) + date.getMinutes() / 60.0);
- setMinute(date.getMinutes());
+ var hour=((date.getHours() % 12) + date.getMinutes() / 60);
+ setPointer("hour",2 * Math.PI * hour / 12,[65,65,30,7,39,12])
+ setPointer("minute",2 * Math.PI * date.getMinutes() / 60,[65,65,40,7,61,12]);
  window.setTimeout("init()", 1000 * 10);
 }
 </script>

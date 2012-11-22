@@ -4,6 +4,10 @@
 // Bash:
 // convert -background "#00000000" -rotate 135.256 arrow.png arrow_new.png
 // composite -geometry +1130+10 arrow_new.png ../Background.png result.png
+// Rotation mit Matrix: http://www.imagemagick.org/Usage/distorts/affine/#affine_rot
+// convert in.gif -matte -virtual-pixel Transparent -affine $sx,$rx,$ry,$sy,0,0 -transform +repage out.png
+// mit sx = cos(alpha); rx = sin(alpha); ry = -sin(alpha); sy = cos(alpha)
+// pruefen, ob einige Parameter weggelassen werden koennen
 
 // description of dimensions array:
 // 0 vertikaler Abstand vom oberen Rand des Ziffernblattes zum Drehpunkt

@@ -70,7 +70,7 @@ function init()
  var date = new Date(/*"October 13, 2012 19:20:00"/**/);
  setDay(date.getDay());
  var hour=((date.getHours() % 12) + date.getMinutes() / 60);
- setPointer("hour",2 * Math.PI * hour / 12,[65,65,30,7,39,12])
+ setPointer("hour",2 * Math.PI * hour / 12,[65,65,30,7,39,12]);
  setPointer("minute",2 * Math.PI * date.getMinutes() / 60,[65,65,40,7,61,12]);
  window.setTimeout("init()", 1000 * 10);
 }

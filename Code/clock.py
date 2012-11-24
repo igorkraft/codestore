@@ -9,8 +9,14 @@ import os
 import math
 
 imgLoc="/media/Daten/Bilder/"
+oldHour = 0.0
+year    = 0
+month   = 1
+day     = 2
+hour    = 3
+minute  = 4
 
-# description of dimensions array:
+# description of dim array:
 # 0 vertikaler Abstand vom oberen Rand des Ziffernblattes zum Drehpunkt
 # 1 horizontaler Abstand vom linken Rand des Ziffernblattes zum Drehpunkt
 # 2 vertikaler Abstand vom oberen Rand der Zeigergrafik zum Zeigerdrehpunkt
@@ -36,21 +42,13 @@ def setPointer(pointer,bg,dest,alpha,dim):
   subprocess.call(["composite","-geometry","+"+str(left)+"+"+str(top)+"","/tmp/pointer_tmp.png",bg,dest])
   return
 
-curTime = time.localtime(time.time())
-year    = 0
-month   = 1
-day     = 2
-hour    = 3
-minute  = 4
-weekday = calendar.weekday(curTime[year],curTime[month],curTime[day])
-
-curHour = ((curTime[hour] % 12) + curTime[minute] / 60.0)
-
-setPointer(imgLoc+"minute.png",imgLoc+"clock.png","/tmp/clock_1.png",2 * math.pi * curTime[minute] / 60.0,[65.0,65.0,40.0,7.0,61.0,12.0])
-setPointer(imgLoc+"hour.png","/tmp/clock_1.png","/tmp/clock_2.png",2 * math.pi * curHour / 12.0,[65.0,65.0,30.0,7.0,39.0,12.0])
-subprocess.call(["composite","-geometry","+1000+30","/tmp/clock_2.png",imgLoc+"Bender.png",imgLoc+"bg.png"])
-
-sys.exit("")
-
 while True:
+  curTime = time.localtime(time.time())
+  curHour = ((curTime[hour] % 12) + curTime[minute] / 60.0)
+  if (curHour != oldHour):
+    oldHour = curHour
+    weekday = calendar.weekday(curTime[year],curTime[month],curTime[day])
+    setPointer(imgLoc+"minute.png",imgLoc+"clock.png","/tmp/clock_1.png",2 * math.pi * curTime[minute] / 60.0,[65.0,65.0,40.0,7.0,61.0,12.0])
+    setPointer(imgLoc+"hour.png","/tmp/clock_1.png","/tmp/clock_2.png",2 * math.pi * curHour / 12.0,[65.0,65.0,30.0,7.0,39.0,12.0])
+    subprocess.call(["composite","-geometry","+1150+30","/tmp/clock_2.png",imgLoc+"Bender.png",imgLoc+"bg.png"])
   time.sleep(10)

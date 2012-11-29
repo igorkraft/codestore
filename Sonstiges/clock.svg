@@ -14,7 +14,7 @@
    height="400"
    id="svg2"
    version="1.1"
-   inkscape:version="0.47 "
+   inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="clock.svg">
   <defs
      id="defs4">
@@ -40,17 +40,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="6.45"
-     inkscape:cx="216.19237"
-     inkscape:cy="279.8965"
+     inkscape:zoom="4.0390625"
+     inkscape:cx="138.44924"
+     inkscape:cy="247.01491"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
-     inkscape:window-width="1170"
-     inkscape:window-height="892"
-     inkscape:window-x="614"
-     inkscape:window-y="64"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1280"
+     inkscape:window-height="725"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -63,7 +63,7 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Ebene 1"
+     inkscape:label="Hintergrund"
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline"
@@ -74,7 +74,7 @@
        id="g3610"
        transform="translate(-101.01526,603.06108)">
       <image
-         xlink:href="file:///D:/Kram/Plunder/Bilder/clock.png"
+         xlink:href="file:///home/user/Arbeitsfläche/codestore/Sonstiges/clock.png"
          width="256"
          height="256"
          id="image2826"
@@ -84,13 +84,53 @@
   </g>
   <g
      inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="c14700_5_rand"
+     sodipodi:insensitive="true" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="d65800_4_rand"
+     sodipodi:insensitive="true" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="ee7200_3_rand"
+     sodipodi:insensitive="true" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="fd8e00_2_rand"
+     sodipodi:insensitive="true" />
+  <g
+     inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Ebene"
-     transform="translate(0,-652.36218)">
+     inkscape:label="feb700_1_rand"
+     transform="translate(0,-652.36218)"
+     style="display:inline">
     <path
-       style="opacity:0.24579127;fill:#0000ff;fill-opacity:1;stroke:none"
+       style="opacity:0.25;fill:#0000ff;fill-opacity:1;stroke:none"
        d="m 226.95349,728.34233 -89.5,16.15625 0.125,15.25 c 0,0 17.51617,-0.59616 35.59375,-5.96875 15.00817,-4.46037 33.54992,-22.13281 44,-11.1875 1.0452,1.09473 -3.02868,3.74825 -1.3125,4.34375 11.25693,3.90614 14.59453,3.2333 17.625,1.125 4.08106,-2.8392 10.4163,-6.21326 11.625,-4.15625 0.35824,0.60966 -11.54363,4.95451 -12.15625,6.71875 -0.72029,2.07431 5.79871,3.03083 8.46875,1.90625 3.24202,-1.36549 9.55964,-3.41459 11.6875,-0.15625 0.82551,1.26407 5.63014,-0.33092 5.875,-1.375 0.33196,-1.41549 -9.08814,-4.55255 -10.5,-8.875 -0.67893,-3.8774 -7.2447,-7.05649 -11.53125,-9.65625 -3.08709,-1.8723 -10,-4.125 -10,-4.125 z m -60.19897,22.99841 c 1.15266,-1.44692 14.80062,-8.16196 15.69355,-7.55225 1.22598,1.49269 -14.95216,8.87291 -15.69355,7.55225 z"
        id="rect2831"
-       sodipodi:nodetypes="cccssssssssscscccc" />
+       sodipodi:nodetypes="cccssssssssscscccc"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       style="opacity:0.25;fill:#0000ff;fill-opacity:1;stroke:none"
+       d="m 233.16867,820.78166 -69.47525,0.66114 0.33911,45.54638 69.64917,1.36552 z"
+       id="rect2831-0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       inkscape:connector-curvature="0"
+       style="opacity:0.25;fill:#0000ff;fill-opacity:1;stroke:none"
+       d="m 104.57136,819.9394 c -1.75521,-6.45428 -20.311318,16.95649 -21.166597,18.68136 -1.307517,10.52749 17.516907,-10.20638 17.516907,-10.20638 l -8.515989,11.51124 c 0,0 -0.89009,1.51364 0.282601,4.5961 0.669151,1.75889 -5.565518,8.01276 -5.064498,10.98297 0.439152,2.60344 3.542387,7.3676 5.231348,5.41043 5.49943,-6.37278 0.511203,-10.65253 10.890178,-27.05391 -0.0927,-8.68306 3.69636,-12.34573 0.82605,-13.92181 z"
+       id="rect2831-0-4"
+       sodipodi:nodetypes="ccccscscc" />
+    <path
+       inkscape:connector-curvature="0"
+       style="opacity:0.25;fill:#0000ff;fill-opacity:1;stroke:none;display:inline"
+       d="m 102.8324,848.14281 c -1.18141,-0.85622 -3.503309,5.07354 -3.503309,5.07354 0,0 5.280309,-3.78565 3.503309,-5.07354 z"
+       id="rect2831-0-1"
+       sodipodi:nodetypes="scs" />
   </g>
 </svg>

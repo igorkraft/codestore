@@ -33,6 +33,10 @@ new URL( "http://google.de/" ).openStream()
 • Enumeration -> ArrayList
 Collections.list(enumeration)
 
+• Array -> List
+List<TypeOfArray> list = new ArrayList<TypeOfArray>(); 
+Collections.addAll(list, array);
+
 • Element (DOM) implementiert Node
 
 • Property-Validator in InitializingBean-Interface

@@ -35,6 +35,7 @@
 - http://www.amazon.de/CSL-Antennenbuchse-abnehmbarer-Antenne-Wireless/dp/B007K871ES/ref=sr_1_7?ie=UTF8&qid=1354698287&sr=8-7
 - frame buffer game: http://www.oolite.org/
 - frame buffer image viewer: http://manpages.ubuntu.com/manpages/hardy/man1/zgv.1.html
+- http://kmandla.wordpress.com/2010/04/16/a-quick-look-at-framebuffer-applications/
 
 -
     NewTab-Bookmark

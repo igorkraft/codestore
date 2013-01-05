@@ -39,7 +39,7 @@
 - http://de.wikipedia.org/wiki/Boost_%28C%2B%2B-Bibliothek%29
 - http://tinythreadpp.bitsnbites.eu/
 - http://tinycthread.bitsnbites.eu/
-- home.arcor.de/jiri01/Daten/Fussgaengerzone_20121228_14.39.zip
+- http://home.arcor.de/jiri01/Daten/Fussgaengerzone.zip
 
 -
     NewTab-Bookmark

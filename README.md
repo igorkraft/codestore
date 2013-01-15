@@ -42,6 +42,7 @@
 - http://home.arcor.de/jiri01/Daten/Fussgaengerzone.zip
 - https://receiveee.com/thibxrum1jor
 - http://paperzelda.blogspot.de/2012/01/skyward-sword-moblin.html
+- http://emerates.webs.com/rpgmakerresources.htm
 
 -
     NewTab-Bookmark

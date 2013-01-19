@@ -44,6 +44,11 @@ Collections.addAll(list, array);
 • InputStream -> File
 org.apache.commons.io.FileUtils.writeStringToFile(new File("c:\\result.txt"),org.apache.commons.io.IOUtils.toString(in.getContent().get(0).getAttachment().getDataSource().getInputStream()))
 
+• Character Sonderzeichen (http://www.utf8-chartable.de/)
+'\u00df' = ß
+'\u00e4' = ä
+'\u00fc' = ü
+
 • XPath-Helper
 private static String xPathToString(Node node, String expression)
 {

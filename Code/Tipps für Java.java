@@ -48,6 +48,7 @@ org.apache.commons.io.FileUtils.writeStringToFile(new File("c:\\result.txt"),org
 '\u00df' = ß
 '\u00e4' = ä
 '\u00fc' = ü
+HTML-Syntax &#x00df;
 
 • XPath-Helper
 private static String xPathToString(Node node, String expression)

@@ -43,6 +43,8 @@
 - https://receiveee.com/thibxrum1jor
 - http://paperzelda.blogspot.de/2012/01/skyward-sword-moblin.html
 - http://emerates.webs.com/rpgmakerresources.htm
+- http://mugen.wikia.com/wiki/Gran_Puente_de_Eldin
+- http://de.wikipedia.org/wiki/Eldfell
 
 -
     NewTab-Bookmark

@@ -45,6 +45,7 @@
 - http://emerates.webs.com/rpgmakerresources.htm
 - http://mugen.wikia.com/wiki/Gran_Puente_de_Eldin
 - http://de.wikipedia.org/wiki/Eldfell
+- Echt cooler cinematic (fast schon kurz) Film:(in HD anschauen): http://www.youtube.com/watch?v=0jNT5cMwxw0
 
 -
     NewTab-Bookmark

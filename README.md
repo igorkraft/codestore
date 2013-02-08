@@ -47,6 +47,10 @@
 - http://de.wikipedia.org/wiki/Eldfell
 - Echt cooler cinematic (fast schon kurz) Film:(in HD anschauen): http://www.youtube.com/watch?v=0jNT5cMwxw0
 - http://home.arcor.de/jiri01/q1/projektaufgabe.png
+- Babys on fire https://www.youtube.com/watch?feature=player_embedded&v=vhmO6NuFMRo
+- I fink u freeky http://www.youtube.com/watch?v=8Uee_mcxvrw
+- Boom Boom http://www.youtube.com/watch?v=AIXUgtNC4Kc
+
 
 -
     NewTab-Bookmark

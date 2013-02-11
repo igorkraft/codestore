@@ -52,6 +52,7 @@
 - Boom Boom http://www.youtube.com/watch?v=AIXUgtNC4Kc
 - http://video.golem.de/foto/10162/3d-kamera-lynx-a-trailer-(kickstarter).html
 - http://www.netzwelt.de/news/92440-mini-pcs-7-computer-usb-stick-format.html
+- Far Cry 3 http://www.youtube.com/watch?v=qKfXatOMMXY
 
 
 -

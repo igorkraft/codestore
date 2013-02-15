@@ -4,6 +4,8 @@
  - Quelle: http://www.raspberrypi.org/phpBB3/viewtopic.php?f=29&t=27857
  - `sudo apt-get install xwit xdotool`
  - die Sektion `<keyboard>` in der `/home/pi/.config/openbox/lxde-rc.xml` erweitern (Code siehe unten)
+ - `Num_4`, `Num_5`, `Num_6` und `Num_8` bilden ein Steuerkreuz
+ - `Num_7` ist linke Maustaste; `Num_9` ist rechte Maustaste und `Num_1` ist mittlere Maustaste
 
 
 Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):

@@ -9,7 +9,7 @@ zu konfigurieren:
   Nautilus
   Maus
   Panels
-  Texteditor
+  Texteditor (markdown compiler, Format XML and Json)
   Energieverwaltung (Bildschirmschoner)
   Hintergrund
   Icons und Cursor

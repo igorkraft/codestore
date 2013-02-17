@@ -23,4 +23,4 @@ zu konfigurieren:
   Anmeldebildschirm
   Grub
   Startprogramme
-  gnome-disk-utility (Laufwerksverwaltung)
+  gnome-disk-utility (gnome-disks früher Palimpsest)

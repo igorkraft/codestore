@@ -57,6 +57,7 @@
 - http://www.raspberrypi.org/archives/3274 (Raspbmc->Multimediafunktionen)
 - http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/
 - rpi (wiipdf, wicd-curses, widelands, http://minetest.net/ (Minecraft))
+- http://de.wikipedia.org/wiki/Irrlicht_%28Engine%29
 
 
 -

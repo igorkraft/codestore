@@ -56,6 +56,7 @@
 - http://elinux.org/RPi_config.txt#Video_mode_options
 - http://www.raspberrypi.org/archives/3274 (Raspbmc->Multimediafunktionen)
 - http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/
+- rpi (wiipdf, wicd-curses, widelands, http://minetest.net/ (Minecraft))
 
 
 -

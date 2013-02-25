@@ -8,6 +8,8 @@
  - `Num_7` ist linke Maustaste; `Num_9` ist rechte Maustaste und `Num_1` ist mittlere Maustaste
 - für eine Bildschirmauflösung von 720p, die /boot/config.txt anpassen
  - hdmi_group=1 und hdmi_mode=19
+- `sudo raspi-config` -> `change_locale` -> de.UTF-8 sorgt für deutsche Texte
+- für deutsches Tastaturlayout die /etc/default/keyboard anpassen `gb` zu `de`
 
 
 Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):

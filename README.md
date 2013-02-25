@@ -58,6 +58,7 @@
 - http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/
 - rpi (wiipdf, wicd-curses, widelands, http://minetest.net/ (Minecraft))
 - http://de.wikipedia.org/wiki/Irrlicht_%28Engine%29
+- http://wildfiregames.com/ (0ad!)
 
 
 -

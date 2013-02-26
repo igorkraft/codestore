@@ -3,8 +3,6 @@
 - WebDAV und Internet weiterleiten testen (python-webdav installieren)
 - http://wiki.ubuntuusers.de/RAM-Disk_erstellen
 - http://www.raspberrypiblog.de/software/raspberry-pi-vm-v0-8-fur-entwickler-verfugbar/287
-- http://wiki.ubuntuusers.de/YAGF
-- kobo-deluxe-portable.softonic.de/
 - http://imgur.com/yPK23
 - http://www.appflower.com/cms/home
 - http://eyeos-apps.org/content/show.php/Sonic+the+Hedgehog?content=69840
@@ -32,9 +30,6 @@
 - http://weavesilk.com/
 - http://new.weavesilk.com/
 - http://www.theliquidateher.com/landscape-vision.html
-- http://www.amazon.de/CSL-Antennenbuchse-abnehmbarer-Antenne-Wireless/dp/B007K871ES/ref=sr_1_7?ie=UTF8&qid=1354698287&sr=8-7
-- frame buffer game: http://www.oolite.org/
-- frame buffer image viewer: http://manpages.ubuntu.com/manpages/hardy/man1/zgv.1.html
 - http://kmandla.wordpress.com/2010/04/16/a-quick-look-at-framebuffer-applications/
 - http://de.wikipedia.org/wiki/Boost_%28C%2B%2B-Bibliothek%29
 - http://tinythreadpp.bitsnbites.eu/
@@ -46,19 +41,13 @@
 - http://mugen.wikia.com/wiki/Gran_Puente_de_Eldin
 - http://de.wikipedia.org/wiki/Eldfell
 - Echt cooler cinematic (fast schon kurz) Film:(in HD anschauen): http://www.youtube.com/watch?v=0jNT5cMwxw0
-- http://home.arcor.de/jiri01/q1/projektaufgabe.png
-- Babys on fire https://www.youtube.com/watch?feature=player_embedded&v=vhmO6NuFMRo
-- I fink u freeky http://www.youtube.com/watch?v=8Uee_mcxvrw
-- Boom Boom http://www.youtube.com/watch?v=AIXUgtNC4Kc
-- http://video.golem.de/foto/10162/3d-kamera-lynx-a-trailer-(kickstarter).html
-- http://www.netzwelt.de/news/92440-mini-pcs-7-computer-usb-stick-format.html
-- Far Cry 3 http://www.youtube.com/watch?v=qKfXatOMMXY
 - http://elinux.org/RPi_config.txt#Video_mode_options
 - http://www.raspberrypi.org/archives/3274 (Raspbmc->Multimediafunktionen)
 - http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/
 - rpi (wiipdf, wicd-curses, widelands, http://minetest.net/ (Minecraft))
 - http://de.wikipedia.org/wiki/Irrlicht_%28Engine%29
 - http://wildfiregames.com/ (0ad!)
+- http://en.wikipedia.org/wiki/Sintel_The_Game
 
 
 -

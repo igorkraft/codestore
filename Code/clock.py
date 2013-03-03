@@ -38,8 +38,8 @@ def setPointer(pointer,bg,dest,alpha,dim):
   if (alpha > 1.5 * math.pi):
     left = int(round(dim[1]-dim[3]*cosAlpha+dim[2]*sinAlpha))
     top  = int(round(dim[0]-dim[2]*cosAlpha+(dim[5]-dim[3])*sinAlpha))
-  subprocess.call(["convert",pointer,"-virtual-pixel","Transparent","-affine",str(cosAlpha)+","+str(sinAlpha)+","+str(-sinAlpha)+","+str(cosAlpha)+",0,0","-transform","/tmp/pointer_tmp.png"])
-  subprocess.call(["composite","-geometry","+"+str(left)+"+"+str(top)+"","/tmp/pointer_tmp.png",bg,dest])
+  subprocess.call(["convert",pointer,"-virtual-pixel","Transparent","-affine",str(cosAlpha)+","+str(sinAlpha)+","+str(-sinAlpha)+","+str(cosAlpha)+",0,0","-transform","/media/clock/pointer_tmp.png"])
+  subprocess.call(["composite","-geometry","+"+str(left)+"+"+str(top)+"","/media/clock/pointer_tmp.png",bg,dest])
   return
 
 while True:
@@ -48,7 +48,7 @@ while True:
   if (curHour != oldHour):
     oldHour = curHour
     weekday = calendar.weekday(curTime[year],curTime[month],curTime[day])
-    setPointer(imgLoc+"minute.png",imgLoc+"clock.png","/tmp/clock_1.png",2 * math.pi * curTime[minute] / 60.0,[65.0,65.0,40.0,7.0,61.0,12.0])
-    setPointer(imgLoc+"hour.png","/tmp/clock_1.png","/tmp/clock_2.png",2 * math.pi * curHour / 12.0,[65.0,65.0,30.0,7.0,39.0,12.0])
-    subprocess.call(["composite","-geometry","+1150+30","/tmp/clock_2.png",imgLoc+"Bender.png",imgLoc+"bg.png"])
+    setPointer(imgLoc+"minute.png",imgLoc+"clock.png","/media/clock/clock_1.png",2 * math.pi * curTime[minute] / 60.0,[65.0,65.0,40.0,7.0,61.0,12.0])
+    setPointer(imgLoc+"hour.png","/media/clock/clock_1.png","/media/clock/clock_2.png",2 * math.pi * curHour / 12.0,[65.0,65.0,30.0,7.0,39.0,12.0])
+    subprocess.call(["composite","-geometry","+1150+30","/media/clock/clock_2.png",imgLoc+"Bender.png","/media/clock/bg.png"])
   time.sleep(10)

@@ -1,5 +1,7 @@
 ### Raspberry Pi
 - WLAN-Treiber sind schon in Raspbian enthalten
+- wicd installieren
+ - auf der Konfigurationsoberfläche wlan0 als Netzgerätedatei bekannt machen
 - Cursor per Tastatur steuern
  - Quelle: http://www.raspberrypi.org/phpBB3/viewtopic.php?f=29&t=27857
  - `sudo apt-get install xwit xdotool`
@@ -10,6 +12,9 @@
  - hdmi_group=1 und hdmi_mode=19
 - `sudo raspi-config` -> `change_locale` -> de.UTF-8 sorgt für deutsche Texte
 - für deutsches Tastaturlayout die /etc/default/keyboard anpassen `gb` zu `de`
+- minetest und torus-trooper laufen nicht
+- kobodeluxe läuft (Texte in Menüs werden nur nicht angezeigt)
+- vlc läuft und spielt brav Radiostreams ab
 
 
 Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):

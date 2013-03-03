@@ -12,5 +12,6 @@ UUID=1d2eb95a-d70c-4c9b-be14-dceed775f750 /               ext4    errors=remount
 UUID=4d733368-5572-46f7-be4e-18d9476544f2 none            swap    sw              0       0
 /dev/scd0       /media/cdrom0   udf,iso9660 user,noauto,exec,utf8 0       0
 /dev/mapper/Daten /media/Daten ext4 defaults 0 2
-/media/Daten/Desktop /home/user/Desktop none bind 0 0
+/media/Daten/Desktop /home/user/Arbeitsfläche none bind 0 0
 /media/Daten/Desktop/.mozilla /home/user/.mozilla none bind 0 0
+ramfs /media/clock ramfs defaults 0 0

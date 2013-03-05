@@ -123,3 +123,9 @@ bash -x scriptName.sh
 
 # so hier dumpen und dann mit Wireshark laden (Filter: http matches ".*")
 sudo dumpcap -i lo -w ~/Arbeitsfläche/dump.trace
+
+# Erzeugen einer Passwortdatei für Mongoose
+./mongoose -A /tmp/passwdfile <realm> <username> <pwd>
+
+# Hochladen einer Datei auf einen Mongoose-Server
+curl --digest --user <username>:<pwd> --upload-file <file> http://localhost:8080

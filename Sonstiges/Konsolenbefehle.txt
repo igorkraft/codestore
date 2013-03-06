@@ -127,5 +127,5 @@ sudo dumpcap -i lo -w ~/Arbeitsfläche/dump.trace
 # Erzeugen einer Passwortdatei für Mongoose
 ./mongoose -A /tmp/passwdfile <realm> <username> <pwd>
 
-# Hochladen einer Datei auf einen Mongoose-Server
-curl --digest --user <username>:<pwd> --upload-file <file> http://localhost:8080
+# Hochladen einer Datei auf einen Mongoose-Server (Dateipipe sorgt für Statusanzeige im Terminal)
+curl --digest --user <username>:<pwd> --upload-file <file> http://localhost:8080 > out.txt

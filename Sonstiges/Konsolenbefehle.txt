@@ -129,3 +129,6 @@ sudo dumpcap -i lo -w ~/Arbeitsfläche/dump.trace
 
 # Hochladen einer Datei auf einen Mongoose-Server (Dateipipe sorgt für Statusanzeige im Terminal)
 curl --digest --user <username>:<pwd> --upload-file <file> http://localhost:8080 > out.txt
+
+# curl mit 1 MB/s Transferrate
+curl --digest --user <user>:<pwd> --limit-rate 1m --upload-file <file> http://localhost:8080 > /dev/null

@@ -54,6 +54,7 @@
 - http://de.wikipedia.org/wiki/Christian_von_Aster
 - http://wiki.videolan.org/Documentation:Streaming_HowTo_New
 - http://de.wikipedia.org/wiki/Louisianamoos
+- http://zeldawiki.org/Main_Page
 
 
 -

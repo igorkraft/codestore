@@ -15,6 +15,8 @@
 - minetest und torus-trooper laufen nicht
 - kobodeluxe läuft (Texte in Menüs werden nur nicht angezeigt)
 - vlc läuft und spielt brav Radiostreams ab
+- um Passwortabfrage für root zu aktivieren `sudo visudo` (öffnet nano)
+ - Direktive `NOPASSWD:` entfernen (letzte Zeile)
 
 
 Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):

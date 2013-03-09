@@ -18,7 +18,7 @@
 
 
 Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
-
+```xml
     <keybind key="KP_4"><action name="Execute"><command>xwit -root -rwarp -5 0</command></action></keybind>
     <keybind key="KP_6"><action name="Execute"><command>xwit -root -rwarp 5 0</command></action></keybind>
     <keybind key="KP_8"><action name="Execute"><command>xwit -root -rwarp 0 -5</command></action></keybind>
@@ -28,7 +28,7 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
     <keybind key="KP_7"><action name="Execute"><command>xdotool click 1</command></action></keybind>
     <keybind key="C-KP_7"><action name="Execute"><command>xdotool click 1</command></action></keybind>
     <keybind key="S-KP_7"><action name="Execute"><command>xdotool click 1</command></action></keybind>
-    
+```
 ### Raspberry Pi Server
 - .bashrc danach durchsuchen, wo PS1 gesetzt wird und ersetzen mit
  - `PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h \[\033[00;36m\]\w\n\$\[\033[03;00m\]'`

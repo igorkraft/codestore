@@ -132,3 +132,12 @@ curl --digest --user <username>:<pwd> --upload-file <file> http://localhost:8080
 
 # curl mit 1 MB/s Transferrate
 curl --digest --user <user>:<pwd> --limit-rate 1m --upload-file <file> http://localhost:8080 > /dev/null
+
+# Prozess pausieren (gibt eine Nummer aus [1], die man zum fortfahren braucht)
+Strg + z
+
+# führt einen pausierten Prozess im Vordergrund wieder aus (Prozess mit Nummer 1)
+fg %1
+
+# führt einen pausierten Prozess im Hintergrund wieder aus (Prozess mit Nummer 1)
+bg %1

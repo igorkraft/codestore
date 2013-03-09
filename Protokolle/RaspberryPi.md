@@ -1,4 +1,4 @@
-### Raspberry Pi
+### Raspberry Pi Multimedia
 - WLAN-Treiber sind schon in Raspbian enthalten
 - wicd installieren
  - auf der Konfigurationsoberfläche wlan0 als Netzgerätedatei bekannt machen
@@ -15,8 +15,6 @@
 - minetest und torus-trooper laufen nicht
 - kobodeluxe läuft (Texte in Menüs werden nur nicht angezeigt)
 - vlc läuft und spielt brav Radiostreams ab
-- um Passwortabfrage für root zu aktivieren `sudo visudo` (öffnet nano)
- - Direktive `NOPASSWD:` entfernen (letzte Zeile)
 
 
 Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
@@ -30,3 +28,30 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
     <keybind key="KP_7"><action name="Execute"><command>xdotool click 1</command></action></keybind>
     <keybind key="C-KP_7"><action name="Execute"><command>xdotool click 1</command></action></keybind>
     <keybind key="S-KP_7"><action name="Execute"><command>xdotool click 1</command></action></keybind>
+    
+### Raspberry Pi Server
+- .bashrc danach durchsuchen, wo PS1 gesetzt wird und ersetzen mit
+ - `PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h \[\033[00;36m\]\w\n\$\[\033[03;00m\]'`
+- um Passwortabfrage für root zu aktivieren `sudo visudo` (öffnet nano)
+ - Direktive `NOPASSWD:` entfernen (letzte Zeile)
+- in `/etc/hostname` und `/etc/hosts` den Rechnernamen ändern
+ - in `/etc/hosts` muss stehen `127.0.0.1 localhost <Rechnername aus /etc/hostname>`
+- `sudo apt-get install apache2` ausführen
+- `sudo apt-get install libapache2-mod-proxy-html` ausführen
+- `sudo apt-get install libapache2-mod-gnutls` ausführen
+- Module aktivieren
+- Apache2 lässt sich starten
+- die `apache2.conf`
+ - `Include ports.conf` auskommentieren
+ - `Include conf.d/` auskommentieren
+ - `Include sites-enabled/` auskommentieren
+ - `ServerName localhost` unten anfügen
+ - darunter die Ports angeben:
+ 
+    <IfModule mod_ssl.c>
+        Listen 443
+    </IfModule>
+
+    <IfModule mod_gnutls.c>
+        Listen 443
+    </IfModule>

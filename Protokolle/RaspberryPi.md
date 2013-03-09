@@ -32,6 +32,7 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
 ### Raspberry Pi Server
 - .bashrc danach durchsuchen, wo PS1 gesetzt wird und ersetzen mit
  - `PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h \[\033[00;36m\]\w\n\$\[\033[03;00m\]'`
+- Passwort für root setzen `sudo passwd root`
 - um Passwortabfrage für root zu aktivieren `sudo visudo` (öffnet nano)
  - Direktive `NOPASSWD:` entfernen (letzte Zeile)
 - in `/etc/hostname` und `/etc/hosts` den Rechnernamen ändern

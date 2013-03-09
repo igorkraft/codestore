@@ -32,6 +32,7 @@ httpd (pid 1064) already running
 
 um das zu lösen muss man in die /etc/apache2/httpd.conf das hier eintragen:
 ServerName localhost
+(die /etc/apache2/httpd.conf wird nur Includiert, man kann es auch direkt in die /etc/apache2/apache2.conf eintragen)
 
 jetzt startet er wieder!
 
@@ -39,12 +40,13 @@ Zertifikat erzeugen als root mit:
 mkdir -p /etc/apache2/ssl
 openssl req -new -x509 -days 3650 -nodes -out /etc/apache2/ssl/apache.pem -keyout /etc/apache2/ssl/apache.pem
 ln -sf /etc/apache2/ssl/apache.pem /etc/apache2/ssl/`/usr/bin/openssl x509 -noout -hash < /etc/apache2/ssl/apache.pem`.0
-chmod 600 /etc/apache2/ssl/apache.pem 
+chmod 600 /etc/apache2/ssl/apache.pem
 
 SSH aktivieren in der /etc/apache2/ports.conf mit
 <IfModule mod_ssl.c>
     Listen 443
 </IfModule>
+(die /etc/apache2/ports.conf ist nur Includiert, das kann direkt in der /etc/apache2/apache2.conf gemacht werden)
 
 ajaxterm installieren
 

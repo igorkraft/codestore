@@ -48,6 +48,7 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
  - `ServerName localhost` unten anfügen
  - darunter die Ports angeben:
  
+
     <IfModule mod_ssl.c>
         Listen 443
     </IfModule>

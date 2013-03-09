@@ -142,3 +142,6 @@ fg %1
 
 # führt einen pausierten Prozess im Hintergrund wieder aus (Prozess mit Nummer 1)
 bg %1
+
+# MD5-Hash bilden
+echo -n 'password' | md5sum

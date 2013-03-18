@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="Hühnersuppe" default="TOTAL">
+
+	<description>Blubber</description>
+
+	<property name="tempdir" value="/home/user/Arbeitsfläche/tmp" />
+	<property name="lib.junit" value="/home/user/Arbeitsfläche/junit-4.10.jar" />
+	<property name="Built-By" value="user" />
+
+	<target name="clean" description="clean up">
+		<delete includeemptydirs="true">
+			<fileset dir="${tempdir}" includes="**/*" />
+		</delete>
+	</target>
+
+	<target name="copy" depends="clean">
+		<mkdir dir="${tempdir}/src" />
+		<copy todir="${tempdir}/src">
+			<fileset dir="src" />
+		</copy>
+	</target>
+
+	<target name="compile" depends="copy">
+		<mkdir dir="${tempdir}/build" />
+		<javac destdir="${tempdir}/build" debug="on" optimize="on" includeantruntime="false">
+			<classpath id="classpath">
+				<path path="${lib.junit}" />
+			</classpath>
+			<src path="${tempdir}/src" />
+		</javac>
+	</target>
+
+	<target name="dist" depends="compile" description="generate the distribution">
+		<manifest file="MANIFEST.MF">
+			<attribute name="Built-By" value="${user.name}" />
+			<attribute name="Main-Class" value="HelloWorld" />
+		</manifest>
+		<jar destfile="${tempdir}/jar.jar" basedir="${tempdir}/build" includes="**/*.class" manifest="MANIFEST.MF" />
+	</target>
+
+	<target name="run" depends="dist">
+		<java jar="${tempdir}/jar.jar" fork="true" />
+	</target>
+
+	<target name="javadoc" depends="run">
+		<mkdir dir="${tempdir}/doc" />
+		<javadoc destdir="${tempdir}/doc" author="true" version="true" use="true" windowtitle="Hello World">
+			<fileset dir="${tempdir}/src" defaultexcludes="yes">
+				<include name="**/*" />
+			</fileset>
+		</javadoc>
+	</target>
+  
+  <!-- HelloWorldTest ist der Name der Klasse, die nach JUnit-Testfällen durchsucht werden soll -->
+	<target name="test" depends="javadoc">
+		<junit>
+			<classpath id="classpath">
+				<path path="${lib.junit}" />
+				<path path="${tempdir}/jar.jar" />
+			</classpath>
+			<test name="HelloWorldTest" haltonfailure="no" todir="${tempdir}" outfile="test">
+				<formatter type="xml" />
+			</test>
+		</junit>
+	</target>
+
+	<target name="TOTAL" depends="test" description="mache Junge">
+		<echo message="ich bin fertig" />
+	</target>
+
+</project>

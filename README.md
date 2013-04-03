@@ -1,27 +1,17 @@
 ### TODO
 - https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 - WebDAV und Internet weiterleiten testen (python-webdav installieren)
-- http://wiki.ubuntuusers.de/RAM-Disk_erstellen
-- http://www.raspberrypiblog.de/software/raspberry-pi-vm-v0-8-fur-entwickler-verfugbar/287
-- http://imgur.com/yPK23
-- http://www.appflower.com/cms/home
-- http://eyeos-apps.org/content/show.php/Sonic+the+Hedgehog?content=69840
 - http://www.javac.info/closures-v05.html mal lesen
 - http://www.scheissewasschenkichmutti.de/
-- http://www.golem.de/news/raspberry-pi-basteln-fuer-geduldige-1207-93058.html
 - http://de.wikipedia.org/wiki/Owncloud
-- http://www.golem.de/news/raspberry-pi-firefox-os-laeuft-mit-60-fps-1208-93898.html
-- http://www.golem.de/news/raspberry-pi-steuerungs-und-bastelplatine-gertboard-ist-fertig-1208-93747.html
-- http://mango.blender.org/
 - http://www.twiggystreasures.com/
 - http://entwickler.com/itr/news/psecom,id,62798,nodeid,82.html
-- http://www.youtube.com/watch?v=XsOzyA9XWfI
+- http://www.youtube.com/watch?v=XsOzyA9XWfI (Unigine Heaven OpenGl)
 - http://www.computerbase.de/news/2009-10/unigine-engine-mit-directx-11-und-tessellation/
 - http://www.robertsspaceindustries.com/
 - http://www.kickstarter.com/projects/obsidian/project-eternity
 - http://home.arcor.de/jiri01/pix/Bender.png
 - https://linksunten.indymedia.org/node/71041
-- http://www.xbox.com/de-DE/live/join
 - http://www.youtube.com/watch?v=pV8UuvnQcmE
 - http://mein.tv/
 - http://www.public-republic.de/artist-of-the-week-%E2%80%94-carl-warner.php
@@ -31,12 +21,9 @@
 - http://new.weavesilk.com/
 - http://www.theliquidateher.com/landscape-vision.html
 - http://kmandla.wordpress.com/2010/04/16/a-quick-look-at-framebuffer-applications/
-- http://de.wikipedia.org/wiki/Boost_%28C%2B%2B-Bibliothek%29
 - http://tinythreadpp.bitsnbites.eu/
 - http://tinycthread.bitsnbites.eu/
-- http://home.arcor.de/jiri01/Daten/Fussgaengerzone.zip
 - https://receiveee.com/thibxrum1jor
-- http://paperzelda.blogspot.de/2012/01/skyward-sword-moblin.html
 - http://emerates.webs.com/rpgmakerresources.htm
 - http://mugen.wikia.com/wiki/Gran_Puente_de_Eldin
 - http://de.wikipedia.org/wiki/Eldfell
@@ -47,7 +34,6 @@
 - rpi (wiipdf, wicd-curses, widelands, http://minetest.net/ (Minecraft))
 - http://de.wikipedia.org/wiki/Irrlicht_%28Engine%29
 - http://wildfiregames.com/ (0ad!)
-- http://en.wikipedia.org/wiki/Sintel_The_Game
 - http://www.razkun.com/
 - http://de.wikipedia.org/wiki/Ecosphere_%28Aquarium%29 oder zen aquarium
 - http://media-cdn.tripadvisor.com/media/photo-s/02/35/28/d0/san-francisco-zen-center.jpg

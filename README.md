@@ -8,7 +8,6 @@
 - http://entwickler.com/itr/news/psecom,id,62798,nodeid,82.html
 - http://www.youtube.com/watch?v=XsOzyA9XWfI (Unigine Heaven OpenGl)
 - http://www.computerbase.de/news/2009-10/unigine-engine-mit-directx-11-und-tessellation/
-- http://www.robertsspaceindustries.com/
 - http://www.kickstarter.com/projects/obsidian/project-eternity
 - http://home.arcor.de/jiri01/pix/Bender.png
 - https://linksunten.indymedia.org/node/71041
@@ -28,7 +27,6 @@
 - http://mugen.wikia.com/wiki/Gran_Puente_de_Eldin
 - http://de.wikipedia.org/wiki/Eldfell
 - Echt cooler cinematic (fast schon kurz) Film:(in HD anschauen): http://www.youtube.com/watch?v=0jNT5cMwxw0
-- http://elinux.org/RPi_config.txt#Video_mode_options
 - http://www.raspberrypi.org/archives/3274 (Raspbmc->Multimediafunktionen)
 - http://www.raspberrypi-tutorials.co.uk/set-raspberry-pi-wireless-network/
 - rpi (wiipdf, wicd-curses, widelands, http://minetest.net/ (Minecraft))
@@ -44,7 +42,6 @@
 - http://de.wikipedia.org/wiki/Theremin
 - http://www.chip.de/artikel/Zotac-GeForce-GTX-Titan-6GB-GDDR5-Grafikkarte-Test_61076561.html
 - http://en.wikipedia.org/wiki/APK_%28file_format%29
-- http://sonic.sega.jp/SonicChannel/enjoy/papercraft/
 
 
 -

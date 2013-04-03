@@ -56,6 +56,7 @@
 - http://de.wikipedia.org/wiki/Louisianamoos
 - http://zeldawiki.org/Main_Page
 - http://de.wikipedia.org/wiki/Theremin
+- http://www.chip.de/artikel/Zotac-GeForce-GTX-Titan-6GB-GDDR5-Grafikkarte-Test_61076561.html
 
 
 -

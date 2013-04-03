@@ -58,6 +58,7 @@
 - http://de.wikipedia.org/wiki/Theremin
 - http://www.chip.de/artikel/Zotac-GeForce-GTX-Titan-6GB-GDDR5-Grafikkarte-Test_61076561.html
 - http://en.wikipedia.org/wiki/APK_%28file_format%29
+- http://sonic.sega.jp/SonicChannel/enjoy/papercraft/
 
 
 -

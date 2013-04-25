@@ -9,3 +9,7 @@ Nummerierung:
   
 Großschreibung am Satzanfang
 - Extras -> AutoKorrektur-Optionen -> Optionen -> Jeden Satz mit...
+
+Farbpalette erweitern
+- Extras -> Optionen -> Farben -> Hinzufügen
+- RGB-Code wird unter Bearbeiten eingestellt

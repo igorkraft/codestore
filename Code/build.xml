@@ -65,6 +65,14 @@
 	</target>
 
 	<target name="TOTAL" depends="test" description="mache Junge">
+		<!-- alle Properties die existieren ausgeben  -->
+		<echoproperties />
+		<!-- zum debuggen dieses Scripts gibt es hier die API-Doku für die project-Variable
+		http://api.dpml.net/ant/1.7.0/org/apache/tools/ant/Project.html -->
+		<script language="javascript"><![CDATA[
+			var variable = project.getReference("dependencies");
+			println(variable.getClass());
+		]]></script>
 		<echo message="ich bin fertig" />
 	</target>
 

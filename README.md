@@ -53,8 +53,7 @@
 - http://cordova.apache.org/
 - http://phonegap.com/
 - http://snesbox.com/
-- http://blog.blackslash.de/archives/27-Maven-JAR-mit-Abhaengigkeiten-bauen.html
-- http://stackoverflow.com/questions/7758099/how-can-i-use-maven-to-build-a-jar-with-required-libraries-in-a-sub-folder-like
+- http://u-hacks.net/accountboerse.php
 
 
 -

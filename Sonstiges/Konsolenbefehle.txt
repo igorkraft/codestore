@@ -112,6 +112,9 @@ notify-send -t $((1000*60*10)) "Ofen ausschalten"
 # Sprachausgabe von Text (-s 100 lässt ihn ein wenig langsamer sprechen default ist 175)
 espeak -vde -s 100 "Ofen ausschalten"
 
+# zwei Stunden verzögerte Erinnerung
+T="Ofen ausschalten" ; sleep $((60*60*2)) ; notify-send -t $((1000*60*10)) "$T" ; espeak -vde -s 100 "$T"
+
 # Bildfolge zu Video (für Blender-Animation)
 mencoder "mf://*.png" -mf fps=25 -o test.avi -ovc lavc -lavcopts vcodec=msmpeg4v2:vbitrate=800
 

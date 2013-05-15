@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>localhost</title>
+<script type="text/javascript">
+/* beispiel.xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<verzeichnis att1="Blubber">
+     <titel att1="test">Wikipedia Staedteverzeichnis</titel>
+     <eintrag>
+          <stichwort>Genf</stichwort>
+          <eintragstext>Genf ist der Sitz von ...</eintragstext>
+     </eintrag>
+     <eintrag>
+          <stichwort>Koeln</stichwort>
+          <eintragstext>Koeln ist eine Stadt, die ...</eintragstext>
+     </eintrag>
+</verzeichnis>
+*/
+function init()
+{
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open('GET', 'beispiel.xml', true);
+	xmlHttp.onreadystatechange = function () 
+	{
+		if (xmlHttp.readyState != 4) return;
+		var xmlDoc = xmlHttp.responseXML;
+		alert(xPathToString(xmlDoc,"/verzeichnis/titel/@att1"));
+		alert(xPathToString(xmlDoc,"/verzeichnis/titel"));
+		alert(xPathToString(xmlDoc,"//eintrag[stichwort='Koeln']/eintragstext"));
+	};
+	xmlHttp.send(null);
+}
+
+function xPathToString(xml,xPath)
+{
+	return xml.evaluate("string("+xPath+")",xml,null,XPathResult.STRING_TYPE,null).stringValue;
+}
+</script>
+</head>
+
+<body>
+	<button onclick="init()">test</button>
+</body>
+
+</html>

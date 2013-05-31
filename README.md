@@ -58,6 +58,9 @@
 - http://de.wikipedia.org/wiki/Vertigo_%E2%80%93_Aus_dem_Reich_der_Toten
 - http://mangafox.me/directory/
 - http://www.wiemanga.com/
+- MW Models: http://mwomercs.com/forums/topic/2303-so-you-want-to-build-a-paper-mech/page__st__60
+- Infos: http://www.sarna.net/wiki/Main_Page
+- Pepakura Designer: http://www.tamasoft.co.jp/pepakura-en/
 
 
 -

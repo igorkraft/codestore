@@ -61,6 +61,7 @@
 - MW Models: http://mwomercs.com/forums/topic/2303-so-you-want-to-build-a-paper-mech/page__st__60
 - Infos: http://www.sarna.net/wiki/Main_Page
 - Pepakura Designer: http://www.tamasoft.co.jp/pepakura-en/
+- http://animesuchtis.blogspot.de/
 
 
 -

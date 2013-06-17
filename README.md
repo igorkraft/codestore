@@ -62,6 +62,7 @@
 - Infos: http://www.sarna.net/wiki/Main_Page
 - Pepakura Designer: http://www.tamasoft.co.jp/pepakura-en/
 - http://animesuchtis.blogspot.de/
+- http://jcrpg.blogspot.de/
 
 
 -

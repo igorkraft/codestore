@@ -65,6 +65,7 @@
 - http://jcrpg.blogspot.de/
 - http://boox.to/?x=65f79439b5a72f31030e2cbf4cc9d2db&d=4bd2a60a44321173b4f2e7e2ed4d95f4&q=rashen%20&ticket=788uimghbf8jja0ja94u72knl5
 - http://www.html5rocks.com/en/mobile/touch/
+- http://www.gimptalk.com/index.php?/topic/41-creating-real-old-rusted-paper-with-gimp-gimp-223/
 
 
 -

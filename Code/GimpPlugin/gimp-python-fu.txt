@@ -1,4 +1,5 @@
 Quelle: http://www.exp-media.com/content/extending-gimp-python-python-fu-plugins-part-2
+API: http://www.gimp.org/docs/python/
 
 - den python-Editor IDLE installieren
 - ein Script unter /home/<user>/.gimp-2.8/plug-ins anlegen
@@ -26,3 +27,4 @@ Quelle: http://www.exp-media.com/content/extending-gimp-python-python-fu-plugins
 - die Funktion pdb.gimp_message schreibt Text in die Error-Konsole (Fenster->Andockbare Dialoge->Fehlerausgabe)
 - in der Python-Fu-Konsole gibt das die Farbe eines Pixels aus: pdb.gimp_drawable_get_pixel(gimp.image_list()[0].active_layer, 10, 10)
 - in der Python-Fu-Funktions-Recherche kann man auf Anwenden klicken um eine Funktion interaktiv zu testen
+- um den Typ einer Referenz zu ermitteln, kann type(variable) verwendet werden

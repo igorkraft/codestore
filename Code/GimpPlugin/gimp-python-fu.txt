@@ -1,0 +1,26 @@
+Quelle: http://www.exp-media.com/content/extending-gimp-python-python-fu-plugins-part-2
+
+- den python-Editor IDLE installieren
+- ein Script unter /home/<user>/.gimp-2.8/plug-ins anlegen
+- das Script ausführbar machen
+- Nutzfunktion deklarieren und bei Gimp registrieren (siehe Vorlage)
+- Gimp neu starten
+- die Nutzfunktion kann in Gimp unter Filter->Python-Fu->Console->Browse recherchiert werden
+- die Unterstriche der Nutzfunktion werden nach der Registrierung durch Bindestriche ersetzt
+- nach der der Registrierung bekommt die Nutzfunktion das Präfix python-fu-...
+- das Script kann im registrierten Menüeintrag ausgeführt werden
+- der siebte Registrierungsparameter kann mit diesen Werten starten: <Toolbox>", "<Image>", "<Layers>", "<Channels>", "<Vectors>", "<Colormap>", "<Load>", "<Save>", "<Brushes>", "<Gradients>", "<Palettes>", "<Patterns>" or "<Buffers>
+- der achte Parameter kann die folgenden Bildtypen enthalten: "*", "RGB", "RGBA", "GRAY", or "INDEXED" (die können auch als Kommasaparierte Liste angegeben werden)
+- der Scriptbutton bleibt ausgegraut, wenn man ein Farbbild läd, obwohl nur Graustufen unterstützt werden
+- bei einer leeren Parameterliste werden automatisch 3 Parameter von Gimp definiert
+  - 1. run mode (der nicht interaktive run mode ist für automatisierte Bildverarbeitung wichtig)
+  - 2. das aktuelle Bild
+  - 3. die ausgewählte Ebene
+- gibt man im Registrierungsparameter 7 <Toolbox> an, dann hat die Nutzfunktion nur einen run mode Parameter
+  - die die Funktion braucht dann kein Bild um ausgeführt werden zu können (sie könnte aber ein Bild erzeugen)
+- die Typen der selbst definierten Parameter können Primitive sein oder Gimpobjekte
+- im Interaktiven Modus erzeugt Gimp für selbstdefinierte Parameter eine Eingabemaske
+- die Nutzfunktion kann mehrere Rückgabewerte liefern, von denen jeder diese Form hat (type, name, description)
+- die Rückgabewerte werden nie von Gimp ausgewertet (nur andere Scripte tun das)
+- werden eigene Parameter in der Nutzfunktion gebraucht, dann müssen im Fall von <Image> die letzten beiden Parameter, die vormals automatisch hinzugefügt wurden als Parameter in die Nutzfunktion eingetragen werden (siehe Vorlage)
+- die Funktion pdb.gimp_message schreibt Text in die Error-Konsole (Fenster->Andockbare Dialoge->Fehlerausgabe)

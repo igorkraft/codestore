@@ -1,0 +1,52 @@
+/*Normalisierung margin, padding*/
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre form, fieldset, input, p, blockquote, th, td{
+	margin:		0;
+	padding:	0;
+}
+
+/*Normalisiert alle ausgezeichneten (Über-)Schriften*/
+
+h1, h2, h3, h4, h5, h6{
+	font-size:	100%;
+	font-style:	normal;
+	font-weight:	normal;
+}
+
+/*Normalisiert alle ausgezeichneten Schriften*/
+
+adress, caption, cite, code, dfn, em, strong, th, var{
+	font-style:	normal;
+	font-weight:	normal;
+}
+
+/*Entfernt alle list-styles*/
+
+ol, ul{
+	list-style:	none;
+}
+
+/*Entfernt alle Abstände aus Tabellen*/
+
+table{
+	border-collapse:	collapse;
+	border-spacing:		0;
+}
+
+/*Entfernt border*/
+
+fieldset, img{
+	border:			0;
+}
+
+/*richtet Tabellentext links aus*/
+
+caption, th{
+	text-align:		left;
+}
+
+/*Entfernt Anführungszeichen*/
+
+q:before, q:after{
+	content:'';
+}

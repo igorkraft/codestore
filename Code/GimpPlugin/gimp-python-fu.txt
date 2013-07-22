@@ -4,7 +4,7 @@ Quelle: http://www.exp-media.com/content/extending-gimp-python-python-fu-plugins
 - ein Script unter /home/<user>/.gimp-2.8/plug-ins anlegen
 - das Script ausführbar machen
 - Nutzfunktion deklarieren und bei Gimp registrieren (siehe Vorlage)
-- Gimp neu starten
+- Gimp neu starten (wird nur die Nutzfunktion modifiziert, so muss Gimp nicht neu gestartet werden)
 - die Nutzfunktion kann in Gimp unter Filter->Python-Fu->Console->Browse recherchiert werden
 - die Unterstriche der Nutzfunktion werden nach der Registrierung durch Bindestriche ersetzt
 - nach der der Registrierung bekommt die Nutzfunktion das Präfix python-fu-...

@@ -24,3 +24,5 @@ Quelle: http://www.exp-media.com/content/extending-gimp-python-python-fu-plugins
 - die Rückgabewerte werden nie von Gimp ausgewertet (nur andere Scripte tun das)
 - werden eigene Parameter in der Nutzfunktion gebraucht, dann müssen im Fall von <Image> die letzten beiden Parameter, die vormals automatisch hinzugefügt wurden als Parameter in die Nutzfunktion eingetragen werden (siehe Vorlage)
 - die Funktion pdb.gimp_message schreibt Text in die Error-Konsole (Fenster->Andockbare Dialoge->Fehlerausgabe)
+- in der Python-Fu-Konsole gibt das die Farbe eines Pixels aus: pdb.gimp_drawable_get_pixel(gimp.image_list()[0].active_layer, 10, 10)
+- in der Python-Fu-Funktions-Recherche kann man auf Anwenden klicken um eine Funktion interaktiv zu testen

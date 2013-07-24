@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from gimpfu import *
 from gimpenums import *
@@ -6,15 +7,16 @@ from gimpenums import *
 # This is the function that will perform actual actions
 # image unf drawable koennen weggelassen werden, wenn in der Registrierung keine Uebergabeparameter angegeben sind
 # image und drawable werden dann trotzdem in der Funktion zur Verfuegung stehen
-def my_script_function(image, drawable, text_value, int_value) :
-	w= drawable.width
-	h= drawable.height
-	for x in range(0,w):
-		for y in range(0,h):
-			pixel = pdb.gimp_drawable_get_pixel(drawable, x, y)[1]
-			if pixel==(0,100,150,255):
-				pdb.gimp_drawable_set_pixel(drawable, x, y, 4, (255,255,255,0))
-	drawable.update(0, 0, drawable.width, drawable.height )
+# TODO: die zu suchende und die zu ersetzende Farbe sollten uebergeben werden koennen (als Farbtyp)
+def my_script_function(image, drawable) :
+	region=drawable.get_pixel_rgn(0,0,drawable.width,drawable.height)
+	# TODO: fuer diese Operation sollten Tile-Objekte verwendet werden (regions sind zu langsam und zu gross)
+	# gimp.image_list()[0].active_layer.get_tile2(False,0,0)[0,0]
+	for x in range(0,drawable.width):
+		for y in range(0,drawable.height):
+			if (region[x,y]=='\x00\x00\x00\xff'):
+				region[x,y]='\xff\xff\xff\x00'
+	drawable.update(0, 0, drawable.width, drawable.height)
 	return
 
 # This is the plugin registration function
@@ -26,11 +28,8 @@ register(
 	"kraft private", # Any copyright information needed
 	"2013", # The date this version of the plugin was released
 	"<Image>/UUU", # The path in the menu where your plugin should be found
-	"*", # The image types supported by your plugin
-	[
-	  (PF_STRING, 'some_text', 'Some text input for our plugin', 'Write something'),
-	  (PF_INT, 'some_integer', 'Some number input for our plugin', 2010)
-	], # The list of the parameters needed by your plugin
+	"RGBA", # The image types supported by your plugin
+	[], # The list of the parameters needed by your plugin
 	[], # The results sent back by your plugin
 	my_script_function, # The name of the local function to run to actually start processing, which will be called with a set of parameters.
 	)

@@ -30,3 +30,4 @@ API: http://www.gimp.org/docs/python/
 - um den Typ einer Referenz zu ermitteln, kann type(variable) verwendet werden
 - der Bildmodus wird unter Bild->Mode eingestellt (Indeziert bedeutet mit Farbpaletten)
 - der Alpha-Kanal kann von Ebene zu Ebene unterschiedlich sein (er wird im Ebenenmenü hinzugefügt und entfernt)
+- fragt man auf einem Gimp-Objekt unbekannten Typs das Attribut Wurst an, dann gibt Gimp den Typnamen des Objekts aus (als Teil einer Fehlermeldung)

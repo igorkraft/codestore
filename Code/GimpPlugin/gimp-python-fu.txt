@@ -28,3 +28,5 @@ API: http://www.gimp.org/docs/python/
 - in der Python-Fu-Konsole gibt das die Farbe eines Pixels aus: pdb.gimp_drawable_get_pixel(gimp.image_list()[0].active_layer, 10, 10)
 - in der Python-Fu-Funktions-Recherche kann man auf Anwenden klicken um eine Funktion interaktiv zu testen
 - um den Typ einer Referenz zu ermitteln, kann type(variable) verwendet werden
+- der Bildmodus wird unter Bild->Mode eingestellt (Indeziert bedeutet mit Farbpaletten)
+- der Alpha-Kanal kann von Ebene zu Ebene unterschiedlich sein (er wird im Ebenenmenü hinzugefügt und entfernt)

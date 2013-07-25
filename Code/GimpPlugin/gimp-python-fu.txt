@@ -31,3 +31,9 @@ API: http://www.gimp.org/docs/python/
 - der Bildmodus wird unter Bild->Mode eingestellt (Indeziert bedeutet mit Farbpaletten)
 - der Alpha-Kanal kann von Ebene zu Ebene unterschiedlich sein (er wird im Ebenenmenü hinzugefügt und entfernt)
 - fragt man auf einem Gimp-Objekt unbekannten Typs das Attribut Wurst an, dann gibt Gimp den Typnamen des Objekts aus (als Teil einer Fehlermeldung)
+- die vier Zahlenparameter für PF_SPINNER und PF_SLIDER sind wie folgt zu verstehen:
+  - 1. initialer Wert
+  - 2. unterer Grenzwert
+  - 3. oberer Grenzwert
+  - 4. Schrittlänge (1 wären Einerschritte)
+- pdb.gimp_message(dir(color)) gibt einige Funktionsnamen aus, die für PF_COLOR definiert sind (geht mit allen Python-Objekten)

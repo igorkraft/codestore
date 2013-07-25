@@ -2,46 +2,47 @@
 # -*- coding: utf-8 -*-
 
 from gimpfu import *
-from gimpenums import *
 
-def replace_pixel(image, drawable, color, slider) :
-	pdb.gimp_message(dir(color))
-	#pdb.gimp_message(color.wurst)
-	pdb.gimp_message(color.b)
-	pdb.gimp_message(slider)
-	tileCountX = int(drawable.width / 64)
+def replace_alpha_pixels(image, drawable, search_color, search_alpha, new_color, new_alpha):
+	search_alpha = int(search_alpha)
+	new_alpha = int(new_alpha)
+	tile_count_x = int(drawable.width / 64)
 	if (drawable.width % 64 > 0):
-		tileCountX = tileCountX + 1
-	tileCountY = int(drawable.height / 64)
+		tile_count_x = tile_count_x + 1
+	tile_count_y = int(drawable.height / 64)
 	if (drawable.height % 64 > 0):
-		tileCountY = tileCountY + 1
-	for tileX in range(tileCountX):
-		for tileY in range(tileCountY):
-			tile=drawable.get_tile2(False,tileX * 64,tileY * 64)
+		tile_count_y = tile_count_y + 1
+	for tile_x in range(tile_count_x):
+		for tile_y in range(tile_count_y):
+			tile = drawable.get_tile2(False,tile_x * 64,tile_y * 64)
 			for x in range(tile.ewidth):
 				for y in range(tile.eheight):
-					if (tile[x,y]=='\x00\x00\x00\xff'):
-						tile[x,y]='\xff\xff\xff\x00'
+					cur_pixel = tile[x,y]
+					if (search_color[0] == ord(cur_pixel[0]) and 
+							search_color[1] == ord(cur_pixel[1]) and 
+							search_color[2] == ord(cur_pixel[2]) and 
+							search_alpha == ord(cur_pixel[3])):
+						tile[x,y] = chr(new_color[0]) + chr(new_color[1]) + chr(new_color[2]) + chr(new_alpha)
 	drawable.update(0, 0, drawable.width, drawable.height)
 	return
 
-# This is the plugin registration function
 register(
-	"replace_pixel",  # Your plugin's main function name, as it will be found in Gimp's Procedure Browser. This means that your plugin will be callable by other plugins, using this function name (even by a script in a another language)!  
-	"My first Python-Fu", # Your plugin's "documentation" name, as it will also appears in the Procedure Browser. This name should describe your plugin briefly.
-	"This script does nothing and is extremely good at it", # Plugin's help. Here you should explain in a more detailed manner what kind of function your plugin provides.
-	"Igor Kraft", # The name of the author of this plugin
-	"kraft private", # Any copyright information needed
-	"2013", # The date this version of the plugin was released
-	"<Image>/TEST", # The path in the menu where your plugin should be found
-	"RGBA", # The image types supported by your plugin
+	"replace_alpha_pixels",
+	"Replace a color including its alpha channel.", 
+	"Replace each pixel with the given color and alpha value by a second given color and alpha value.", 
+	"", 
+	"private", 
+	"2013", 
+	"<Image>/Filters/Plug-Ins/Replace Alpha Pixels", 
+	"RGBA", 
 	[
-		(PF_COLOR,  "arg3", "Search for", (0, 0, 0) ),
-		(PF_SLIDER, "contrast", "Alpha",  255, (0, 255, 1) )# initial steht er auf 255; das Spektrum geht von 0 bis 255; der Zeiger macht Einerschritte
-	], # The list of the parameters needed by your plugin
-	[], # The results sent back by your plugin
-	replace_pixel, # The name of the local function to run to actually start processing, which will be called with a set of parameters.
-	)
+		(PF_COLOR,   "search_color", "Search for", (255, 255, 255) ),
+		(PF_SPINNER, "search_alpha", "Alpha",  255, (0, 255, 1) ),
+		(PF_COLOR,   "new_color", "Replace with", (0, 0, 0) ),
+		(PF_SPINNER, "new_alpha", "Alpha",  0, (0, 255, 1) )
+	], 
+	[], 
+	replace_alpha_pixels)
 
 main()
 

@@ -68,6 +68,7 @@
 - http://www.gimptalk.com/index.php?/topic/41-creating-real-old-rusted-paper-with-gimp-gimp-223/
 - http://en.wikipedia.org/wiki/Final_Fantasy_Adventure
 - http://dev.sencha.com/deploy/ext-4.0.0/examples/desktop/desktop.html
+- http://www.html5rocks.com/en/tutorials/file/filesystem/terminal.html
 
 
 -

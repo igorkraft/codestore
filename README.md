@@ -69,6 +69,7 @@
 - http://en.wikipedia.org/wiki/Final_Fantasy_Adventure
 - http://dev.sencha.com/deploy/ext-4.0.0/examples/desktop/desktop.html
 - http://www.html5rocks.com/en/tutorials/file/filesystem/terminal.html
+- http://visualvm.java.net/oqlhelp.html
 
 
 -

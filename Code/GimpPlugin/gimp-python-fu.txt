@@ -37,3 +37,9 @@ API: http://www.gimp.org/docs/python/
   - 3. oberer Grenzwert
   - 4. Schrittlänge (1 wären Einerschritte)
 - pdb.gimp_message(dir(color)) gibt einige Funktionsnamen aus, die für PF_COLOR definiert sind (geht mit allen Python-Objekten)
+- help("modules") listet alle verfügbaren Module auf
+- help("gtk") listet Informationen zum GTK-Modul auf
+- pdb.gimp_message(dir(gtk)) geht auch, wenn man vorher "import gtk" macht
+- hat man gtk importiert, kann man so eine MessageBox anzeigen:
+  dialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION,gtk.BUTTONS_YES_NO, "huhu")
+	dialog.run()

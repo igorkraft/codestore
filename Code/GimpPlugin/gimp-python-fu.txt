@@ -42,4 +42,5 @@ API: http://www.gimp.org/docs/python/
 - pdb.gimp_message(dir(gtk)) geht auch, wenn man vorher "import gtk" macht
 - hat man gtk importiert, kann man so eine MessageBox anzeigen:
   dialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION,gtk.BUTTONS_YES_NO, "huhu")
-	dialog.run()
+  dialog.run()
+- hier sind Layouts ganz gut beschrieben: http://zetcode.com/gui/pygtk/layout/

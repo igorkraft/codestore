@@ -73,6 +73,7 @@
 - http://benosteen.wordpress.com/2012/04/27/using-opengl-es-2-0-on-the-raspberry-pi-without-x-windows/
 - http://en.wikipedia.org/wiki/Cocos2d
 - https://github.com/raspberrypi/quake3 (benutzt OpenGL ES für die Darstellung und libsdl für Inputs)
+  http://www.raspberrypi.org/phpBB3/viewtopic.php?p=128327 (Quelle)
 
 
 -

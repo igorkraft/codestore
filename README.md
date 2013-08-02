@@ -70,6 +70,7 @@
 - http://dev.sencha.com/deploy/ext-4.0.0/examples/desktop/desktop.html
 - http://www.html5rocks.com/en/tutorials/file/filesystem/terminal.html
 - http://visualvm.java.net/oqlhelp.html
+- http://benosteen.wordpress.com/2012/04/27/using-opengl-es-2-0-on-the-raspberry-pi-without-x-windows/
 
 
 -

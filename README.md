@@ -74,6 +74,7 @@
 - http://en.wikipedia.org/wiki/Cocos2d
 - https://github.com/raspberrypi/quake3 (benutzt OpenGL ES für die Darstellung und libsdl für Inputs)
   http://www.raspberrypi.org/phpBB3/viewtopic.php?p=128327 (Quelle)
+- http://www.lwjgl.org/ (Lightweight Java Game Library)
 
 
 -

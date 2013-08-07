@@ -76,6 +76,7 @@
   http://www.raspberrypi.org/phpBB3/viewtopic.php?p=128327 (Quelle)
 - http://www.lwjgl.org/ (Lightweight Java Game Library)
 - http://de.wikipedia.org/wiki/Ingress_%28Computerspiel%29
+- http://de.wikipedia.org/wiki/Magic_Carpet_%28Computerspiel%29
 
 
 -

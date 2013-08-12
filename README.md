@@ -77,6 +77,7 @@
 - http://www.lwjgl.org/ (Lightweight Java Game Library)
 - http://de.wikipedia.org/wiki/Ingress_%28Computerspiel%29
 - http://de.wikipedia.org/wiki/Magic_Carpet_%28Computerspiel%29
+- http://www.amazon.de/dp/3864900492 (Gradle: Ein kompakter Einstieg in das Build-Management-System)
 
 
 -

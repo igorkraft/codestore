@@ -77,3 +77,6 @@ oben im Catabila.bat das folgende eingeben:
 set JAVA_OPTS=%JAVA_OPTS% -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address="8000"
 im Eclips eine Debugkonfiguration für die Bibliothek anlegen
 Remote Java Application -> Projekt auswählen -> Host: localhost; Port: 8000
+
+• Parameter eines ServletRequests iterieren
+for (Entry<String,Object> entry : (Set<Entry>)request.getParameterMap().entrySet())

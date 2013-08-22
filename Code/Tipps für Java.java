@@ -80,3 +80,6 @@ Remote Java Application -> Projekt auswählen -> Host: localhost; Port: 8000
 
 • Parameter eines ServletRequests iterieren
 for (Entry<String,Object> entry : (Set<Entry>)request.getParameterMap().entrySet())
+
+• Ersetze alle Platzhalter, die mit "-error" enden ("Hallo ${test-error} Welt" -> "Hallo Welt")
+s.replaceAll("\\$\\{[^\\};]*-error\\}", "");

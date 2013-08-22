@@ -83,3 +83,7 @@ for (Entry<String,Object> entry : (Set<Entry>)request.getParameterMap().entrySet
 
 • Ersetze alle Platzhalter, die mit "-error" enden ("Hallo ${test-error} Welt" -> "Hallo Welt")
 s.replaceAll("\\$\\{[^\\};]*-error\\}", "");
+
+• Ersetze alle Platzhalter mit den Token einer Map (erfordert commons-lang)
+StrSubstitutor.replace(<Objekt auf dem .toString() aufgerufen wid>, map, [Token-Prefix], [Token-Suffix])
+StrSubstitutor.replaceSystemProperties(object)

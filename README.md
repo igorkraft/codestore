@@ -80,6 +80,7 @@
 - http://www.amazon.de/dp/3864900492 (Gradle: Ein kompakter Einstieg in das Build-Management-System)
 - http://blog.sonatype.com/people/2009/05/were-used-to-the-axe-grinding/ (Kritikpunkte in Maven)
 - http://fabian-engels.de/gea/final/Web.html (BattleZone 3D)
+- http://www.durovis.com/opendive-howto.html
 
 
 -

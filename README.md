@@ -81,6 +81,7 @@
 - http://blog.sonatype.com/people/2009/05/were-used-to-the-axe-grinding/ (Kritikpunkte in Maven)
 - http://fabian-engels.de/gea/final/Web.html (BattleZone 3D)
 - http://www.durovis.com/opendive-howto.html
+- http://de.wikipedia.org/wiki/Soul_Blazer
 
 
 -

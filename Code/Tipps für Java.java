@@ -87,3 +87,6 @@ s.replaceAll("\\$\\{[^\\};]*-error\\}", "");
 • Ersetze alle Platzhalter mit den Token einer Map (erfordert commons-lang)
 StrSubstitutor.replace(<Objekt auf dem .toString() aufgerufen wid>, map, [Token-Prefix], [Token-Suffix])
 StrSubstitutor.replaceSystemProperties(object)
+
+• Ort, an dem die aus JSP generierten Java-Codes liegen
+work\Catalina\localhost\<Application>\org\apache\jsp

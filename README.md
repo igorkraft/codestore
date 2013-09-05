@@ -82,6 +82,7 @@
 - http://fabian-engels.de/gea/final/Web.html (BattleZone 3D)
 - http://www.durovis.com/opendive-howto.html
 - http://de.wikipedia.org/wiki/Soul_Blazer
+- http://www.nidium.com/ (browser engine mit an scratch orientiertem compositor) -> noch frühe Alpha
 
 
 -

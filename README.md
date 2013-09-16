@@ -85,6 +85,7 @@
 - http://www.nidium.com/ (browser engine mit an scratch orientiertem compositor) -> noch frühe Alpha
 - http://de.wikipedia.org/wiki/Schale_%28Technische_Mechanik%29
 - http://martinfowler.com/articles/lmax.html
+- http://pi.minecraft.net/ (freie Minecraft-Version für Raspberry Pi)
 
 
 -

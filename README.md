@@ -87,6 +87,7 @@
 - http://martinfowler.com/articles/lmax.html
 - http://pi.minecraft.net/ (freie Minecraft-Version für Raspberry Pi)
   mit Programmierschnittstelle http://www.raspberrypi.org/archives/tag/minecraft
+- http://michelanders.blogspot.de/2012/02/3d-convex-hull-in-python-blender.html (konvexe Hülle mit Blender in Python)
 
 
 -

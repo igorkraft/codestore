@@ -88,6 +88,7 @@
 - http://pi.minecraft.net/ (freie Minecraft-Version für Raspberry Pi)
   mit Programmierschnittstelle http://www.raspberrypi.org/archives/tag/minecraft
 - http://michelanders.blogspot.de/2012/02/3d-convex-hull-in-python-blender.html (konvexe Hülle mit Blender in Python)
+- http://www.golem.de/news/google-coder-webprogrammierung-lernen-mit-dem-raspberry-pi-1309-101578.html
 
 
 -

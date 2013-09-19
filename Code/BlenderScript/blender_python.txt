@@ -1,0 +1,19 @@
+# alle Ausgaben von print("...") gehen auf die Betriebssystemkonsole
+
+# Script um beide Kanäle zu flushen (nur für Windows nötig)
+import sys
+sys.stdout.flush()
+sys.stderr.flush()
+
+# Anzahl der Faces eines Objekts ermitteln
+len(bpy.data.meshes["Cube"].polygons)
+
+# Umwandeln von lokalen Kooridinaten in globale (die Matrix muss links stehen!!)
+bpy.context.object.matrix_world*bpy.context.object.data.vertices[0].co.to_4d()
+
+# Strg + n dreht die Normalen nach außen
+
+# gesamte Methodensignatur anzeigen
+import inspect
+print(inspect.getargspec(func))
+siehe http://docs.python.org/2/library/inspect.html

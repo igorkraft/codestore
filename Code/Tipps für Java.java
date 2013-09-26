@@ -90,3 +90,6 @@ StrSubstitutor.replaceSystemProperties(object)
 
 • Ort, an dem die aus JSP generierten Java-Codes liegen
 work\Catalina\localhost\<Application>\org\apache\jsp
+
+• der etwas bessere Split aus commons-lang
+StringUtils.splitByWholeSeparatorPreserveAllTokens(text,newLine);

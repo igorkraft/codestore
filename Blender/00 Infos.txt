@@ -7,3 +7,4 @@
 - die Pfade der Dateien unter `Recent Files` werden hier gespeichert: /home/user/.blender/2.63/config/recent-files.txt
 - möchte man den Objektmittelpunkt in die geometrische Mitte des Objekts setzen, dann `Object`->`Transform`->`Origin To Geometry`
  - `Geometry To Origin` gibt es dort auch
+- bilden der konvenxen Hülle: Edit-Mode + 'Space' + convex eingeben

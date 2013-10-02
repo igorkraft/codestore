@@ -4,9 +4,23 @@
 	<description>Blubber</description>
 
 	<property name="tempdir" value="/home/user/Arbeitsfläche/tmp" />
+	<property name="maven.repo" value="/home/user/.m2/repository" />
+	<property name="code.base" value="/home/user/codebase" />
 	<property name="lib.junit" value="/home/user/Arbeitsfläche/junit-4.10.jar" />
 	<property name="Built-By" value="user" />
-
+	
+	<!-- classpath Variablen gruppieren -->
+	<path id="compile.dependencies">
+		<path path="${maven.repo}/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar" />
+		<path path="${maven.repo}/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar" />
+	</path>
+	
+	<!-- erzeugt eine kopierbare Liste absolut referenzierter Dateien (unter Windows sinnvoll) -->
+	<resources id="runtime.dependencies" >
+		<file file="${maven.repo}/commons-io/commons-io/2.4/commons-io-2.4.jar" />
+		<file file="${code.base}/any.jar" />
+	</resources>
+	
 	<target name="clean" description="clean up">
 		<delete includeemptydirs="true">
 			<fileset dir="${tempdir}" includes="**/*" />
@@ -18,6 +32,9 @@
 		<copy todir="${tempdir}/src">
 			<fileset dir="src" />
 		</copy>
+		<copy todir="${tempdir}/build/lib">
+			<resources refid="runtime.dependencies" />
+		</copy>
 	</target>
 
 	<target name="compile" depends="copy">
@@ -25,6 +42,7 @@
 		<javac destdir="${tempdir}/build" debug="on" optimize="on" includeantruntime="false">
 			<classpath id="classpath">
 				<path path="${lib.junit}" />
+				<path refid="compile.dependencies" />
 			</classpath>
 			<src path="${tempdir}/src" />
 		</javac>

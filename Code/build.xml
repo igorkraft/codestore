@@ -43,6 +43,7 @@
 			<classpath id="classpath">
 				<path path="${lib.junit}" />
 				<path refid="compile.dependencies" />
+				<pathelement path="${java.class.path}/" />
 			</classpath>
 			<src path="${tempdir}/src" />
 		</javac>

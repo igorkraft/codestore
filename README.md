@@ -90,6 +90,8 @@
 - http://michelanders.blogspot.de/2012/02/3d-convex-hull-in-python-blender.html (konvexe Hülle mit Blender in Python)
 - http://www.golem.de/news/google-coder-webprogrammierung-lernen-mit-dem-raspberry-pi-1309-101578.html
 - http://www.raspberrypi.org/phpBB3/viewtopic.php?f=66&t=14481 (D-compiler für Raspberry Pi, der letzte gepostete Link ist interessant)
+- Collection-Bibliothek für C: http://sglib.sourceforge.net/
+  für Threads und Strings: http://en.wikipedia.org/wiki/C_POSIX_library
 
 
 -

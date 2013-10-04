@@ -92,6 +92,7 @@
 - http://www.raspberrypi.org/phpBB3/viewtopic.php?f=66&t=14481 (D-compiler für Raspberry Pi, der letzte gepostete Link ist interessant)
 - Collection-Bibliothek für C: http://sglib.sourceforge.net/
   für Threads und Strings: http://en.wikipedia.org/wiki/C_POSIX_library
+- Three.js für C++: https://github.com/jdduke/three_cpp
 
 
 -

@@ -93,6 +93,7 @@
 - Collection-Bibliothek für C: http://sglib.sourceforge.net/
   für Threads und Strings: http://en.wikipedia.org/wiki/C_POSIX_library
 - Three.js für C++: https://github.com/jdduke/three_cpp
+- ganz gute deutsche EInführung in C++: http://www.codenode.de/
 
 
 -

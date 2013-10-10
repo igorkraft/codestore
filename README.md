@@ -97,6 +97,7 @@
 - hier steht, wie man den Linker benutzt: http://en.wikipedia.org/wiki/Static_library
 - http://de.wikipedia.org/wiki/DirectFB (Direct FrameBuffer)
   http://www.golem.de/news/wayland-weston-laeuft-auf-directfb-1310-102001.html
+- Design Unternehmen: http://www.artcom.de/en/home/
 
 
 -

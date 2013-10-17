@@ -44,3 +44,4 @@ API: http://www.gimp.org/docs/python/
   dialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_QUESTION,gtk.BUTTONS_YES_NO, "huhu")
   dialog.run()
 - hier sind Layouts ganz gut beschrieben: http://zetcode.com/gui/pygtk/layout/
+- Python-Version anzeigen: import platform & platform.python_version()

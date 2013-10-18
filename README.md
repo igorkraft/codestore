@@ -99,7 +99,7 @@
   http://www.golem.de/news/wayland-weston-laeuft-auf-directfb-1310-102001.html
 - Design Unternehmen: http://www.artcom.de/en/home/
 - http://www.heise.de/newsticker/meldung/Pif-FPGA-fuer-den-Raspberry-Pi-1976232.html
-
+- http://www.designboom.com/
 
 -
     NewTab-Bookmark

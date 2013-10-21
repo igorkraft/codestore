@@ -109,6 +109,8 @@
     mvn install -Dmaven.test.skip=true
     Kopiert die Abhängigkeiten des Projekts nach target
     mvn dependency:copy-dependencies
+    verwendet target als lokales repository (user repository bleibt unangetastet)
+    mvn install -Dmaven.repo.local=target
 -
     git clone https://github.com/igorkraft/codestore.git
     git add --all

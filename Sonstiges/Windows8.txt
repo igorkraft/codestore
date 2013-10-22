@@ -1,0 +1,32 @@
+<Super>+<Shift>+<Pfeil links> = Fenster zwischen Monitoren verschieben
+<Super>+<c> = rechte Seitenleiste
+<Super>+<x> = Startmenü rechtsklick
+<Super>+<q> = App-Suche
+<Super>+<i> = Einstellungen rechts (enthält "Lautstärke" und unten "PC-Einstellungen ändern"!!)
+<Super>+<f> = Datei-Suche
+<Super>+<w> = Einstellungen durchsuchen
+<Strg>+<Shift>+<ESC> = Task-Manager öffnen
+<Alt>+<Doppelklick> = Dateieigenschaften
+<Strg>+<Tab> = Reiter wechseln
+<Super>+<+> = reinzoomen (mit <Super>+<-> wieder rauszoomen)
+  über die sich öffnende Bildschirmlupe können auch alle Farben des Bildschirms invertiert werden
+<Super>+<Shift>+<Klick auf Taskleistensymbol> = neue Instanz öffnen
+<Super>+<Pfeil> = Fenster platzieren
+<Super>+<Tab> = zwischen Metroapps wechseln (Desktop ist auch eine Metroapp)
+<Super>+<z> = Menü für aktuelle Metroapp öffnen (= Rechtsklick auf Metroapp)
+in den Tabwechselmenüs kann mit klick auch dirket geöffnet werden
+Verknüpfungen, die hier angelegt werden %AppData%\Microsoft\Windows\Start Menu\Programs\Accessories, werden auf dem Startbildschirm angezeigt
+zum Schließen einer Metroapp den oberen Rand greifen und nach unten auf dem Bildschirm ziehen
+Apps können auch per Kontextmenü in der <Super>+<Tab>-Leiste geschlossen werden
+die Autostartprogramme befinden sich hier: %userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+<Super>+<d> = wechselt von aktueller Metroapp zum Desktop (ohne dessen Fenster zu minimieren)
+<Strg>+<Scrollrad> = Startbildschirm zoomen (im herausgezoomten Modus können Appgruppen verschoben und umbenannt werden)
+<Strg>+<Bild_auf/Bild_ab> = Notizseiten von OneNote blättern
+in der Benutzerkontensteuerung kann eingestellt werden, wann der Benutzer über Admnoperationen informiert werden soll
+<Super>+<Pause> = speichert Screenshot nach %userprofile%\Pictures
+die Kachel der Foto-App bezieht ihre Thumbnails von hier: %userprofile%\AppData\Local\Packages\microsoft.windowsphotos_8wekyb3d8bbwe\LocalState
+  generiert werden die Thumbnails aus Bildern dieses Ordners %userprofile%\Pictures
+  eigene Thumbnails müssen den folgenden Ansprüchen genügen:
+   - LargeTile1.jpg (248*120) für eine große Kachel
+   - SmallTile1.jpg (120*120) für eine kleine Kachel
+   - für mehrere Thumbnails muss die Nummer in den Bildnamen hochgezählt werden

@@ -93,3 +93,9 @@ work\Catalina\localhost\<Application>\org\apache\jsp
 
 • der etwas bessere Split aus commons-lang
 StringUtils.splitByWholeSeparatorPreserveAllTokens(text,newLine);
+
+• Passwortabfragen
+JPasswordField passwordField = new JPasswordField(20);
+passwordField.setEchoChar('*');
+JOptionPane.showMessageDialog(null,passwordField,"Enter password",JOptionPane.OK_OPTION);
+String password = new String(passwordField.getPassword());

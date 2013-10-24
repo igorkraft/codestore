@@ -100,6 +100,7 @@
 - Design Unternehmen: http://www.artcom.de/en/home/
 - http://www.heise.de/newsticker/meldung/Pif-FPGA-fuer-den-Raspberry-Pi-1976232.html
 - http://www.designboom.com/
+- http://www.genymotion.com/ (schneller Android Emulator)
 
 -
     NewTab-Bookmark

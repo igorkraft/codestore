@@ -101,6 +101,7 @@
 - http://www.heise.de/newsticker/meldung/Pif-FPGA-fuer-den-Raspberry-Pi-1976232.html
 - http://www.designboom.com/
 - http://www.genymotion.com/ (schneller Android Emulator)
+- http://www.kickstarter.com/projects/mossmann/hackrf-an-open-source-sdr-platform
 
 -
     NewTab-Bookmark

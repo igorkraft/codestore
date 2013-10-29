@@ -30,3 +30,4 @@ die Kachel der Foto-App bezieht ihre Thumbnails von hier: %userprofile%\AppData\
    - LargeTile1.jpg (248*120) für eine große Kachel
    - SmallTile1.jpg (120*120) für eine kleine Kachel
    - für mehrere Thumbnails muss die Nummer in den Bildnamen hochgezählt werden
+die hintergrundbilder liegen hier: C:\Windows\Web\Wallpaper\Windows

@@ -102,6 +102,7 @@
 - http://www.designboom.com/
 - http://www.genymotion.com/ (schneller Android Emulator)
 - http://www.kickstarter.com/projects/mossmann/hackrf-an-open-source-sdr-platform
+- http://de.wikibooks.org/wiki/Blender_-_Handbuch_zur_Spiel-Engine
 
 -
     NewTab-Bookmark

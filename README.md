@@ -102,7 +102,7 @@
 - http://www.designboom.com/
 - http://www.genymotion.com/ (schneller Android Emulator)
 - http://www.kickstarter.com/projects/mossmann/hackrf-an-open-source-sdr-platform
-- http://de.wikibooks.org/wiki/Blender_-_Handbuch_zur_Spiel-Engine
+- http://www.blender.org/documentation/blender_python_api_2_66a_release/bmesh.ops.html#bmesh.ops.convex_hull
 
 -
     NewTab-Bookmark

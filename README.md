@@ -114,6 +114,15 @@
     mvn dependency:copy-dependencies
     verwendet target als lokales repository (user repository bleibt unangetastet)
     mvn install -Dmaven.repo.local=target
+    Bibliothek manuell ins lokale Repo importieren (geht mit deploy analog)
+    pom für Abhängigkeiten kann auch angegeben werden
+    mvn install:install-file ^
+    -Dfile=<path-to-file> ^
+    -DgroupId=<group-id> ^
+    -DartifactId=<artifact-id> ^
+    -Dversion=<version> ^
+    -Dpackaging=jar
+    
 -
     git clone https://github.com/igorkraft/codestore.git
     git add --all

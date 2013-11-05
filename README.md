@@ -103,6 +103,7 @@
 - http://www.genymotion.com/ (schneller Android Emulator)
 - http://www.kickstarter.com/projects/mossmann/hackrf-an-open-source-sdr-platform
 - http://www.blender.org/documentation/blender_python_api_2_66a_release/bmesh.ops.html#bmesh.ops.convex_hull
+- http://de.wikipedia.org/wiki/Bootstrap_%28Framework%29 (JavaScriptFramework für Oberflächen und Layout)
 
 -
     NewTab-Bookmark

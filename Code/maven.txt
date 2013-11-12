@@ -1,0 +1,10 @@
+- es gibt 3 Lebenszyklen in Maven (Clean Lifecycle, Default Lifecycle, Site Lifecycle)
+- jeder Zyklus besteht aus unterschiedlichen Phasen (welcher Zyklus beim Build benutzt wird ergibt sich implizit aus der Phases, die beim Mavenaufruf übergeben wird)
+- zu jedem Lebenszyklus gibt es verschiedene Default-Binding-Listen (jede Zyklusphase wird einem Plugin mit einem Goal zugeordnet)
+- welche Default-Binding-Liste benutzt werden soll wird im packaging-Attribut der pom festgelegt (default ist jar)
+- jedes Plugin hat individuelle Goals (stehen in der Doku jedes Plugins)
+- in einer Phase kann ein Plugin eines oder mehrere Goals ausführen
+- der Aufruf 'mvn install:install-file' bewirkt, dass das 'maven-install-plugin' mit dem Goal install-file ausgeführt wird
+  bei disem Aufruf wurde keine Phase angegeben, weswegen keiner der Lebenszyklen abgewickelt wird
+  das der Parameter nicht als Phase interpretiert wird, liegt an dessen Doppelpunkt (alle Goal-Angaben enthalten Doppelpunkte)
+- beim Maven-Aufruf mit einer Phase wird nicht nur die Phase selbst, sondern auch alle ihre Vorgängerphasen ausgeführt

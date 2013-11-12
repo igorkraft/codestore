@@ -107,6 +107,7 @@
 - http://de.wikipedia.org/wiki/Braid_%28Computerspiel%29
 - http://www.golem.de/news/gate-one-html5-terminal-emulator-mit-x11-unterstuetzung-1311-102609.html
 - http://www.heise.de/newsticker/meldung/Modularer-Synthesizer-von-KORG-und-littleBits-2042974.html
+- Maven Vor- und Nachteile: http://stackoverflow.com/questions/861382/why-does-maven-have-such-a-bad-rep
 
 -
     NewTab-Bookmark

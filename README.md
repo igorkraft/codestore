@@ -110,6 +110,10 @@
 - Maven Vor- und Nachteile: http://stackoverflow.com/questions/861382/why-does-maven-have-such-a-bad-rep
 - Maven Groovy Beispiele: http://docs.codehaus.org/display/GMAVEN/Executing+Groovy+Code
 - http://de.wikipedia.org/wiki/Aquascaping
+- http://maven.apache.org/plugins/ 
+  (generiert Eclipse-Projektdatei aus pom, native-plugin für C und C++, PDF-Dokumentation, 
+  TODO-List aus Annotations, tomcat7-maven-plugin, jetty-plugin usw.)
+- http://code.google.com/p/maven-android-plugin/wiki/GettingStarted
 
 -
     NewTab-Bookmark

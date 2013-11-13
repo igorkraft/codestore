@@ -115,6 +115,7 @@
   TODO-List aus Annotations, tomcat7-maven-plugin, jetty-plugin usw.)
 - http://code.google.com/p/maven-android-plugin/wiki/GettingStarted
 - http://stackoverflow.com/questions/1541771/using-maven-for-c-c-projects
+- http://blog.bigpixel.ro/2012/07/building-cc-applications-with-maven/
 
 -
     NewTab-Bookmark

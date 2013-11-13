@@ -116,6 +116,7 @@
 - http://code.google.com/p/maven-android-plugin/wiki/GettingStarted
 - http://stackoverflow.com/questions/1541771/using-maven-for-c-c-projects
 - http://blog.bigpixel.ro/2012/07/building-cc-applications-with-maven/
+- http://accelconf.web.cern.ch/accelconf/icalepcs2011/papers/wepks026.pdf
 
 -
     NewTab-Bookmark

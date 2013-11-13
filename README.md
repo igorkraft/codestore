@@ -114,6 +114,7 @@
   (generiert Eclipse-Projektdatei aus pom, native-plugin für C und C++, PDF-Dokumentation, 
   TODO-List aus Annotations, tomcat7-maven-plugin, jetty-plugin usw.)
 - http://code.google.com/p/maven-android-plugin/wiki/GettingStarted
+- http://stackoverflow.com/questions/1541771/using-maven-for-c-c-projects
 
 -
     NewTab-Bookmark

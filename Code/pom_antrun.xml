@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+ <modelVersion>4.0.0</modelVersion>
+
+ <groupId>org.private</groupId>
+ <artifactId>antrunsample</artifactId>
+ <version>1.0.0</version>
+ 
+ <!--
+  Aufrufbeispiele:
+  mvn
+     führt nur oberes Skript aus (weil defaultGoal angegeben wurde)
+  mvn antrun:run
+     führt nur oberes Skript aus
+  mvn package
+     führt nur unteres Skript aus
+  mvn package antrun:run
+     führt erst das untere Skript aus, dann das obere
+  mvn antrun:run package 
+     führt erst das obere Skript aus, dann das untere
+ -->
+ 
+ <build>
+  <defaultGoal>antrun:run</defaultGoal>
+  <plugins>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-antrun-plugin</artifactId>
+    <version>1.7</version>
+    <dependencies>
+     <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.4</version>
+     </dependency>
+    </dependencies>
+    <configuration>
+     <tasks>
+      <script language="javascript"> <![CDATA[
+       importPackage(java.io);
+       importPackage(org.apache.commons.io);
+       var f = new File("rungoal.txt");
+       f.createNewFile();
+       println(FilenameUtils.getName(f.getAbsolutePath()));
+       ]]>
+      </script>
+     </tasks>
+    </configuration>
+    <executions>
+     <execution>
+      <phase>package</phase>
+      <configuration>
+       <tasks>
+        <script language="javascript"> <![CDATA[
+         importPackage(java.io);
+         importPackage(org.apache.commons.io);
+         var f = new File("package.txt");
+         f.createNewFile();
+         println(FilenameUtils.getName(f.getAbsolutePath()));
+         ]]>
+        </script>
+       </tasks>
+      </configuration>
+      <goals>
+       <goal>run</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+  </plugins>
+ </build>
+
+</project>

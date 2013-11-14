@@ -22,6 +22,7 @@
  
  <build>
   <defaultGoal>antrun:run</defaultGoal>
+  <directory>${java.io.tmpdir}</directory>
   <plugins>
    <plugin>
     <groupId>org.apache.maven.plugins</groupId>
@@ -39,9 +40,9 @@
       <script language="javascript"> <![CDATA[
        importPackage(java.io);
        importPackage(org.apache.commons.io);
-       var f = new File("rungoal.txt");
-       f.createNewFile();
-       println(FilenameUtils.getName(f.getAbsolutePath()));
+       importPackage(javax.swing);
+       var value = JOptionPane.showInputDialog("Please input a value");
+       FileUtils.writeStringToFile(new File("rungoal.txt"), value);
        ]]>
       </script>
      </tasks>
@@ -52,11 +53,7 @@
       <configuration>
        <tasks>
         <script language="javascript"> <![CDATA[
-         importPackage(java.io);
-         importPackage(org.apache.commons.io);
-         var f = new File("package.txt");
-         f.createNewFile();
-         println(FilenameUtils.getName(f.getAbsolutePath()));
+         println("package phase");
          ]]>
         </script>
        </tasks>

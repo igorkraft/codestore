@@ -121,6 +121,7 @@
 - https://www.dartlang.org/tools/editor/
 - https://www.play-i.com/ (Roboterprogrammierung für Kinder)
 - http://www.utest.com/ (Testingplattform)
+- http://plantuml.sourceforge.net/activity2.html#simple (wie UMLet, kann aber auch Maven und Javadoc)
 
 -
     NewTab-Bookmark

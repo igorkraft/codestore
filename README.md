@@ -122,6 +122,7 @@
 - https://www.play-i.com/ (Roboterprogrammierung für Kinder)
 - http://www.utest.com/ (Testingplattform)
 - http://plantuml.sourceforge.net/activity2.html#simple (wie UMLet, kann aber auch Maven und Javadoc)
+- http://www.golem.de/news/mathematica-mathe-anders-lernen-mit-raspberry-pi-1311-102903.html
 
 -
     NewTab-Bookmark

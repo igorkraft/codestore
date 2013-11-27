@@ -128,6 +128,7 @@
 - http://plantuml.sourceforge.net/download.html (Eclipseplugin für UML-Diagramme basierend auf der Grafbeschreibungssprache dot)
 - http://www.graphviz.org/ (Graphenvisualisierungsbibliothek, die von plantuml genutzt wird)
   in den Plugin-Eigenschaften von plantuml muss hierauf verwiesen werden
+  gibt es im Ubuntu Repository
 
 -
     NewTab-Bookmark

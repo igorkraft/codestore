@@ -124,6 +124,10 @@
 - http://plantuml.sourceforge.net/activity2.html#simple (wie UMLet, kann aber auch Maven und Javadoc)
 - http://www.golem.de/news/mathematica-mathe-anders-lernen-mit-raspberry-pi-1311-102903.html
   (Paket: 'wolfram-engine')
+- http://www.yworks.com/en/index.html (hier gibt es yEd -> freier Grapheditor in Java basierend auf GraphML)
+- http://plantuml.sourceforge.net/download.html (Eclipseplugin für UML-Diagramme basierend auf der Grafbeschreibungssprache dot)
+- http://www.graphviz.org/ (Graphenvisualisierungsbibliothek, die von plantuml genutzt wird)
+  in den Plugin-Eigenschaften von plantuml muss hierauf verwiesen werden
 
 -
     NewTab-Bookmark

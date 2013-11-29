@@ -1,5 +1,4 @@
 • File to DOM
-
 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 DocumentBuilder builder = factory.newDocumentBuilder();
 Document document = builder.parse(new FileInputStream("adressen2.xml"));
@@ -10,6 +9,14 @@ javax.xml.transform.Transformer transformer = transformerFactory.newTransformer(
 javax.xml.transform.dom.DOMSource source = new javax.xml.transform.dom.DOMSource(userData);
 javax.xml.transform.stream.StreamResult result = new javax.xml.transform.stream.StreamResult(new java.io.File("C:\\testing.xml"));
 transformer.transform(source, result);
+
+• pretty print DOM to OutputStream
+ByteArrayOutputStream resultXml = new ByteArrayOutputStream();
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+transformer.transform(new DOMSource(domElement), new StreamResult(resultXml));
+
 
 • Path -> InputStream
 new FileInputStream(path)

@@ -129,6 +129,7 @@
 - http://www.graphviz.org/ (Graphenvisualisierungsbibliothek, die von plantuml genutzt wird)
   in den Plugin-Eigenschaften von plantuml muss hierauf verwiesen werden
   gibt es im Ubuntu Repository
+- http://en.wikipedia.org/wiki/Petri_Net_Markup_Language
 
 -
     NewTab-Bookmark

@@ -133,6 +133,7 @@
 - http://www.j3l7h.de/ (freie deutsche Mathekurse von Joern Loviscach)
 - https://github.com/vhf/free-programming-books/blob/master/free-programming-books-de.md
 - http://de.wikipedia.org/wiki/The_Legend_of_Zelda:_A_Link_Between_Worlds (3DS Zeldagame)
+- http://en.wikipedia.org/wiki/DesignSpark_PCB (freies Tool um Schaltpläne zu erstellen)
 
 -
     NewTab-Bookmark

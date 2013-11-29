@@ -130,6 +130,7 @@
   in den Plugin-Eigenschaften von plantuml muss hierauf verwiesen werden
   gibt es im Ubuntu Repository
 - http://en.wikipedia.org/wiki/Petri_Net_Markup_Language
+- http://www.j3l7h.de/ (freie deutsche Mathekurse von Joern Loviscach)
 
 -
     NewTab-Bookmark

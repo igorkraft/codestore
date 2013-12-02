@@ -134,6 +134,7 @@
 - https://github.com/vhf/free-programming-books/blob/master/free-programming-books-de.md
 - http://de.wikipedia.org/wiki/The_Legend_of_Zelda:_A_Link_Between_Worlds (3DS Zeldagame)
 - http://en.wikipedia.org/wiki/DesignSpark_PCB (freies Tool um Schaltpläne zu erstellen)
+- http://de.wikipedia.org/wiki/Selenium (automatisierte Tests für Webanwendungen, soll auch mit Maven gehen)
 
 -
     NewTab-Bookmark

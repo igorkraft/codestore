@@ -135,6 +135,7 @@
 - http://de.wikipedia.org/wiki/The_Legend_of_Zelda:_A_Link_Between_Worlds (3DS Zeldagame)
 - http://en.wikipedia.org/wiki/DesignSpark_PCB (freies Tool um Schaltpläne zu erstellen)
 - http://de.wikipedia.org/wiki/Selenium (automatisierte Tests für Webanwendungen, soll auch mit Maven gehen)
+- http://de.wikibooks.org/wiki/SVG/_Animationsbeispiele
 
 -
     NewTab-Bookmark

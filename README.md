@@ -136,6 +136,7 @@
 - http://en.wikipedia.org/wiki/DesignSpark_PCB (freies Tool um Schaltpläne zu erstellen)
 - http://de.wikipedia.org/wiki/Selenium (automatisierte Tests für Webanwendungen, soll auch mit Maven gehen)
 - http://de.wikibooks.org/wiki/SVG/_Animationsbeispiele
+- http://de.wikipedia.org/wiki/Aliivibrio_fischeri (biolumineszierende Bakterien)
 
 -
     NewTab-Bookmark

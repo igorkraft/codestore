@@ -137,6 +137,7 @@
 - http://de.wikipedia.org/wiki/Selenium (automatisierte Tests für Webanwendungen, soll auch mit Maven gehen)
 - http://de.wikibooks.org/wiki/SVG/_Animationsbeispiele
 - http://de.wikipedia.org/wiki/Aliivibrio_fischeri (biolumineszierende Bakterien)
+- http://de.wikipedia.org/wiki/Go_%28Programmiersprache%29 (C/C++ Alternative)
 
 -
     NewTab-Bookmark

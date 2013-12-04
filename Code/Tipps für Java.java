@@ -106,3 +106,6 @@ JPasswordField passwordField = new JPasswordField(20);
 passwordField.setEchoChar('*');
 JOptionPane.showMessageDialog(null,passwordField,"Enter password",JOptionPane.OK_OPTION);
 String password = new String(passwordField.getPassword());
+
+• Millisekundendauer formatiert ausgeben (erfordert commons-lang)
+DurationFormatUtils.formatDuration(timeInMS, "HH:mm:ss,SSS")

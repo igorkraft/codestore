@@ -1,3 +1,5 @@
+'gedit-plugins' enthält unter anderem ein Plugin, dass Whitespaces darstellt
+
 Quelle: http://www.connorgarvey.com/blog/?p=264#codesyntax_1
 
 JSON-Formater

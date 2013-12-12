@@ -109,3 +109,6 @@ String password = new String(passwordField.getPassword());
 
 • Millisekundendauer formatiert ausgeben (erfordert commons-lang)
 DurationFormatUtils.formatDuration(timeInMS, "HH:mm:ss,SSS")
+
+• nettes LookAndFeel
+UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");

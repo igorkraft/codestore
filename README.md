@@ -140,6 +140,7 @@
 - http://de.wikipedia.org/wiki/Go_%28Programmiersprache%29 (C/C++ Alternative)
 - http://en.wikipedia.org/wiki/Conductive_ink
 - http://en.wikipedia.org/wiki/Botanicula
+- Markdown-Editor: https://stackedit.io/
 
 -
     NewTab-Bookmark

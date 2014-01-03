@@ -15,6 +15,9 @@
 - minetest und torus-trooper laufen nicht
 - kobodeluxe läuft (Texte in Menüs werden nur nicht angezeigt)
 - vlc läuft und spielt brav Radiostreams ab
+- Soundausgang festlegen:
+ - HDMI-Sound aktivieren: `sudo amixer cset numid=3 2`
+ - analoger Ausgang: `sudo amixer cset numid=3 1`
 
 
 Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):

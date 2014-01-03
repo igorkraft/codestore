@@ -66,5 +66,5 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
 - Anzeige von X-Fenstern ermöglichen
  - `ssh -Y user@host`
 - Dateisystem einhängen:
- - `sshfs user@host:/remotepath ~/mnt`
+ - `sshfs -o allow_other user@host:/remotepath ~/mnt`
  - `umount ~/mnt`

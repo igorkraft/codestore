@@ -61,3 +61,10 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
         Listen 443
     </IfModule>
 ```
+
+### SSH
+- Anzeige von X-Fenstern ermöglichen
+ - `ssh -Y user@host`
+- Dateisystem einhängen:
+ - `sshfs user@host:/remotepath ~/mnt`
+ - `umount ~/mnt`

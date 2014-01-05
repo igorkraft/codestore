@@ -141,6 +141,7 @@
 - http://en.wikipedia.org/wiki/Conductive_ink
 - http://en.wikipedia.org/wiki/Botanicula
 - Markdown-Editor: https://stackedit.io/
+- VLC-Webinterface: https://wiki.videolan.org/Documentation:Modules/http_intf/
 
 -
     NewTab-Bookmark

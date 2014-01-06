@@ -31,3 +31,4 @@ die Kachel der Foto-App bezieht ihre Thumbnails von hier: %userprofile%\AppData\
    - SmallTile1.jpg (120*120) für eine kleine Kachel
    - für mehrere Thumbnails muss die Nummer in den Bildnamen hochgezählt werden
 die hintergrundbilder liegen hier: C:\Windows\Web\Wallpaper\Windows
+<Strg>+<n>=öffnet den aktuellen Ordner in einem neuen Fenster (auf dem Desktop wid der Desktop im Explorer geöffnet)

@@ -142,6 +142,8 @@
 - http://en.wikipedia.org/wiki/Botanicula
 - Markdown-Editor: https://stackedit.io/
 - VLC-Webinterface: https://wiki.videolan.org/Documentation:Modules/http_intf/
+- Dokumentieren (Lubuntu Proxy-Konfiguration):
+  http://askubuntu.com/questions/150210/how-do-i-set-systemwide-proxy-servers-in-xubuntu-lubuntu-or-ubuntu-studio
 
 -
     NewTab-Bookmark

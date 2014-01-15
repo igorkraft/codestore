@@ -19,3 +19,12 @@
 
 #### Maven
 - Update Maven projects on startup: &#x2611;
+
+#### Java->Code Style->Formatter->Edit
+- Profile name: custom
+- Indentation
+ - Tab size: 2
+ - Align fields in columns
+- Braces
+ - Array initializer: Same line
+ - alle anderen: Next line

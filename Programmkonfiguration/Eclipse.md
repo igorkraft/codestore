@@ -28,3 +28,5 @@
 - Braces
  - Array initializer: Same line
  - alle anderen: Next line
+- Line Wrapping
+ - Maximum line width: 800

@@ -144,6 +144,7 @@
 - VLC-Webinterface: https://wiki.videolan.org/Documentation:Modules/http_intf/
 - Dokumentieren (Lubuntu Proxy-Konfiguration):
   http://askubuntu.com/questions/150210/how-do-i-set-systemwide-proxy-servers-in-xubuntu-lubuntu-or-ubuntu-studio
+- http://www.amazon.de/Mobile-Web-Apps-mit-JavaScript-professionelle/dp/3868020853/ref=sr_1_2?ie=UTF8&qid=1389855133&sr=8-2&keywords=Mobile+web+apps+mit+javascript
 
 -
     NewTab-Bookmark

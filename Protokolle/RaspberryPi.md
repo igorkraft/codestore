@@ -68,3 +68,37 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
 - Dateisystem einhängen:
  - `sshfs -o allow_other user@host:/remotepath ~/mnt`
  - `umount ~/mnt`
+
+### VLC als Musik-Server
+- vlc installieren
+- zwei Skripte unter /etc/init.d anlegen und ausführbar machen
+ - cvlcd:
+```#!/usr/bin/python
+#coding=UTF-8
+### BEGIN INIT INFO
+# Provides:          VLC als Daemon starten und das http- und das telnet-Interface initialisieren.
+# Required-Start:    
+# Required-Stop:     
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Kurze Beschreibung
+# Description:       Längere Bechreibung
+### END INIT INFO
+# Author: Name <email@domain.tld>
+
+import sys
+import subprocess
+
+if (len(sys.argv) < 2):
+	sys.exit()
+
+if (sys.argv[1] == "start"):
+	subprocess.Popen(["su", "pi", "-c", "/etc/init.d/run_cvlc.sh"])
+
+if (sys.argv[1] == "stop"):
+	subprocess.call(["killall", "vlc"])
+```
+ - run_cvlc.sh:
+```cvlc --extraintf http:telnet --http-port 8888
+```
+ - den Dienst mit `sudo update-rc.d cvlcd defaults` aktivieren

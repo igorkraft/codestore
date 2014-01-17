@@ -108,5 +108,5 @@ cvlc --extraintf http:telnet --http-port 8888
 ```
 
 - den Dienst mit `sudo update-rc.d cvlcd defaults` aktivieren
-- in der `/usr/share/vlc/lua/http/.hosts` die Zeile `192.168.0.0/150` eintragen
+- in der `/usr/share/vlc/lua/http/.hosts` die Zeile `192.168.0.0/16` eintragen
 - Rechner neustarten

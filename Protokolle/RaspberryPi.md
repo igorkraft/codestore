@@ -73,6 +73,7 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
 - vlc installieren
 - zwei Skripte unter /etc/init.d anlegen und ausführbar machen
  - cvlcd:
+
 ```#!/usr/bin/python
 #coding=UTF-8
 ### BEGIN INIT INFO
@@ -98,7 +99,10 @@ if (sys.argv[1] == "start"):
 if (sys.argv[1] == "stop"):
 	subprocess.call(["killall", "vlc"])
 ```
+
  - run_cvlc.sh:
+
 ```cvlc --extraintf http:telnet --http-port 8888
 ```
+
  - den Dienst mit `sudo update-rc.d cvlcd defaults` aktivieren

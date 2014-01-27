@@ -112,3 +112,15 @@ DurationFormatUtils.formatDuration(timeInMS, "HH:mm:ss,SSS")
 
 • nettes LookAndFeel
 UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+
+• eine Funktion als Java-Script auslagern
+private String callScriptFunction(String param) throws Exception
+{
+	ScriptEngineManager manager = new ScriptEngineManager();
+	ScriptEngine engine = manager.getEngineByName("JavaScript");
+	InputStreamReader reader = new InputStreamReader(new FileInputStream("script.js"), "UTF-8");
+	engine.eval(reader);
+	return ((Invocable)engine).invokeFunction("scriptFunction", param).toString();
+}
+// script.js:
+function scriptFunction(param) { return "result"; }

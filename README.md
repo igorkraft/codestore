@@ -147,6 +147,7 @@
 - http://www.amazon.de/Mobile-Web-Apps-mit-JavaScript-professionelle/dp/3868020853/ref=sr_1_2?ie=UTF8&qid=1389855133&sr=8-2&keywords=Mobile+web+apps+mit+javascript
 - http://piotrbuda.eu/2012/05/installing-google-play-on-android-emulator.html
 - http://de.wikipedia.org/wiki/Foundation-Zyklus
+- http://www.amazon.de/2-TECH-Port-Netzteil-aktiv-Speed/dp/B000M95252/ref=sr_1_24/277-5992203-5258640?s=computers&ie=UTF8&qid=1391084419&sr=1-24&keywords=usb-+hub+mit+netzteil
 
 -
     NewTab-Bookmark

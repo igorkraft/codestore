@@ -148,6 +148,10 @@
 - http://piotrbuda.eu/2012/05/installing-google-play-on-android-emulator.html
 - http://de.wikipedia.org/wiki/Foundation-Zyklus
 - http://www.amazon.de/2-TECH-Port-Netzteil-aktiv-Speed/dp/B000M95252/ref=sr_1_24/277-5992203-5258640?s=computers&ie=UTF8&qid=1391084419&sr=1-24&keywords=usb-+hub+mit+netzteil
+- http://de.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol
+ - http://de.wikipedia.org/wiki/Liste_von_XMPP-Server-Software
+ - http://xmpp.org/xmpp-software/servers/
+ - http://wiki.ubuntuusers.de/Openfire
 
 -
     NewTab-Bookmark

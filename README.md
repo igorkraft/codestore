@@ -152,6 +152,7 @@
  - http://de.wikipedia.org/wiki/Liste_von_XMPP-Server-Software
  - http://xmpp.org/xmpp-software/servers/
  - http://wiki.ubuntuusers.de/Openfire
+- http://de.wikipedia.org/wiki/Kali_Linux (Distribution mit Sicherheits- und Netzwerktool für Penetrationtests)
 
 -
     NewTab-Bookmark

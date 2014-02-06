@@ -154,6 +154,7 @@
  - http://wiki.ubuntuusers.de/Openfire
 - http://de.wikipedia.org/wiki/Kali_Linux (Distribution mit Sicherheits- und Netzwerktool für Penetrationtests)
 - https://github.com/Lakshmipathi/extcarve (Ext4 Dateiwiederherstellung)
+ - ext4magic geht wohl noch besser
 
 -
     NewTab-Bookmark

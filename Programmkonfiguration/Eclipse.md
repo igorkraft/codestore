@@ -8,6 +8,12 @@
 - Show line numbers: &#x2611;
 - Show whitespace characters: &#x2611;
 
+#### General->Workspace
+- Text file encoding: UTF-8
+
+#### Web->HTML Files
+- Encoding: UTF-8
+
 #### XML->Editor
 - Line width: 800
 

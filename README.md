@@ -159,6 +159,7 @@
 - http://3dzentrale.com/portfolio/sebastian/sebastian.html
 - http://de.wikipedia.org/wiki/Ijon_Tichy:_Raumpilot
 - http://de.wikipedia.org/wiki/Die_kommenden_Tage
+- http://code.google.com/p/guava-libraries/wiki/GuavaExplained (Strings, Collections, Math, Files, etc.)
 
 -
     NewTab-Bookmark

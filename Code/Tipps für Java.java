@@ -124,3 +124,9 @@ private String callScriptFunction(String param) throws Exception
 }
 // script.js:
 function scriptFunction(param) { return "result"; }
+
+• Trim mit anderen Zeichen als Whitespaces (erfordert guava)
+CharMatcher.anyOf("{}").trimFrom("{key1=value1, key2=value2}");
+
+• Schlüssel-Werte-Paare von String nach Map (erfordert guava)
+Map<String, String> result = Splitter.on(", ").withKeyValueSeparator("=").split("key1=value1, key2=value2");

@@ -157,6 +157,7 @@
  - ext4magic geht wohl noch besser
 - das bessere Apache Velocity: http://en.wikipedia.org/wiki/Thymeleaf
 - http://3dzentrale.com/portfolio/sebastian/sebastian.html
+- http://de.wikipedia.org/wiki/Ijon_Tichy:_Raumpilot
 
 -
     NewTab-Bookmark

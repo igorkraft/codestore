@@ -130,3 +130,8 @@ CharMatcher.anyOf("{}").trimFrom("{key1=value1, key2=value2}");
 
 • Schlüssel-Werte-Paare von String nach Map (erfordert guava)
 Map<String, String> result = Splitter.on(", ").withKeyValueSeparator("=").split("key1=value1, key2=value2");
+
+• alle Tabellen einer HSQLDB anzeigen
+SELECT TABLE_NAME, COLUMN_NAME, TYPE_NAME, COLUMN_SIZE, DECIMAL_DIGITS, IS_NULLABLE 
+FROM INFORMATION_SCHEMA.SYSTEM_COLUMNS 
+WHERE TABLE_NAME NOT LIKE 'SYSTEM_%'

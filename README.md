@@ -164,6 +164,7 @@
 - http://www.kreuzburger.de/ (Burgerladen mit Lieferservice)
 - https://upvoid.com/miner/about/ (Voxel-Engine)
 - http://www.heise.de/developer/artikel/JavaScript-Web-Workers-und-Conway-s-Game-of-Life-in-3D-2105172.html
+- http://www.zweirad-stadler.com/standorte/berlin.html,f7?PHPSESSID=o80id2hpm2grigh3r39v0cqk73
 
 -
     NewTab-Bookmark

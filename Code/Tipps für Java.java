@@ -133,3 +133,6 @@ Map<String, String> result = Splitter.on(", ").withKeyValueSeparator("=").split(
 
 • alle Tabellen einer HSQLDB anzeigen
 SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA like 'PUBLIC'
+
+• um in LogCat nach Tags zu filtern
+tag:^(Tagname1|Tagname2).*$

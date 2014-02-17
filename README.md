@@ -169,6 +169,8 @@
 - LibGDX und Blender
  - http://codebin.co.uk/blog/using-blender-3d-models-in-libgdx/
  - https://github.com/libgdx/libgdx/wiki/Importing-Blender-models-in-LibGDX
+- http://www.nicalis.com/ (Retro-Games)
+- http://en.wikipedia.org/wiki/Cave_Story (Freeware)
 
 -
     NewTab-Bookmark

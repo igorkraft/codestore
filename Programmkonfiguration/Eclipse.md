@@ -36,3 +36,6 @@
  - alle anderen: Next line
 - Line Wrapping
  - Maximum line width: 800
+
+#### Run/Debug->Launching
+- Launch the previously launched application: &#x2611;

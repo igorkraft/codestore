@@ -172,6 +172,9 @@
 - http://www.nicalis.com/ (Retro-Games)
 - http://en.wikipedia.org/wiki/Cave_Story (Freeware)
 - https://github.com/spring-projects/spring-boot/blob/master/docs/howto.md (Spring-Boot-Beschreibung)
+- http://www.jolokia.org/ (JMX-Konverter nach Rest/JSON)
+ - http://hawt.io/ (der dazu passende JSON-Vier, den gibt es auch als Firefox-Plugin)
+- https://github.com/spring-projects/spring-boot/blob/master/spring-boot-samples/pom.xml (Spring Boot Modulliste)
 
 -
     NewTab-Bookmark

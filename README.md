@@ -174,7 +174,8 @@
 - https://github.com/spring-projects/spring-boot/blob/master/docs/howto.md (Spring-Boot-Beschreibung)
 - http://www.jolokia.org/ (JMX-Konverter nach Rest/JSON)
  - http://hawt.io/ (der dazu passende JSON-Vier, den gibt es auch als Firefox-Plugin)
-- https://github.com/spring-projects/spring-boot/blob/master/spring-boot-samples/pom.xml (Spring Boot Modulliste)
+- https://github.com/spring-projects/spring-boot/blob/master/spring-boot-samples/pom.xml
+ - https://github.com/spring-projects/spring-boot/tree/master/spring-boot-starters (Spring Boot Modulliste)
 
 -
     NewTab-Bookmark

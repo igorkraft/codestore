@@ -173,9 +173,11 @@
 - http://en.wikipedia.org/wiki/Cave_Story (Freeware)
 - https://github.com/spring-projects/spring-boot/blob/master/docs/howto.md (Spring-Boot-Beschreibung)
 - http://www.jolokia.org/ (JMX-Konverter nach Rest/JSON)
- - http://hawt.io/ (der dazu passende JSON-Vier, den gibt es auch als Firefox-Plugin)
+ - http://hawt.io/ (alias hawtio, der dazu passende JSON-Vier, den gibt es auch als Firefox-Plugin)
 - https://github.com/spring-projects/spring-boot/blob/master/spring-boot-samples/pom.xml
  - https://github.com/spring-projects/spring-boot/tree/master/spring-boot-starters (Spring Boot Modulliste)
+- http://metrics.codahale.com/getting-started/ (enthält Annotations für Beans, die Überwacht werden sollen)
+ - die Werte sind per JMX verfügbar und können mit hawtio dargestellt werden
 
 -
     NewTab-Bookmark

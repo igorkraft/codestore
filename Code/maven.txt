@@ -8,3 +8,4 @@
   bei disem Aufruf wurde keine Phase angegeben, weswegen keiner der Lebenszyklen abgewickelt wird
   das der Parameter nicht als Phase interpretiert wird, liegt an dessen Doppelpunkt (alle Goal-Angaben enthalten Doppelpunkte)
 - beim Maven-Aufruf mit einer Phase wird nicht nur die Phase selbst, sondern auch alle ihre Vorgängerphasen ausgeführt
+- `mvn source:jar` erzeugt ein -source.jar Paket

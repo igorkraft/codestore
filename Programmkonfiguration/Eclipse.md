@@ -39,3 +39,9 @@
 
 #### Run/Debug->Launching
 - Launch the previously launched application: &#x2611;
+
+#### Color Theme Plugin Update Site (enthält Zenburn)
+- http://eclipse-color-theme.github.io/update/
+
+#### General->Appearance->Color Theme
+- Zenburn: &#x2611;

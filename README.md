@@ -178,6 +178,13 @@
  - https://github.com/spring-projects/spring-boot/tree/master/spring-boot-starters (Spring Boot Modulliste)
 - http://metrics.codahale.com/getting-started/ (enthält Annotations für Beans, die Überwacht werden sollen)
  - die Werte sind per JMX verfügbar und können mit hawtio dargestellt werden
+- http://jhipster.github.io/
+- http://presos.dsyer.com/decks/spring-boot-intro.html
+- https://github.com/spring-projects/spring-boot/tree/master/spring-boot-starters/spring-boot-starter-shell-remote
+- http://de.slideshare.net/makingx/spring-4spring-boot-spring-jjug-jsug
+- http://projectlombok.org/features/Cleanup.html
+- http://www.slf4j.org/images/legacy.png
+
 
 -
     NewTab-Bookmark

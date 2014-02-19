@@ -13,7 +13,7 @@
 - https://linksunten.indymedia.org/node/71041
 - http://www.youtube.com/watch?v=pV8UuvnQcmE
 - http://mein.tv/
-- http://www.public-republic.de/artist-of-the-week-%E2%80%94-carl-warner.php
+- http://www.public-republic.de/artist-of-the-week-%E2%%94-carl-warner.php
 - http://shop.embedded-projects.net/gnublin
 - http://www.facebook.com/media/set/?set=a.241022095989513.54759.118462898245434&type=3
 - http://weavesilk.com/
@@ -188,6 +188,7 @@
  - enthält Folien, die die Richtung von Spring und Java 8 zeigen
 - http://projectlombok.org/features/Cleanup.html (Cleanup schließt Stream, wenn der Scope verlassen wird)
  - das gesamte Projekt Lombok ist spannend
+ - man kann per Annotation Getter und Setter generieren lassen!
 - http://www.slf4j.org/images/legacy.png
 - http://www.slf4j.org/legacy.html
  - die Grafik zeigt, wo man ansetzen muss bestehende Loggings aus seinen Fremdabhängigkeiten nimmt (commons-logging muss dafür excludiert werden)

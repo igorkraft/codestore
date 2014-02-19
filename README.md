@@ -179,12 +179,19 @@
 - http://metrics.codahale.com/getting-started/ (enthält Annotations für Beans, die Überwacht werden sollen)
  - die Werte sind per JMX verfügbar und können mit hawtio dargestellt werden
 - http://jhipster.github.io/
+ - Beispielprojekt für Spring-Boot mit Frontends für Metriken, Loggin usw.
 - http://presos.dsyer.com/decks/spring-boot-intro.html
+ - Gedankenstütze für Spring-Boot (erklärt, wie Eigenschaften stufenweise überschrieben werden)
 - https://github.com/spring-projects/spring-boot/tree/master/spring-boot-starters/spring-boot-starter-shell-remote
+ - Modul mit SSH, das im commands-Ordner mit eigenen Befehlen erweitert werden kann
 - http://de.slideshare.net/makingx/spring-4spring-boot-spring-jjug-jsug
+ - enthält Folien, die die Richtung von Spring und Java 8 zeigen
 - http://projectlombok.org/features/Cleanup.html (Cleanup schließt Stream, wenn der Scope verlassen wird)
  - das gesamte Projekt Lombok ist spannend
 - http://www.slf4j.org/images/legacy.png
+- http://www.slf4j.org/legacy.html
+ - die Grafik zeigt, wo man ansetzen muss bestehende Loggings aus seinen Fremdabhängigkeiten nimmt (commons-logging muss dafür excludiert werden)
+ - für Spring-Boot wird die native slf4j Implementierung Logback genutzt
 
 
 -

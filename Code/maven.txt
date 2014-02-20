@@ -12,3 +12,4 @@
 - `mvn package -Dmaven.repo.local=target/repository` legt das lokale Repository fest (geht auch in der settings.xml)
 - `mvn dependency:unpack-dependencies -Dmdep.useSubDirectoryPerArtifact=true` wie `mvn dependency:copy-dependencies` nur dass die Artefacte ausgepackt werden
 - `mvn dependency:tree` druckt einen Baum der aufgelösten Abhängigkeiten
+- `mvn dependency:build-classpath` listet die Dependencies mit absoluten Pfaden

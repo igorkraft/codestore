@@ -43,6 +43,10 @@
 #### General->Appearance->Color Theme
 - http://eclipse-color-theme.github.io/update/ (Color Theme Plugin Update Site)
 - Zenburn: &#x2611;
+ 
+#### Variables-View->View Menu->Layout->Select Columns
+- Declared Type &#x2611;
+- Actual Type &#x2611;
 
 #### Sonstiges
 - über das Kontextmenü der Variables-View können Watchpoints für primitive Datentypen erzeugt werden

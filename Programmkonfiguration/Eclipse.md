@@ -47,4 +47,5 @@
 #### Sonstiges
 - über das Kontextmenü der Variables-View können Watchpoints für primitive Datentypen erzeugt werden
 - Watchpoints können auch bei Attributdeklaration mit Doppelklick auf die Breakpointbar gemacht werden
-- mit Doppelklick auf die Breakpointbar bei Klassendeklaration wird ein Brechpunkt gesetzt, der immer dann unterbricht, wenn ein Objekt der Klasse erzeugt wird (egal mit welchem Konstruktor)
+- mit Doppelklick auf die Breakpointbar bei Klassendeklaration wird ein Breakpoint gesetzt, der immer dann unterbricht, wenn ein Objekt der Klasse erzeugt wird (egal mit welchem Konstruktor)
+- unter Watchpoint-Properties kann festgelegt werden, ob ein Watchpoint bei lesendem oder schreibendem Zugriff unterbrechen soll

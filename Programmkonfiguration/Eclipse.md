@@ -50,3 +50,5 @@
 - mit Doppelklick auf die Breakpointbar bei Klassendeklaration wird ein Breakpoint gesetzt, der immer dann unterbricht, wenn ein Objekt der Klasse erzeugt wird (egal mit welchem Konstruktor)
 - unter Watchpoint-Properties kann festgelegt werden, ob ein Watchpoint bei lesendem oder schreibendem Zugriff unterbrechen soll
 - Breakpoints bei Methodendeklaration können auch für das Verlassen von Methoden eingestellt werden (praktisch, wenn es mehrere Austrittspunkte gibt)
+- wenn man den folgenden Code für eine Condition festlegt, dann werden Konsolenausgaben beim durchlaufen der Breakpoints gemacht, ohne dass Ausführung unterbrochen wird
+ - `System.out.println("Hello there"); return false;`

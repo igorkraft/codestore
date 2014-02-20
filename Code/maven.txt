@@ -9,4 +9,5 @@
   das der Parameter nicht als Phase interpretiert wird, liegt an dessen Doppelpunkt (alle Goal-Angaben enthalten Doppelpunkte)
 - beim Maven-Aufruf mit einer Phase wird nicht nur die Phase selbst, sondern auch alle ihre Vorgängerphasen ausgeführt
 - `mvn source:jar` erzeugt ein -source.jar Paket
-- `mvn package -Dmaven.repo.local=target/repository` legt das lokale Repository fest
+- `mvn package -Dmaven.repo.local=target/repository` legt das lokale Repository fest (geht auch in der settings.xml)
+- `mvn dependency:unpack-dependencies -Dmdep.useSubDirectoryPerArtifact=true` wie `mvn dependency:copy-dependencies` nur dass die Artefacte ausgepackt werden

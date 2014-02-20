@@ -9,6 +9,7 @@ Nummerierung:
   
 Großschreibung am Satzanfang
 - Extras -> AutoKorrektur-Optionen -> Optionen -> Jeden Satz mit...
+- Extras -> AutoKorrektur-Optionen -> Optionen -> ZWei GRoßbuchstaben...
 
 Farbpalette erweitern
 - Extras -> Optionen -> Farben -> Hinzufügen

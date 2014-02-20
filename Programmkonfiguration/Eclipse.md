@@ -46,3 +46,4 @@
 
 #### Sonstiges
 - über das Kontextmenü der Variables-View können Watchpoints für primitive Datentypen erzeugt werden
+- Watchpoints können auch bei Variablendeklaration mit Doppelklick auf die Breakpointbar gemacht werden

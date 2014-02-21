@@ -195,6 +195,7 @@
  - für Spring-Boot wird die native slf4j Implementierung Logback genutzt
 - http://www.staff.science.uu.nl/~geijt101/papers/SA2013/index.html
  - Flexible Muscle-Based Locomotion for Bipedal Creatures (zum totlachen :-)
+- http://wiki.blender.org/index.php/Dev:Ref/Release_Notes/2.70
 
 
 -

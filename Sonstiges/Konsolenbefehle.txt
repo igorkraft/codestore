@@ -152,3 +152,9 @@ echo -n 'password' | md5sum
 # nur gelistete Dateien eines Verzeichnisses kopieren
 cp -v -r -d /src/+(fso1|fso2|fso3) /dest
 -> v=Fortschritt; r=Rekursiv; d=Verknüpfungen nur kopieren, aber nicht folgen
+
+# Festplattenkapazität anzeigen
+discus
+
+# Prozessorauslastung anzeigen
+top

@@ -197,6 +197,7 @@
  - Flexible Muscle-Based Locomotion for Bipedal Creatures (zum totlachen :-)
 - http://wiki.blender.org/index.php/Dev:Ref/Release_Notes/2.70
  - http://cgcookie.com/blender/2011/05/08/game-engine-create-a-basic-game/
+- https://github.com/jwiegley/git-scripts/blob/master/git-forest (kann vernünftige Bäume darstellen)
 
 
 -

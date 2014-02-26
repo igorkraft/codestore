@@ -40,6 +40,11 @@ new URL( "http://google.de/" ).openStream()
 • Enumeration -> ArrayList
 Collections.list(enumeration)
 
+• String -> File (ohne commons-io)
+PrintWriter writer = new PrintWriter("/pathtofile");
+writer.print(content);
+writer.close();
+
 • Array -> List
 List<TypeOfArray> list = new ArrayList<TypeOfArray>(); 
 Collections.addAll(list, array);
@@ -140,3 +145,7 @@ SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA like 'PUBLIC'
 
 • um in LogCat nach Tags zu filtern
 tag:^(Tagname1|Tagname2).*$
+
+• Classen eines APK auflistenlisten (nur auf einem Androidgerät und nur mit dem classes.dex der eingenen Anwendung)
+DexFile dexFile = new DexFile(this.getBaseContext().getApplicationInfo().sourceDir);
+Collections.list(dexFile.entries());

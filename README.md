@@ -160,6 +160,11 @@
 - http://de.wikipedia.org/wiki/Ijon_Tichy:_Raumpilot
 - http://de.wikipedia.org/wiki/Die_kommenden_Tage
 - http://code.google.com/p/guava-libraries/wiki/GuavaExplained (Strings, Collections, Math, Files, etc.)
+ - Files kann toString() mit Charset, 
+ - touch
+ - createTempDir
+ - getNameWithoutExtension
+ - equal
 - http://www.israbox.com/ (für Musik)
 - http://www.kreuzburger.de/ (Burgerladen mit Lieferservice)
 - https://upvoid.com/miner/about/ (Voxel-Engine)

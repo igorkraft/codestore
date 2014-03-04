@@ -205,6 +205,8 @@
 - https://github.com/jwiegley/git-scripts/blob/master/git-forest (kann vernünftige Bäume darstellen)
 - https://jogamp.org/wiki/index.php/Maven_And_Android (OpenGL mit unpack von natives)
 - http://de.wikipedia.org/wiki/Threema (WhatsApp mit Clientverschlüsselung)
+- http://www.xmarks.com/topic/gulli (E-Book-Liste)
+- http://de.codeplex.com/downloads/get/721506 (recht cooler Android-Explorer)
 
 
 -

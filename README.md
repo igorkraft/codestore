@@ -207,6 +207,7 @@
 - http://de.wikipedia.org/wiki/Threema (WhatsApp mit Clientverschlüsselung)
 - http://www.xmarks.com/topic/gulli (E-Book-Liste)
 - http://de.codeplex.com/downloads/get/721506 (recht cooler Android-Explorer)
+- http://www.pearl.de/a-PX1673-5452.shtml?query=Funksteckdose
 
 
 -

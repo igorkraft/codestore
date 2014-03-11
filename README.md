@@ -214,6 +214,7 @@
  - http://mooc.org/
  - http://www.linuxfoundation.org/news-media/announcements/2014/03/linux-foundation-build-massive-open-online-course-program-edx
 - http://gooseberry.blender.org/ (open movie project)
+- https://www.coursera.org/course/compvision
 
 
 -

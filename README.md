@@ -209,6 +209,8 @@
 - http://de.codeplex.com/downloads/get/721506 (recht cooler Android-Explorer)
 - http://www.pearl.de/a-PX1673-5452.shtml?query=Funksteckdose
 - http://www.bbc.co.uk/programmes/articles/1g84m0sXpnNCv84GpN2PLZG/the-hitchhiker-s-guide-to-the-galaxy-game-30th-anniversary-edition
+- http://de.wikipedia.org/wiki/Massive_Open_Online_Course
+ - http://en.wikipedia.org/wiki/EdX
 
 
 -

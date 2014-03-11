@@ -212,6 +212,7 @@
 - http://de.wikipedia.org/wiki/Massive_Open_Online_Course
  - http://en.wikipedia.org/wiki/EdX
  - http://mooc.org/
+ - http://www.linuxfoundation.org/news-media/announcements/2014/03/linux-foundation-build-massive-open-online-course-program-edx
 
 
 -

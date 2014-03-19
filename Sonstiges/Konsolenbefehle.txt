@@ -158,3 +158,6 @@ discus
 
 # Prozessorauslastung anzeigen
 top
+
+# Base64 dekodieren
+echo `echo QWxhZGRpbjpvcGVuIHNlc2FtZQ== | base64 --decode`

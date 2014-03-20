@@ -149,3 +149,6 @@ tag:^(Tagname1|Tagname2).*$
 • Classen eines APK auflistenlisten (nur auf einem Androidgerät und nur mit dem classes.dex der eingenen Anwendung)
 DexFile dexFile = new DexFile(this.getBaseContext().getApplicationInfo().sourceDir);
 Collections.list(dexFile.entries());
+
+• Stream splitten (erfordert commons-io, der letzte Parameter legt fest, ob beim close beide Streams geschlossen werden sollen)
+TeeInputStream(inStream, outStream, true)

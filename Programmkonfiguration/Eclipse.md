@@ -56,3 +56,20 @@
 - Breakpoints bei Methodendeklaration können auch für das Verlassen von Methoden eingestellt werden (praktisch, wenn es mehrere Austrittspunkte gibt)
 - wenn man den folgenden Code für eine Condition festlegt, dann werden Konsolenausgaben beim durchlaufen der Breakpoints gemacht, ohne dass die Ausführung unterbrochen wird (praktisch um race conditions zu finden)
  - `System.out.println("Hello there"); return false;`
+
+#### Remote Debugging
+
+- ermöglicht Eclipse über einen offenen Port eine laufende JVM zu debuggen
+ - die JVM lauscht auf dem Port und wartet darauf, dass sich ein Debugger anschließt
+- funktioniert per Netzwerk auch über verschiedene Rechner
+- der Sourcecode der zu debuggenden Bibliothek muss zum Binary in der externen JVM passen
+- zu debuggendes Java mit diesen Parametern aufrufen   
+  `-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8765`
+ - `suspend=[y|n]` legt fest, ob die JVM beim Start so lange blockieren soll, bis sich ein Eclipse auf dem Debugport meldet (sinnvoll für das Debuggen der Initialisierungsphase)
+- für Tomcat müssen die Parameter oben in die catalina.bat eingetragen werden
+ - `set JAVA_OPTS=%JAVA_OPTS% -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8765`
+ - hat im Test nicht mit einem Tomcat funktioniert, der als Dienst installiert war
+- in Eclipse eine Run Configuration vom Typ `Remote Java Application` anlegen
+ - Connection Type: Standard (Socket Attach)
+ - Host: <Rechner auf dem die JVM läuft>
+ - Port: 8765

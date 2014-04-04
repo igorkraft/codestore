@@ -106,6 +106,9 @@ work\Catalina\localhost\<Application>\org\apache\jsp
 • der etwas bessere Split aus commons-lang
 StringUtils.splitByWholeSeparatorPreserveAllTokens(text,newLine);
 
+• liefert alles links von einer bestimmten Zeichenkette
+StringUtils.substringBefore(str, separator)
+
 • Passwortabfragen
 JPasswordField passwordField = new JPasswordField(20);
 passwordField.setEchoChar('*');

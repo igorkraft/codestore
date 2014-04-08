@@ -161,3 +161,7 @@ top
 
 # Base64 dekodieren
 echo `echo QWxhZGRpbjpvcGVuIHNlc2FtZQ== | base64 --decode`
+
+# Prozess-ID zu einem Port herausfinden (nur Windows)
+# die Prozess-ID wird auch im Tasjmanager angezeigt
+netstat -a -n -o

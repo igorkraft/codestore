@@ -168,3 +168,6 @@ netstat -l -p    (unter Linux)
 
 # Dateisystem über SSH einhängen (aushängen mit umount)
 sshfs user@host:/ /mnt/
+
+# einen Webserver mit python starten
+python -m SimpleHTTPServer 8081

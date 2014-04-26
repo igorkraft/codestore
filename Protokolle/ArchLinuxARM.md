@@ -12,3 +12,10 @@
 
 - initiale Anmeldedaten `root:root`
 - mit `passwd` das Passwort ändern
+- `pcman -S adduser` (Programm zum Hinzufügen eines Benutzers installieren)
+- neuen Benutzer anlegen `adduser ichabod` (außer dem Passwort alles mit `ENTER` bestätigen)
+
+#### Sonstiges
+
+- Verwendung des Paketmanagers (Installation, Aktualisierung, Systemaktualisierung, usw.)
+ - https://wiki.archlinux.de/title/pacman

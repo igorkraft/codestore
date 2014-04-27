@@ -23,6 +23,11 @@
  - `ESC` drücken, um in den Command-Mode zu wechseln
  - `:x` eingeben und bestätigen (entspricht speichern und schließen)
 - `pacman -S screen` installieren
+- in der `/home/ichabod/.bashrc` folgende Zeile hinzufügen
+ - `PS1='\[\033[00;33m\]\u@\h \[\033[00;36m\]\w\n\$ \[\033[03;00m\]'`
+
+#### Webserver aufsetzen
+
 - `pacman -S apache` installieren
 - `pacman -S libxml2` installieren
 
@@ -32,3 +37,5 @@
  - https://wiki.archlinux.de/title/pacman
 - Erläuterungen zu sudo
  - https://wiki.archlinux.de/title/Sudo
+- die Paketdateien aller installierten Programme liegen hier
+ - `/var/cache/pacman/pkg/`

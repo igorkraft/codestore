@@ -21,7 +21,10 @@
  - `i` drücken um in den Edit-Mode zu wechseln
  - die Zeile `ichabod ALL=(ALL) ALL` hinzufügen (und eine weitere Leerzeile)
  - `ESC` drücken, um in den Command-Mode zu wechseln
- - `ZZ` (Großbuchstaben) eingeben und bestätigen (entspricht speichern und schließen)
+ - `:x` eingeben und bestätigen (entspricht speichern und schließen)
+- `pacman -S screen` installieren
+- `pacman -S apache` installieren
+- `pacman -S libxml2` installieren
 
 #### Sonstiges
 

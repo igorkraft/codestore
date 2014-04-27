@@ -12,10 +12,20 @@
 
 - initiale Anmeldedaten `root:root`
 - mit `passwd` das Passwort ändern
-- `pcman -S adduser` (Programm zum Hinzufügen eines Benutzers installieren)
+- `pacman -S adduser` (Programm zum Hinzufügen eines Benutzers installieren)
 - neuen Benutzer anlegen `adduser ichabod` (außer dem Passwort alles mit `ENTER` bestätigen)
+- `pacman -S sudo` das Programm sudo installieren
+- ichabod für die Verwendung von sudo freischalten
+ - `visudo` ausführen (Öffnet vi mit Syntaxprüfung für /etc/sudoers)
+ - mit dem Cursor zu einer freien Zeile navigieren
+ - `i` drücken um in den Edit-Mode zu wechseln
+ - die Zeile `ichabod ALL=(ALL) ALL` hinzufügen (und eine weitere Leerzeile)
+ - `ESC` drücken, um in den Command-Mode zu wechseln
+ - `ZZ` (Großbuchstaben) eingeben und bestätigen (entspricht speichern und schließen)
 
 #### Sonstiges
 
 - Verwendung des Paketmanagers (Installation, Aktualisierung, Systemaktualisierung, usw.)
  - https://wiki.archlinux.de/title/pacman
+- Erläuterungen zu sudo
+ - https://wiki.archlinux.de/title/Sudo

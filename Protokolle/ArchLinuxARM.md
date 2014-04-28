@@ -39,3 +39,6 @@
  - https://wiki.archlinux.de/title/Sudo
 - die Paketdateien aller installierten Programme liegen hier
  - `/var/cache/pacman/pkg/`
+- `systemctl list-unit-files` zeigt alle Dienste und deren Status an
+- `systemctl enable httd.service` Dienst aktivieren
+- `systemctl status httd.service` und `systemctl is-enabled httpd.service` zeigen den Status an

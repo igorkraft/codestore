@@ -30,6 +30,8 @@
 
 - `pacman -S apache` installieren
 - `pacman -S libxml2` installieren
+- mit `sudo systemctl enable httpd.service` festlegen, dass der Dienst beim booten gestartet werden soll
+- mit `sudo systemctl start httpd.service` den Dienst starten und prüfen, ob er funktioniert
 
 #### Sonstiges
 
@@ -39,6 +41,13 @@
  - https://wiki.archlinux.de/title/Sudo
 - die Paketdateien aller installierten Programme liegen hier
  - `/var/cache/pacman/pkg/`
+
+#### wichtige Konsolenbefehle
+
+- `sudo pacman -S <program>` installiert ein Programm
+- `sudo pacman -Sy` lokale Datenbank anktualisieren
+- `sudo pacman -Su` alle installierten Pakete aktualisieren
 - `systemctl list-unit-files` zeigt alle Dienste und deren Status an
-- `systemctl enable httd.service` Dienst aktivieren
-- `systemctl status httd.service` und `systemctl is-enabled httpd.service` zeigen den Status an
+- `sudo systemctl enable httpd.service` Dienst beim Booten des Rechners starten
+- `systemctl status httpd.service` und `systemctl is-enabled httpd.service` zeigen den Status an
+- `sudo systemctl start httpd.service` startet den Dienst

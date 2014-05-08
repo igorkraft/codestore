@@ -47,20 +47,20 @@
 - die Zeile `Listen 80` durch `Listen 443` ersetzen
 - diesen Block einfügen:
 
-    <virtualhost *:443>
-            DocumentRoot "/srv/http"
-            SSLEngine On
-            SSLCertificateFile /etc/httpd/cert/apache.pem
-            ProxyRequests Off
-            <Proxy *>
-                    Order Deny,allow
-                    Allow from all
-            </Proxy>
-            ProxyPass /ajaxterm/ http://localhost:8022/
-            ProxyPassReverse /ajaxterm/ http://localhost:8022/
-            ProxyPass /mongoose/ http://localhost:8081/
-            ProxyPassReverse /mongoose/ http://localhost:8081/
-    </virtualhost>
+	<virtualhost *:443>
+		DocumentRoot "/srv/http"
+		SSLEngine On
+		SSLCertificateFile /etc/httpd/cert/apache.pem
+		ProxyRequests Off
+		<Proxy *>
+			Order Deny,allow
+			Allow from all
+		</Proxy>
+		ProxyPass /ajaxterm/ http://localhost:8022/
+		ProxyPassReverse /ajaxterm/ http://localhost:8022/
+		ProxyPass /mongoose/ http://localhost:8081/
+		ProxyPassReverse /mongoose/ http://localhost:8081/
+	</virtualhost>
 
 #### Sonstiges
 

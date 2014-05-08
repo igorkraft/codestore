@@ -26,12 +26,40 @@
 - in der `/home/ichabod/.bashrc` folgende Zeile hinzufügen
  - `PS1='\[\033[00;33m\]\u@\h \[\033[00;36m\]\w\n\$ \[\033[03;00m\]'`
 
-#### Webserver aufsetzen
+#### Webserver installieren und konfigurieren
 
 - `pacman -S apache` installieren
 - `pacman -S libxml2` installieren
 - mit `sudo systemctl enable httpd.service` festlegen, dass der Dienst beim booten gestartet werden soll
 - mit `sudo systemctl start httpd.service` den Dienst starten und prüfen, ob er funktioniert
+- ein Server-Zertifikat erstellen
+ - `mkdir -p /etc/httpd/cert`
+ - `openssl req -new -x509 -days 3650 -nodes -out /etc/httpd/cert/apache.pem -keyout /etc/httpd/cert/apache.pem`
+ - `ln -sf /etc/httpd/cert/apache.pem /etc/httpd/cert/\`/usr/bin/openssl x509 -noout -hash < /etc/httpd/cert/apache.pem\`.0`
+ - `chmod 600 /etc/httpd/cert/apache.pem`
+
+#### httpd.conf anpassen
+
+- Location: `/etc/httpd/conf/httpd.conf`
+- die Zeile `LoadModule authn_dbd_module modules/mod_authn_dbd.so` einkommentieren
+- die Zeile `LoadModule auth_form_module modules/mod_auth_form.so` einkommentieren
+- die Zeile `LoadModule ssl_module modules/mod_ssl.so` einkommentieren
+- die Zeile `Listen 80` durch `Listen 443` ersetzen
+- diesen Block einfügen:
+    <virtualhost *:443>
+            DocumentRoot "/srv/http"
+            SSLEngine On
+            SSLCertificateFile /etc/httpd/cert/apache.pem
+            ProxyRequests Off
+            <Proxy *>
+                    Order Deny,allow
+                    Allow from all
+            </Proxy>
+            ProxyPass /ajaxterm/ http://localhost:8022/
+            ProxyPassReverse /ajaxterm/ http://localhost:8022/
+            ProxyPass /mongoose/ http://localhost:8081/
+            ProxyPassReverse /mongoose/ http://localhost:8081/
+    </virtualhost>
 
 #### Sonstiges
 

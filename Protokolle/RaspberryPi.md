@@ -71,7 +71,8 @@ pid=/var/run/ddclient.pid # record PID in file.
 ssl=yes # use ssl-support. Works with
 # ssl-library
 
-use=if, if=eth0
+#use=if, if=eth0
+use=web, web=checkip.dyndns.com
 server=freedns.afraid.org
 protocol=freedns
 login=<login_name>

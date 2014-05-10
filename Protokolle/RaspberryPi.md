@@ -61,7 +61,7 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
         Listen 443
     </IfModule>
 ```
-- `sudo apt-get install apache2` ausführen
+- `sudo apt-get install ddclient` ausführen
 - in der `/etc/ddclient.conf` das folgende eintragen:
 ```
 daemon=5m

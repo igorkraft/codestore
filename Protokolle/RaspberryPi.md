@@ -67,7 +67,7 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
 daemon=5m
 timeout=10
 syslog=no # log update msgs to syslog
-pid=/var/run/ddclient.pid # record PID in file.
+#pid=/var/run/ddclient.pid # record PID in file.
 ssl=yes # use ssl-support. Works with
 # ssl-library
 

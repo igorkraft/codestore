@@ -72,7 +72,7 @@ ssl=yes # use ssl-support. Works with
 # ssl-library
 
 #use=if, if=eth0
-use=web, web=checkip.dyndns.com
+use=web, web=checkip.dyndns.com, web-skip='IP Address'
 server=freedns.afraid.org
 protocol=freedns
 login=<login_name>

@@ -61,6 +61,23 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
         Listen 443
     </IfModule>
 ```
+- `sudo apt-get install apache2` ausführen
+- in der `/etc/ddclient.conf` das folgende eintragen:
+```
+daemon=5m
+timeout=10
+syslog=no # log update msgs to syslog
+pid=/var/run/ddclient.pid # record PID in file.
+ssl=yes # use ssl-support. Works with
+# ssl-library
+
+use=if, if=eth0
+server=freedns.afraid.org
+protocol=freedns
+login=<login_name>
+password=<pwd>
+<domain-URL>
+```
 
 ### SSH
 - Anzeige von X-Fenstern ermöglichen

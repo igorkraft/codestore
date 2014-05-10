@@ -46,7 +46,7 @@
 - die Zeile `LoadModule ssl_module modules/mod_ssl.so` einkommentieren
 - die Zeile `Listen 80` durch `Listen 443` ersetzen
 - diesen Block einfügen:
-
+```xml
 	<virtualhost *:443>
 		DocumentRoot "/srv/http"
 		SSLEngine On
@@ -61,7 +61,7 @@
 		ProxyPass /mongoose/ http://localhost:8081/
 		ProxyPassReverse /mongoose/ http://localhost:8081/
 	</virtualhost>
-
+```
 #### Sonstiges
 
 - Verwendung des Paketmanagers (Installation, Aktualisierung, Systemaktualisierung, usw.)

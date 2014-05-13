@@ -171,3 +171,6 @@ sshfs user@host:/ /mnt/
 
 # einen Webserver mit python starten
 python -m SimpleHTTPServer 8081
+
+# zufällige UUI erzeugen
+uuidgen

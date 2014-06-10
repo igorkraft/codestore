@@ -221,6 +221,7 @@
 - http://tunein.com/radio/Tropicalisima-FM-Instrumental-s133393/
 - https://jmeter.apache.org/ (für Lasttests von SOAP, HTTP, JMS etc.)
 - Java-Proxy-Implementierungen: http://wiki.apache.org/tomcat/ServletProxy
+- http://askubuntu.com/questions/318973/how-do-i-create-a-wifi-hotspot-sharing-wireless-internet-connection-single-adap
 
 
 -

@@ -224,6 +224,7 @@
 - http://askubuntu.com/questions/318973/how-do-i-create-a-wifi-hotspot-sharing-wireless-internet-connection-single-adap
 - http://wiki.rootzwiki.com/Google_Apps#Universal_Packages_2
 - http://en.wikipedia.org/wiki/Aptoide
+- http://www.schildow.de/
 
 
 -

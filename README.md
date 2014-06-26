@@ -226,6 +226,7 @@
 - http://en.wikipedia.org/wiki/Aptoide
 - http://www.schildow.de/
 - https://de.wikipedia.org/wiki/Heidekrautbahn
+- http://forum.videogameszone.de/retro-gaming/9297627-legend-zelda-linkas-awakening-3d.html
 
 
 -

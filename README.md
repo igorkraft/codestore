@@ -235,6 +235,7 @@
  - AndroidApp für Offline Karten: http://www.locusmap.eu/dt_portfolio/openstreetmap-tools/
  - Installationsanleitung: http://www.openandromaps.org/en/manual
  - weitere Offlinekarten: http://www.androidmaps.co.uk/ und http://download.mapsforge.org/
+- http://www.crash-tarife.de/ (gute Handy-Verträge)
 
 
 -

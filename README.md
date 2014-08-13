@@ -231,6 +231,9 @@
 - https://de.wikipedia.org/wiki/Catch_Without_Arms
 - https://www.genuitec.com/products/gapdebug/
 - http://dropwizard.io/
+- Offline-Karten-Daten für Radfahrer: http://www.openandromaps.org/en/downloads/germany
+ - AndroidApp für Offline Karten: http://www.locusmap.eu/dt_portfolio/openstreetmap-tools/
+ - Installationsanleitung: http://www.openandromaps.org/en/manual
 
 
 -

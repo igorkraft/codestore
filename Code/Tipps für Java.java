@@ -125,6 +125,15 @@ DateFormatUtils.format(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss")
 Date date = DateUtils.parseDate("2011-07-22T12:01:34", new String[]{"yyyy-MM-dd'T'HH:mm:ss"});
 date.getTime()
 
+• Zeitpunkt in UTC-Zeitstempel umwandeln, unter Beachtung von Zeitzone und Sommerzeit (erfordert joda-time)
+DateTime localTime = DateTimeFormat
+		.forPattern("yyyy-MM-dd HH:mm:ss.SSS")
+		.withZone(DateTimeZone.forID("Europe/Berlin"))
+		.parseDateTime("1970-01-01 00:00:00.000");
+DateTime utcTime = localTime.withZoneRetainFields(DateTimeZone.forID("UTC"));
+System.out.println("UTC time stamp:   " + utcTime.getMillis());
+System.out.println("local time stamp: " + localTime.getMillis());
+
 • nettes LookAndFeel
 UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 

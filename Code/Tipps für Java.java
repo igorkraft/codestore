@@ -126,6 +126,7 @@ Date date = DateUtils.parseDate("2011-07-22T12:01:34", new String[]{"yyyy-MM-dd'
 date.getTime()
 
 • Zeitpunkt in UTC-Zeitstempel umwandeln, unter Beachtung von Zeitzone und Sommerzeit (erfordert joda-time)
+DateTime localTime = new DateTime(1970,1,1,0,0,0,0,DateTimeZone.forID("Europe/Berlin"));
 DateTime localTime = DateTimeFormat
 		.forPattern("yyyy-MM-dd HH:mm:ss.SSS")
 		.withZone(DateTimeZone.forID("Europe/Berlin"))

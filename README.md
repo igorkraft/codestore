@@ -238,6 +238,7 @@
  - Routing-Engine (Navigation) http://wiki.openstreetmap.org/wiki/GraphHopper
 - http://www.crash-tarife.de/ (gute Handy-Verträge)
 - https://code.google.com/p/json-path/ (XPath für JSON)
+- http://www.anddev.org/other-coding-problems-f5/simulate-virtual-file-t56050.html (Grooveshark dat-Dateien entschlüsseln, die über die App heruntergeladen wurden)
 
 
 -

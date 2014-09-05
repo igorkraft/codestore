@@ -160,7 +160,10 @@ discus
 top
 
 # Base64 dekodieren
-echo `echo QWxhZGRpbjpvcGVuIHNlc2FtZQ== | base64 --decode`
+echo `echo QWxhZGRpbjpvcGVuIHNlc2FtZQ== | base64 -d`
+
+# Base64 kodieren
+echo `echo -n Aladdin:open sesame | base64 -w0`
 
 # Prozess zu einem Port herausfinden
 netstat -a -n -o (unter Windows; liefert PID, die im Taskmanager zugeordnet werden muss)

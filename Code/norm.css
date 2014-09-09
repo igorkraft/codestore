@@ -20,6 +20,15 @@ adress, caption, cite, code, dfn, em, strong, th, var{
 	font-weight:	normal;
 }
 
+/*Normalisiert Links*/
+
+a, a:link, a:visited, a:hover, a:active
+{
+	color: black;
+	font-style: normal;
+	text-decoration: none;
+}
+
 /*Entfernt alle list-styles*/
 
 ol, ul{

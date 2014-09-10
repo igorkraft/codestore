@@ -136,6 +136,9 @@ DateTime utcTime = localTime.withZoneRetainFields(DateTimeZone.forID("UTC"));
 System.out.println("UTC time stamp:   " + utcTime.getMillis());
 System.out.println("local time stamp: " + localTime.getMillis());
 
+• Joda-Zeitpunkt formatiert ausgeben
+DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS").print(localTime)
+
 • nettes LookAndFeel
 UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 

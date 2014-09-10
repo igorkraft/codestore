@@ -131,7 +131,8 @@ DateTime localTime = new DateTime(1970,1,1,0,0,0,0,DateTimeZone.forID("Europe/Be
 DateTime localTime = DateTimeFormat
 		.forPattern("yyyy-MM-dd HH:mm:ss.SSS")
 		.withZone(DateTimeZone.forID("Europe/Berlin"))
-		.parseDateTime("1970-01-01 00:00:00.000");
+		//.withZone(DateTimeZone.UTC)
+		.parseDateTime("1970-01-01 01:00:00.000");
 System.out.println("UTC time stamp: " + localTime.getMillis());
 
 • Joda-Zeitpunkt formatiert ausgeben

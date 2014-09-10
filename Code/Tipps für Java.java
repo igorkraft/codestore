@@ -126,17 +126,19 @@ DateFormatUtils.format(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss", TimeZo
 Date date = DateUtils.parseDate("2011-07-22T12:01:34", new String[]{"yyyy-MM-dd'T'HH:mm:ss"});
 date.getTime()
 
-• Zeitpunkt in UTC-Zeitstempel umwandeln, unter Beachtung von Zeitzone und Sommerzeit (erfordert joda-time)
-DateTime localTime = new DateTime(1970,1,1,0,0,0,0,DateTimeZone.forID("Europe/Berlin"));
-DateTime localTime = DateTimeFormat
+• Joda-Zeitpunkte erzeugen (erfordert joda-time)
+// alle Beispiel-Objekte enthalten den selben Zeitpunkt
+DateTime time = new DateTime(0); // aus UTC-Zeitstempel (die Zone wird nur bei der Darstellung gebraucht)
+DateTime time = new DateTime(1970,1,1,1,0,0,0,DateTimeZone.forID("Europe/Berlin"));
+DateTime time = DateTimeFormat
 		.forPattern("yyyy-MM-dd HH:mm:ss.SSS")
 		.withZone(DateTimeZone.forID("Europe/Berlin"))
-		//.withZone(DateTimeZone.UTC)
 		.parseDateTime("1970-01-01 01:00:00.000");
-System.out.println("UTC time stamp: " + localTime.getMillis());
+System.out.println("UTC time stamp: " + time.getMillis());
 
 • Joda-Zeitpunkt formatiert ausgeben
-DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS").print(localTime)
+DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS").print(time) // verwendet die Zone des time-Objekts für die Darstellung
+DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS").withZone(DateTimeZone.UTC).print(time)
 
 • nettes LookAndFeel
 UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");

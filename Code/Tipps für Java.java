@@ -126,10 +126,14 @@ DateFormatUtils.format(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss", TimeZo
 Date date = DateUtils.parseDate("2011-07-22T12:01:34", new String[]{"yyyy-MM-dd'T'HH:mm:ss"});
 date.getTime()
 
-• Joda-Zeitpunkte erzeugen (erfordert joda-time)
-// alle Beispiel-Objekte enthalten den selben Zeitpunkt
-DateTime time = new DateTime(0); // aus UTC-Zeitstempel (die Zone wird nur bei der Darstellung gebraucht)
+• Joda-Zeitpunkte erzeugen (alle Beispiel-Objekte enthalten den selben Zeitpunkt)
+// aus UTC-Zeitstempel (hinterlegt für die Darstellung die Zeitzone des Systems, wird die Zeitzone angegeben, 
+// dann ändert sich der Zeitpunkt nicht)
+DateTime time = new DateTime(0); 
+// hier legt die Zeitzone fest, wie die Zeitangaben in einen Zeitstempel umgewandelt werden sollen, der Zeitpunkt
+// ändert sich je nach Zeitzone (lässt man die Zeitzone weg, dann wird die Systemzeitzone benutzt)
 DateTime time = new DateTime(1970,1,1,1,0,0,0,DateTimeZone.forID("Europe/Berlin"));
+// verhält sich analog zum vorigen Beispiel
 DateTime time = DateTimeFormat
 		.forPattern("yyyy-MM-dd HH:mm:ss.SSS")
 		.withZone(DateTimeZone.forID("Europe/Berlin"))

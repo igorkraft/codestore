@@ -119,6 +119,7 @@ String password = new String(passwordField.getPassword());
 DurationFormatUtils.formatDuration(timeInMS, "HH:mm:ss,SSS")
 
 • Millisekundendatum formatieren (erfordert commons-lang)
+// lässt man die Zeitzone weg, dann wird die Systemzeitzone benutzt
 DateFormatUtils.format(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss", TimeZone.getTimeZone("UTC"))
 
 • Zeitpunkt in Millisekunden umwandeln (erfordert commons-lang)

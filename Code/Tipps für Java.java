@@ -144,6 +144,11 @@ System.out.println("UTC time stamp: " + time.getMillis());
 DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS").print(time) // verwendet die Zone des time-Objekts für die Darstellung
 DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS").withZone(DateTimeZone.UTC).print(time)
 
+• Joda-Zeitpunkt Locale-spezifisch formatiert ausgeben (lässt man withLocale(...) weg, dann wird die Systemsprache benutzt)
+//style two characters from the set {"S", "M", "L", "F", "-"}; (first is date second is time)
+// S = short; M = medium; L = long; - = omited
+DateTimeFormat.forStyle("FF").withLocale(Locale.US).print(time);
+
 • nettes LookAndFeel
 UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 

@@ -149,9 +149,8 @@ DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS").withZone(DateTimeZone.UTC).
 // S = short; M = medium; L = long; - = omited
 DateTimeFormat.forStyle("FF").withLocale(Locale.US).print(time);
 
-• für eine locale feststellen, ob 12 oder 24 Stunden angezeigt werden
-String pattern = DateTimeFormat.patternForStyle("-S", Locale.getDefault());
-boolean is24HourView = pattern.contains("a");
+• für eine Locale feststellen, ob 12 oder 24 Stunden angezeigt werden
+boolean is24HourView = DateTimeFormat.patternForStyle("-S", Locale.getDefault()).contains("a");
 
 • nettes LookAndFeel
 UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");

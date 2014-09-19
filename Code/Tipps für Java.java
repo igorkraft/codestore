@@ -204,3 +204,6 @@ public void writeToClipboard(String data)
 	StringSelection contents = new StringSelection(data);
 	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(contents, null);
 }
+
+• Charset-Konstanten (erfordert commons-io)
+Charsets.ISO_8859_1 und Charsets.UTF_8

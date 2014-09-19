@@ -185,3 +185,22 @@ Collections.list(dexFile.entries());
 
 • Stream splitten (erfordert commons-io, der letzte Parameter legt fest, ob beim close beide Streams geschlossen werden sollen)
 TeeInputStream(inStream, outStream, true)
+
+• aus Zwischenablage lesen
+private String readFromClipboard() throws UnsupportedFlavorException, IOException
+{
+	Transferable data = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null);
+	for (DataFlavor flavor : data.getTransferDataFlavors())
+	{
+		if (!(data.getTransferData(flavor) instanceof String)) continue;
+		return data.getTransferData(flavor).toString();
+	}
+	return "";
+}
+
+• in Zwischenablage schreiben
+public void writeToClipboard(String data)
+{
+	StringSelection contents = new StringSelection(data);
+	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(contents, null);
+}

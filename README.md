@@ -240,7 +240,7 @@
 - https://code.google.com/p/json-path/ (XPath für JSON)
 - http://www.anddev.org/other-coding-problems-f5/simulate-virtual-file-t56050.html (Grooveshark dat-Dateien entschlüsseln, die über die App heruntergeladen wurden)
 - http://www.neo4j.org/develop (Graphdatenbank mit REST-Schnittstelle)
-- http://wiki.eclipse.org/Jetty/Tutorial/Embedding_Jetty (Verwendung ohne Servlets, SSL, FileServer, XML-Konfiguration)
+- http://wiki.eclipse.org/Jetty/Tutorial/Embedding_Jetty (Verwendung ohne Servlets, SSL, FileServer, XML-Konfiguration, externe war-Dateien laden)
 
 
 -

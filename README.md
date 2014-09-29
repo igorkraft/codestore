@@ -242,6 +242,7 @@
 - http://www.neo4j.org/develop (Graphdatenbank mit REST-Schnittstelle)
 - http://wiki.eclipse.org/Jetty/Tutorial/Embedding_Jetty (Verwendung ohne Servlets, SSL, FileServer, XML-Konfiguration, externe war-Dateien laden)
 - http://blog.petrockblock.com/retropie/ (Retro-Game-Image für Raspberry)
+- http://www.giuspen.com/cherrytree/ (OneNote-Alternative)
 
 
 -

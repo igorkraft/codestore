@@ -244,6 +244,7 @@
 - http://blog.petrockblock.com/retropie/ (Retro-Game-Image für Raspberry)
 - http://www.giuspen.com/cherrytree/ (OneNote-Alternative)
 - http://fritzing.org/home/ (elektrische Schaltungen und Platienen)
+- Selene Media Encoder (Frontend für ffmpeg)
 
 
 -

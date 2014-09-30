@@ -177,3 +177,6 @@ python -m SimpleHTTPServer 8081
 
 # zufällige UUI erzeugen
 uuidgen
+
+# SVG nach PNG
+inkscape img.svg --export-png=img.png --export-dpi=90

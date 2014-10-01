@@ -246,6 +246,9 @@
 - http://fritzing.org/home/ (elektrische Schaltungen und Platienen)
 - Selene Media Encoder (Frontend für ffmpeg)
 - http://de.wikipedia.org/wiki/Unziale
+- Android-Programme im Chrome canary laufen lassen
+ - https://github.com/vladikoff/chromeos-apk/blob/master/archon.md (Chrome-Erweiterung)
+ - https://play.google.com/store/apps/details?id=me.bpear.chromeapkpackager (wandelt Android-Programme in Chrome-Programme um)
 
 
 -

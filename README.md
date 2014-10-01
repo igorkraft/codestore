@@ -254,6 +254,10 @@
  - https://hadoop.apache.org/docs/r0.18.3/hdfs_shell.html (Zugriff per Shell)
  - http://hadoop.apache.org/docs/r1.0.4/api/org/apache/hadoop/fs/FileSystem.html (Dateisystem-Schnittstelle)
  - http://hadoop.apache.org/docs/r1.0.4/webhdfs.html (WebHDFS-Doku mit curl-Beispielen)
+- andere Dateisystem-REST-Schnittstellen
+ - https://github.com/Fluidbyte/Node-FSAPI (für node.js)
+ - https://www.npmjs.org/package/restfs (node.js-Modul)
+ - https://code.google.com/p/gss/ (Standalone Java-Server mit Webclient und WebDAV)
 
 -
     NewTab-Bookmark

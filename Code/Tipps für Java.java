@@ -45,9 +45,14 @@ PrintWriter writer = new PrintWriter("/pathtofile");
 writer.print(content);
 writer.close();
 
+• Primitive Array -> Object Array
+Character[] chars = ArrayUtils.toObject("test".toCharArray());
+
 • Array -> List
-List<TypeOfArray> list = new ArrayList<TypeOfArray>(); 
-Collections.addAll(list, array);
+List<Character> list = Arrays.asList(new Character[]{'a','b'});
+
+• 2d Array -> Map
+Map<Object,Object> map = ArrayUtils.toMap(new String[][]{{"abd","123"},{"xyz","789"}});
 
 • Element (DOM) implementiert Node
 

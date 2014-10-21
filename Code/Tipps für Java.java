@@ -151,7 +151,7 @@ DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS").withZone(DateTimeZone.UTC).
 
 • Joda-Zeitpunkt Locale-spezifisch formatiert ausgeben (lässt man withLocale(...) weg, dann wird die Systemsprache benutzt)
 //style two characters from the set {"S", "M", "L", "F", "-"}; (first is date second is time)
-// S = short; M = medium; L = long; - = omited
+// S = short; M = medium; L = long; F = full; - = omited
 DateTimeFormat.forStyle("FF").withLocale(Locale.US).print(time);
 
 • für eine Locale feststellen, ob 12 oder 24 Stunden angezeigt werden

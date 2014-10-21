@@ -260,6 +260,7 @@
  - https://www.npmjs.org/package/restfs (node.js-Modul)
  - https://code.google.com/p/gss/ (Standalone Java-Server mit Webclient und WebDAV)
 - https://cardboard.withgoogle.com/ (VR-Brille aus Pappe)
+- http://rethinkdb.com/ (JSON-Datenbank mit JSON-artiger Anfragesprache)
 
 -
     NewTab-Bookmark

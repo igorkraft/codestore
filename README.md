@@ -261,6 +261,7 @@
  - https://code.google.com/p/gss/ (Standalone Java-Server mit Webclient und WebDAV)
 - https://cardboard.withgoogle.com/ (VR-Brille aus Pappe)
 - http://rethinkdb.com/ (JSON-Datenbank mit JSON-artiger Anfragesprache)
+- http://wiki.ubuntuusers.de/LUKS/Containerdatei (Truecrypt-Alternative) 
 
 -
     NewTab-Bookmark

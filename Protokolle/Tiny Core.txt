@@ -1,0 +1,18 @@
+Installation mit der CorePlus-Version (kann auch Micro Core installieren)
+ - nach dem Boot im Terminal `tc-install` ausführen
+ - `Whole Disk` -> `sda`
+ - ext4
+ - Boot Options bleiben leer
+ - `Core only` -> `non US keyboard`
+ - `Proceed` -> Neustart ohne Live-Image
+ 
+- Pakete suchen: `tce-ab`
+- Midnight Commander installieren: `tce-load -wi mc.tcz` (-w = runterladen, -i installieren)
+- mit `passwd` für tc und root Passwörter vergeben
+
+SSH-Server:
+- SSH-Server installieren: `tce-load -i openssh.tcz` (vorsicht, hier ohne w, weil das Paket schon auf Platte liegt)
+- Konfigurieren: 
+ - `cd /usr/local/etc/ssh`
+ - `sudo cp sshd_config.example sshd_config`
+- Server starten: `sudo /usr/local/etc/init.d/openssh start`

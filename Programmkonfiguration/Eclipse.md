@@ -3,7 +3,7 @@
 #### General->Appearance->Colors and Fonts->Basic->Text Font->Edit
 - Größe: 12
 
-#### General->Editors->TextEditors
+#### General->Editors->Text Editors
 - Displayed tab width: 2
 - Show line numbers: &#x2611;
 - Show whitespace characters: &#x2611;
@@ -14,7 +14,7 @@
 #### Web->HTML Files
 - Encoding: UTF-8
 
-#### XML->Editor
+#### XML->XML Files->Editor
 - Line width: 800
 
 #### XML->XML Files->Editor->Typing

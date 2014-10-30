@@ -263,6 +263,7 @@
 - http://rethinkdb.com/ (JSON-Datenbank mit JSON-artiger Anfragesprache)
 - http://wiki.ubuntuusers.de/LUKS/Containerdatei (Truecrypt-Alternative)
 - http://qemu-buch.de/de/index.php?title=QEMU-KVM-Buch/_Managementtools/_AQEMU (QEMU-Frontend)
+- https://simon.kde.org/ (Linux-Spracherkennung, die deutsch versteht)
 
 -
     NewTab-Bookmark

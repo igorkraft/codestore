@@ -8,12 +8,12 @@ zu konfigurieren:
   ddclient (dyndns)
   Firefox
   Nautilus
-  Maus
-  Panels
+  Maus (ein Drittel der Beschleunigungsanzeige)
+  Panels (Verknüpfungen, eingehängte Speicher, Systemmonitor, Benachrichtigungsfeld, Uhr, Ausschalten-Btn)
   Texteditor (markdown compiler, Format XML and Json)
   Energieverwaltung (Bildschirmschoner)
-  Hintergrund
-  Icons und Cursor
+  Hintergrund (Analoge Uhr)
+  Icons und Cursor (oxygen-icon-theme, oxygen-cursor-theme)
   Homeverzeichnis (Desktop)
   Terminalfarben
   .bashrc
@@ -23,5 +23,5 @@ zu konfigurieren:
   Werkzeugleisten (Arbeitsflächeneinstellungen->Benutzeroberfläche)
   Anmeldebildschirm
   Grub
-  Startprogramme
+  Startprogramme (Reminder)
   gnome-disk-utility (gnome-disks früher Palimpsest)

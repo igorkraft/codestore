@@ -9,7 +9,7 @@ zu konfigurieren:
   Firefox
   Nautilus
   Maus (ein Drittel der Beschleunigungsanzeige)
-  Panels (Verknüpfungen, eingehängte Speicher, Systemmonitor, Benachrichtigungsfeld, Uhr, Ausschalten-Btn)
+  Panels (Verknüpfungen, eingehängte Speicher, Systemmonitor (Prozessor, Speicher, Netzwerk), Benachrichtigungsfeld, Uhr, Ausschalten-Btn)
   Texteditor (markdown compiler, Format XML and Json)
   Energieverwaltung (Bildschirmschoner)
   Hintergrund 

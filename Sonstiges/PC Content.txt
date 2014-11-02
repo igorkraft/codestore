@@ -12,7 +12,8 @@ zu konfigurieren:
   Panels (Verknüpfungen, eingehängte Speicher, Systemmonitor, Benachrichtigungsfeld, Uhr, Ausschalten-Btn)
   Texteditor (markdown compiler, Format XML and Json)
   Energieverwaltung (Bildschirmschoner)
-  Hintergrund (Analoge Uhr)
+  Hintergrund 
+  Analoge Uhr (clock.py als Daemon, Vorlage siehe ajaxterm.txt)
   Icons und Cursor (oxygen-icon-theme, oxygen-cursor-theme)
   Homeverzeichnis (Desktop)
   Terminalfarben

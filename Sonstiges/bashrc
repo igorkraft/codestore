@@ -9,4 +9,5 @@ export PS1='\[\033[00;33m\]\u@\h \[\033[00;36m\]\w\n\$ \[\033[03;00m\]'
 export JAVA_HOME=/media/Daten/Code/Java/jdk1.7.0_21
 export GRADLE_HOME=/media/Daten/Code/Java/gradle-1.7
 export PATH="$PATH:/media/Daten/Code/adt-bundle-linux-x86-20130522/sdk/platform-tools"
+export PATH="$PATH:/media/Daten/Code/adt-bundle-linux-x86-20130522/sdk/tools"
 export D=~/Arbeitsfläche

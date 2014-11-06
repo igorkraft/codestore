@@ -17,6 +17,8 @@ transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 transformer.transform(new DOMSource(domElement), new StreamResult(resultXml));
 
+• Iterator -> List (erfordert guava)
+List<ContentType> charsets = Lists.newArrayList(iteratorOfContentTypes);
 
 • Path -> InputStream
 new FileInputStream(path)
@@ -212,3 +214,6 @@ public void writeToClipboard(String data)
 
 • Charset-Konstanten (erfordert commons-io)
 Charsets.ISO_8859_1 und Charsets.UTF_8
+
+• alle Charsets des Systems
+List<Charset> charsets = Lists.newArrayList((new sun.nio.cs.StandardCharsets()).charsets());

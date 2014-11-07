@@ -18,7 +18,10 @@ transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 transformer.transform(new DOMSource(domElement), new StreamResult(resultXml));
 
 • Iterator -> List (erfordert guava)
-List<ContentType> charsets = Lists.newArrayList(iteratorOfContentTypes);
+List<ContentType> list = Lists.newArrayList(iteratorOfContentTypes);
+
+• Iterator -> List (erfordert commons-collections)
+List<ContentType> list = IteratorUtils.toList(iteratorOfContentTypes);
 
 • Path -> InputStream
 new FileInputStream(path)

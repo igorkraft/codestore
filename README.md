@@ -264,6 +264,7 @@
 - http://wiki.ubuntuusers.de/LUKS/Containerdatei (Truecrypt-Alternative)
 - http://qemu-buch.de/de/index.php?title=QEMU-KVM-Buch/_Managementtools/_AQEMU (QEMU-Frontend)
 - https://simon.kde.org/ (Linux-Spracherkennung, die deutsch versteht)
+- http://www.roboternetz.de/community/threads/63102-3D-Drucker-Eigenbau-green-monster
 
 -
     NewTab-Bookmark

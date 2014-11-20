@@ -266,6 +266,7 @@
 - https://simon.kde.org/ (Linux-Spracherkennung, die deutsch versteht)
 - http://www.roboternetz.de/community/threads/63102-3D-Drucker-Eigenbau-green-monster
  - http://www.pixelklecks.de/projekteii/3ddrucker/index.html
+- http://blog.milsystems.de/2011/09/grid4stick-antenne-im-eigenbau-mein-ergebnis/ (küchensieb als wlan reflektor)
 
 -
     NewTab-Bookmark

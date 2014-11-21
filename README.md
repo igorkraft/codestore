@@ -304,4 +304,4 @@ offene FTP-Verzeichnisse werden hierhin eingehängt:
 
 ![Home](https://raw.github.com/igorkraft/codestore/master/Sonstiges/Home.png "Home")
 
- ಠل͟ಠ༽
+༼ ಠل͟ಠ༽╯

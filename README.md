@@ -302,3 +302,5 @@ offene FTP-Verzeichnisse werden hierhin eingehängt:
 /run/user/user/gvfs
 
 ![Home](https://raw.github.com/igorkraft/codestore/master/Sonstiges/Home.png "Home")
+
+ ಠل͟ಠ༽

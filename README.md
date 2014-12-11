@@ -268,6 +268,8 @@
  - http://www.pixelklecks.de/projekteii/3ddrucker/index.html
 - http://blog.milsystems.de/2011/09/grid4stick-antenne-im-eigenbau-mein-ergebnis/ (küchensieb als wlan reflektor)
 - https://www.polymer-project.org/docs/elements/material.html (Angular-Alternative mit GUI-Elementen)
+- http://en.wikipedia.org/wiki/HATEOAS (Zustände in Rest-Schnittstellen abbilden)
+ - http://jaxenter.de/artikel/rest-hateoas-fielding-176645
 
 -
     NewTab-Bookmark

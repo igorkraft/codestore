@@ -270,7 +270,11 @@
 - https://www.polymer-project.org/docs/elements/material.html (Angular-Alternative mit GUI-Elementen)
 - http://en.wikipedia.org/wiki/HATEOAS (Zustände in Rest-Schnittstellen abbilden)
  - http://jaxenter.de/artikel/rest-hateoas-fielding-176645
-- http://en.wikipedia.org/wiki/Mr._Pickles
+- http://en.wikipedia.org/wiki/Mr._Pickles (Animationsserie)
+- http://en.wikipedia.org/wiki/Rick_and_Morty (Animationsserie)
+- https://www.duolingo.com/ (kostenlos Fremdsprachen lernen)
+- http://de.wikipedia.org/wiki/Radiohead
+- http://de.wikipedia.org/wiki/Near_Field_Communication (mit HF-RFID-Tags)
 
 -
     NewTab-Bookmark

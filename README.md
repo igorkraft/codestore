@@ -270,6 +270,7 @@
 - https://www.polymer-project.org/docs/elements/material.html (Angular-Alternative mit GUI-Elementen)
 - http://en.wikipedia.org/wiki/HATEOAS (Zustände in Rest-Schnittstellen abbilden)
  - http://jaxenter.de/artikel/rest-hateoas-fielding-176645
+- http://en.wikipedia.org/wiki/Mr._Pickles
 
 -
     NewTab-Bookmark

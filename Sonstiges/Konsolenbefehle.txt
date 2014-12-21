@@ -181,3 +181,18 @@ uuidgen
 
 # SVG nach PNG
 inkscape img.svg --export-png=img.png --export-dpi=90
+
+# Datei gefüllt mit Nullen erzeugen (bs = Blockgröße; count = Anzahl der Blöcke)
+dd if=/dev/zero of=my_fs bs=1024 count=30720
+
+# Datei als Laufwerk einhängen
+losetup /dev/loop0 my_fs
+
+# prüfen, ob loop device belegt ist (0 bis 8)
+losetup /dev/loop0
+
+# Datei von loop device lösen
+losetup -d /dev/loop0
+
+# Dateisystem auf einem Gerät erzeugen
+mkfs -t ext4 -m 1 -v /dev/loop0

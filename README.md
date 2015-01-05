@@ -276,6 +276,8 @@
 - http://de.wikipedia.org/wiki/Radiohead
 - http://de.wikipedia.org/wiki/Near_Field_Communication (mit HF-RFID-Tags)
 - http://blog.fefe.de/
+- https://www.atlassian.com/git/tutorials/ (gutes Git-Tutorial)
+ - https://www.atlassian.com/git/tutorials/undoing-changes
 
 -
     NewTab-Bookmark

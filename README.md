@@ -275,6 +275,7 @@
 - https://www.duolingo.com/ (kostenlos Fremdsprachen lernen)
 - http://de.wikipedia.org/wiki/Radiohead
 - http://de.wikipedia.org/wiki/Near_Field_Communication (mit HF-RFID-Tags)
+- http://blog.fefe.de/
 
 -
     NewTab-Bookmark

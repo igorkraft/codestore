@@ -279,6 +279,7 @@
 - https://www.atlassian.com/git/tutorials/ (gutes Git-Tutorial)
  - https://www.atlassian.com/git/tutorials/undoing-changes
 - https://www.kickstarter.com/projects/torquing/zano-autonomous-intelligent-swarming-nano-drone
+- http://java.dzone.com/articles/10-amazing-libraries-your-web (Javascript-Bibliotheken)
 
 -
     NewTab-Bookmark

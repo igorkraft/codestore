@@ -220,3 +220,7 @@ Charsets.ISO_8859_1 und Charsets.UTF_8
 
 • alle Charsets des Systems
 List<Charset> charsets = Lists.newArrayList((new sun.nio.cs.StandardCharsets()).charsets());
+
+• XSL-Trasformation mit Xalan in der Komandozeile
+set CLASSPATH=serializer-2.7.2.jar;xalan-2.7.2.jar;xercesImpl-2.9.1.jar;xml-apis-1.3.04.jar
+java org.apache.xalan.xslt.Process -IN Report.xml -XSL Report.xsl -OUT Report.html

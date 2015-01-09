@@ -267,6 +267,18 @@
 - http://www.roboternetz.de/community/threads/63102-3D-Drucker-Eigenbau-green-monster
  - http://www.pixelklecks.de/projekteii/3ddrucker/index.html
 - http://blog.milsystems.de/2011/09/grid4stick-antenne-im-eigenbau-mein-ergebnis/ (küchensieb als wlan reflektor)
+- https://www.polymer-project.org/docs/elements/material.html (Angular-Alternative mit GUI-Elementen)
+- http://en.wikipedia.org/wiki/HATEOAS (Zustände in Rest-Schnittstellen abbilden)
+ - http://jaxenter.de/artikel/rest-hateoas-fielding-176645
+- http://en.wikipedia.org/wiki/Mr._Pickles (Animationsserie)
+- http://en.wikipedia.org/wiki/Rick_and_Morty (Animationsserie)
+- https://www.duolingo.com/ (kostenlos Fremdsprachen lernen)
+- http://de.wikipedia.org/wiki/Radiohead
+- http://de.wikipedia.org/wiki/Near_Field_Communication (mit HF-RFID-Tags)
+- http://blog.fefe.de/
+- https://www.atlassian.com/git/tutorials/ (gutes Git-Tutorial)
+ - https://www.atlassian.com/git/tutorials/undoing-changes
+- https://www.kickstarter.com/projects/torquing/zano-autonomous-intelligent-swarming-nano-drone
 
 -
     NewTab-Bookmark
@@ -302,3 +314,5 @@ offene FTP-Verzeichnisse werden hierhin eingehängt:
 /run/user/user/gvfs
 
 ![Home](https://raw.github.com/igorkraft/codestore/master/Sonstiges/Home.png "Home")
+
+༼ ಠل͟ಠ༽╯

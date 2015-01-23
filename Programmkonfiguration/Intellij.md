@@ -1,7 +1,7 @@
 ## Intellij
 
 #### Settings->Compiler->Android Compilers
-- Optimize: &#x2611;
+- Force jumbo mode: &#x2611;
 - VM options: --force-jumbo
 
 #### Editor->Editor Tabs

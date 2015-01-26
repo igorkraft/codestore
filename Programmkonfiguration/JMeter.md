@@ -30,6 +30,8 @@
 - wird einer `Config Element` hinzugefügt (unter `Config Element`)
 - verweist auf eine csv-Datei relativ zur Testplandatei
 - die csv-Datei kann eine umbruchseparierte Liste von Werten enthalten
+- ein Umbrauch wird automatisch als Wertetrenner erkannt
+- unter `Delimiter (...):` kann ein Wertetrenner innerhalb der Zeile eingetragen werden
 - unter `Variable Names (comma-delimited):` wird ein Variablenname vergeben, der im übergeordneten Request verwendet werden kann
 - im Request wird der Variablenname nach dem Muster `${var_name}` in den `Path` eingetragen
 - bei einer Request-Folge werden die Werte dann nacheinander in den Pfad eingefügt

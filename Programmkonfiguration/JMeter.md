@@ -19,6 +19,10 @@
 - kann für Basic-Authentication benutzt werden (`HTTP Cookie Manager` wäre auch möglich)
 - bis auf `Username`, `Password` und `Mechanism` können die anderen Felder leer bleiben
 
+##### Constant Throughput Timer
+- wird einer `Thread Group` hinzugefügt (unter `Timer`)
+- legt für jeden einzelnen Thread fest, wie viele Requests pro Minute ausgeführt werden sollen
+
 ##### HTTP Request
 - wird einer `Thread Group` hinzugefügt (unter `Sampler`)
 - konfiguriert Server und Port

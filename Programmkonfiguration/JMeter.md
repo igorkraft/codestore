@@ -27,3 +27,9 @@
 ##### HTTP Authorization Manager
 - kann für Basic-Authentication benutzt werden (`HTTP Cookie Manager` wäre auch möglich)
 - bis auf `Username`, `Password` und `Mechanism` können die anderen Felder leer bleiben
+
+##### View Results Tree
+- listet alle Requests und Responses aller Testplanläufe auf
+- die Raw-Daten von Request und Response sind einsehbar
+- Redirects können nachvollzogen werden
+- die Liste kann in eine Datei exportiert werden

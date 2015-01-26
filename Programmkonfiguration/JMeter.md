@@ -31,7 +31,7 @@
 - Multipart-Bodies werden per Checkbox aktiviert
 
 ##### CVS Data Set Config
-- wird einer `Config Element` hinzugefügt (unter `Config Element`)
+- wird einem `HTTP Request` hinzugefügt (unter `Config Element`)
 - verweist auf eine csv-Datei relativ zur Testplandatei
 - die csv-Datei kann eine umbruchseparierte Liste von Werten enthalten
 - ein Umbrauch wird automatisch als Wertetrenner erkannt
@@ -39,6 +39,13 @@
 - unter `Variable Names (comma-delimited):` wird ein Variablenname vergeben, der im übergeordneten Request verwendet werden kann
 - im Request wird der Variablenname nach dem Muster `${var_name}` in den `Path` eingetragen
 - bei einer Request-Folge werden die Werte dann nacheinander in den Pfad eingefügt
+
+##### Response Assertion
+- wird einer `Thread Group` hinzugefügt (unter `Assertions`)
+- bewertet, ob ein Response als erfolgreich gilt oder nicht
+- die Auswertung wird in den `View Results`-Komponenten dargestellt
+- unter `Pattern to Test` wird Text eingetragen, nach dem im Response-Body gesucht wird
+- Reguläre Ausdrücke werden auch unterstützt
 
 ##### View Results Tree
 - wird einem `HTTP Request` hinzugefügt (unter `Listener`)

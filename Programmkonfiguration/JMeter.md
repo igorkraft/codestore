@@ -27,6 +27,7 @@
 - wird einer `Thread Group` hinzugefügt (unter `Sampler`)
 - konfiguriert Server und Port
 - `Path:` enthält alles nach dem Port z. B. `/webapp/res/img.png`
+ - im `Path:` können auch Beanshell-Funktionen ausgeführt werden `/?time=${__BeanShell(System.currentTimeMillis())}`
 - Request-Body und Request-Parameter können konfiguriert werden
 - Multipart-Bodies werden per Checkbox aktiviert
 

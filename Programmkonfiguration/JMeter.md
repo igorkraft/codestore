@@ -23,6 +23,13 @@
 - wird einer `Thread Group` hinzugefügt (unter `Timer`)
 - legt für jeden einzelnen Thread fest, wie viele Requests pro Minute ausgeführt werden sollen
 
+##### BeanShell PreProcessor
+- wird einer `Thread Group` hinzugefügt (unter `Pre Processors`)
+- führt ein Bean Shell Script aus, in dem Variablen gesetzt werden können
+ - `vars.put("key", "value");`
+ - die Variablen können im Pfad eines Requests benutzt werden
+- man hat Zugriff auf alle Java-Standard-Bibliotheken
+
 ##### HTTP Request
 - wird einer `Thread Group` hinzugefügt (unter `Sampler`)
 - konfiguriert Server und Port
@@ -32,7 +39,7 @@
 - Multipart-Bodies werden per Checkbox aktiviert
 
 ##### CVS Data Set Config
-- wird einem `HTTP Request` hinzugefügt (unter `Config Element`)
+- wird einer `Thread Group` hinzugefügt (unter `Config Element`)
 - verweist auf eine csv-Datei relativ zur Testplandatei
 - die csv-Datei kann eine umbruchseparierte Liste von Werten enthalten
 - ein Umbrauch wird automatisch als Wertetrenner erkannt

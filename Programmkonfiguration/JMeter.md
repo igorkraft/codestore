@@ -26,7 +26,7 @@
 ##### BeanShell PreProcessor
 - wird einer `Thread Group` hinzugefügt (unter `Pre Processors`)
 - führt ein Bean Shell Script aus, in dem Variablen gesetzt werden können
- - `vars.put("key", "value");`
+ - `vars.put("varKey", "value");`
  - die Variablen können im Pfad eines Requests benutzt werden
 - man hat Zugriff auf alle Java-Standard-Bibliotheken
 
@@ -35,6 +35,7 @@
 - konfiguriert Server und Port
 - `Path:` enthält alles nach dem Port z. B. `/webapp/res/img.png`
  - im `Path:` können auch Beanshell-Funktionen ausgeführt werden `/?time=${__BeanShell(System.currentTimeMillis())}`
+ - Zugriff auf Variable: `/?param=${varKey}`
 - Request-Body und Request-Parameter können konfiguriert werden
 - Multipart-Bodies werden per Checkbox aktiviert
 

@@ -61,7 +61,7 @@
 - listet alle Requests und Responses aller Testplanläufe auf
 - die Raw-Daten von Request und Response sind einsehbar
 - Redirects können nachvollzogen werden
-- die Liste kann in eine Datei exportiert werden
+- die Liste kann in eine Datei (csv oder xml) exportiert werden (automatisch bei jedem Testlauf)
 
 ##### View Results in Table
 - wird einer `Thread Group` hinzugefügt (unter `Listener`)

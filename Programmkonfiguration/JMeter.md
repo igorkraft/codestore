@@ -1,6 +1,11 @@
 ## JMeter
 
 - Options -> Choose Language -> English (damit die Modulnamen zur Doku passen)
+- BeanShell und andere Funktionen
+ - http://jmeter.apache.org/usermanual/functions.html#__BeanShell
+ - beschreibt, wie man externe BeanShell-Script in Variablen aufruft
+ - beschreibt weitere Funktionen wie `__javaScript`, `__machineIP`, `__StringFromFile`, `__time`, `__FileToString`, `__TestPlanName`, `__XPath`, `__P`, `__CSVRead`, `__UUID` usw.
+ - beschreibt den Einsatz des `Function Helper` Dialogs (zum Testen von Funktionen)
 
 #### Die Komponenten
 

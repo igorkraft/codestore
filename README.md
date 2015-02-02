@@ -283,6 +283,11 @@
 - http://www.amazon.de/gp/product/B000W5C6YQ?psc=1&redirect=true&ref_=oh_aui_detailpage_o01_s00 (Sitzkissen)
 - http://bogifabian.com/ (Hell-Dunkel-Zeichnungen)
 - https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples
+- Test-Frameworks für Web-Seiten
+ - http://www.seleniumhq.org/
+ - http://casperjs.org/
+ - http://phantomjs.org/
+- http://de.wikipedia.org/wiki/Die_Weisheit_der_Vielen
 
 -
     NewTab-Bookmark

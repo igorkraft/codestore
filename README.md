@@ -288,6 +288,7 @@
  - http://casperjs.org/
  - http://phantomjs.org/
 - http://de.wikipedia.org/wiki/Die_Weisheit_der_Vielen
+- https://www.spotify.com/de/ (Musik für alle)
 
 -
     NewTab-Bookmark

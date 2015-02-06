@@ -291,7 +291,7 @@
 - https://www.spotify.com/de/ (Musik für alle)
 - http://www.heise.de/download/o-inari-origami-1195908.html?hg=1&hgi=1&hgf=false (Origami-Game)
 - https://code.google.com/p/kqemu-portable-win/ (portabler Qemu für Windows)
- - http://linuxundich.de/gnu-linux/mit-qemu-ohne-admininistrator-rechten-portable-virtualisieren/
+ - http://linuxundich.de/gnu-linux/mit-qemu-ohne-admininistrator-rechten-portable-virtualisieren/ (Beschleuniger für Windows-Betrieb)
 
 -
     NewTab-Bookmark

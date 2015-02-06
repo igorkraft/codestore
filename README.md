@@ -290,6 +290,7 @@
 - http://de.wikipedia.org/wiki/Die_Weisheit_der_Vielen
 - https://www.spotify.com/de/ (Musik für alle)
 - http://www.heise.de/download/o-inari-origami-1195908.html?hg=1&hgi=1&hgf=false (Origami-Game)
+- https://code.google.com/p/kqemu-portable-win/ (portabler Qemu für Windows)
 
 -
     NewTab-Bookmark

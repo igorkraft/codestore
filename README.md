@@ -292,6 +292,7 @@
 - http://www.heise.de/download/o-inari-origami-1195908.html?hg=1&hgi=1&hgf=false (Origami-Game)
 - https://code.google.com/p/kqemu-portable-win/ (portabler Qemu für Windows)
  - http://linuxundich.de/gnu-linux/mit-qemu-ohne-admininistrator-rechten-portable-virtualisieren/ (Beschleuniger für Windows-Betrieb)
+- http://stackoverflow.com/questions/27381781/java-spring-boot-how-to-map-my-my-app-root-to-index-html (Welcomepage in SPringboot einstellen)
 
 -
     NewTab-Bookmark

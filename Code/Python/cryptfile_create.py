@@ -8,6 +8,8 @@ import os
 
 # Aufruf: sudo ./cryptfile_create.py container_file 30
 # Parameter: Name des zu erzeugenden Parameters, Größe des Parameters in MB
+# TODO: Semikolons am Ende der Zeilen einfügen
+# TODO: alle vier Scripte zu einem einzigen zusammenfassen
 
 if (len(sys.argv) < 3):
 	print "Not enough arguments."
@@ -20,6 +22,7 @@ print container
 subprocess.call(["dd", "if=/dev/urandom", "of=" + sys.argv[1], "bs=1M", "count=" + sys.argv[2]])
 
 # freies Loop-Gerät ermitteln
+# TODO: den Fall behandeln, dass kein freies Loop-Gerät gefunden wird
 p=subprocess.Popen(["losetup", "-f"],stdout=subprocess.PIPE,stdin=subprocess.PIPE)
 loopDevice = p.stdout.readline().strip()
 
@@ -33,6 +36,7 @@ subprocess.call(["cryptsetup", "luksFormat", "-c", "aes-xts-plain64", "-s", "512
 subprocess.call(["cryptsetup", "luksOpen", loopDevice, container])
 
 # virtuelles Dateisystem anlegen
+# TODO: das Dateisystem einhängen und den Aufrufer zu dessen Besitzer machen
 subprocess.call(["mkfs.ext4", "/dev/mapper/" + container])
 
 # verschlüsseltes Gerät schließen

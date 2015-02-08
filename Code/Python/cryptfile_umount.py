@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #coding=UTF-8
 
+import shlex
 import shutil
 import subprocess
 import sys
@@ -43,10 +44,10 @@ if (associations == None):
 	exit();
 
 # virtuelles Dateisystem aushängen
-subprocess.call(["umount", associations.mountPoint]);
+subprocess.call(shlex.split("umount " + associations.mountPoint));
 
 # Mapper auflösen
-subprocess.call(["cryptsetup", "luksClose", associations.mapper]);
+subprocess.call(shlex.split("cryptsetup luksClose " + associations.mapper));
 
 # Kontainer aus Loop-Gerät entfernen
 subprocess.call(shlex.split("losetup -d " + associations.loopDevice))

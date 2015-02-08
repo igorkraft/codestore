@@ -49,7 +49,7 @@ subprocess.call(["umount", associations.mountPoint]);
 subprocess.call(["cryptsetup", "luksClose", associations.mapper]);
 
 # Kontainer aus Loop-Gerät entfernen
-subprocess.call(["losetup", "-d", associations.loopDevice])
+subprocess.call(shlex.split("losetup -d " + associations.loopDevice))
 
 # MountPoint entfernen
 shutil.rmtree(associations.mountPoint)

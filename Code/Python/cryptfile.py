@@ -35,6 +35,18 @@ def main():
 	if (sys.argv[1] == "list"):
 		listMountedContainers();
 	
+	if (sys.argv[1] == "create"):
+		if (len(sys.argv) < 4):
+			printUsage();
+			exit();
+		if (os.path.isfile(sys.argv[2]) or os.path.isdir(sys.argv[2])):
+			print "[" + sys.argv[2] + "] already exists.";
+			exit();
+		if (not unicode(sys.argv[3]).isnumeric()):
+			print "[" + sys.argv[3] + "] is not a number.";
+			exit();
+		createContainer(sys.argv[2], sys.argv[3]);
+	
 	if (sys.argv[1] == "mount"):
 		if (len(sys.argv) < 3):
 			printUsage();
@@ -49,6 +61,16 @@ def main():
 			print "No empty loop device found.";
 			exit();
 		mountContainer(sys.argv[2]);
+	
+	if (sys.argv[1] == "umount"):
+		if (len(sys.argv) < 3):
+			printUsage();
+			exit();
+		associations = getAssociations(sys.argv[2]);
+		if (associations == None):
+			print "[" + sys.argv[2] + "] is not mounted.";
+			exit();
+		unmountContainer(associations);
 	
 def printUsage():
 	print "TODO: print usage";
@@ -71,7 +93,13 @@ def getAssociations(filePath):
 def listMountedContainers():
 	print "TODO listMountedContainers";
 
+def createContainer(container, size):
+	print "TODO createContainer"
+
 def mountContainer(container):
 	print "TODO mountContainer";
+	
+def unmountContainer(associations):
+	print "TODO unmountContainer"
 
 main();

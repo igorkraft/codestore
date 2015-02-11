@@ -43,7 +43,7 @@ def main():
 			print "[" + sys.argv[2] + "] already exists.";
 			exit();
 		if (not unicode(sys.argv[3]).isnumeric()):
-			print "[" + sys.argv[3] + "] is not a number.";
+			print "[" + sys.argv[3] + "] is not a number. Please type the container size in MB without unit.";
 			exit();
 		createContainer(sys.argv[2], sys.argv[3]);
 	
@@ -73,14 +73,19 @@ def main():
 		unmountContainer(associations);
 	
 def printUsage():
-	print "TODO: print usage";
+	print "Usage:";
+	print "cryptfile.py create <file> <size> - creates a luks file container (<size> is the container size in MB)";
+	print "                                       <file> specifies the name of the new container file";
+	print "                                       <size> specifies the container size in MB (mention without unit)";
+	print "cryptfile.py mount <file> - mount a luks file container";
+	print "cryptfile.py umount <file> - unmount a luks file container";
+	print "cryptfile.py list - list mounted file containers";
 
 def getAssociations(filePath):
 	filePath = os.path.realpath(filePath);
 	for fso in os.listdir("/media"):
 		if (fso.find("crypt_loop") != 0): continue;
-		# TODO: shlex.split benutzen
-		p=subprocess.Popen(["losetup", "--show", "/dev/" + fso.replace("crypt_","")],stdout=subprocess.PIPE,stdin=subprocess.PIPE);
+		p=subprocess.Popen(shlex.split("losetup --show /dev/" + fso.replace("crypt_","")),stdout=subprocess.PIPE,stdin=subprocess.PIPE);
 		currentPath = p.stdout.readline().strip().split("(")[1].rstrip(")");
 		if (currentPath == filePath):
 			result = Associations();

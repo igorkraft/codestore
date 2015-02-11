@@ -32,3 +32,5 @@ if not os.path.exists(mountPoint): os.makedirs(mountPoint)
 
 # Mapper ins Dateisystem einhängen
 subprocess.call(["mount", "-t", "ext4", "/dev/mapper/" + mapper, mountPoint])
+
+# TODO: den mount point ausgeben

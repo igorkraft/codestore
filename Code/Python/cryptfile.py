@@ -5,6 +5,7 @@ import sys
 import os
 import subprocess
 import shlex
+import shutil
 
 # TODO: Shellbefehle kann man auch so ausführen: retcode = os.system("echo 'foo' &> /dev/null")
 
@@ -89,22 +90,87 @@ def getAssociations(filePath):
 		currentPath = p.stdout.readline().strip().split("(")[1].rstrip(")");
 		if (currentPath == filePath):
 			result = Associations();
-			result.mountPoint = "/media/" + fso
-			result.mapper = "/dev/mapper/" + fso
-			result.loopDevice = "/dev/" + fso.replace("crypt_","")
+			result.mountPoint = "/media/" + fso;
+			result.mapper = "/dev/mapper/" + fso;
+			result.loopDevice = "/dev/" + fso.replace("crypt_","");
 			return result;
 	return;
 
 def listMountedContainers():
-	print "TODO listMountedContainers";
+	for fso in os.listdir("/media"):
+		if (fso.find("crypt_loop") != 0): continue;
+		p=subprocess.Popen(["losetup", "--show", "/dev/" + fso.replace("crypt_","")],stdout=subprocess.PIPE,stdin=subprocess.PIPE);
+		# TODO: was wenn der Pfad mit mehreren schließenden Klammern endet?
+		# TODO: was wenn im Pfad mehrere öffnende Klammern vorkommen?
+		filePath = p.stdout.readline().strip().split("(")[1].rstrip(")");
+		print "/media/" + fso + " => " + filePath;
 
 def createContainer(container, size):
-	print "TODO createContainer"
+
+	p=subprocess.Popen(["losetup", "-f"],stdout=subprocess.PIPE,stdin=subprocess.PIPE);
+	loopDevice = p.stdout.readline().strip();
+	mapper = "crypt_" + loopDevice.split("/")[2];
+	mountPoint = "/media/" + mapper;
+	
+	# Kontainer mit zufälligen Werten füllen
+	# TODO: was wenn ein absoluter Pfad mit Leerzeichen als container übergeben wurde
+	subprocess.call(["dd", "if=/dev/urandom", "of=" + container, "bs=1M", "count=" + size]);
+	
+	# Kontainer im Loop-Gerät einhängen
+	subprocess.call(["losetup", loopDevice, container]);
+	
+	# LUKS-Dateisystem anlegen (Passwort wird abgefragt)
+	subprocess.call(["cryptsetup", "luksFormat", "-c", "aes-xts-plain64", "-s", "512", "-h", "sha512", loopDevice]);
+	
+	# das verschlüsselte Gerät öffnen (Passwort wird erneut abgefragt)
+	subprocess.call(["cryptsetup", "luksOpen", loopDevice, mapper]);
+	
+	# virtuelles Dateisystem anlegen
+	# TODO: das Dateisystem einhängen und den Aufrufer zu dessen Besitzer machen
+	subprocess.call(["mkfs.ext4", "/dev/mapper/" + mapper]);
+	
+	# verschlüsseltes Gerät schließen
+	subprocess.call(["cryptsetup", "luksClose", mapper]);
+	
+	# Kontainer aus Loop-Gerät entfernen
+	subprocess.call(["losetup", "-d", loopDevice])
+
+	# den Aufrufer zum Besitzer des Kontainers machen
+	subprocess.call(["chown", os.environ["SUDO_USER"] + ":" + os.environ["SUDO_USER"], container]);
 
 def mountContainer(container):
-	print "TODO mountContainer";
+
+	p=subprocess.Popen(["losetup", "-f"],stdout=subprocess.PIPE,stdin=subprocess.PIPE);
+	loopDevice = p.stdout.readline().strip();
+	mapper = "crypt_" + loopDevice.split("/")[2];
+	mountPoint = "/media/" + mapper;
+	
+	# Container im Loop-Gerät einhängen
+	subprocess.call(["losetup", loopDevice, container]);
+
+	# Loop-Gerät im Mapper öffnen (Passwort wird abgefragt)
+	subprocess.call(["cryptsetup", "luksOpen", loopDevice, mapper]);
+
+	# Einhängepunkt erzeugen
+	if not os.path.exists(mountPoint): os.makedirs(mountPoint);
+
+	# Mapper ins Dateisystem einhängen
+	subprocess.call(["mount", "-t", "ext4", "/dev/mapper/" + mapper, mountPoint]);
+
+	print "[" + container + "] mounted on [" + mountPoint + "]";
 	
 def unmountContainer(associations):
-	print "TODO unmountContainer"
+
+	# virtuelles Dateisystem aushängen
+	subprocess.call(shlex.split("umount " + associations.mountPoint));
+
+	# Mapper auflösen
+	subprocess.call(shlex.split("cryptsetup luksClose " + associations.mapper));
+
+	# Kontainer aus Loop-Gerät entfernen
+	subprocess.call(shlex.split("losetup -d " + associations.loopDevice));
+
+	# MountPoint entfernen
+	shutil.rmtree(associations.mountPoint);
 
 main();

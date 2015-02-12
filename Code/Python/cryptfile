@@ -26,9 +26,9 @@ def main():
 		exit();
 		
 	if (sys.argv[1] != "list" and
-      sys.argv[1] != "create" and
-      sys.argv[1] != "mount" and
-      sys.argv[1] != "umount"
+	    sys.argv[1] != "create" and
+	    sys.argv[1] != "mount" and
+	    sys.argv[1] != "umount"
 	   ):
 		printUsage();
 		exit();
@@ -134,12 +134,12 @@ def createContainer(container, size):
 	
 	# Kontainer aus Loop-Gerät entfernen
 	subprocess.call(["losetup", "-d", loopDevice])
-
+	
 	# den Aufrufer zum Besitzer des Kontainers machen
 	subprocess.call(["chown", os.environ["SUDO_USER"] + ":" + os.environ["SUDO_USER"], container]);
 
 def mountContainer(container):
-
+	
 	p=subprocess.Popen(["losetup", "-f"],stdout=subprocess.PIPE,stdin=subprocess.PIPE);
 	loopDevice = p.stdout.readline().strip();
 	mapper = "crypt_" + loopDevice.split("/")[2];
@@ -147,29 +147,29 @@ def mountContainer(container):
 	
 	# Container im Loop-Gerät einhängen
 	subprocess.call(["losetup", loopDevice, container]);
-
+	
 	# Loop-Gerät im Mapper öffnen (Passwort wird abgefragt)
 	subprocess.call(["cryptsetup", "luksOpen", loopDevice, mapper]);
-
+	
 	# Einhängepunkt erzeugen
 	if not os.path.exists(mountPoint): os.makedirs(mountPoint);
-
+	
 	# Mapper ins Dateisystem einhängen
 	subprocess.call(["mount", "-t", "ext4", "/dev/mapper/" + mapper, mountPoint]);
-
-	print "[" + container + "] mounted on [" + mountPoint + "]";
 	
-def unmountContainer(associations):
+	print "[" + container + "] mounted on [" + mountPoint + "]";
 
+def unmountContainer(associations):
+	
 	# virtuelles Dateisystem aushängen
 	subprocess.call(shlex.split("umount " + associations.mountPoint));
-
+	
 	# Mapper auflösen
 	subprocess.call(shlex.split("cryptsetup luksClose " + associations.mapper));
-
+	
 	# Kontainer aus Loop-Gerät entfernen
 	subprocess.call(shlex.split("losetup -d " + associations.loopDevice));
-
+	
 	# MountPoint entfernen
 	# TODO: das nur machen, wenn zuvor kein Fehler aufgetreten ist, weil sonst
 	# der Inhalt des Kontainers gelöscht wird!!

@@ -171,6 +171,8 @@ def unmountContainer(associations):
 	subprocess.call(shlex.split("losetup -d " + associations.loopDevice));
 
 	# MountPoint entfernen
+	# TODO: das nur machen, wenn zuvor kein Fehler aufgetreten ist, weil sonst
+	# der Inhalt des Kontainers gelöscht wird!!
 	shutil.rmtree(associations.mountPoint);
 
 main();

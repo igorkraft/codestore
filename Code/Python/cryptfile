@@ -126,8 +126,22 @@ def createContainer(container, size):
 	subprocess.call(["cryptsetup", "luksOpen", loopDevice, mapper]);
 	
 	# virtuelles Dateisystem anlegen
-	# TODO: das Dateisystem einhängen und den Aufrufer zu dessen Besitzer machen
 	subprocess.call(["mkfs.ext4", "/dev/mapper/" + mapper]);
+	
+	# Einhängepunkt erzeugen
+	if not os.path.exists(mountPoint): os.makedirs(mountPoint);
+	
+	# Mapper ins Dateisystem einhängen
+	subprocess.call(["mount", "-t", "ext4", "/dev/mapper/" + mapper, mountPoint]);
+	
+	# den Aufrufer zum Besitzer des virtuellen Dateisystems machen
+	os.system("chown " + os.environ["SUDO_USER"] + ":" + os.environ["SUDO_USER"] + " " + mountPoint);
+	
+	# virtuelles Dateisystem aushängen
+	os.system("umount " + mountPoint);
+	
+	# MountPoint entfernen
+	shutil.rmtree(mountPoint);
 	
 	# verschlüsseltes Gerät schließen
 	subprocess.call(["cryptsetup", "luksClose", mapper]);

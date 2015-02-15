@@ -293,6 +293,7 @@
 - https://code.google.com/p/kqemu-portable-win/ (portabler Qemu für Windows)
  - http://linuxundich.de/gnu-linux/mit-qemu-ohne-admininistrator-rechten-portable-virtualisieren/ (Beschleuniger für Windows-Betrieb)
 - http://stackoverflow.com/questions/27381781/java-spring-boot-how-to-map-my-my-app-root-to-index-html (Welcomepage in SPringboot einstellen)
+- http://askubuntu.com/questions/307280/how-do-i-install-applications-in-ubuntu (Linux offline updaten und Programme installieren)
 
 -
     NewTab-Bookmark

@@ -162,17 +162,15 @@ def mountContainer(container):
 def unmountContainer(associations):
 	
 	# virtuelles Dateisystem aushängen
-	subprocess.call(shlex.split("umount " + associations.mountPoint));
+	if (os.system("umount " + associations.mountPoint) != 0): exit();
 	
 	# Mapper auflösen
-	subprocess.call(shlex.split("cryptsetup luksClose " + associations.mapper));
+	if (os.system("cryptsetup luksClose " + associations.mapper) != 0): exit();
 	
 	# Kontainer aus Loop-Gerät entfernen
-	subprocess.call(shlex.split("losetup -d " + associations.loopDevice));
+	if (os.system("losetup -d " + associations.loopDevice) != 0): exit();
 	
 	# MountPoint entfernen
-	# TODO: das nur machen, wenn zuvor kein Fehler aufgetreten ist, weil sonst
-	# der Inhalt des Kontainers gelöscht wird!!
 	shutil.rmtree(associations.mountPoint);
 
 main();

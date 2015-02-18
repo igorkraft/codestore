@@ -295,6 +295,7 @@
 - http://stackoverflow.com/questions/27381781/java-spring-boot-how-to-map-my-my-app-root-to-index-html (Welcomepage in SPringboot einstellen)
 - http://askubuntu.com/questions/307280/how-do-i-install-applications-in-ubuntu (Linux offline updaten und Programme installieren)
 - https://de.wikipedia.org/wiki/Btrfs (ext4-Nachfolger)
+- https://www.youtube.com/watch?v=uD6Okha_Yj0&feature=youtu.be (First look at App Development in Angular2)
 
 -
     NewTab-Bookmark

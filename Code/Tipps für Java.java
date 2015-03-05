@@ -224,3 +224,7 @@ List<Charset> charsets = Lists.newArrayList((new sun.nio.cs.StandardCharsets()).
 • XSL-Trasformation mit Xalan in der Komandozeile
 set CLASSPATH=serializer-2.7.2.jar;xalan-2.7.2.jar;xercesImpl-2.9.1.jar;xml-apis-1.3.04.jar
 java org.apache.xalan.xslt.Process -IN Report.xml -XSL Report.xsl -OUT Report.html
+
+• Byte-Verarbeitung
+(byte)0xff
+String.format("0x%02X", oneByte)

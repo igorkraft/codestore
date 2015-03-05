@@ -226,5 +226,14 @@ set CLASSPATH=serializer-2.7.2.jar;xalan-2.7.2.jar;xercesImpl-2.9.1.jar;xml-apis
 java org.apache.xalan.xslt.Process -IN Report.xml -XSL Report.xsl -OUT Report.html
 
 • Byte-Verarbeitung
-(byte)0xff
-String.format("0x%02X", oneByte)
+byte b = (byte)0xff; // diese vier Befehle weisen alle den selben Wert zu (der als -1 dargestellt werden würde)
+byte b = (byte)255;
+byte b = (byte)-1;
+byte b = -1;
+Wertebereich: 0 bis 127 dann -128 bis -1
+Hexadezimale Darstellung: String.format("0x%02X", b)
+Vorzeichenfreie Darstellung als int: b & 0xFF
+Integer größer 127 müssen explizit gecastet werden, weil sie vorzeichenbehaftet dargestellt werden
+Für den logischen Vergleich werden bytes immer erst in Integer konvertiert und dann vergleichen!
+Soll heißen: (byte)255  ist kleiner als (byte)10 
+bzw.         (byte)0xFF ist kleiner als (byte)0x0A

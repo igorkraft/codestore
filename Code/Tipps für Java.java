@@ -237,3 +237,4 @@ Integer größer 127 müssen explizit gecastet werden, weil sie vorzeichenbehaft
 Für den logischen Vergleich werden bytes immer erst in Integer konvertiert und dann vergleichen!
 Soll heißen: (byte)255  ist kleiner als (byte)10 
 bzw.         (byte)0xFF ist kleiner als (byte)0x0A
+Für einen Vergleich muss also erst die vorzeichenfreie Darstellung erzeugt werden.

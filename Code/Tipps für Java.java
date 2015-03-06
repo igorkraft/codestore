@@ -73,6 +73,9 @@ org.apache.commons.io.FileUtils.writeStringToFile(new File("c:\\result.txt"),org
 HTML/XML-Syntax &#x00df;
 HTML/XML dezimal &#223; = ß
 
+• die Unicoderepräsentation eines Zeichens ausgeben
+"\\u" + Integer.toHexString('₤' | 0x10000).substring(1)
+
 • XPath-Helper
 private static String xPathToString(Node node, String expression)
 {

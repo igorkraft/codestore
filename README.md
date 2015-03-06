@@ -297,6 +297,8 @@
 - https://de.wikipedia.org/wiki/Btrfs (ext4-Nachfolger)
 - https://www.youtube.com/watch?v=uD6Okha_Yj0&feature=youtu.be (First look at App Development in Angular2)
 - http://de.wikipedia.org/wiki/Matcha (pulverisierter Tee)
+ - http://www.thecattylife.com/2010/07/matcha-madness/
+ - http://www.chocablog.com/reviews/kitkat-matcha-green-tea/
 
 -
     NewTab-Bookmark

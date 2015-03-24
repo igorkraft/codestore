@@ -300,6 +300,9 @@
  - http://www.thecattylife.com/2010/07/matcha-madness/
  - http://www.chocablog.com/reviews/kitkat-matcha-green-tea/
 - https://streetart.withgoogle.com/de/?utm_source=google&utm_medium=hppromo&utm_campaign=streetart2&utm_content=desktop (Street Art)
+- Majoras Mask Fanart
+ - http://majorasmaskgb.deviantart.com/gallery/?set=36429624&offset=0
+ - http://blueamnesiac.deviantart.com/gallery/36428383/Majora-s-Mask-GB-Demake?offset=0
 
 -
     NewTab-Bookmark

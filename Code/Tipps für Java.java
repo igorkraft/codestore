@@ -218,8 +218,8 @@ public void writeToClipboard(String data)
 	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(contents, null);
 }
 
-• Charset-Konstanten (erfordert commons-io)
-Charsets.ISO_8859_1 und Charsets.UTF_8
+• Charset-Konstanten
+StandardCharsets.ISO_8859_1 und StandardCharsets.UTF_8
 
 • alle Charsets des Systems
 List<Charset> charsets = Lists.newArrayList((new sun.nio.cs.StandardCharsets()).charsets());

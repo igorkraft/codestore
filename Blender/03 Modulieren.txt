@@ -20,6 +20,7 @@
 - 'r' kann mehrfach gedrückt werden, um die Rotationsachse zu verändern (so kann man in allen Richtungen rotieren ohne die Perspektive zu ändern)
 - 'g' 'x' verschiebt nur in X-Richtung (andere Translationen und Achsen analog)
 - 'g' 'x' 'Num-' 'Num5' verschiebt das Objekt in X um -5 (Maussteuerung wird deaktiviert)
+- 'g' 'g' verschiebt Vertex entlang seiner Kante
 - 'Shift' 'd' dupliziert ein Objekte und Objektgruppen
 - neue Objekte werden dort in die Szene gesetzt, wo der 3D-Cursor steht 
 - zum setzen des 3D-Cursors 'linke_Maus

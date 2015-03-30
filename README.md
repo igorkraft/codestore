@@ -306,6 +306,7 @@
 - https://www.codeschool.com/ (Freie Kurse für Web-Technologien)
 - http://www.echojs.com/ (Newssite für Javascript)
 - https://roystanross.wordpress.com/super-mario-64-hd/ (im Browser spielbarer Unity-Nachbau von Mario64)
+- http://notepadqq.altervista.org/wp/ (Notepad++ für Linux)
 
 -
     NewTab-Bookmark

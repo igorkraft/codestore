@@ -8,5 +8,5 @@ var a = document.createElement("a");
 a.href = relUrl;
 return a.href;
 
-"test"   -> "http://localhost/test"
+"test"   -> "http://localhost/test" <br/>
 "//test" -> "http://test/" (wendet das Schema des aktuellen Hosts an)

@@ -307,6 +307,9 @@
 - http://www.echojs.com/ (Newssite für Javascript)
 - https://roystanross.wordpress.com/super-mario-64-hd/ (im Browser spielbarer Unity-Nachbau von Mario64)
 - http://notepadqq.altervista.org/wp/ (Notepad++ für Linux)
+- http://blog.petrockblock.com/retropie/ (Emulatorenmanager für Raspberry Pi mit ca. 30 Emulatoren)
+- http://openelec.tv/ (Kodi/XBMC-basiertes Mediacenter für Raspberry Pi)
+- http://www.squid-cache.org/ (freier Proxy für Webseiten)
 
 -
     NewTab-Bookmark

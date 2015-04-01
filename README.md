@@ -310,6 +310,7 @@
 - http://blog.petrockblock.com/retropie/ (Emulatorenmanager für Raspberry Pi mit ca. 30 Emulatoren)
 - http://openelec.tv/ (Kodi/XBMC-basiertes Mediacenter für Raspberry Pi)
 - http://www.squid-cache.org/ (freier Proxy für Webseiten)
+- http://projects.spring.io/spring-cloud/ 
 
 -
     NewTab-Bookmark

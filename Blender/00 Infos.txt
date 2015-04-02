@@ -9,6 +9,7 @@
  - `Geometry To Origin` gibt es dort auch
 - bilden der konvenxen Hülle: Edit-Mode + 'Space' + convex eingeben
 - wenn das reinzoomen nicht mehr weiter geht, dann mit 'Alt' + 'Pos1' die View auf den Cursor zentrieren
+- 'Alt' + 'm' -> zwei Punkte zu einem zusammenfügen/mergen (Auswahl fragt nach Vorgehensweise)
 
 Eine Kante entlang ihrer Richutng an einer Seite verlängern bzw. einen Vertex entlang einer Kante hinausschieben:
 - den Vertex markieren, der die Position behalten soll

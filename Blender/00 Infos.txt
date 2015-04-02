@@ -8,6 +8,7 @@
 - möchte man den Objektmittelpunkt in die geometrische Mitte des Objekts setzen, dann `Object`->`Transform`->`Origin To Geometry`
  - `Geometry To Origin` gibt es dort auch
 - bilden der konvenxen Hülle: Edit-Mode + 'Space' + convex eingeben
+- wenn das reinzoomen nicht mehr weiter geht, dann mit 'Alt' + 'Pos1' die View auf den Cursor zentrieren
 
 Eine Kante entlang ihrer Richutng an einer Seite verlängern bzw. einen Vertex entlang einer Kante hinausschieben:
 - den Vertex markieren, der die Position behalten soll

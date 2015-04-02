@@ -311,6 +311,7 @@
 - http://openelec.tv/ (Kodi/XBMC-basiertes Mediacenter für Raspberry Pi)
 - http://www.squid-cache.org/ (freier Proxy für Webseiten)
 - http://projects.spring.io/spring-cloud/ 
+- http://sourcemaking.com/design_patterns
 
 -
     NewTab-Bookmark

@@ -17,3 +17,7 @@ Eine Kante entlang ihrer Richutng an einer Seite verlängern bzw. einen Vertex e
 - den zweiten Vertex mitmarkieren
 - mit `.` den 3D-Cursor als Pivot-Punkt festlegen
 - mit `s` die Kante skalieren
+
+unter Linux die Super-Taste zum Verschieben von Fenstern einstellen
+- `dconf-tools` installieren und ausführen
+- `org → gnome → desktop → wm → preferences → mouse-button-modifier` auf `<Super>` umstellen

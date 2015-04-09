@@ -314,6 +314,7 @@
 - http://sourcemaking.com/design_patterns
 - http://getbootstrap.com/components/ (Bootstrap glyphs)
 - http://java.dzone.com/articles/spring-boot-support-spring?mz=62823-enterprise-integration (Spring-Boot-Wizard)
+- http://java.dzone.com/articles/bootstrap-responsive-grid
 
 -
     NewTab-Bookmark

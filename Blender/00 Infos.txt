@@ -22,3 +22,11 @@ Eine Kante entlang ihrer Richutng an einer Seite verlängern bzw. einen Vertex e
 unter Linux die Super-Taste zum Verschieben von Fenstern einstellen
 - `dconf-tools` installieren und ausführen
 - `org → gnome → desktop → wm → preferences → mouse-button-modifier` auf `<Super>` umstellen
+
+Ein Mesh mit einer Ebene zerschneiden
+- weggeschnitten wird die Hälfte, zu der die Ebenennormale zeigt
+- Schnittebene einfügen und ausrichten
+- erst die Ebene, dann das Mesh markieren
+- den `Boolean`-Modifier hinzufügen
+- bei `Object:` die Ebene auswählen
+- den Modifier anwenden

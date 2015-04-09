@@ -154,6 +154,8 @@ DateTime time = DateTimeFormat
 System.out.println("UTC time stamp: " + time.getMillis());
 
 • Joda-Zeitpunkt formatiert ausgeben
+// die Zeitzone legt den Offset fest
+// die Locale legt das Ausgabeformat fest
 DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS").print(time) // verwendet die Zone des time-Objekts für die Darstellung
 DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSS").withZone(DateTimeZone.UTC).print(time)
 

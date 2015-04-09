@@ -313,6 +313,7 @@
 - http://projects.spring.io/spring-cloud/ 
 - http://sourcemaking.com/design_patterns
 - http://getbootstrap.com/components/ (Bootstrap glyphs)
+- http://java.dzone.com/articles/spring-boot-support-spring?mz=62823-enterprise-integration (Spring-Boot-Wizard)
 
 -
     NewTab-Bookmark

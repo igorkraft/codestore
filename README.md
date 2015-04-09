@@ -312,6 +312,7 @@
 - http://www.squid-cache.org/ (freier Proxy für Webseiten)
 - http://projects.spring.io/spring-cloud/ 
 - http://sourcemaking.com/design_patterns
+- http://getbootstrap.com/components/ (Bootstrap glyphs)
 
 -
     NewTab-Bookmark

@@ -316,6 +316,10 @@
 - http://java.dzone.com/articles/spring-boot-support-spring?mz=62823-enterprise-integration (Spring-Boot-Wizard)
 - http://java.dzone.com/articles/bootstrap-responsive-grid
 - http://hive2hive.com/ (Open-Source Library for P2P-based File Synchronization and Sharing)
+- regions for Java (Intellij und Eclipse)
+ - https://www.jetbrains.com/idea/help/folding-custom-regions-with-line-comments.html
+ - http://stackoverflow.com/questions/6940199/how-to-use-coffee-bytes-code-folding
+- https://plugins.jetbrains.com/plugin/6317 (Lombok-Plugins Intellij)
 
 -
     NewTab-Bookmark

@@ -25,8 +25,10 @@ unter Linux die Super-Taste zum Verschieben von Fenstern einstellen
 
 Ein Mesh mit einer Ebene zerschneiden
 - weggeschnitten wird die Hälfte, zu der die Ebenennormale zeigt
-- Schnittebene einfügen und ausrichten
-- erst die Ebene, dann das Mesh markieren
-- den `Boolean`-Modifier hinzufügen
-- bei `Object:` die Ebene auswählen
-- den Modifier anwenden
+- funktioniert nur mit Schnittstellen, bei denen die Flächen zusammenhängen (man kann Suzanne nicht an ihren Augen zerschneiden)
+- Ablauf
+ - Schnittebene einfügen und ausrichten
+ - erst die Ebene, dann das Mesh markieren
+ - den `Boolean`-Modifier hinzufügen
+ - bei `Object:` die Ebene auswählen
+ - den Modifier anwenden

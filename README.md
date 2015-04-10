@@ -315,6 +315,7 @@
 - http://getbootstrap.com/components/ (Bootstrap glyphs)
 - http://java.dzone.com/articles/spring-boot-support-spring?mz=62823-enterprise-integration (Spring-Boot-Wizard)
 - http://java.dzone.com/articles/bootstrap-responsive-grid
+- http://hive2hive.com/ (Open-Source Library for P2P-based File Synchronization and Sharing)
 
 -
     NewTab-Bookmark

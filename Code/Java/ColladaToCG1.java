@@ -12,6 +12,17 @@ import org.apache.commons.io.FileUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
+/*
+Blender-Export:
+ - Edit-Mode
+ - mark all faces (in face selection mode)
+ - Strg + T to triangulate
+ - extrude individual (no movement)
+ - duplicate (no movement)
+ - select inverse
+ - remove selected faces
+*/
+
 public class ColladaToCG1 
 {
 	public static String js = "define([\"exports\"], function(exports)\n{\nexports.vertices =\n[\n%s\n];\n\n"+

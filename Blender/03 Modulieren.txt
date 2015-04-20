@@ -85,5 +85,6 @@ Modifier:
   -> sollen sich Punkt auf der Spiegelfläche nicht voneinander entfernen wenn man sie verschiebt, so muss 'Clipping' aktiviert werden
   -> es können mehrere Spiegelachsen aktiviert werden, so wird das Objekt mehrfach in den Raum gespiegelt
   -> bei 'Apply' beiden Hälften sind jetzt individuell bearbeitbar
+  -> unter 'Mirror Object:' kann ein Objekt ausgewählt werden, an dem gespiegelt wird (dabei wirken sich nur die globalen Objektkoordinaten auf die Spiegelung aus (Rotation und Translation))
 - Subdivision Surface-> verfeinert ein grobes Mesh virtuell, die groben Grundelemente bleiben im Editmodus erhalten
   -> Grad der Verfeinerung /Unterteilung wird mit 'View' eingestellt

@@ -13,7 +13,7 @@
 - Mesh-spezifische Eigenschaften werden links neben dem 3D-Fenster angezeigt
 - Transformation beinhaltet Translation 'g', Rotieren 'r' und Skalieren 's'
 - die Button-Leiste 'Transform Orientation' ist unter dem 3D-Fenster in der Mitte
-- möchte man das Objekt Achsenbezogen Transformieren, dann kann man dort eine Transformationsart auswählen
+ - möchte man das Objekt Achsenbezogen Transformieren, dann kann man dort eine Transformationsart auswählen
 - um die Transformation anzuwenden, klickt man die bunten Pfeile am Objekt an
 - mit Shift können mehrere Transormationsarten gleichzeitig aktiviert werden (ausgeführt wird aber nur die am Objekt gewählte)
 - kommt man beim Verschieben an den Bildschirmrand, dann springt der Cursor zur gegenüberliegenden Seite
@@ -54,6 +54,9 @@ Editiermodus:
 - Löscht man einen Punkt, so werden seine Kanten auch gelöscht
 - hat man ein Element ausgewählt, so kann man die Auswahl kreisförmig erweiter mit 'Strg'+'Num_+' (veringern analog)
 - um eine Fläche zwischen drei gewählten Punken als Fläche zu füllen 'Alt' + 'f'
+- wählt man eine Kante aus und drückt 'Strg' + 'Alt' + 'Space', dann wird zu 'Transform Orientation' ein neues Koordinatenkreuz hinzugefügt
+ -> damit kann man Elemente um beliebige Achsen rotieren oder entlang ihrer Richtung bewegen (bei Transformation zwei Mal 'y' drücken)
+ -> Koordinatenkreuz später auch im Objektmodus verwendbar
 
 3D-Werkzeuge:
 - 'Limit selection to visible' unter dem 3D-Fenster mache das Objekt im Bearbeitungsmodus durchsichtig

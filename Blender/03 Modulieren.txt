@@ -57,6 +57,7 @@ Editiermodus:
 - wählt man eine Kante aus und drückt 'Strg' + 'Alt' + 'Space', dann wird zu 'Transform Orientation' ein neues Koordinatenkreuz hinzugefügt
  -> damit kann man Elemente um beliebige Achsen rotieren oder entlang ihrer Richtung bewegen (bei Transformation zwei Mal 'y' drücken)
  -> Koordinatenkreuz später auch im Objektmodus verwendbar
+ -> wählt man ein Polygon aus, so verläuft die Z-Achse des neuen Koordinatensystems entlang der Flächennormale
 
 3D-Werkzeuge:
 - 'Limit selection to visible' unter dem 3D-Fenster mache das Objekt im Bearbeitungsmodus durchsichtig

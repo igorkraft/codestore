@@ -196,3 +196,7 @@ losetup -d /dev/loop0
 
 # Dateisystem auf einem Gerät erzeugen
 mkfs -t ext4 -m 1 -v /dev/loop0
+
+# Prozessortemperatur anzeigen (erfordert lm-sensors)
+sudo sensors-detect # einmalig absetzen und den Anweisungen folgen
+sensors

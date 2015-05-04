@@ -33,3 +33,8 @@ Ein Mesh mit einer Ebene zerschneiden
  - den `Boolean`-Modifier hinzufügen
  - bei `Object:` die Ebene auswählen
  - den Modifier anwenden
+ 
+guter Einstiegsshader für Cycles
+- Mix Shader
+ - Glossy BSDF
+ - Diffuse BSDF

@@ -21,7 +21,8 @@ Eine Kante entlang ihrer Richutng an einer Seite verlängern bzw. einen Vertex e
 - mit `s` die Kante skalieren
 
 unter Linux die Super-Taste zum Verschieben von Fenstern einstellen
-- `dconf-tools` installieren und ausführen
+- `dconf-tools` installieren
+- `sudo dconf-editor` ausführen
 - `org → gnome → desktop → wm → preferences → mouse-button-modifier` auf `<Super>` umstellen
 
 Ein Mesh mit einer Ebene zerschneiden

@@ -75,6 +75,9 @@ Editiermodus:
   -> funktioniert auch im Objektmodus
   -> wie nah umliegende Elemente für eine Beeinflussung sein müssen, legt der weiße Kreis fest (Scrollen für anderen Radius)
 - mit 'k' aktiviert man im Editmodeus das Kantenschnittwerkzeug
+- um nur Teile eines Mesh smooth zu machen (z. B. ein Rohr mit einem harten Schnitt)
+  -> die Polygone markieren
+  -> links -> 'Shading / UVs' -> 'Shading' für Polygone (oder auch Kanten) 'Smooth' einstellen
 
 Modifier:
 - der 'Schraubenschlüssel' unter dem Szenengraph zeigt eine Liste mit allen für das Objekt erzeugten Modifiern (jeder hat individuelle Eigenschaften)

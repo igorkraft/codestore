@@ -24,6 +24,7 @@ unter Linux die Super-Taste zum Verschieben von Fenstern einstellen
 - `dconf-tools` installieren
 - `sudo dconf-editor` ausführen
 - `org → gnome → desktop → wm → preferences → mouse-button-modifier` auf `<Super>` umstellen
+- `Hauptmenü → System → Einstellungen → Fenster → Verhalten` unten auf `<Super>` umstellen
 
 Ein Mesh mit einer Ebene zerschneiden
 - weggeschnitten wird die Hälfte, zu der die Ebenennormale zeigt

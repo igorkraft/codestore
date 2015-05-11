@@ -28,9 +28,21 @@ Texturen:
 - unter der Vorschau können shaderspezifische Eigenschaften eingestellt werden
 - für eigene Texturen wählt man unter 'Typ' 'Image or Movie' und in den zugehörigen Eigenschaften unter 'Image' dann das darzustellende Bild
 - 'Influence'>'Color' gibt an wie stark die Textur die Materialfarbe überdeckt
-- wenn sich zwei Texturen überlagern sollen, dann wird in einem weitern Slot ein Textur hinzugefügt und ihr 'Influence'>'Color'-Wer nach unten geregelt
+- wenn sich zwei Texturen überlagern sollen, dann wird in einem weitern Slot ein Textur hinzugefügt und ihr 'Influence'>'Color'-Wert nach unten geregelt
 - neben dem Namen des Modus (z.B. Edit Mode) wird der Viewport eingestellt
 - möchte man im Bearbeitungsfenster Texturen sehen, dann muss der Viewport 'Textured' eingestellt werden und in den Einstellungen des Bearbeitungsfensters (Taste 'n') -> Display -> Shading -> GLSL gewählt werden
 - unter 'Mapping' wird die Projektionsart eingestellt (das Bearbeitungsfenster unterstützt nur flache Projektion, die anderen wirken sich erst beim rendern aus)
 - stellt man die Werte unter 'Mapping'->'Size' hoch, wird die Textur kleiner und wiederholt sich (nahtlos aneinander passende Texturen sind geeignet)
 
+UV-Mapping von Texturen:
+- im Mesh Kanten auswählen, die als Naht markiert werden ('Strg'+'e'->'Mark Seam')
+- das Screen Layout 'UV Editing' einstellen
+- die zu entfaltenen Teile des Mesh markieren, mit 'u'->'Unwrap' anwenden
+- die Polygone, die man im UV-Editor markiert, werden in der 3D-View hell hervorgehoben
+- im UV-Editor werden stehts nur die Polygone dargestellt, die auch im 3D-View markiert sind
+- das Objekt mit einem Material versehen und unter 'Surface' 'Diffuse BSDF' einstellen
+- unter 'Surface'->'Color' den Punkt rechts klicken und 'Image Texture' einstellen
+ - in den Textur-Properties wird automatisch eine Textur konfiguriert
+- unter 'Surface'->'Color'->'Open' eine Textur auswählen
+- die Textur im UV-Editor öffnen und die Polygone an den richtigen Stellen der Textur platzieren
+- im UV-Editor kann unter 'UVs'->'Export UV Layout' ein SVG mit den UV-Polygonen exportiert werden

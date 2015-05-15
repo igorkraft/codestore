@@ -52,7 +52,7 @@
 - unter `Delimiter (...):` kann ein Wertetrenner innerhalb der Zeile eingetragen werden
 - unter `Variable Names (comma-delimited):` wird ein Variablenname vergeben, der im übergeordneten Request verwendet werden kann
 - im Request wird der Variablenname nach dem Muster `${var_name}` in den `Path` eingetragen
-- bei einer Request-Folge werden die Werte dann nacheinander in den Pfad eingefügt
+- bei einer Request-Folge werden die Werte dann nacheinander in den Pfad eingefügt (`Loop Count` in `Thread Group` > 1)
 
 ##### Response Assertion
 - wird einer `Thread Group` hinzugefügt (unter `Assertions`)

@@ -46,3 +46,7 @@ UV-Mapping von Texturen:
 - unter 'Surface'->'Color'->'Open' eine Textur auswählen
 - die Textur im UV-Editor öffnen und die Polygone an den richtigen Stellen der Textur platzieren
 - im UV-Editor kann unter 'UVs'->'Export UV Layout' ein SVG mit den UV-Polygonen exportiert werden
+ - Beim Exportieren des UV-Layouts nach SVG, werden SVG-Objekt mit Konturen (Rändern) erzeugt.
+ - Wenn man diese Objekte in Inkscape mit einer Füllung versieht und die Kontur entfernt, dann verringert sich die Größe der Objekte um die Dicke der Kontur.
+ - wie man das verhindert ist in der Datei InkscapeControllerTests.java beschieben
+

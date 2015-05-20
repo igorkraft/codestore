@@ -322,6 +322,7 @@
 - https://plugins.jetbrains.com/plugin/6317 (Lombok-Plugins Intellij)
 - https://www.kickstarter.com/projects/1818505613/mdrawbot-4-in-1-drawing-robot?ref=category (Zeichenroboter)
 - https://de.wikipedia.org/wiki/Light_Painting
+- http://en.wikipedia.org/wiki/File:Git_operations.svg (Git-Befehle und ihre Wirkungen)
 
 -
     NewTab-Bookmark

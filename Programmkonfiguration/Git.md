@@ -46,6 +46,8 @@
   - `git clean -f -d`
 - nur ignorierte FSOs löschen
   - `git clean -f -d -X`
+- unbeobachtete und ignorierte FSOs löschen
+  - `git clean -f -d -x`
 - alle Änderungen aus dem Stage-Bereich entfernen
   - `git reset HEAD *`
 - Historie einschließlich Umbenennungen ausgeben

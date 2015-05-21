@@ -55,6 +55,23 @@
 
 #### Konfigurationsdatei
 
+- liegt unter `$HOME/.gitconfig`
+- Kommentare fangen mit `#` an
+- globale Exclude-Dateien können hier konfiguriert werden
+- HTTP-Einstellungen (Proxy, SSL-Zertifikate ignorieren)
+```
+[http]
+	proxy = http://<proxy>:<port>
+	sslVerify = false
+```
+- Difftool konfigurieren (die Sektion `difftool` kann mehmals vorkommen, in der `diff`-Sektion wird das zu benutzende festgelegt)
+```
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = C:/Program\\ Files/SourceGear/Common/DiffMerge/sgdm.exe \"$LOCAL\" \"$REMOTE\"
+```
+
 #### Links
 
 - List häufig verwendeter Befehle

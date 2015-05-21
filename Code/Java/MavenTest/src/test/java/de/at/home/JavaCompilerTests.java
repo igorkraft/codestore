@@ -1,4 +1,4 @@
-package org.local.test;
+package de.at.home;
 
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;

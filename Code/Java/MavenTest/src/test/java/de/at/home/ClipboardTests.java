@@ -1,4 +1,4 @@
-package org.local.test;
+package de.at.home;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.DataFlavor;

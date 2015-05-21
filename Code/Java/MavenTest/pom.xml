@@ -6,7 +6,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.local.test</groupId>
+	<groupId>de.at.home</groupId>
 	<artifactId>maventest</artifactId>
 	<version>1.0.0</version>
 
@@ -146,7 +146,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>org.local.test.Base64Test</mainClass>
+									<mainClass>de.at.home.Base64Test</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>

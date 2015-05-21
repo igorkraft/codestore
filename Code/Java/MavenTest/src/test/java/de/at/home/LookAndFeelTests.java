@@ -1,4 +1,4 @@
-package org.local.test;
+package de.at.home;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;

@@ -1,4 +1,4 @@
-package org.local.test;
+package de.at.home;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;

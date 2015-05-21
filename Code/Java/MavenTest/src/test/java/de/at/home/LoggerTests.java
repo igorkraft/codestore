@@ -31,3 +31,5 @@ public class LoggerTests
 		
 	}
 }
+
+// Test 1

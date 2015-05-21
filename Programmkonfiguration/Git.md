@@ -1,5 +1,13 @@
 ## Git
 
+#### Allgemeines
+
+- unbeobachtete FSOs müssen mit `git add` unter Beobachtung gestellt werden
+  - `git add` überführt die Dateien in den Stage-Bereich, sodass sie vom nächsten commit erfasst werden können
+- unbeobachtete Dateien werden auch als **untracked** bezeichnet
+- selbst mit `git mv <fso>` kann keine Umbenennung eines FSOs gemacht werden ohne dass die Historie der betroffenen FSOs verloren geht
+  - `git log --follow <fso>` gibt die Historie einschließlich Umbenennungen aus
+
 #### Installation
 
 - um den aktuellen Zweig im Promt anzuzeigen, diese Befehle in die .bashrc eintragen
@@ -26,7 +34,7 @@
   - `gitk <Dateipfad>`
 - Remote-Zweige anzeigen
   - `git ls-remote`
-- unbeobachtete (untracked) FSOs anzeigen, Liste veränderter Dateien anzeigen, Stage-Bereich anzeigen
+- unbeobachtete FSOs anzeigen, Liste veränderter Dateien anzeigen, Stage-Bereich anzeigen
   - `git status`
 - unbeobachtete Dateien anzeigen
   - `git ls-files --others --exclude-standard`
@@ -40,6 +48,8 @@
   - `git clean -f -d -X`
 - alle Änderungen aus dem Stage-Bereich entfernen
   - `git reset HEAD *`
+- Historie einschließlich Umbenennungen ausgeben
+  - `git log --follow <fso>`
 
 #### Konfigurationsdatei
 

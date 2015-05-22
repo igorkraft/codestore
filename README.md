@@ -323,6 +323,10 @@
 - https://www.kickstarter.com/projects/1818505613/mdrawbot-4-in-1-drawing-robot?ref=category (Zeichenroboter)
 - https://de.wikipedia.org/wiki/Light_Painting
 - https://github.com/huxi/lilith (Beispiel, wie man Logback für den Lilith-Log-Client konfiguriert + log4j)
+- SVG Renderer für Java
+  - https://xmlgraphics.apache.org/batik/
+  - https://svgsalamander.java.net/?six_charachters_limit
+  - http://www.jfree.org/jfreesvg/
 
 -
     NewTab-Bookmark

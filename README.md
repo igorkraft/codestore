@@ -327,6 +327,8 @@
   - https://xmlgraphics.apache.org/batik/
   - https://svgsalamander.java.net/?six_charachters_limit
   - http://www.jfree.org/jfreesvg/
+- https://www.polymer-project.org/1.0/ (Framework zum Erzeugen Grafischer Web-Komponenten)
+  - https://polymer-designer.appspot.com/ (zugehöriger Editor)
 
 -
     NewTab-Bookmark

@@ -329,6 +329,9 @@
   - http://www.jfree.org/jfreesvg/
 - https://www.polymer-project.org/1.0/ (Framework zum Erzeugen Grafischer Web-Komponenten)
   - https://polymer-designer.appspot.com/ (zugehöriger Editor)
+- RPG-Sachen
+  - http://rpg-atelier.net/
+  - http://www.pixeljoint.com/forum/forum_posts.asp?TID=16247 (Farbtool DawnBringer)
 
 -
     NewTab-Bookmark

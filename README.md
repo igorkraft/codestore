@@ -332,6 +332,7 @@
 - RPG-Sachen
   - http://rpg-atelier.net/
   - http://www.pixeljoint.com/forum/forum_posts.asp?TID=16247 (Farbtool DawnBringer)
+- https://www.udacity.com/ (Platform für Informatik-Lernkurse)
 
 -
     NewTab-Bookmark

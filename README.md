@@ -333,6 +333,8 @@
   - http://rpg-atelier.net/
   - http://www.pixeljoint.com/forum/forum_posts.asp?TID=16247 (Farbtool DawnBringer)
 - https://www.udacity.com/ (Platform für Informatik-Lernkurse)
+- https://de.wikipedia.org/wiki/Grafikpipeline
+  - https://de.wikipedia.org/wiki/Homogene_Koordinaten
 
 -
     NewTab-Bookmark

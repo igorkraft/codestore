@@ -21,6 +21,7 @@
 - 'g' 'x' verschiebt nur in X-Richtung (andere Translationen und Achsen analog)
 - 'g' 'x' 'Num-' 'Num5' verschiebt das Objekt in X um -5 (Maussteuerung wird deaktiviert)
 - 'g' 'g' verschiebt Vertex entlang seiner Kante
+  - 'Alt' während des schiebens, schiebt über die Kantenlänge hinaus
 - 'Shift' 'd' dupliziert ein Objekte und Objektgruppen
 - neue Objekte werden dort in die Szene gesetzt, wo der 3D-Cursor steht 
 - zum setzen des 3D-Cursors 'linke_Maus

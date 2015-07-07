@@ -12,6 +12,9 @@
 - wenn das reinzoomen nicht mehr weiter geht, dann mit 'Alt' + 'Pos1' die View auf den Cursor zentrieren
 - 'Alt' + 'm' -> zwei Punkte zu einem zusammenfügen/mergen (Auswahl fragt nach Vorgehensweise)
 - 'w' + '4' -> Doppelte Punkte entfernen
+- 'h' macht markierte Objekte unsichtbar
+- 'Shift' + 'h' macht alle nicht markierten Objekte unsichtbar
+- 'Alt' + 'h' macht alle Objekte sichtbar
 
 Eine Kante entlang ihrer Richutng an einer Seite verlängern bzw. einen Vertex entlang einer Kante hinausschieben:
 - den Vertex markieren, der die Position behalten soll

@@ -366,6 +366,19 @@ Helligkeitssteuerung für Nvidia-Karten:
     # Add to your "Device" section in /etc/X11/xorg.conf and restart X
     Option "RegistryDwords" "EnableBrightnessControl=1"
 
+Zwei-Monitor-Betrieb aktivieren:
+
+- `linux-generic-lts-vivid` installieren (ermöglicht den Desktop auf beide Monitore zu erweitern)
+- die Auflösung des externen Monitors muss den Bildschirmeinstellungen hinzugefügt werden
+  - dazu muss eine Modline für die Auflösung generiert werden: `cvt 1280 1024 60`
+  - außerdem muss der Name des externen Monitors bekannt sein: `xrandr` (der Name steht ganz links in der Zeile über den Auflösungen, hier VGA-0)
+  - hinzufügen der neuen Auflösung:
+```
+  xrandr --newmode "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync
+  xrandr --addmode VGA-0 1280x1024_60.00
+```
+  - anschließend kann die Auflösung in den Bildschirmeinstellungen ausgewählt werden
+
 offene FTP-Verzeichnisse werden hierhin eingehängt:
 /run/user/user/gvfs
 

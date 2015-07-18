@@ -378,6 +378,10 @@ Zwei-Monitor-Betrieb aktivieren:
   xrandr --addmode VGA-0 1280x1024_60.00
 ```
   - anschließend kann die Auflösung in den Bildschirmeinstellungen ausgewählt werden
+  - damit die Einstellungen nach jedem Start übernommen werden, müssen sie den Startprogrammen hinzugefügt werden:
+```
+  sh -c "xrandr --newmode \"1280x1024_60.00\"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync ; xrandr --addmode VGA-0 1280x1024_60.00"
+```
 
 offene FTP-Verzeichnisse werden hierhin eingehängt:
 /run/user/user/gvfs

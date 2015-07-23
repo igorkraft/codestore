@@ -4,8 +4,11 @@
 - Force jumbo mode: &#x2611;
 - VM options: --force-jumbo
 
-#### Editor->Editor Tabs
+#### Editor->General->Editor Tabs
 - Show tabs in single row: &#x2611;
+
+#### Editor->General->Appearance
+- Show whitespaces: &#x2611;
 
 #### Editor->Colors and Fonts->Font
 - Scheme: Dracula

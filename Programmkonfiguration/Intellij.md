@@ -9,6 +9,7 @@
 
 #### Editor->General->Appearance
 - Show whitespaces: &#x2611;
+- Show Line Numbers: &#x2611;
 
 #### Editor->Colors and Fonts->Font
 - Scheme: Dracula

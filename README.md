@@ -335,6 +335,10 @@
 - https://www.udacity.com/ (Platform für Informatik-Lernkurse)
 - https://de.wikipedia.org/wiki/Grafikpipeline
   - https://de.wikipedia.org/wiki/Homogene_Koordinaten
+- Zuul
+  - http://projects.spring.io/spring-cloud/spring-cloud.html#_router_and_filter_zuul
+  - den zuul-cloud-starter einbinden
+  - EnableZuulProxy-Annotaion verwenden
 
 -
     NewTab-Bookmark

@@ -48,6 +48,10 @@
 - Declared Type &#x2611;
 - Actual Type &#x2611;
 
+#### Startargumente
+- ` -showlocation` zeigt den Workspace in der Titelleiste an
+- ` -data /path/to/workspace` übergibt den Workspace
+
 #### Sonstiges
 - über das Kontextmenü der Variables-View können Watchpoints für primitive Datentypen erzeugt werden
 - Watchpoints können auch bei Attributdeklaration mit Doppelklick auf die Breakpointbar gemacht werden

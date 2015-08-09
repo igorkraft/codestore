@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
 @EnableAutoConfiguration // konfiguriert die Anwendung abhängig von ihren Startern
-@ComponentScan
+@ComponentScan // sorgt dafür, dass die Controller-Klassen automatisch gefunden werden
 public class ApplicationMain
 {
 

@@ -14,4 +14,5 @@
 
 #### Settings - User
 - um die Standardeinstellungen zu überschreiben, müssen sie aus `Settings - Default` nach `Settings - User` kopiert und angepasst werden
-- `"draw_white_space": "all",` oben hinzufügen
+- `"draw_white_space": "all",`
+- `"word_wrap": "false",`

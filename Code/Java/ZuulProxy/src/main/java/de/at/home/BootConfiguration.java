@@ -9,9 +9,14 @@ import com.netflix.zuul.ZuulFilter;
 public class BootConfiguration
 {
 	@Bean
-	public ZuulFilter zuulTestFilter()
+	public ZuulFilter preZuulFilter()
 	{
-		return new ZuulTestFilter();
+		return new PreZuulFilter();
 	}
 
+	@Bean
+	public ZuulFilter postZuulFilter()
+	{
+		return new PostZuulFilter();
+	}
 }

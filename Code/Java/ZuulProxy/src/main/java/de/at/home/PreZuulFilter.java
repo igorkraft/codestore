@@ -6,13 +6,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 
-public class ZuulTestFilter extends ZuulFilter
+public class PreZuulFilter extends ZuulFilter
 {
 	@Override
 	public boolean shouldFilter()
 	{
 		HttpServletRequest request = RequestContext.getCurrentContext().getRequest();
-		
 		return request.getRequestURI().contains("test1.txt");
 	}
 
@@ -20,13 +19,15 @@ public class ZuulTestFilter extends ZuulFilter
 	public Object run()
 	{
 		HttpServletResponse response = RequestContext.getCurrentContext().getResponse();
-		return response;
+		RequestContext.getCurrentContext().setResponse(new ResponseWrapper(response));
+		
+		return null;
 	}
 
 	@Override
 	public String filterType()
 	{
-		return "post";
+		return "pre";
 	}
 
 	@Override

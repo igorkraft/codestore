@@ -11,12 +11,12 @@ import com.netflix.zuul.ZuulFilter;
 public class WebController
 {
 	@Autowired
-	@Qualifier("zuulTestFilter")
-	private ZuulFilter zuulFilter;
+	@Qualifier("postZuulFilter")
+	private ZuulFilter postZuulFilter;
 	
-	public void setZuulFilter(ZuulFilter zuulFilter)
+	public void setPostZuulFilter(ZuulFilter postZuulFilter)
 	{
-		this.zuulFilter = zuulFilter;
+		this.postZuulFilter = postZuulFilter;
 	}
 
 	@RequestMapping("/")

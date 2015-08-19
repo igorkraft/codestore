@@ -3,8 +3,6 @@ server.port: 8083
 
 zuul.ignored-services: '*'
 
-
-
 zuul.routes.testservice.path: '/src/**'
 zuul.routes.testservice.url: 'http://localhost:8081/src'
 zuul.routes.testservice.serviceId: 'testservice'

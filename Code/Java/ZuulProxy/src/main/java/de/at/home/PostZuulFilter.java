@@ -40,7 +40,8 @@ public class PostZuulFilter extends ZuulFilter
 	@Override
 	public int filterOrder()
 	{
-		return 1;
+		// der SendResponseFilter hat die Position 1000. Filter, die die Response verarbeiten, 
+		// müssen eine Position > 1000 haben 
+		return 1001;
 	}
-
 }

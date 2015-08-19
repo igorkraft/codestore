@@ -19,11 +19,13 @@ public class ResponseWrapper extends HttpServletResponseWrapper
 	private final ByteArrayOutputStream capture;
 	private ServletOutputStream output;
 	private PrintWriter writer;
+	private ResponseModifier responseModifier;
 
-	public ResponseWrapper(HttpServletResponse response)
+	public ResponseWrapper(HttpServletResponse response, ResponseModifier responseModifier)
 	{
 		super(response);
 		this.capture = new ByteArrayOutputStream(response.getBufferSize());
+		this.responseModifier = responseModifier;
 	}
 
 	@Override
@@ -63,8 +65,13 @@ public class ResponseWrapper extends HttpServletResponseWrapper
 		return new String(this.capture.toByteArray(), getCharacterEncoding());
 	}
 	
-	// inner classes #######################################################################
+	public ResponseModifier getResponseModifier()
+	{
+		return responseModifier;
+	}
 	
+	// inner classes #######################################################################
+
 	private class CaptureOutputStream extends ServletOutputStream
 	{
 		@Override

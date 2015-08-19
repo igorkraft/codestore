@@ -1,10 +1,11 @@
-package de.at.home;
+package de.at.home.filter;
 
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
+
+import de.at.home.ResponseWrapper;
 
 public class PostZuulFilter extends ZuulFilter
 {
@@ -20,12 +21,9 @@ public class PostZuulFilter extends ZuulFilter
 	{
 		try
 		{
-			ResponseWrapper responseWrapper = (ResponseWrapper)RequestContext.getCurrentContext().getResponse();
-			ServletResponse response = responseWrapper.getResponse();
+			ResponseWrapper wrapper = (ResponseWrapper)RequestContext.getCurrentContext().getResponse();
 			
-			String content = responseWrapper.getCaptureAsString();
-			response.getWriter().write(content);
-			response.getWriter().write("test content");
+			wrapper.getResponseModifier().modify(wrapper.getResponse(), wrapper.getCaptureAsString());
 		}
 		catch (Exception e) { /* TODO */ }
 		return null;

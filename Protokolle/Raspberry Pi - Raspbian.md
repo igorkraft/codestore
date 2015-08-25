@@ -1,4 +1,6 @@
-### Raspberry Pi Multimedia
+### Raspberry Pi - Raspbian
+
+#### Raspberry Pi Multimedia
 - WLAN-Treiber sind schon in Raspbian enthalten
 - wicd installieren
  - auf der Konfigurationsoberfläche wlan0 als Netzgerätedatei bekannt machen
@@ -32,7 +34,7 @@ Cursor per Tastatur steuern (`/home/pi/.config/openbox/lxde-rc.xml`):
     <keybind key="C-KP_7"><action name="Execute"><command>xdotool click 1</command></action></keybind>
     <keybind key="S-KP_7"><action name="Execute"><command>xdotool click 1</command></action></keybind>
 ```
-### Raspberry Pi Server
+#### Raspberry Pi Server
 - .bashrc danach durchsuchen, wo PS1 gesetzt wird und ersetzen mit
  - `PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h \[\033[00;36m\]\w\n\$\[\033[03;00m\]'`
 - Passwort für root setzen `sudo passwd root`
@@ -80,14 +82,14 @@ password=<pwd>
 <domain-URL>
 ```
 
-### SSH
+#### SSH
 - Anzeige von X-Fenstern ermöglichen
  - `ssh -Y user@host`
 - Dateisystem einhängen:
  - `sshfs -o allow_other user@host:/remotepath ~/mnt`
  - `umount ~/mnt`
 
-### VLC als Musik-Server
+#### VLC als Musik-Server
 - vlc installieren
 - zwei Skripte unter /etc/init.d anlegen und ausführbar machen
  - cvlcd:

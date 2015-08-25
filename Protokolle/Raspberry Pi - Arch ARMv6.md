@@ -1,9 +1,8 @@
-### ArchLinuxARM
+### Raspberry Pi - Arch ARMv6
 
 #### Herunterladen und Installieren
 
-- http://archlinuxarm.org/platforms/armv6/raspberry-pi oder <br>
-http://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2
+- http://archlinuxarm.org/platforms/armv6/raspberry-pi
 - auf dem Diskimage ist eine Partitionstabelle enthalten
  - am Anfang ist eine Bootpartition, gefolgt von einer Datenpartition
 - `dd` kann auf die Karte schreiben auch wenn diese nicht gemountet ist

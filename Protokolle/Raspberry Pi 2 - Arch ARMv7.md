@@ -9,3 +9,9 @@
 - als root (nicht per sudo!) das Archiv auf rp2_root auspacken:
   - `bsdtar -xpf ArchLinuxARM-rpi-2-latest.tar.gz -C rp2_root`
 - die Dateien im Ordner boot nach rp2_boot verschieben
+
+#### Konfiguration
+
+- initiale Benutzer `root:root` und `alarm:alarm`
+- man kann sich nicht per SSH als root anmelden (mit `su` kann alarm zu root werden)
+- mit `passwd` beide Passwörter ändern

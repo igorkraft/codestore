@@ -15,3 +15,10 @@
 - initiale Benutzer `root:root` und `alarm:alarm`
 - man kann sich nicht per SSH als root anmelden (mit `su` kann alarm zu root werden)
 - mit `passwd` beide Passwörter ändern
+- `pacman -S screen` installieren
+- in der .bashrc den Prompt anpassen `PS1='\[\033[00;33m\]\u@\h \[\033[00;36m\]\w\n\$ \[\033[03;00m\]'`
+- `pacman -S screen` installieren
+
+#### Apache Webserver
+
+- siehe `Raspberry Pi - Arch ARMv6.md`

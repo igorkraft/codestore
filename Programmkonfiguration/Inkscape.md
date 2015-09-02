@@ -13,6 +13,7 @@
 - Bewegt man den Cursor über einen Knoten und scrollt mit `Shift` nach oben, dann werden weitere Knoten, die in der Nähe liegen markiert (wie bei einem sich vergrößerden Markierkreis)
   - führt man den Vorgang mit `Strg` statt mit `Shift` aus, denn werden benachbarte Knoten auf dem Subpfad markiert (erleichtert das Markieren eines gesamten Subpfades)
 - hält man `Shift` gedrückt und verschiebt einen Knoten, dann wird einer seiner Bezier-Anfasser bewegt
+- mit `Strg` und `Alt` kann man einen Knoten entlang seiner Kanten bewegen
 
 ##### Knotentypen
 - bei Ecken werden die Bezier-Anfasser des Knotens nicht eingeschränkt

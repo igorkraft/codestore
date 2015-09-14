@@ -65,6 +65,7 @@
 	sslVerify = false
 ```
 - Difftool konfigurieren (die Sektion `difftool` kann mehmals vorkommen, in der `diff`-Sektion wird das zu benutzende festgelegt)
+  - für die folgenden Vergleichsprogramme kann die Sektion `difftool` weggelassen werden: `kdiff3, kompare, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge, diffuse, opendiff, p4merge and araxis`
 ```
 [diff]
 	tool = diffmerge

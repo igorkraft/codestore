@@ -30,6 +30,8 @@
 - zwei Versionen der selben Datei über mehrere Commits (und Zweige) vergleichen
   - `git diff <commit_id_1>..<commit_id_2> -- <Dateipfad>`
   - `git difftool <commit_id_1>..<commit_id_2> -- <Dateipfad>`
+- unveröffentlichte Änderungen einer Datei mit Basis vergleichen
+  - `git difftool <Dateipfad>`
 - Versionsgeschichte einer bestimmten Datei anzeigen
   - `gitk <Dateipfad>`
 - Remote-Zweige anzeigen

@@ -7,6 +7,10 @@
 - unbeobachtete Dateien werden auch als **untracked** bezeichnet
 - selbst mit `git mv <fso>` kann keine Umbenennung eines FSOs gemacht werden ohne dass die Historie der betroffenen FSOs verloren geht
   - `git log --follow <fso>` gibt die Historie einschließlich Umbenennungen aus
+- die Bezeichnung `origin` ist ein Alias für die Remote-URL, mit der geklont wurde
+- wenn man pushed, muss man die Remote-URL und den Remote-Zweig angeben (`git push origin master`)
+  - lässt man Remote-URL und Remote-Zweig weg, dann wird zu dem Zweig gepushed, der mit dem aktuellen lokalen Zweig verbunden ist (Upstream-Verbindung)
+  - `git branch -vv` zeigt welcher lokale Zweig mit welchem Remote-Zweig verbunden ist (Upstream-Verbindung) 
 
 #### Installation
 
@@ -16,6 +20,8 @@
 
 #### Befehle
 
+- lokale und entfernte Zweige anzeigen (mit aktuellen Commits und Upstream-Verbindungen)
+  - `git branch -a -vv`
 - Zweige oder Commits auschecken
   - `git checkout origin/develop`
   - `git checkout <commit_id>`

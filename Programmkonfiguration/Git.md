@@ -10,7 +10,12 @@
 - die Bezeichnung `origin` ist ein Alias für die Remote-URL, mit der geklont wurde
 - wenn man pushed, muss man die Remote-URL und den Remote-Zweig angeben (`git push origin master`)
   - lässt man Remote-URL und Remote-Zweig weg, dann wird zu dem Zweig gepushed, der mit dem aktuellen lokalen Zweig verbunden ist (Upstream-Verbindung)
-  - `git branch -vv` zeigt welcher lokale Zweig mit welchem Remote-Zweig verbunden ist (Upstream-Verbindung) 
+  - `git branch -vv` zeigt welcher lokale Zweig mit welchem Remote-Zweig verbunden ist (Upstream-Verbindung)
+- `HEAD` ist ein lokaler Zeiger auf das, was man aktuell ausgecheckt hat (Zweig, Tag oder Commit/Revision)
+- zeigt `HEAD` auf einen Commit/Revision, dann hat man einen `detached HEAD`
+  - wenn man auf einem `detached HEAD` Änderungen macht und diese committed, dann gehört der neue Commit zu keinem Zweig oder Tag
+  - checkt man nach dem Commitment einen Zweig aus, dann wird der neue Commit nirgends gelistet und irgendwann vom Garbage Collector entfernt
+  - mit `git reflog` kann man die Revision des neuen Commits ermitteln, ihn anschließend auschecken und auf ihm einen Zweig definieren
 
 #### Installation
 

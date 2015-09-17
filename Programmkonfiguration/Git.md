@@ -34,6 +34,8 @@
   - im Submodul wird der Commit ausgecheckt, der im Unterordner-Link steht (dadurch entsteht ein `detached HEAD` im Submodul!)
 - checkt man im Superprojekt einen anderen Commit aus, dann wird im Submodul der verlinkted commit ausgecheckt
   - der Checkout im Superprojekt schlägt fehl, wenn im Submodul unveröffentlichte Änderungen sind und es ebenfalls ausgecheckt werden müsste
+- `git submodule update --init --recursive` aktualisiert/initialisiert alle Submodule des Superprojekts
+  - ist nötig, wenn man einen Commit ausgecheckt hat, in dem es noch kein Submodul gab und wieder zurückwechselt oder wenn man nicht rekursiv geklont hat
 
 #### Installation
 

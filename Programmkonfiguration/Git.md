@@ -11,11 +11,29 @@
 - wenn man pushed, muss man die Remote-URL und den Remote-Zweig angeben (`git push origin master`)
   - lässt man Remote-URL und Remote-Zweig weg, dann wird zu dem Zweig gepushed, der mit dem aktuellen lokalen Zweig verbunden ist (Upstream-Verbindung)
   - `git branch -vv` zeigt welcher lokale Zweig mit welchem Remote-Zweig verbunden ist (Upstream-Verbindung)
+
+#### HEAD
+
 - `HEAD` ist ein lokaler Zeiger auf das, was man aktuell ausgecheckt hat (Zweig, Tag oder Commit/Revision)
 - zeigt `HEAD` auf einen Commit/Revision, dann hat man einen `detached HEAD`
   - wenn man auf einem `detached HEAD` Änderungen macht und diese committed, dann gehört der neue Commit zu keinem Zweig oder Tag
   - checkt man nach dem Commitment einen Zweig aus, dann wird der neue Commit nirgends gelistet und irgendwann vom Garbage Collector entfernt
   - mit `git reflog` kann man die Revision des neuen Commits ermitteln, ihn anschließend auschecken und auf ihm einen Zweig definieren
+
+#### Submodule
+
+- ein Projekt, dass Submodule (Links auf auf andere Projekte) enthält heißt **Superprojekt**
+- `git submodule add <Remote-URL> <Unterordner>` bettet ein Projekt als Submodul in einen Unterordner des aktuellen Projekts (Superprojekt) ein
+  - eine Datei `.gitmodules` wid angelegt, die die Submodul-URL mit dem Unterordner verknüpft
+  - die Einbettung muss anschließend committed werden
+  - der Unterordner wird in Git als Link repräsentiert, der die Commit-Revision des Superprojekts mit der Commit-Revision des Submodules verbindet (wie eine Datei, die die Commit-Revision des Submodules beinhaltet)
+- wenn man im Submodule auscheckt, dann wird das als Änderung des Unterordners im Superprojekt erkannt (commit nötig)
+- wenn man im Submodule etwas ändert, dann wird das in beiden Projekten erkannt
+  - man muss erst das Submodul commiten, dann das Superprojekt
+- `git clone --recursive <Remote-URL>` klont ein Projekt einschließlich seiner Submodule
+  - im Submodul wird der Commit ausgecheckt, der im Unterordner-Link steht (dadurch entsteht ein `detached HEAD` im Submodul!)
+- checkt man im Superprojekt einen anderen Commit aus, dann wird im Submodul der verlinkted commit ausgecheckt
+  - der Checkout im Superprojekt schlägt fehl, wenn im Submodul unveröffentlichte Änderungen sind und es ebenfalls ausgecheckt werden müsste
 
 #### Installation
 

@@ -36,6 +36,7 @@
   - der Checkout im Superprojekt schlägt fehl, wenn im Submodul unveröffentlichte Änderungen sind und es ebenfalls ausgecheckt werden müsste
 - `git submodule update --init --recursive` aktualisiert/initialisiert alle Submodule des Superprojekts
   - ist nötig, wenn man einen Commit ausgecheckt hat, in dem es noch kein Submodul gab und wieder zurückwechselt oder wenn man nicht rekursiv geklont hat
+- `git submodule status` zeigt die verknüpften Commit-Revisions an (für aktuellen Superprojekt-Commit)
 
 #### Installation
 

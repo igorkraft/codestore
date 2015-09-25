@@ -340,11 +340,13 @@
   - den zuul-cloud-starter einbinden
   - EnableZuulProxy-Annotaion verwenden
 
--
+```
     NewTab-Bookmark
     javascript:window.open();stop();
     "icon": "data:image/x-icon;base64,AAABAAEAEBAAAAEAIADMAQAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAZNJREFUOI19k0+qE0EQh7/uGR8DyRjwqTzIIiAx3iA7DyCCx5iVq5whV/AqkgNEybjKKvusIiLGjJi86emecjE9eW3+vIKChqa++v2quhUPoU5S83+Izzo4o4JiDdwAT7MsewUk1loNoLUWrbVdrVbf5/P5D+Av4IA6DgAxcJvn+bvRaPQhiqKXQQNExOx2u29Zln2azWYWOITyNNCZTqfvrbWfRSQXkS8n+VVE8sVi8RG48w0JFUTALZAA91yOKkmSN96qAlQcDC06HA4K2ANPrgCkLEvrG+tWgbQqyrJUQHWlGECcc45gQ3Fwqaqq0iJiAugZwFpbnwKOezfGKA+oHwE4mnlp/AyOYYypadYTXyhuAa1FObPgFdz7Duq0GqiNMS68PwPQrPAqwFprebB9nIEG4hPARQve5o2v0S0gAtJer/dLKXXH+Uc6Ajqdzh+gS/NWTORVPB+Px68nk0k6HA67NB/lYvb7/bIoiu5yufztnNur9Xr9tiiKF2maPhsMBimPPyQAvdls7Ha7/amU2v8DfxHJizzoUP0AAAAASUVORK5CYII=",
--
+```
+
+```
     mvn install -Dmaven.test.skip=true
     Kopiert die Abhängigkeiten des Projekts nach target
     mvn dependency:copy-dependencies
@@ -358,13 +360,8 @@
     -DartifactId=<artifact-id> ^
     -Dversion=<version> ^
     -Dpackaging=jar
+```
     
--
-    git clone https://github.com/igorkraft/codestore.git
-    git add --all
-    git commit -a -m "new code"
-    git push
-
 Helligkeitssteuerung für Nvidia-Karten:
 
     # Add to your "Device" section in /etc/X11/xorg.conf and restart X

@@ -2,9 +2,9 @@
 
 #### Gasterweiterungen installieren
 
-- Quelle:http://randomitblog.blogspot.com/2011/04/installing-virtualbox-guest-additions.html
+Quelle:http://randomitblog.blogspot.com/2011/04/installing-virtualbox-guest-additions.html
 
-- ```
+```
 sudo apt-get install dkms
 sudo apt-get install build-essential
 sudo apt-get install linux-headers-$(uname -r)

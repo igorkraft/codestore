@@ -25,7 +25,7 @@ sudo apt-get install linux-headers-$(uname -r)
 - Guest ist von überall im Netzwerk über seine IP erreichbar
 - Guest bekommt seine IP vom DHCP-Server des Netzwerks
 
-#### NAT
+##### NAT
 
 - Host und Guest bilden ein eigenes internes Netzwerk
 - Host hat im internen Netz eine andere IP als im externen

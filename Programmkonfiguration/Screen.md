@@ -1,4 +1,4 @@
-### Screen
+## Screen
 
 - mehrere Screen-Sitzungen können sowohl nebeneinander, als auch ineinander geöffnet werden (es kann ein Sitzungsbaum entstehen)
  - auf einer Ebene des Baumes kann man nur mit einer Sitzung verbunden sein

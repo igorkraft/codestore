@@ -1,4 +1,4 @@
-### Sublime Text
+## Sublime Text
 
 #### Allgemeines
 - mit `Shift` + `Strg` + `p` wird die Schnellsuche für Befehle gestartet

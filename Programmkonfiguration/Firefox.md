@@ -1,4 +1,4 @@
-### Firefox
+## Firefox
 
 #### Erweiterungen
 - `JSONView`

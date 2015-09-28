@@ -1,4 +1,4 @@
-package de.at.home;
+package org.local.test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,17 +28,26 @@ public class FtpTests
 		PropertiesUserManagerFactory userManagerFactory = new PropertiesUserManagerFactory();
 
 		UserManager um = userManagerFactory.createUserManager();
-		BaseUser user = new BaseUser();
-		user.setName("calle");
-		user.setPassword("secret");
-		user.setHomeDirectory("/home/user/Arbeitsfläche");
+		BaseUser user1 = new BaseUser();
+		user1.setName("calle");
+		user1.setPassword("secret");
+		user1.setHomeDirectory(System.getProperty("user.home"));
+		
+		BaseUser user2 = new BaseUser();
+		user2.setName("calle2");
+		user2.setPassword("secret");
+		user2.setHomeDirectory(System.getProperty("user.dir")); // working directory
 
 		List<Authority> auths = new ArrayList<>();
-		auths.addAll(user.getAuthorities());
+		auths.addAll(user1.getAuthorities());
+		auths.addAll(user2.getAuthorities());
 		auths.add(new WritePermission());
 
-		user.setAuthorities(auths);
-		um.save(user);
+		user1.setAuthorities(auths);
+		um.save(user1);
+		
+		user2.setAuthorities(auths);
+		um.save(user2);
 
 		serverFactory.setUserManager(um);
 		FtpServer server = serverFactory.createServer();

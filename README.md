@@ -341,6 +341,10 @@
   - EnableZuulProxy-Annotaion verwenden
 - https://de.wikipedia.org/wiki/Liste_der_Saturnmonde
 - https://archive.org/ (Internetarchiv)
+- Git-Server aufsetzen
+  - http://stackoverflow.com/questions/5507489/git-server-like-github
+  - http://www.linux-magazine.com/Online/Features/Install-Your-Own-Git-Server
+  - https://about.gitlab.com/downloads/
 
 ```
     NewTab-Bookmark

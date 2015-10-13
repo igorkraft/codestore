@@ -345,6 +345,7 @@
   - http://stackoverflow.com/questions/5507489/git-server-like-github
   - http://www.linux-magazine.com/Online/Features/Install-Your-Own-Git-Server
   - https://about.gitlab.com/downloads/
+- http://haacked.com/archive/2014/07/28/github-flow-aliases/ (Aliases für Git)
 
 ```
     NewTab-Bookmark

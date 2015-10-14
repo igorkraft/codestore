@@ -26,3 +26,10 @@
 
 - mit einer offenen Sitzung verbinden   
 `screen -r [Name der Sitzung]`
+
+- die .profile anpassen, um nach SSH-Login eine Screen-Session zu starten
+```sh
+if [[ -z "$STY" ]]; then
+ screen -S s1
+fi
+```

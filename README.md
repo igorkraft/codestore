@@ -1,5 +1,6 @@
 ### TODO
 - https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+  - https://github.com/github/linguist/blob/master/lib/linguist/languages.yml (highlighting languages)
 - WebDAV und Internet weiterleiten testen (python-webdav installieren)
 - http://www.javac.info/closures-v05.html mal lesen
 - http://www.scheissewasschenkichmutti.de/

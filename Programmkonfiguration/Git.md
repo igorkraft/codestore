@@ -48,6 +48,10 @@
 
 - lokale und entfernte Zweige anzeigen (mit aktuellen Commits und Upstream-Verbindungen)
   - `git branch -a -vv`
+- Zweig auf aktuellem Commit erzeugen (lokal und remote)
+  - `git branch develop`
+  - `git checkout develop`
+  - `git push origin develop`
 - Zweige oder Commits auschecken
   - `git checkout origin/develop`
   - `git checkout <commit_id>`

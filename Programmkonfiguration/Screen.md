@@ -29,7 +29,20 @@
 
 - die .profile anpassen, um nach SSH-Login eine Screen-Session zu starten
 ```sh
-if [[ -z "$STY" ]]; then
- screen -S s1
-fi
+initScreen()
+{
+	if [[ ! -z "$STY" ]]; then
+		return
+	fi
+
+	screenLs=`screen -ls`
+
+	if [[ $screenLs == *".s1"* ]]; then
+		screen -r s1
+	else
+		screen -S s1
+	fi
+}
+
+initScreen
 ```

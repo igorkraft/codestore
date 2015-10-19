@@ -1,6 +1,8 @@
 package de.at.home.saveuncommittedchanges;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -8,33 +10,47 @@ import org.junit.Test;
 
 public class MainTest
 {
-	@Test
+	public static final String CHECK_POINT_MARK = "###check_point###: ";
+	
+	//todo Log einbauen, mit dem man steuern kann, wie gesprächig die callProgram-Methode ist
+	
+//	@Test
 	public void backup() throws Exception
 	{
-		// todo commit message variabel machen (Sicherungsvermerk ###check_point###)
+		this.backup("wichtige Sicherung");
+	}
+	
+	private void backup(String commitMessage) throws Exception
+	{
 		String reference = StringUtils.substringBefore(callProgram("git status"), "\n");
 		reference = StringUtils.substringAfterLast(reference, " ");
 		String commitId = callProgram("git rev-parse HEAD");
 		
-		System.out.println(callProgram("git checkout " + commitId));
-		System.out.println(callProgram("git add -A"));
-		// todo prüfen, warum in der commit message keine Leerzeichen enthalten sein dürfen
-		// die escapten Gänsefüßchen werden als Zeichen mit in die commit message übernommen
-		System.out.println(callProgram("git commit -a -m \"check_point\""));
+		callProgram("git checkout " + commitId);
+		callProgram("git add -A");
+		callProgram(new String[]{"git", "commit", "-a", "-m", CHECK_POINT_MARK + commitMessage});
 		
 		System.out.println("check point id is: " + callProgram("git rev-parse HEAD"));
 		
 		callProgram("git checkout " + reference);
 	}
 	
-//	@Test
-	public void show()
+	@Test
+	public void show() throws Exception
 	{
-		//git reflog show -n 1000
+		// todo Java 1.8 Stream-Filter einsetzen
+		String refLog = callProgram("git reflog show -n 1000");
+		List<String> refLogs = Arrays.asList(StringUtils.split(refLog, '\n'));
+		
+		for (String line : refLogs)
+		{
+			if (!line.contains(CHECK_POINT_MARK)) continue;
+			System.out.println(line.replaceAll(" HEAD@\\{.*\\}: commit: " + CHECK_POINT_MARK, ": "));
+		}
 	}
 	
 //	@Test
-	public void restore()
+	public void restore() throws Exception
 	{
 		
 	}
@@ -50,4 +66,17 @@ public class MainTest
 		System.out.println(IOUtils.toString(p.getErrorStream(), StandardCharsets.UTF_8));
 		return StringUtils.replace(result, "\r", "");
 	}
+	
+	private String callProgram(String[] command) throws Exception
+	{
+		String[] envp = { "LANG=en_US.UTF-8" };
+		Process p = Runtime.getRuntime().exec(command, envp);
+		p.waitFor();
+		String result = IOUtils.toString(p.getInputStream(), StandardCharsets.UTF_8);
+		System.out.println(Arrays.toString(command));
+		System.out.println(result);
+		System.out.println(IOUtils.toString(p.getErrorStream(), StandardCharsets.UTF_8));
+		return StringUtils.replace(result, "\r", "");
+	}
+
 }

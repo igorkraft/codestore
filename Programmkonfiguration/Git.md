@@ -47,8 +47,12 @@
 
 #### Befehle
 
+##### Sonstige Befehle
+
 - leeren Ordner als Git-Projekt initialisieren (Git-Projekt anlegen)
   - `git init --bare --shared=group`
+- Commit-Id der aktuall ausgecheckten Referenz (Tag oder Branch) anzeigen
+  - `git rev-parse HEAD`
 - lokale und entfernte Zweige anzeigen (mit aktuellen Commits und Upstream-Verbindungen)
   - `git branch -a -vv`
 - Zweig auf aktuellem Commit erzeugen (lokal und remote)
@@ -83,22 +87,24 @@
   - `git commit -a -m "commit all"`
 - Änderungen im Stage-Bereich commiten
   - `git commit -m "commit message"`
-- **Änderungen** und neue Dateien in den Stage-Bereich übernehmen
-  - `git add <Dateipfad>`
-- **Änderungen** und neue Dateien aus dem Stage-Bereich entfernen
-  - `git reset HEAD <Dateipfad>`
-- alle unbeobachteten Dateien beobachten
-  - `git add -A`
 - unbeobachtete FSOs löschen
   - `git clean -f -d`
 - nur ignorierte FSOs löschen
   - `git clean -f -d -X`
 - unbeobachtete und ignorierte FSOs löschen
   - `git clean -f -d -x`
-- alle Änderungen aus dem Stage-Bereich entfernen
-  - `git reset HEAD *`
 - Historie einschließlich Umbenennungen ausgeben
   - `git log --follow <fso>`
+
+##### Befehle zur Modifikation des Stage-Bereichs
+- alle Änderungen und unbeobachtete Dateien in den Stage-Bereich übernehmen
+  - `git add -A`
+- eine Änderung oder unbeobachtete Datei in den Stage-Bereich übernehmen
+  - `git add <Dateipfad>`
+- alle Änderungen und unbeobachtete Dateien aus dem Stage-Bereich entfernen
+  - `git reset HEAD *`
+- eine Änderung oder unbeobachtete Datei aus dem Stage-Bereich entfernen
+  - `git reset HEAD <Dateipfad>`
 
 #### Konfigurationsdatei
 

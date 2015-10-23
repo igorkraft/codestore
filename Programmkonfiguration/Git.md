@@ -111,6 +111,7 @@
 - liegt unter `$HOME/.gitconfig`
 - Kommentare fangen mit `#` an
 - globale Exclude-Dateien können hier konfiguriert werden
+- globale Aliase können hier definiert werden (siehe Abschnitt Alias)
 - HTTP-Einstellungen (Proxy, SSL-Zertifikate ignorieren)
 ```
 [http]
@@ -131,6 +132,7 @@
 	email = igorkraft@web.de
 	name = Igor Kraft
 ```
+#### Alias
 
 #### Links
 

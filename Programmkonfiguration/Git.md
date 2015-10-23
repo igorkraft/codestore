@@ -81,8 +81,12 @@
   - `git ls-files --others --exclude-standard`
 - alle Änderungen beobachteter FSOs commiten
   - `git commit -a -m "commit all"`
+- Änderungen im Stage-Bereich commiten
+  - `git commit -m "commit message"`
 - **Änderungen** und neue Dateien in den Stage-Bereich übernehmen
   - `git add <Dateipfad>`
+- **Änderungen** und neue Dateien aus dem Stage-Bereich entfernen
+  - `git reset HEAD <Dateipfad>`
 - alle unbeobachteten Dateien beobachten
   - `git add -A`
 - unbeobachtete FSOs löschen

@@ -4,6 +4,7 @@
 
 - unbeobachtete FSOs müssen mit `git add` unter Beobachtung gestellt werden
   - `git add` überführt die Dateien in den Stage-Bereich, sodass sie vom nächsten commit erfasst werden können
+  - `git add` überführt Änderungen an bereits beobachteten Dateien in den Stage-Bereich
 - unbeobachtete Dateien werden auch als **untracked** bezeichnet
 - selbst mit `git mv <fso>` kann keine Umbenennung eines FSOs gemacht werden ohne dass die Historie der betroffenen FSOs verloren geht
   - `git log --follow <fso>` gibt die Historie einschließlich Umbenennungen aus
@@ -80,6 +81,8 @@
   - `git ls-files --others --exclude-standard`
 - alle Änderungen beobachteter FSOs commiten
   - `git commit -a -m "commit all"`
+- **Änderungen** und neue Dateien in den Stage-Bereich übernehmen
+  - `git add <Dateipfad>`
 - alle unbeobachteten Dateien beobachten
   - `git add -A`
 - unbeobachtete FSOs löschen

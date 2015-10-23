@@ -46,6 +46,8 @@
 
 #### Befehle
 
+- leeren Ordner als Git-Projekt initialisieren (Git-Projekt anlegen)
+  - `git init --bare --shared=group`
 - lokale und entfernte Zweige anzeigen (mit aktuellen Commits und Upstream-Verbindungen)
   - `git branch -a -vv`
 - Zweig auf aktuellem Commit erzeugen (lokal und remote)

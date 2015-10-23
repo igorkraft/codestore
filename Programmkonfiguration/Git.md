@@ -134,6 +134,17 @@
 ```
 #### Alias
 
+- globale Aliase werden in der `$HOME/.gitconfig` gespeichert
+  - globales Alias definieren `git config --global alias.co checkout`
+- Aliase können auch proektbezogen definiert werden
+
+##### Nützliche Aliase
+```
+[alias]
+	# checkout and update submodules
+	cou = "!f() { git checkout $1; git submodule update --init --recursive; }; f"
+```
+
 #### Links
 
 - List häufig verwendeter Befehle

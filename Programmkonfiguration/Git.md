@@ -125,6 +125,12 @@
 [difftool "diffmerge"]
 	cmd = C:/Program\\ Files/SourceGear/Common/DiffMerge/sgdm.exe \"$LOCAL\" \"$REMOTE\"
 ```
+- Benutzer für neue Commits definieren
+```
+[user]
+	email = igorkraft@web.de
+	name = Igor Kraft
+```
 
 #### Links
 

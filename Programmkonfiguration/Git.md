@@ -4,6 +4,7 @@
 
 - unbeobachtete FSOs müssen mit `git add` unter Beobachtung gestellt werden
   - `git add` überführt die Dateien in den Stage-Bereich, sodass sie vom nächsten commit erfasst werden können
+  - `git add` überführt Änderungen an bereits beobachteten Dateien in den Stage-Bereich
 - unbeobachtete Dateien werden auch als **untracked** bezeichnet
 - selbst mit `git mv <fso>` kann keine Umbenennung eines FSOs gemacht werden ohne dass die Historie der betroffenen FSOs verloren geht
   - `git log --follow <fso>` gibt die Historie einschließlich Umbenennungen aus
@@ -46,6 +47,17 @@
 
 #### Befehle
 
+##### Sonstige Befehle
+
+- leeren Ordner als Git-Projekt initialisieren (Git-Projekt anlegen)
+  - `git init --bare --shared=group`
+- Commit-Id der aktuall ausgecheckten Referenz (Tag oder Branch) anzeigen
+  - `git rev-parse HEAD`
+- Commit-IDs der direkten (-n 1) Parents anzeigen (ein Merge erzeugt mehrere direkte Parents)
+  - `git log --pretty=%P -n 1 <commit_id>`
+  - lässt man die Commit-ID weg, dann werden die direkten Parents des aktuellen Commits angezeigt
+- alle Referenzen (lokale Zweige, Remote-Zweige und Tags) und deren Commit-IDs anzeigen
+  - `git show-ref`
 - lokale und entfernte Zweige anzeigen (mit aktuellen Commits und Upstream-Verbindungen)
   - `git branch -a -vv`
 - Zweig auf aktuellem Commit erzeugen (lokal und remote)
@@ -78,24 +90,33 @@
   - `git ls-files --others --exclude-standard`
 - alle Änderungen beobachteter FSOs commiten
   - `git commit -a -m "commit all"`
-- alle unbeobachteten Dateien beobachten
-  - `git add -A`
+- Änderungen im Stage-Bereich commiten
+  - `git commit -m "commit message"`
 - unbeobachtete FSOs löschen
   - `git clean -f -d`
 - nur ignorierte FSOs löschen
   - `git clean -f -d -X`
 - unbeobachtete und ignorierte FSOs löschen
   - `git clean -f -d -x`
-- alle Änderungen aus dem Stage-Bereich entfernen
-  - `git reset HEAD *`
 - Historie einschließlich Umbenennungen ausgeben
   - `git log --follow <fso>`
+
+##### Befehle zur Modifikation des Stage-Bereichs
+- alle Änderungen und unbeobachtete Dateien in den Stage-Bereich übernehmen
+  - `git add -A`
+- eine Änderung oder unbeobachtete Datei in den Stage-Bereich übernehmen
+  - `git add <Dateipfad>`
+- alle Änderungen und unbeobachtete Dateien aus dem Stage-Bereich entfernen
+  - `git reset HEAD *`
+- eine Änderung oder unbeobachtete Datei aus dem Stage-Bereich entfernen
+  - `git reset HEAD <Dateipfad>`
 
 #### Konfigurationsdatei
 
 - liegt unter `$HOME/.gitconfig`
 - Kommentare fangen mit `#` an
 - globale Exclude-Dateien können hier konfiguriert werden
+- globale Aliase können hier definiert werden (siehe Abschnitt Alias)
 - HTTP-Einstellungen (Proxy, SSL-Zertifikate ignorieren)
 ```
 [http]
@@ -109,6 +130,24 @@
 	tool = diffmerge
 [difftool "diffmerge"]
 	cmd = C:/Program\\ Files/SourceGear/Common/DiffMerge/sgdm.exe \"$LOCAL\" \"$REMOTE\"
+```
+- Benutzer für neue Commits definieren
+```
+[user]
+	email = igorkraft@web.de
+	name = Igor Kraft
+```
+#### Alias
+
+- globale Aliase werden in der `$HOME/.gitconfig` gespeichert
+  - globales Alias definieren `git config --global alias.co checkout`
+- Aliase können auch proektbezogen definiert werden
+
+##### Nützliche Aliase
+```
+[alias]
+	# checkout and update submodules
+	cou = "!f() { git checkout $1; git submodule update --init --recursive; }; f"
 ```
 
 #### Links

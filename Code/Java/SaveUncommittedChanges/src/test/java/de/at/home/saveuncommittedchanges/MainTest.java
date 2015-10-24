@@ -48,6 +48,8 @@ public class MainTest
 //		git commit -m "check_point"
 //		# --hard sorgt dafür, dass der Dateisystemzustand des Parents hergestellt wird (der Parent wird nach der Verschiebung ausgecheckt)
 //		git reset HEAD~1 --hard # verschiebt die aktuelle Zweigmarkierung zum direken Parent das aktuellen Commits
+//		
+//		Bei Wiederherstellung, würde man den Checkpoint-Commit auschecken und den mixed-Befehl ausführen
 	}
 	
 	@Test

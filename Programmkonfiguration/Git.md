@@ -53,6 +53,8 @@
   - `git init --bare --shared=group`
 - Commit-Id der aktuall ausgecheckten Referenz (Tag oder Branch) anzeigen
   - `git rev-parse HEAD`
+- Tags und deren Commit-Ids anzeigen
+  - `git show-ref --tags`
 - lokale und entfernte Zweige anzeigen (mit aktuellen Commits und Upstream-Verbindungen)
   - `git branch -a -vv`
 - Zweig auf aktuellem Commit erzeugen (lokal und remote)

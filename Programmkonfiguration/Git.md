@@ -53,6 +53,9 @@
   - `git init --bare --shared=group`
 - Commit-Id der aktuall ausgecheckten Referenz (Tag oder Branch) anzeigen
   - `git rev-parse HEAD`
+- Commit-IDs der direkten (-n 1) Parents anzeigen (ein Merge erzeugt mehrere direkte Parents)
+  - `git log --pretty=%P -n 1 <commit_id>`
+  - lässt man die Commit-ID weg, dann werden die direkten Parents des aktuellen Commits angezeigt
 - alle Referenzen (lokale Zweige, Remote-Zweige und Tags) und deren Commit-IDs anzeigen
   - `git show-ref`
 - lokale und entfernte Zweige anzeigen (mit aktuellen Commits und Upstream-Verbindungen)

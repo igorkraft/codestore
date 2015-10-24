@@ -35,11 +35,19 @@ public class MainTest
 		callProgram("git checkout " + reference);
 		
 //		TODO: Das geht auch einfacher
+//		# Variante 1
 //		git add -A
 //		git commit -m "check_point"
+//		# --mixed sorgt dafür, dass der Dateisystemzustand des aktuellen Commits erhalten bleibt (der Parent wird nach der Verschiebung nicht ausgecheckt)
 //		git reset HEAD~1 --mixed # verschiebt die aktuelle Zweigmarkierung zum direken Parent das aktuellen Commits
 //		git reset --hard # löscht alle lokalen Änderungen an beobachteten Dateien
 //		git clean -f -d # unbeobachtete Dateien löschen
+//
+//		# Variante 2
+//		git add -A
+//		git commit -m "check_point"
+//		# --hard sorgt dafür, dass der Dateisystemzustand des Parents hergestellt wird (der Parent wird nach der Verschiebung ausgecheckt)
+//		git reset HEAD~1 --hard # verschiebt die aktuelle Zweigmarkierung zum direken Parent das aktuellen Commits
 	}
 	
 	@Test

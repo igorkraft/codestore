@@ -33,6 +33,13 @@ public class MainTest
 		System.out.println("check point id is: " + callProgram("git rev-parse HEAD"));
 		
 		callProgram("git checkout " + reference);
+		
+//		TODO: Das geht auch einfacher
+//		git add -A
+//		git commit -m "check_point"
+//		git reset HEAD~1 --mixed # verschiebt die aktuelle Zweigmarkierung zum direken Parent das aktuellen Commits
+//		git reset --hard # löscht alle lokalen Änderungen an beobachteten Dateien
+//		git clean -f -d # unbeobachtete Dateien löschen
 	}
 	
 	@Test

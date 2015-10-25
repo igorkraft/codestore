@@ -14,10 +14,10 @@ public class MainTest
 	
 	//todo Log einbauen, mit dem man steuern kann, wie gesprächig die callProgram-Methode ist
 	
-//	@Test
+	@Test
 	public void backup() throws Exception
 	{
-		this.backup("wichtige Sicherung");
+		this.backup("wichtige Sicherung 2");
 	}
 	
 	private void backup(String commitMessage) throws Exception
@@ -52,7 +52,7 @@ public class MainTest
 //		Bei Wiederherstellung, würde man den Checkpoint-Commit auschecken und den mixed-Befehl ausführen
 	}
 	
-	@Test
+//	@Test
 	public void show() throws Exception
 	{
 		// todo Java 1.8 Stream-Filter einsetzen

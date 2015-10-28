@@ -72,9 +72,30 @@ public class Main
 		}
 	}
 	
-	private static void recover(String commitId)
+	private static void recover(String commitId) throws Exception
 	{
+		// todo Fehleingaben dem Benutzer kommunizieren
 		
+		commitId = StringUtils.left(commitId, 7);
+		if (commitId.length() < 7) return;
+		
+		boolean commitIdIsValid = false;
+		// todo Java 1.8 Stream-Filter einsetzen
+		String refLog = callProgram("git reflog show -n 1000");
+		List<String> refLogs = Arrays.asList(StringUtils.split(refLog, '\n'));
+		
+		for (String line : refLogs)
+		{
+			if (!line.startsWith(commitId) || !line.contains(CHECK_POINT_MARK)) continue;
+			commitIdIsValid = true;
+			break;
+		}
+		
+		if (!commitIdIsValid) return;
+		
+		callProgram("git checkout " + commitId);
+		callProgram("git reset HEAD~1 --mixed");
+		callProgram("git submodule update --init --recursive");
 	}
 	
 	private static String callProgram(String command) throws Exception

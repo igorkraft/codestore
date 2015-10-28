@@ -147,7 +147,9 @@
 ```
 [alias]
 	# checkout and update submodules
-	cou = "!f() { git checkout $1; git submodule update --init --recursive; }; f"
+	cu = "!f() { git checkout $1; git submodule update --init --recursive; }; f"
+	# delete changes and untracked files
+	discard = "!f() { git reset HEAD~1 --hard; git clean -f -d; }; f"
 ```
 
 #### Links

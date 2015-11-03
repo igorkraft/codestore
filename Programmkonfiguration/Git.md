@@ -110,6 +110,8 @@
   - `git reset HEAD *`
 - eine Änderung oder unbeobachtete Datei aus dem Stage-Bereich entfernen
   - `git reset HEAD <Dateipfad>`
+- Löschung einer Datei in den Stage-Bereich übernehmen
+  - `git rm <Dateipfad>`
 
 #### Konfigurationsdatei
 

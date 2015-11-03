@@ -1,4 +1,4 @@
-package de.at.home.saveuncommittedchanges;
+package de.at.home.gitpot;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;

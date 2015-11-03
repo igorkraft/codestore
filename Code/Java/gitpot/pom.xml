@@ -7,8 +7,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>de.at.home</groupId>
-	<artifactId>saveuncommittedchanges</artifactId>
-	<version>1.0.0</version>
+	<artifactId>gitpot</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -17,11 +17,11 @@
 		<relativePath />
 	</parent>
 	
-	<name>SaveUncommittedChanges</name>
+	<name>GitPot</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>de.at.home.saveuncommittedchanges.Main</start-class>
+		<start-class>de.at.home.gitpot.Main</start-class>
 		<java.version>1.8</java.version>
 		<maven.test.skip>true</maven.test.skip>
 	</properties>
@@ -92,7 +92,7 @@
 	</dependencies>
 	
 	<build>
-		<finalName>suc</finalName>
+		<finalName>gitpot</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

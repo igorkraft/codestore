@@ -5,7 +5,7 @@
 ##### Konfigurationsdatei:
 
 - $HOME/.npmrc (globale Konfiguration für Benutzer)
-- die Datei kann auch im Projekt-Verzeichnis abgelegt werden
+- die Datei kann auch im Projekt-Verzeichnis abgelegt werden (Projektkonfiguration)
 - die Datei kann auch im npm-Installationsverzeichnis abgelegt werden (globale Konfiguration)
 - Dateiinhalt:
 ```

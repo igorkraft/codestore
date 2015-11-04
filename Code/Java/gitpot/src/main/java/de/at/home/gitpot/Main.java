@@ -21,9 +21,16 @@ public class Main
 	
 	//todo Log einbauen, mit dem man steuern kann, wie gesprächig die callProgram-Methode ist
 
+	/*
+	 * Git-Aliases:
+	 * 
+	 * pot     = "!f() { java -jar gitpot.jar pot; }; f"
+	 * rescue  = "!f() { java -jar gitpot.jar rescue \"$1\"; }; f"
+	 * recover = "!f() { java -jar gitpot.jar recover \"$1\"; }; f"
+	 */
+	
 	public static void main(String[] args) throws Exception
 	{
-		// todo Projekt umbenennen
 		CommandLine line;
 		try
 		{
@@ -44,7 +51,7 @@ public class Main
 	
 	private static void rescue(String commitMessage) throws Exception
 	{
-		if (commitMessage == null)
+		if (StringUtils.isBlank(commitMessage))
 		{
 			commitMessage = "check point " + DateTimeFormat.forStyle("MM").print(new DateTime());
 		}

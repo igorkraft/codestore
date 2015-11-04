@@ -1,8 +1,8 @@
-### npm
+## npm
 
 - Cache-Verzeichnis sollte wegen zu langer Dateipfade direkt auf C: liegen
 
-##### Konfigurationsdatei:
+#### Konfigurationsdatei:
 
 - $HOME/.npmrc (globale Konfiguration für Benutzer)
 - die Datei kann auch im Projekt-Verzeichnis abgelegt werden (Projektkonfiguration)

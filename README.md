@@ -347,6 +347,12 @@
   - http://www.linux-magazine.com/Online/Features/Install-Your-Own-Git-Server
   - https://about.gitlab.com/downloads/
 - http://haacked.com/archive/2014/07/28/github-flow-aliases/ (Aliases für Git)
+- https://lodash.com/docs (JS-Lib, die das macht, was commons-lang macht)
+  - die Methoden darin sind teilweise performanter als die nativen Gegenstücke
+- https://mozilla.github.io/localForage/ (JS-Lib, die die Persistenzmöglichkeiten des Browsers verwaltet)
+  - die Persistenzmöglichkeiten können im Debugger unter `Resources` eingesehen werden
+  - man kann Daten einer Webanwendung in einen Sync-Storage legen
+  - der Sync-Stroage ist mit einem Google-Konto verknüpft und synct in alle Browser, in denen man sich mit dem Konto anmeldet
 
 ```
     NewTab-Bookmark

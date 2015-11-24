@@ -1,5 +1,8 @@
 ## Intellij
 
+#### JDK zum Ausführen des Android-Studios
+- vor dem Start die Umgebungsvariable setzen: `STUDIO_JDK=$JAVA_HOME`
+
 #### Settings->Compiler->Android Compilers
 - Force jumbo mode: &#x2611;
 - VM options: --force-jumbo

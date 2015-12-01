@@ -73,6 +73,9 @@ org.apache.commons.io.FileUtils.writeStringToFile(new File("c:\\result.txt"),org
 HTML/XML-Syntax &#x00df;
 HTML/XML dezimal &#223; = ß
 
+• Abbilden von Unicodezeichen mit mehr als 4 Hex-Stellen
+String face = new String(new int[] { 0x1f634 }, 0, 1);
+
 • die Unicoderepräsentation eines Zeichens ausgeben
 "\\u" + Integer.toHexString('₤' | 0x10000).substring(1)
 

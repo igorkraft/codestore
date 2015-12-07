@@ -20,7 +20,7 @@
 	</properties>
 
 	<build>
-		<finalName>gs-uploading-files</finalName>
+		<finalName>${project.name}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

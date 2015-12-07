@@ -8,6 +8,7 @@
 - für manuelle Installation den Anweisungen hier folgen: https://packagecontrol.io/installation
 - neue Pakete können mit dem Befehl `Package Control: Install Package` gefunden und installiert werden
   - `Pretty JSON` installieren
+  - `Gradle_Language` installieren (Highlighting für Gradle)
 
 #### Einstellungen
 - Preferences -> Color Scheme -> Zenburnesque

@@ -51,6 +51,9 @@
 #### Startargumente
 - ` -showlocation` zeigt den Workspace in der Titelleiste an
 - ` -data /path/to/workspace` übergibt den Workspace
+- STS.ini bzw. eclipse.ini die JVM setzen
+  - über `-vmargs` `-vm` eintragen
+  - in einer eigenen Zeile den Pfad zum Java-Executable eintragen
 
 #### Sonstiges
 - über das Kontextmenü der Variables-View können Watchpoints für primitive Datentypen erzeugt werden

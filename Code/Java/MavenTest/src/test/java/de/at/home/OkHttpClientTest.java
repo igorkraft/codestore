@@ -107,7 +107,18 @@ public class OkHttpClientTest
 	private OkHttpClient createOkHttpClient(final String userName, final String userPassword) throws Exception
 	{
 		OkHttpClient client = new OkHttpClient();
-
+		
+//		client.setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("some_proxy", 1234)));
+		
+		client.setHostnameVerifier(new HostnameVerifier()
+		{
+			@Override
+			public boolean verify(String hostname, SSLSession session)
+			{
+				return true;
+			}
+		});
+		
 		client.setAuthenticator(new Authenticator()
 		{
 			@Override

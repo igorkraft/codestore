@@ -353,6 +353,7 @@
   - die Persistenzmöglichkeiten können im Debugger unter `Resources` eingesehen werden
   - man kann Daten einer Webanwendung in einen Sync-Storage legen
   - der Sync-Stroage ist mit einem Google-Konto verknüpft und synct in alle Browser, in denen man sich mit dem Konto anmeldet
+- http://keycloak.jboss.org/ (Built on top of the OAuth 2.0, Open ID Connect, JSON Web Token (JWT) and SAML 2.0 specifications) 
 
 ```
     NewTab-Bookmark

@@ -355,6 +355,9 @@
   - der Sync-Stroage ist mit einem Google-Konto verknüpft und synct in alle Browser, in denen man sich mit dem Konto anmeldet
 - http://keycloak.jboss.org/ (Built on top of the OAuth 2.0, Open ID Connect, JSON Web Token (JWT) and SAML 2.0 specifications) 
 - http://blog.codinghorror.com/new-programming-jargon/
+- http://www.musicworldbrilon.de/deanvendetta30classicblack.html (reduzierte 600€ Gitarre)
+  - http://www.thomann.de/de/blackstar_id_core_10.htm (passender Verstärker)
+- `--spring.output.ansi.enabled=ALWAYS` färbt Konsolenausgabe ein (siehe Banner.txt aufm Telefon)
 
 ```
     NewTab-Bookmark

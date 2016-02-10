@@ -358,6 +358,9 @@
 - http://www.musicworldbrilon.de/deanvendetta30classicblack.html (reduzierte 600€ Gitarre)
   - http://www.thomann.de/de/blackstar_id_core_10.htm (passender Verstärker)
 - `--spring.output.ansi.enabled=ALWAYS` färbt Konsolenausgabe ein (siehe Banner.txt aufm Telefon)
+- http://security.stackexchange.com/questions/42618/how-to-protect-tomcat-7-against-slowloris-attack
+  - Tomcat vor DDoS-Angriffen sichern
+  - erfordert eine Firewall oder iptables-Anpassung
 
 ```
     NewTab-Bookmark

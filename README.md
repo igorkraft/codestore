@@ -362,6 +362,7 @@
   - Tomcat vor DDoS-Angriffen sichern
   - erfordert eine Firewall oder iptables-Anpassung
 - http://codetheory.in/android-handlers-runnables-loopers-messagequeue-handlerthread/ (Android MessageQueue und andere Konzepte)
+- https://cphacker0901.wordpress.com/1900/12/22/talking-about-android-message-queue/ (Android MessageQueue)
 
 ```
     NewTab-Bookmark

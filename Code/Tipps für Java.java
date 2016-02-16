@@ -45,6 +45,9 @@ new URL( "http://google.de/" ).openStream()
 • Enumeration -> ArrayList
 Collections.list(enumeration)
 
+• Map -> List
+map.values()
+
 • String -> File (ohne commons-io)
 PrintWriter writer = new PrintWriter("/pathtofile");
 writer.print(content);

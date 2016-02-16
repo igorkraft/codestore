@@ -361,6 +361,7 @@
 - http://security.stackexchange.com/questions/42618/how-to-protect-tomcat-7-against-slowloris-attack
   - Tomcat vor DDoS-Angriffen sichern
   - erfordert eine Firewall oder iptables-Anpassung
+- http://codetheory.in/android-handlers-runnables-loopers-messagequeue-handlerthread/ (Android MessageQueue und andere Konzepte)
 
 ```
     NewTab-Bookmark

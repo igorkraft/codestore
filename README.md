@@ -364,6 +364,9 @@
 - http://codetheory.in/android-handlers-runnables-loopers-messagequeue-handlerthread/ (Android MessageQueue und andere Konzepte)
 - https://cphacker0901.wordpress.com/1900/12/22/talking-about-android-message-queue/ (Android MessageQueue)
 - http://www.coloring-for-kids.net/wp-content/gallery/ (Ausmalbilder)
+- Agile Software-Methoden in der Familie
+  - http://www.ted.com/talks/bruce_feiler_agile_programming_for_your_family
+  - https://youtu.be/J6oMG7u9HGE (Video mit deutschen Untertiteln)
 
 ```
     NewTab-Bookmark

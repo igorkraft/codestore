@@ -367,6 +367,7 @@
 - Agile Software-Methoden in der Familie
   - http://www.ted.com/talks/bruce_feiler_agile_programming_for_your_family
   - https://youtu.be/J6oMG7u9HGE (Video mit deutschen Untertiteln)
+- https://www.collaboraoffice.com/code/ (LibreOffice für OwnCloud)
 
 ```
     NewTab-Bookmark

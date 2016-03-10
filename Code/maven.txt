@@ -7,6 +7,8 @@
 - der Aufruf 'mvn install:install-file' bewirkt, dass das 'maven-install-plugin' mit dem Goal install-file ausgeführt wird
   bei disem Aufruf wurde keine Phase angegeben, weswegen keiner der Lebenszyklen abgewickelt wird
   das der Parameter nicht als Phase interpretiert wird, liegt an dessen Doppelpunkt (alle Goal-Angaben enthalten Doppelpunkte)
+- der Aufruf 'mvn dependency:unpack@some-id' führt das 'unpack'-Goal mit der angegebenen ID des 'maven-dependency-plugin' aus
+  ein Goal kann innerhalb eines Plugins mehrfach konfiguriert werden (die Konfigurationen werden durch IDs unterschieden)
 - beim Maven-Aufruf mit einer Phase wird nicht nur die Phase selbst, sondern auch alle ihre Vorgängerphasen ausgeführt
 - `mvn source:jar` erzeugt ein -source.jar Paket
 - `mvn package -Dmaven.repo.local=target/repository` legt das lokale Repository fest (geht auch in der settings.xml)

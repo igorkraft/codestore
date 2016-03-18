@@ -101,6 +101,8 @@
   - `git clean -f -d -x`
 - Historie einschließlich Umbenennungen ausgeben
   - `git log --follow <fso>`
+- alle lokalen Tags pushen
+  - `git push --follow-tags`
 
 ##### Befehle zur Modifikation des Stage-Bereichs
 - alle Änderungen und unbeobachtete Dateien in den Stage-Bereich übernehmen

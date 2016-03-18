@@ -11,6 +11,7 @@
 - die Bezeichnung `origin` ist ein Alias für die Remote-URL, mit der geklont wurde
 - wenn man pushed, muss man die Remote-URL und den Remote-Zweig angeben (`git push origin master`)
   - lässt man Remote-URL und Remote-Zweig weg, dann wird zu dem Zweig gepushed, der mit dem aktuellen lokalen Zweig verbunden ist (Upstream-Verbindung)
+  - einen Zweig pushen, der nur lokal existiert `git push -u origin new_branch` (Upstream-Verbindung wird hergestellt)
   - `git branch -vv` zeigt welcher lokale Zweig mit welchem Remote-Zweig verbunden ist (Upstream-Verbindung)
 
 #### HEAD

@@ -20,4 +20,5 @@
 
 #### Suche mit Regulären Ausdrücken
 - matcht alle Zeilen, die nicht mit einem `c` anfangen: `^((?!c).*)$`
-- matcht Zeichen mit Unicode `0061` (ist ein `a`) : `\x{0061}`
+- matcht alle Umbrüche, die nicht von einem `c` gefolgt sind: `\n(?!c)`
+- matcht Zeichen mit Unicode `006d` (ist ein `k`) : `\x{0061}`

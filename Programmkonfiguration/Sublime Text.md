@@ -23,3 +23,6 @@
 - matcht alle Zeilen, die nicht mit einem `c` anfangen: `^((?!c).*)$`
 - matcht alle Umbrüche, die nicht von einem `c` gefolgt sind: `\n(?!c)`
 - matcht Zeichen mit Unicode `006d` (ist ein `k`) : `\x{0061}`
+
+#### Konsolenbefehle
+- `view.file_name()` Pfad zur aktuellen Datei ausgeben

@@ -37,12 +37,12 @@
   - `mvn dependency:copy-dependencies`
 - Abhängigkeitsbaum anzeigen
   - `mvn dependency:tree`
-- `mvn dependency:build-classpath` Abhängigkeiten mit absoluten Pfaden ausgeben
+- Abhängigkeiten mit absoluten Pfaden ausgeben
   - `mvn dependency:build-classpath`
   
 #### Maven-Wrapper
-https://repo1.maven.org/maven2/io/takari/maven-wrapper/
-- das neuste tar.gz runterladen und die darin enthaltenen Dateien ins Projektroot kopieren
+- auf https://repo1.maven.org/maven2/io/takari/maven-wrapper/ das neuste tar.gz runterladen
+- die darin enthaltenen Dateien ins Projektroot kopieren
 - statt `mvn` `./mvnw` aufrufen
   
 #### Sonstiges

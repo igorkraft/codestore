@@ -249,3 +249,6 @@ Für den logischen Vergleich werden bytes immer erst in Integer konvertiert und 
 Soll heißen: (byte)255  ist kleiner als (byte)10 
 bzw.         (byte)0xFF ist kleiner als (byte)0x0A
 Für einen Vergleich muss also erst die vorzeichenfreie Darstellung erzeugt werden.
+
+• Java-Download per curl
+curl -L -C - -b "oraclelicense=accept-securebackup-cookie" -O http://download.oracle.com/otn-pub/java/jdk/8u77-b03/jdk-8u77-linux-x64.tar.gz

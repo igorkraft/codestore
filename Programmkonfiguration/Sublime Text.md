@@ -20,10 +20,11 @@
 - `"word_wrap": "false",`
 - `"font_size": 13,`
 
-#### Verzeichnis durchsuchen
+#### Dateien durchsuchen
 - Verzeichnis öffnen, das durchsucht werden soll
 - `Find` -> `Find in Files...` wählen
 - Doppelklick auf Treffer öffnet die Fundstelle in Datei
+- es werden alle Verzeichnisse, geöffnete Dateien und ungespeicherte Tabs durchsucht
 
 #### Suche mit Regulären Ausdrücken
 - matcht alle Zeilen, die nicht mit einem `c` anfangen: `^((?!c).*)$`

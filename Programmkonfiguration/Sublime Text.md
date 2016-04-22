@@ -31,5 +31,8 @@
 - matcht alle Umbrüche, die nicht von einem `c` gefolgt sind: `\n(?!c)`
 - matcht Zeichen mit Unicode `006d` (ist ein `k`) : `\x{0061}`
 
+#### Sonstiges
+- `Shift + Strg + p` -> `reveal` öffnet Verzeichnis der aktuellen Datei im FileManager
+
 #### Konsolenbefehle
 - `view.file_name()` Pfad zur aktuellen Datei ausgeben

@@ -10,6 +10,7 @@
   - `Pretty JSON` installieren
   - `Gradle_Language` installieren (Highlighting für Gradle)
   - `SideBarEnhancements` installieren (erweitert Kontextmenü der Ordner-Sidebar)
+  - `FocusFileOnSidebar` erweitert Befehlssatz um `Focus File on Sidebar`
 
 #### Einstellungen
 - Preferences -> Color Scheme -> Zenburnesque
@@ -19,6 +20,7 @@
 - `"draw_white_space": "all",`
 - `"word_wrap": "false",`
 - `"font_size": 13,`
+- `"close_sidebar_if_opened": false,`
 
 #### Dateien durchsuchen
 - Verzeichnis öffnen, das durchsucht werden soll

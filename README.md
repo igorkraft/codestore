@@ -369,6 +369,7 @@
   - https://youtu.be/J6oMG7u9HGE (Video mit deutschen Untertiteln)
 - https://www.collaboraoffice.com/code/ (LibreOffice für OwnCloud)
 - https://generalassemb.ly/blog/sublime-text-3-tips-tricks-shortcuts/
+- http://blog.jdebugger.com/2015/02/jdebug-java-debugging-plugin-for.html (Sublime Text Plugin zum Java debuggen)
 
 ```
     NewTab-Bookmark

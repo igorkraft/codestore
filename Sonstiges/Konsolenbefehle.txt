@@ -1,3 +1,7 @@
+# Live-System Image auf einen USB-Stick übertragen (erfordert das Paket syslinux)
+isohybrid disk.iso # wandelt das ISO in ein Format für Flashspeicher um
+dd if=disk.iso of=/dev/sdb # der USB-Stick darf nicht gemounted sein
+
 # ISO/IMG Dateien ins Dateisystem einbinden
 mount -o loop disk.iso /mnt/
 

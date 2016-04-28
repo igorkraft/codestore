@@ -1,4 +1,4 @@
-package de.at.home;
+package de.at.home.uploads;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package de.at.home;
+package de.at.home.uploads;
 
 import java.io.File;
 import java.io.FileInputStream;

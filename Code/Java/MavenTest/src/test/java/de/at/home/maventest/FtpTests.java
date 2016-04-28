@@ -1,4 +1,4 @@
-package de.at.home;
+package de.at.home.maventest;
 
 import java.util.ArrayList;
 import java.util.List;

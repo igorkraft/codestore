@@ -1,19 +1,14 @@
-package de.at.home;
+package de.at.home.maventest;
 
-import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.commons.lang3.time.DateUtils;
-import org.apache.commons.lang3.time.DurationFormatUtils;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatterBuilder;
-import org.joda.time.format.ISODateTimeFormat;
 import org.junit.Test;
 
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Locale;
-import java.util.TimeZone;
 
 public class JodaTimeTests
 {	

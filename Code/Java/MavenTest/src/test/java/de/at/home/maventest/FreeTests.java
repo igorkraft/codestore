@@ -1,10 +1,7 @@
-package de.at.home;
+package de.at.home.maventest;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
-import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.junit.Test;

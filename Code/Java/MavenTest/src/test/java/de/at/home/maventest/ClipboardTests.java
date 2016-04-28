@@ -1,4 +1,4 @@
-package de.at.home;
+package de.at.home.maventest;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.DataFlavor;

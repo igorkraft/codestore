@@ -1,4 +1,4 @@
-package de.at.home;
+package de.at.home.maventest;
 
 import java.util.List;
 import java.util.Map;

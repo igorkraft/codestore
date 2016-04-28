@@ -1,4 +1,4 @@
-package de.at.home;
+package de.at.home.maventest;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;

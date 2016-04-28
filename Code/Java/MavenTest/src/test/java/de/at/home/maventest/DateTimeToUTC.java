@@ -1,4 +1,4 @@
-package de.at.home;
+package de.at.home.maventest;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;

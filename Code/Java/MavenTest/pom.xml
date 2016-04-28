@@ -6,7 +6,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>de.at.home</groupId>
+	<groupId>de.at.home.maventest</groupId>
 	<artifactId>maventest</artifactId>
 	<version>1.0.0</version>
 
@@ -157,7 +157,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>de.at.home.Base64Test</mainClass>
+									<mainClass>de.at.home.maventest.Base64Test</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>

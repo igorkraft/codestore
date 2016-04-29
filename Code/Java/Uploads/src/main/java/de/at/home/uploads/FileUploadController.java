@@ -4,9 +4,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.squareup.moshi.Moshi;
 import org.apache.commons.io.IOUtils;
 import org.apache.tomcat.util.http.fileupload.FileItemIterator;
 import org.apache.tomcat.util.http.fileupload.FileItemStream;
@@ -29,11 +31,8 @@ public class FileUploadController
 	@RequestMapping("/status")
 	public @ResponseBody ResponseEntity<String> status()
 	{
-		// Json laden
-		//JsonAdapter<Map> adapter = (new Moshi.Builder()).build().adapter(Map.class);
-		//String result = adapter.toJson(this.statusService.getUploads());
-
-		return new ResponseEntity<String>(this.statusService.toString(), HttpStatus.OK);
+		String result = ((new Moshi.Builder()).build().adapter(Map.class)).toJson(this.statusService.getUploads());
+		return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
 
 	@RequestMapping(value="/upstream", method=RequestMethod.POST)

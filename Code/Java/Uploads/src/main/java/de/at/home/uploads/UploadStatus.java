@@ -2,6 +2,7 @@ package de.at.home.uploads;
 
 public class UploadStatus
 {
+    // TODO Lombok einsetzen
     private volatile long count;
     private volatile long startTime;
     private volatile int contentLength;
@@ -25,16 +26,5 @@ public class UploadStatus
     public void isRunning(boolean runningState)
     {
         this.runningState = runningState;
-    }
-
-    @Override
-    public String toString()
-    {
-        String result = "{";
-        result = result + "\"count\":\"" + this.count + "\",";
-        result = result + "\"startTime\":\"" + this.startTime + "\",";
-        result = result + "\"contentLength\":\"" + this.contentLength + "\",";
-        result = result + "\"runningState\":\"" + this.runningState + "\"";
-        return result + "}";
     }
 }

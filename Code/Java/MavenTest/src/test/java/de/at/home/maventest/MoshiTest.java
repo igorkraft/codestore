@@ -53,4 +53,6 @@ public class MoshiTest
 			System.out.println(stock.getKey() + " = " + Math.round((Double)stock.getValue()));
 		}
 	}
+
+	// Object to JSON wird im Upload-Projekt benutzt
 }

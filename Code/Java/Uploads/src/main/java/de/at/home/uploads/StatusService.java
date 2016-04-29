@@ -35,16 +35,4 @@ public class StatusService
     {
         return this.uploads;
     }
-
-    @Override
-    public String toString()
-    {
-        String result = "{";
-        for (Map.Entry<String, UploadStatus> entry : this.uploads.entrySet())
-        {
-            result = result + "\"" + entry.getKey() + "\":" + entry.getValue() + ",";
-        }
-        result = StringUtils.left(result,result.length() - 1) + "}";
-        return result;
-    }
 }

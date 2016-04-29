@@ -1,14 +1,51 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>File-Upload</title>
+    <meta charset="utf-8">
+    <title>File-Upload</title>
+    <script src="/webjars/jquery/2.2.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function()
+    {
+        $(document).on("click", "button", function (e)
+        {
+            e.preventDefault();
+            var myFormData = new FormData();
+            var inputs = $("#my_form input");
+            $.each(inputs, function (indexInArray, value)
+            {
+                var file = value.files[0];
+                var filename = $(value).attr("data-filename");
+                var name = $(value).attr("name");
+                myFormData.append(name, file, filename);
+            });
+            
+            var xhr = new XMLHttpRequest;
+            xhr.open('POST', '/upstream', true);
+            xhr.send(myFormData);
+
+            /*$.ajax({
+                url: "/upstream",
+                type: "POST",
+                data: myFormData,
+                async: true,
+                cache: false,
+                contentType: false,
+                proccessData: false,
+                success: function() {
+                    // do something smart here
+                }
+            });*/
+        });
+    });
+    </script>
 </head>
 
 <body>
-		<form action="upstream" method="post" enctype="multipart/form-data">
-				<input name="file" type="file" id="fileA" /> 
-				<input name="hochladen" type="submit" id="senddata" />
-		</form>
+    <form id="my_form" enctype="multipart/form-data">
+        <input type="file" name="file1">
+        <input type="file" name="file2">
+        <button>click</button>
+    </form>
 </body>
 </html>

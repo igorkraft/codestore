@@ -63,6 +63,7 @@ public class FileUploadController
 			return new ResponseEntity<String>("Internal server IO error", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
+		// TODO: Status zurück schicken
 		return new ResponseEntity<String>("Success", HttpStatus.OK);
 	}
 	
@@ -76,6 +77,7 @@ public class FileUploadController
 		try
 		{
 			inStream = item.openStream();
+			// Ablageverzeichnis konfigurierbar machen
 			outStream = new FileOutputStream(item.getName());
 			this.copyLarge(inStream, outStream, uploadStatus);
 		}

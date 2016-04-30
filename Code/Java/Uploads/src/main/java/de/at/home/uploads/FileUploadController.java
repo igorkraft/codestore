@@ -80,12 +80,12 @@ public class FileUploadController
 			// Ablageverzeichnis konfigurierbar machen
 			outStream = new FileOutputStream(item.getName());
 			this.copyLarge(inStream, outStream, uploadStatus);
+			uploadStatus.isRunning(false);
 		}
 		finally
 		{
 			IOUtils.closeQuietly(outStream);
 			IOUtils.closeQuietly(inStream);
-			uploadStatus.isRunning(false);
 		}
 	}
 

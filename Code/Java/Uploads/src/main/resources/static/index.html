@@ -7,45 +7,27 @@
     <script type="text/javascript">
     $(document).ready(function()
     {
-        $(document).on("click", "button", function (e)
+        $("#uploadButton").click(function()
         {
-            e.preventDefault();
-            var myFormData = new FormData();
-            var inputs = $("#my_form input");
-            $.each(inputs, function (indexInArray, value)
-            {
-                var file = value.files[0];
-                var filename = $(value).attr("data-filename");
-                var name = $(value).attr("name");
-                myFormData.append(name, file, filename);
-            });
-            
-            var xhr = new XMLHttpRequest;
-            xhr.open('POST', '/upstream', true);
-            xhr.send(myFormData);
+            var uploadFormData = new FormData();
+            uploadFormData.append("file", $("#uploadFile").get(0).files[0]);
 
-            /*$.ajax({
-                url: "/upstream",
-                type: "POST",
-                data: myFormData,
-                async: true,
-                cache: false,
-                contentType: false,
-                proccessData: false,
-                success: function() {
-                    // do something smart here
-                }
-            });*/
+            $.ajax(
+            {
+              url: "/upstream",
+              type: "POST",
+              data: uploadFormData,
+              async: true,
+              contentType: false,
+              processData: false
+            });
         });
     });
     </script>
 </head>
 
 <body>
-    <form id="my_form" enctype="multipart/form-data">
-        <input type="file" name="file1">
-        <input type="file" name="file2">
-        <button>click</button>
-    </form>
+    <input id="uploadFile" type="file">
+    <button id="uploadButton">Upload</button>
 </body>
 </html>

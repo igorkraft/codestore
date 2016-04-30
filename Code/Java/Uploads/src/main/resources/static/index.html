@@ -5,29 +5,51 @@
     <title>File-Upload</title>
     <script src="/webjars/jquery/2.2.3/jquery.min.js"></script>
     <script type="text/javascript">
+    
+    var upload = function()
+    {
+        var uploadFormData = new FormData();
+        uploadFormData.append("file", $("#uploadFile").get(0).files[0]);
+
+        $.ajax(
+        {
+          url: "/upstream",
+          type: "POST",
+          data: uploadFormData,
+          async: true,
+          contentType: false,
+          processData: false
+        });
+    };
+
+    var refreshStatus = function(data)
+    {
+        var status = jQuery.parseJSON(data);
+        for (var fileName in status)
+        {
+          var fileStatus = status[fileName];
+          // alert(fileStatus.startTime);
+          var statusLine = document.getElementsByName(fileName)[0];
+          if (typeof(statusLine) === "undefined")
+          {
+            // tr erzeugen
+          }
+        }
+        window.setTimeout(function(){$.ajax({url: "/status", success: refreshStatus});}, 3000);
+    }
+
     $(document).ready(function()
     {
-        $("#uploadButton").click(function()
-        {
-            var uploadFormData = new FormData();
-            uploadFormData.append("file", $("#uploadFile").get(0).files[0]);
-
-            $.ajax(
-            {
-              url: "/upstream",
-              type: "POST",
-              data: uploadFormData,
-              async: true,
-              contentType: false,
-              processData: false
-            });
-        });
+        $("#uploadButton").click(upload);
+        $.ajax({url: "/status", success: refreshStatus});
     });
+
     </script>
 </head>
 
 <body>
     <input id="uploadFile" type="file">
     <button id="uploadButton">Upload</button>
+    <table id="statusTable"><tr name="TODO.txt"><td></td></tr><tr name="test.txt"><td></td></tr></table>
 </body>
 </html>

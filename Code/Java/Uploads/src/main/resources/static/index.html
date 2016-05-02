@@ -9,6 +9,8 @@
     var upload = function()
     {
         var uploadFormData = new FormData();
+        // man kann mehrere file input Felder anhängen, aber auf Serverseite
+        // gibt es nur eine Content-Length, für die Größe der HTTP-Nachricht
         uploadFormData.append("file", $("#uploadFile").get(0).files[0]);
 
         $.ajax(
@@ -22,20 +24,38 @@
         });
     };
 
-    var refreshStatus = function(data)
+    var getStatusLine = function(fileName)
     {
-        var status = jQuery.parseJSON(data);
+        var statusLine = $(document.getElementsByName(fileName)[0]);
+
+        if (typeof(statusLine.get(0)) !== "undefined") return statusLine;
+      
+        statusLine = 
+            $($("<tr>").attr("name", fileName))
+            .append($("<td>").text(fileName))
+            .append($("<td>").attr("name", "contentLength"))
+            .append($("<td>").attr("name", "count"))
+            .append($("<td>").attr("name", "runningState"))
+            .append($("<td>").attr("name", "startTime"));
+
+        $("#statusTable tbody").append(statusLine);
+
+        return statusLine;
+    };
+
+    var refreshStatus = function(status)
+    {
         for (var fileName in status)
         {
           var fileStatus = status[fileName];
-          // alert(fileStatus.startTime);
-          var statusLine = document.getElementsByName(fileName)[0];
-          if (typeof(statusLine) === "undefined")
-          {
-            // tr erzeugen
-          }
+          var statusLine = getStatusLine(fileName);
+
+          statusLine.find("td[name='contentLength']").text(fileStatus.contentLength);
+          statusLine.find("td[name='count']").text(fileStatus.count);
+          statusLine.find("td[name='runningState']").text(fileStatus.runningState);
+          statusLine.find("td[name='startTime']").text(fileStatus.startTime);
         }
-        window.setTimeout(function(){$.ajax({url: "/status", success: refreshStatus});}, 3000);
+        window.setTimeout(function(){$.ajax({url: "/status", success: refreshStatus});}, 1000);
     }
 
     $(document).ready(function()
@@ -50,6 +70,6 @@
 <body>
     <input id="uploadFile" type="file">
     <button id="uploadButton">Upload</button>
-    <table id="statusTable"><tr name="TODO.txt"><td></td></tr><tr name="test.txt"><td></td></tr></table>
+    <table id="statusTable" style=""><tbody></tbody></table>
 </body>
 </html>

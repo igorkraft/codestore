@@ -28,7 +28,7 @@ public class FileUploadController
 	@Autowired
 	private StatusService statusService;
 
-	@RequestMapping("/status")
+	@RequestMapping(value = "/status", produces = "application/json")
 	public @ResponseBody ResponseEntity<String> status()
 	{
 		String result = ((new Moshi.Builder()).build().adapter(Map.class)).toJson(this.statusService.getUploads());

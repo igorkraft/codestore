@@ -3,7 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>File-Upload</title>
+
+    <link href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
     <script src="/webjars/jquery/2.2.3/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript">
     
     var upload = function()
@@ -70,6 +74,12 @@
 <body>
     <input id="uploadFile" type="file">
     <button id="uploadButton">Upload</button>
-    <table id="statusTable" style=""><tbody></tbody></table>
+
+    <!-- <div class="panel panel-default"> -->
+        <table id="statusTable" class="table"><tbody></tbody></table>
+    <!-- </div> -->
+
+
+
 </body>
 </html>

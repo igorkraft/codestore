@@ -34,17 +34,34 @@
 
         if (typeof(statusLine.get(0)) !== "undefined") return statusLine;
       
+        var progressBar =
+            $("<div>", {class : "progress"})
+            .append($("<div>", 
+            {
+                class : "progress-bar",
+                role : "progressbar",
+                style : "min-width: 2em; width: 0%"
+            }).text("0%"));
+
         statusLine = 
-            $($("<tr>").attr("name", fileName))
+            $("<tr>").attr("name", fileName)
             .append($("<td>").text(fileName))
             .append($("<td>").attr("name", "contentLength"))
-            .append($("<td>").attr("name", "count"))
+            .append($("<td>").attr("name", "count").append(progressBar))
             .append($("<td>").attr("name", "runningState"))
             .append($("<td>").attr("name", "startTime"));
 
         $("#statusTable tbody").append(statusLine);
 
         return statusLine;
+    };
+
+    var setProgress = function(statusLine, fileStatus)
+    {
+        var progress = Math.round((fileStatus.count * 100) / fileStatus.contentLength);
+        var progressBar = statusLine.find(".progress-bar");
+        progressBar.text(progress + "%");
+        progressBar.attr("style", "min-width: 2em; width:" + progress + "%");
     };
 
     var refreshStatus = function(status)
@@ -55,9 +72,9 @@
           var statusLine = getStatusLine(fileName);
 
           statusLine.find("td[name='contentLength']").text(fileStatus.contentLength);
-          statusLine.find("td[name='count']").text(fileStatus.count);
           statusLine.find("td[name='runningState']").text(fileStatus.runningState);
           statusLine.find("td[name='startTime']").text(fileStatus.startTime);
+          setProgress(statusLine, fileStatus);
         }
         window.setTimeout(function(){$.ajax({url: "/status", success: refreshStatus});}, 1000);
     }
@@ -74,12 +91,7 @@
 <body>
     <input id="uploadFile" type="file">
     <button id="uploadButton">Upload</button>
-
-    <!-- <div class="panel panel-default"> -->
-        <table id="statusTable" class="table"><tbody></tbody></table>
-    <!-- </div> -->
-
-
-
+    <button id="resetButton" onclick="$.ajax({url: '/reset'});">Reset</button>
+    <table id="statusTable" class="table"><tbody></tbody></table>
 </body>
 </html>

@@ -35,6 +35,13 @@ public class FileUploadController
 		return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/reset")
+	public @ResponseBody ResponseEntity<String> reset()
+	{
+		this.statusService.reset();
+		return new ResponseEntity<String>("Success", HttpStatus.OK);
+	}
+
 	@RequestMapping(value="/upstream", method=RequestMethod.POST)
 	public @ResponseBody ResponseEntity<String> upstream(HttpServletRequest request)
 	{

@@ -35,4 +35,9 @@ public class StatusService
     {
         return this.uploads;
     }
+
+    public void reset()
+    {
+        this.uploads = Collections.synchronizedMap(new HashMap<String, UploadStatus>());
+    }
 }

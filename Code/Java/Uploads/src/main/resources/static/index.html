@@ -8,6 +8,7 @@
 
     <script src="/webjars/jquery/2.2.3/jquery.min.js"></script>
     <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/webjars/momentjs/2.12.0/moment.js"></script>
     <script type="text/javascript">
     
     var upload = function()
@@ -28,6 +29,15 @@
         });
     };
 
+    var formatBytes = function (bytes)
+    {
+        if(bytes == 0) return '0 Byte';
+        var k = 1024;
+        var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+        var i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(3)) + '\u00a0' + sizes[i];
+    }
+
     var getStatusLine = function(fileName)
     {
         var statusLine = $(document.getElementsByName(fileName)[0]);
@@ -45,11 +55,12 @@
 
         statusLine = 
             $("<tr>").attr("name", fileName)
+            .append($("<td>").attr("name", "state"))
             .append($("<td>").text(fileName))
-            .append($("<td>").attr("name", "contentLength"))
-            .append($("<td>").attr("name", "count").append(progressBar))
-            .append($("<td>").attr("name", "runningState"))
-            .append($("<td>").attr("name", "startTime"));
+            .append($("<td>").attr("name", "progress").append(progressBar))
+            .append($("<td>").attr("name", "size"))
+            .append($("<td>").attr("name", "elapsedTime"))
+            .append($("<td>").attr("name", "remainingTime"));
 
         $("#statusTable tbody").append(statusLine);
 
@@ -71,9 +82,9 @@
           var fileStatus = status[fileName];
           var statusLine = getStatusLine(fileName);
 
-          statusLine.find("td[name='contentLength']").text(fileStatus.contentLength);
-          statusLine.find("td[name='runningState']").text(fileStatus.runningState);
-          statusLine.find("td[name='startTime']").text(fileStatus.startTime);
+          statusLine.find("td[name='size']").text(formatBytes(fileStatus.contentLength));
+          statusLine.find("td[name='state']").text(fileStatus.runningState);
+          statusLine.find("td[name='elapsedTime']").text(moment(fileStatus.startTime).format("YYYY-MM-DD HH:mm:ss"));
           setProgress(statusLine, fileStatus);
         }
         window.setTimeout(function(){$.ajax({url: "/status", success: refreshStatus});}, 1000);
@@ -92,6 +103,18 @@
     <input id="uploadFile" type="file">
     <button id="uploadButton">Upload</button>
     <button id="resetButton" onclick="$.ajax({url: '/reset'});">Reset</button>
-    <table id="statusTable" class="table"><tbody></tbody></table>
+    <table id="statusTable" class="table table-bordered">
+        <thead>
+            <tr>
+                <th width="4%">State</th>
+                <th width="23%">Name</th>
+                <th width="23%">Progress</th>
+                <th width="4%">Size</th>
+                <th width="23%">Elapsed Time</th>
+                <th width="23%">Remaining Time</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 </body>
 </html>

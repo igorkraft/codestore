@@ -74,8 +74,10 @@
   - `git log --graph --oneline --all`
 - lokale Änderungen rückgängig machen
   - `git reset --hard`
-- Änderungen einer Datei verwerfen
+- Änderungen einer Datei verwerfen (mit * für alle veränderten Dateien)
   - `git checkout <Datei>`
+- letzten lokalen Commit rückgängig machen (setzt lokalen Zweig auf das Parent des aktuellen Commits)
+  - `git reset --soft HEAD~`
 - zwei Versionen der selben Datei über mehrere Commits (und Zweige) vergleichen
   - `git diff <commit_id_1>..<commit_id_2> -- <Dateipfad>`
   - `git difftool <commit_id_1>..<commit_id_2> -- <Dateipfad>`

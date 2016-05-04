@@ -1,20 +1,15 @@
 package de.at.home.uploads;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-
 import com.squareup.moshi.Moshi;
 import org.apache.commons.io.IOUtils;
 import org.apache.tomcat.util.http.fileupload.FileItemIterator;
 import org.apache.tomcat.util.http.fileupload.FileItemStream;
-import org.apache.tomcat.util.http.fileupload.FileUploadException;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -22,9 +17,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.*;
+import java.util.Map;
+
 @Controller
-public class FileUploadController 
+public class FileUploadController implements InitializingBean
 {
+	@Value("${upload.root.directory:.}")
+	private File uploadRoot;
+
 	@Autowired
 	private StatusService statusService;
 
@@ -60,12 +62,8 @@ public class FileUploadController
 
 				this.writeToFile(item);
 			}
-		} 
-		catch (FileUploadException e) 
-		{
-			return new ResponseEntity<String>("File upload error", HttpStatus.INTERNAL_SERVER_ERROR);
-		} 
-		catch (IOException e) 
+		}
+		catch (Exception e)
 		{
 			return new ResponseEntity<String>("Internal server IO error", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -84,8 +82,7 @@ public class FileUploadController
 		try
 		{
 			inStream = item.openStream();
-			// Ablageverzeichnis konfigurierbar machen
-			outStream = new FileOutputStream(item.getName());
+			outStream = new FileOutputStream(new File(this.uploadRoot, item.getName()));
 			this.copyLarge(inStream, outStream, uploadStatus);
 			uploadStatus.isRunning(false);
 		}
@@ -110,4 +107,12 @@ public class FileUploadController
 		return count;
 	}
 
+	@Override
+	public void afterPropertiesSet() throws Exception
+	{
+		if (!this.uploadRoot.exists()) throw new Exception("Please configure a valid 'upload.root.directory'.");
+		String uploadFolder = DateTimeFormat.forPattern("yyyyMMdd_HHmmss").print(new DateTime());
+		this.uploadRoot = new File(this.uploadRoot, uploadFolder);
+		this.uploadRoot.mkdir();
+	}
 }

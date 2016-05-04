@@ -58,7 +58,7 @@
 
     var setProgress = function(statusLine, fileStatus)
     {
-        var progress = Math.round((fileStatus.count * 100) / fileStatus.contentLength);
+        var progress = fileStatus.runningState ? Math.round((fileStatus.count * 100) / fileStatus.contentLength) : 100;
         var progressBar = statusLine.find(".progress-bar");
         progressBar.text(progress + "%");
         progressBar.attr("style", "min-width: 2em; width:" + progress + "%");

@@ -39,7 +39,16 @@
   - `mvn dependency:tree`
 - Abhängigkeiten mit absoluten Pfaden ausgeben
   - `mvn dependency:build-classpath`
-  
+
+#### BuildPlan-Plugin
+
+- listet Goals in Ausführungsreihenfolge auf
+  - `mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:LATEST:list`
+- listet für jede Phase die ausgeführten Goals auf
+  - `mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:LATEST:list-phase`
+- listet für jedes Plugin die Goals auf, die ausgeführt werden
+  - `mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:LATEST:list-plugin`
+
 #### Maven-Wrapper
 - auf https://repo1.maven.org/maven2/io/takari/maven-wrapper/ das neuste tar.gz runterladen
 - die darin enthaltenen Dateien ins Projektroot kopieren

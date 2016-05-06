@@ -52,6 +52,8 @@
 #### Maven-Wrapper
 - auf https://repo1.maven.org/maven2/io/takari/maven-wrapper/ das neuste tar.gz runterladen
 - die darin enthaltenen Dateien ins Projektroot kopieren
+- gegebenenfalls einen Proxy konfigurieren 
+  - `export MAVEN_OPTS=-Dhttp.proxyHost=proxy.host -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy.host -Dhttps.proxyPort=8080 -Dhttp.nonProxyHosts=localhost`
 - statt `mvn` `./mvnw` aufrufen
   
 #### Sonstiges

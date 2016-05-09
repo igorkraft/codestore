@@ -62,3 +62,4 @@
 - `mvn package -Dmaven.repo.local=target/repository` legt das lokale Repository fest (geht auch in der settings.xml)
 - `LATEST` kann statt einer Versionsnummer angegeben werden
 - `mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp` generiert interaktiv ein Java-Web-Projekt
+- `mvn install -Dmaven.test.skip=true` überspringt die Tests des Surefire-Plugins

@@ -24,7 +24,7 @@ import java.util.Map;
 @Controller
 public class FileUploadController implements InitializingBean
 {
-	@Value("${upload.root.directory:.}")
+	@Value("${upload.root.directory:${user.dir}}")
 	private File uploadRoot;
 
 	@Autowired
@@ -33,7 +33,8 @@ public class FileUploadController implements InitializingBean
 	@RequestMapping(value = "/status", produces = "application/json")
 	public @ResponseBody ResponseEntity<String> status()
 	{
-		String result = ((new Moshi.Builder()).build().adapter(Map.class)).toJson(this.statusService.getUploads());
+		this.statusService.updateCurrentTime();
+		String result = ((new Moshi.Builder()).build().adapter(StatusService.class)).toJson(this.statusService);
 		return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
 

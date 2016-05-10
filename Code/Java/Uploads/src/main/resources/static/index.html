@@ -29,15 +29,6 @@
         });
     };
 
-    var formatBytes = function (bytes)
-    {
-        if(bytes == 0) return '0 Byte';
-        var k = 1024;
-        var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-        var i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(3)) + '\u00a0' + sizes[i];
-    }
-
     var getStatusLine = function(fileName)
     {
         var statusLine = $(document.getElementsByName(fileName)[0]);
@@ -58,7 +49,6 @@
             .append($("<td>").attr("name", "state"))
             .append($("<td>").text(fileName))
             .append($("<td>").attr("name", "progress").append(progressBar))
-            .append($("<td>").attr("name", "size"))
             .append($("<td>").attr("name", "elapsedTime"))
             .append($("<td>").attr("name", "remainingTime"));
 
@@ -75,17 +65,29 @@
         progressBar.attr("style", "min-width: 2em; width:" + progress + "%");
     };
 
+    var getElapsedTime = function(fileStatus)
+    {
+        // var progress = fileStatus.runningState ? Math.round((fileStatus.count * 100) / fileStatus.contentLength) : 100;
+        // var progressBar = statusLine.find(".progress-bar");
+        // progressBar.text(progress + "%");
+        // progressBar.attr("style", "min-width: 2em; width:" + progress + "%");
+
+        //moment.duration(100); // 100 milliseconds
+        var now = moment();
+        return moment(fileStatus.startTime).format("YYYY-MM-DDTHH:mm:ss");
+    };
+
     var refreshStatus = function(status)
     {
-        for (var fileName in status)
+        for (var fileName in status.uploads)
         {
-          var fileStatus = status[fileName];
+          var fileStatus = status.uploads[fileName];
           var statusLine = getStatusLine(fileName);
 
-          statusLine.find("td[name='size']").text(formatBytes(fileStatus.contentLength));
           statusLine.find("td[name='state']").text(fileStatus.runningState);
-          statusLine.find("td[name='elapsedTime']").text(moment(fileStatus.startTime).format("YYYY-MM-DD HH:mm:ss"));
           setProgress(statusLine, fileStatus);
+          statusLine.find("td[name='elapsedTime']").text(getElapsedTime(fileStatus));
+          statusLine.find("td[name='remainingTime']").text(moment(fileStatus.startTime).format("YYYY-MM-DD HH:mm:ss"));
         }
         window.setTimeout(function(){$.ajax({url: "/status", success: refreshStatus});}, 1000);
     }
@@ -109,7 +111,6 @@
                 <th width="4%">State</th>
                 <th width="23%">Name</th>
                 <th width="23%">Progress</th>
-                <th width="4%">Size</th>
                 <th width="23%">Elapsed Time</th>
                 <th width="23%">Remaining Time</th>
             </tr>

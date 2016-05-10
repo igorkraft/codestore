@@ -52,6 +52,8 @@
 #### Maven-Wrapper
 - auf https://repo1.maven.org/maven2/io/takari/maven-wrapper/ das neuste tar.gz runterladen
 - die darin enthaltenen Dateien ins Projektroot kopieren
+- gegebenenfalls einen Proxy konfigurieren 
+  - `export MAVEN_OPTS=-Dhttp.proxyHost=proxy.host -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy.host -Dhttps.proxyPort=8080 -Dhttp.nonProxyHosts=localhost`
 - statt `mvn` `./mvnw` aufrufen
   
 #### Sonstiges
@@ -60,3 +62,4 @@
 - `mvn package -Dmaven.repo.local=target/repository` legt das lokale Repository fest (geht auch in der settings.xml)
 - `LATEST` kann statt einer Versionsnummer angegeben werden
 - `mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp` generiert interaktiv ein Java-Web-Projekt
+- `mvn install -Dmaven.test.skip=true` überspringt die Tests des Surefire-Plugins

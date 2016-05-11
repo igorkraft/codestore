@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
-import java.util.Map;
 
 @Controller
 public class FileUploadController implements InitializingBean

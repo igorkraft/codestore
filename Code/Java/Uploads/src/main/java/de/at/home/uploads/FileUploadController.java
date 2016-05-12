@@ -72,7 +72,7 @@ public class FileUploadController implements InitializingBean
 		return new ResponseEntity<String>("Success", HttpStatus.OK);
 	}
 	
-	private void writeToFile(FileItemStream item) throws IOException
+	private void writeToFile(FileItemStream item)
 	{
 		UploadStatus uploadStatus = this.statusService.getUploads().get(item.getName());
 
@@ -85,6 +85,10 @@ public class FileUploadController implements InitializingBean
 			outStream = new FileOutputStream(new File(this.uploadRoot, item.getName()));
 			this.copyLarge(inStream, outStream, uploadStatus);
 			uploadStatus.isRunning(false);
+		}
+		catch (Exception e)
+		{
+			//todo angemessen reagieren + Status failed setzen + erneuten Versuch ermöglichen
 		}
 		finally
 		{

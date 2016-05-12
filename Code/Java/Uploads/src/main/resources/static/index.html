@@ -73,7 +73,9 @@
         var minutes = Math.trunc(duration / 60000.0);
         duration = duration - (minutes * 60000.0);
         var seconds = Math.trunc(duration / 1000.0);
-        return hours+":"+minutes+":"+seconds;
+        return (hours   > 9 ? "" : "0") + hours + ":" + 
+               (minutes > 9 ? "" : "0") + minutes + ":" + 
+               (seconds > 9 ? "" : "0") + seconds;
     }
 
     var getElapsedTime = function(fileStatus, currentTime)
@@ -85,8 +87,9 @@
     var getRemainingTime = function(fileStatus, currentTime)
     {
         if (!fileStatus.runningState) return "-";
+        //todo das kann man bestimmt viel einfacher ausrechnen
         var result = fileStatus.contentLength * (currentTime - fileStatus.startTime) / fileStatus.count;
-        return formatDuration(result);
+        return formatDuration(result-(currentTime - fileStatus.startTime));
     }
 
     var refreshStatus = function(status)
@@ -121,10 +124,10 @@
         <thead>
             <tr>
                 <th width="4%">State</th>
-                <th width="23%">Name</th>
-                <th width="23%">Progress</th>
-                <th width="23%">Elapsed Time</th>
-                <th width="23%">Remaining Time</th>
+                <th width="31%">Name</th>
+                <th width="31%">Progress</th>
+                <th width="17%">Elapsed Time</th>
+                <th width="17%">Remaining Time</th>
             </tr>
         </thead>
         <tbody></tbody>

@@ -33,7 +33,7 @@
 - matcht alle Umbrüche, die nicht von einem `c` gefolgt sind: `\n(?!c)`
 - matcht Zeichen mit Unicode (hier ein `a`): `\x{0061}`
   - matcht zwei aufeinanderfolgende Umbrüche: `\x{000a}\x{000a}`
-  - Wagenrückläufe werden beim Laden einer Datei gefiltert und sind nach dem Speichern nicht mehr vorhanden
+  - Wagenrückläufe werden beim Laden einer Datei gefiltert, können nach dem Speichern aber vorhanden bleiben
 
 #### Sonstiges
 - `Shift + Strg + p` -> `reveal` öffnet Verzeichnis der aktuellen Datei im FileManager

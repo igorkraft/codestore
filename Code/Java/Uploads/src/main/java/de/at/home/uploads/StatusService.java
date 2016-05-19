@@ -13,7 +13,6 @@ import java.util.Map;
 public class StatusService
 {
     private Map<String, UploadStatus> uploads = Collections.synchronizedMap(new HashMap<String, UploadStatus>());
-    private volatile long currentTime;
 
     public boolean addUploadWhenNotExistent(String fileName, int contentLength)
     {
@@ -34,11 +33,6 @@ public class StatusService
     public Map<String, UploadStatus> getUploads()
     {
         return this.uploads;
-    }
-
-    public void updateCurrentTime()
-    {
-        this.currentTime = System.currentTimeMillis();
     }
 
     public void reset()

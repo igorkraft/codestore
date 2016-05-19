@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class FileUploadController implements InitializingBean
@@ -32,9 +34,11 @@ public class FileUploadController implements InitializingBean
 	@RequestMapping(value = "/status", produces = "application/json")
 	public @ResponseBody ResponseEntity<String> status()
 	{
-		this.statusService.updateCurrentTime();
-		String result = ((new Moshi.Builder()).build().adapter(StatusService.class)).toJson(this.statusService);
-		return new ResponseEntity<String>(result, HttpStatus.OK);
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("currentTime", System.currentTimeMillis());
+		result.put("uploads", this.statusService.getUploads());
+		String json = ((new Moshi.Builder()).build().adapter(Map.class)).toJson(result);
+		return new ResponseEntity<String>(json, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/reset")

@@ -170,3 +170,9 @@
 - gutes Git-Tutorial
   - https://www.atlassian.com/git/tutorials/
   - https://www.atlassian.com/git/tutorials/undoing-changes
+- besseres Tutorial?
+  - https://www.learnenough.com/git-tutorial
+- wie man Fehler die man mit Git gemacht hat wieder in den Griff bekommt (Flowchart)
+  - http://justinhileman.info/article/git-pretty/
+- Liste, welche Git-Befehle sich hinter Gitflow verbergen
+  - https://gist.github.com/JamesMGreene/cdd0ac49f90c987e45ac

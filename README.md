@@ -372,6 +372,7 @@
 - http://blog.jdebugger.com/2015/02/jdebug-java-debugging-plugin-for.html (Sublime Text Plugin zum Java debuggen)
 - https://blockly-games.appspot.com/maze?lang=de&level=1&skin=0 (Programmiereinstieg für Kinder)
 - https://github.com/chrislusf/seaweedfs (REST-Dateisystem)
+  - https://github.com/chrislusf/seaweedfs/wiki/Directories-and-Files
 
 ```
     NewTab-Bookmark

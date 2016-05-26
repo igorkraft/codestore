@@ -373,6 +373,7 @@
 - https://blockly-games.appspot.com/maze?lang=de&level=1&skin=0 (Programmiereinstieg für Kinder)
 - https://github.com/chrislusf/seaweedfs (REST-Dateisystem)
   - https://github.com/chrislusf/seaweedfs/wiki/Directories-and-Files
+- https://youtu.be/1lBxgACVcrQ ("Angular 2 force awakens" von John Papa)
 
 ```
     NewTab-Bookmark

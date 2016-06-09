@@ -44,9 +44,11 @@
                 style : "min-width: 2em; width: 0%"
             }).text("0%"));
 
+        var glyph = $("<span>", {class : "glyphicon glyphicon-ok text-success"});
+
         statusLine = 
             $("<tr>").attr("name", fileName)
-            .append($("<td>").attr("name", "state"))
+            .append($("<td>").attr("name", "state").append(glyph))
             .append($("<td>").text(fileName))
             .append($("<td>").attr("name", "progress").append(progressBar))
             .append($("<td>").attr("name", "elapsedTime"))
@@ -55,6 +57,11 @@
         $("#statusTable tbody").append(statusLine);
 
         return statusLine;
+    };
+
+    var setState = function(statusLine, runningState)
+    {
+        statusLine.find(".glyphicon").attr("class", runningState ? "glyphicon glyphicon-open text-info" : "glyphicon glyphicon-ok text-success");
     };
 
     var setProgress = function(statusLine, fileStatus)
@@ -76,7 +83,7 @@
         return (hours   > 9 ? "" : "0") + hours + ":" + 
                (minutes > 9 ? "" : "0") + minutes + ":" + 
                (seconds > 9 ? "" : "0") + seconds;
-    }
+    };
 
     var getElapsedTime = function(fileStatus, currentTime)
     {
@@ -90,7 +97,7 @@
         //todo das kann man bestimmt viel einfacher ausrechnen
         var result = fileStatus.contentLength * (currentTime - fileStatus.startTime) / fileStatus.count;
         return formatDuration(result-(currentTime - fileStatus.startTime));
-    }
+    };
 
     var refreshStatus = function(status)
     {
@@ -99,13 +106,13 @@
           var fileStatus = status.uploads[fileName];
           var statusLine = getStatusLine(fileName);
 
-          statusLine.find("td[name='state']").text(fileStatus.runningState);
+          setState(statusLine, fileStatus.runningState);
           setProgress(statusLine, fileStatus);
           statusLine.find("td[name='elapsedTime']").text(getElapsedTime(fileStatus, status.currentTime));
           statusLine.find("td[name='remainingTime']").text(getRemainingTime(fileStatus, status.currentTime));
         }
         window.setTimeout(function(){$.ajax({url: "/status", success: refreshStatus});}, 1000);
-    }
+    };
 
     $(document).ready(function()
     {
@@ -132,5 +139,6 @@
         </thead>
         <tbody></tbody>
     </table>
+    <span class="glyphicon glyphicon-warning-sign text-danger"></span>
 </body>
 </html>

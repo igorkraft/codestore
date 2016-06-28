@@ -210,3 +210,6 @@ convert -interlace none img.png img.jpg
 
 # IP eines Systems ermitteln
 ip route
+
+# eine OpenVPN-Verbindung öffnen
+sudo openvpn --config client.ovpn --script-security 2

@@ -374,6 +374,7 @@
 - https://github.com/chrislusf/seaweedfs (REST-Dateisystem)
   - https://github.com/chrislusf/seaweedfs/wiki/Directories-and-Files
 - https://youtu.be/1lBxgACVcrQ ("Angular 2 force awakens" von John Papa)
+- https://en.wikipedia.org/wiki/Remmina (remote desktop client für Linux)
 
 ```
     NewTab-Bookmark

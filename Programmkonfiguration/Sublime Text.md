@@ -11,6 +11,7 @@
   - `Gradle_Language` installieren (Highlighting für Gradle)
   - `SideBarEnhancements` installieren (erweitert Kontextmenü der Ordner-Sidebar)
   - `FocusFileOnSidebar` erweitert Befehlssatz um `Focus File on Sidebar`
+  - `Markdown Preview` rendert Markdown zu Git flavored HTML
 
 #### Einstellungen
 - Preferences -> Color Scheme -> Zenburnesque

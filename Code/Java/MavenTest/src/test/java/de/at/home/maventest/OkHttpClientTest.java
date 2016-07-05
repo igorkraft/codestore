@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
 import java.net.Proxy;
 import java.security.cert.X509Certificate;
 
@@ -109,7 +111,11 @@ public class OkHttpClientTest
 	private OkHttpClient createOkHttpClient(final String userName, final String userPassword) throws Exception
 	{
 		OkHttpClient client = new OkHttpClient();
-		
+
+		CookieManager cookieManager = new CookieManager();
+		cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+		client.setCookieHandler(cookieManager);
+
 //		client.setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("some_proxy", 1234)));
 		
 		client.setHostnameVerifier(new HostnameVerifier()

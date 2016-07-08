@@ -25,8 +25,9 @@
 
 #### Dependency-Plugin
 
-- die Source-Jars aller Abhängigkeiten eines Projekts ins lokale Repository laden (erfordert pom.xml)
+- die Sources/JavaDocs aller Abhängigkeiten eines Projekts ins lokale Repository laden (erfordert pom.xml)
   - `mvn dependency:sources`
+  - `mvn dependency:resolve -Dclassifier=javadoc`
 - eine Bibliothek herunterladen und auspacken (keine pom.xml erforderlich)
   - `mvn dependency:unpack -Dartifact=junit:junit:LATEST:jar -Dproject.basedir=. -DoutputDirectory=.` 
 - eine Bibliothek herunterladen (keine pom.xml erforderlich)

@@ -7,7 +7,7 @@
 #### Package Control
 - für manuelle Installation den Anweisungen hier folgen: https://packagecontrol.io/installation
 - neue Pakete können mit dem Befehl `Package Control: Install Package` gefunden und installiert werden
-  - `Pretty JSON` installieren
+  - `Indent XML` installieren (Formatiert JSON und XML mit `Indent JSON` und `Indent XML`)
   - `Gradle_Language` installieren (Highlighting für Gradle)
   - `SideBarEnhancements` installieren (erweitert Kontextmenü der Ordner-Sidebar)
   - `FocusFileOnSidebar` erweitert Befehlssatz um `Focus File on Sidebar`

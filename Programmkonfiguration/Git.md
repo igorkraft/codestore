@@ -144,6 +144,13 @@
 	email = igorkraft@web.de
 	name = Igor Kraft
 ```
+- Vorlage für das .git-Verzeichnis
+  - wird beim Klonen und Erzeugen angewendet
+  - kann Hooks enthalten, die für alle Repositories angewendet werden sollen
+```
+[init]
+	templatedir = d:/git_template
+```
 #### Alias
 
 - globale Aliase werden in der `$HOME/.gitconfig` gespeichert
@@ -161,7 +168,7 @@
 
 #### Links
 
-- List häufig verwendeter Befehle
+- Liste häufig verwendeter Befehle
   - https://projekte.itmc.tu-dortmund.de/projects/wiki-hsb/wiki/Wichtige_Git_Befehle/1
 - Befehle und ihre Wirkung als Grafik
   - http://en.wikipedia.org/wiki/File:Git_operations.svg

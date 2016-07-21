@@ -18,6 +18,7 @@
 - muss im Request vorhanden sein, wenn bei einer Request-Folge (siehe `Thread Group`) Cookies vom Server wieder mitgeschickt werden sollen
 - beim Neustart des Testplans werden die Server-Cookies des vorigen Laufs verworfen
 - man kann Client-Cookies hinzufügen
+- für zusätzliche Cookies müssen `Domain` und `Path:` gesetzt werden (z. B. `localhost` und `/`)
 
 ##### HTTP Authorization Manager
 - wird einer `Thread Group` hinzugefügt (unter `Config Element`)

@@ -16,6 +16,7 @@
   
 #### Installation des Basissystems
 
+- vor dem Hochfahren ein Netzwerkkabel anschließen
 - `pacstrap -i /mnt base base-devel`
   - wenn er nachfragt, welche Pakete installiert werden sollen, dann nur `Enter` drücken
 - fstab generieren `genfstab -U /mnt > /mnt/etc/fstab`
@@ -28,7 +29,7 @@
   - in der `/etc/locale.gen` die Zeilen `en_US.UTF-8 UTF-8` und `de_DE.UTF-8 UTF-8` einkommentieren
   - Sprachdateien generieren `locale-gen`
   - die Datei `/etc/locale.conf` mit dem Inhalt `LANG=de_DE.UTF-8` anlegen (erste Spalte einer Sprache aus der `/etc/locale.gen`)
-- Tastaturlayout einstelle
+- Tastaturlayout einstellen
   - die Datei `/etc/vconsole.conf` mit dem Inhalt `KEYMAP=de-latin1` anlegen
 - Zeitzone einstellen
   - interaktives Programm zum Ermitteln der Zeitzone `tzselect`
@@ -64,7 +65,8 @@
 - Netzwerkkonfiguration generieren `wifi-menu -o wlp0s18f2u4`
   - generiert eine Konfigurationsdatei in `/etc/netctl/`
   - `wifi-menu` ist im Paket `dialog` enthalten
-  
+- `netctl restart profile` startet netctl
+
 #### Benutzerkonfiguration
 
 - Benutzer mit eingeschränkten Rechten anlegen `useradd -m -s /bin/bash dummy`
@@ -140,6 +142,31 @@ SigLevel = Never
     -> TODO im catalyst-Repository gibt es einen xorg-server, der vielleicht funktioniert
   - den hier beschribenen Programmen `https://wiki.archlinux.org/index.php/Downgrading_packages` kann man keine Versionsnummer für einen Downgrade übergeben
     -> TODO testen, ob das Alternativen sind
+
+#### X Server und AMD Treiber (zweiter Versuch)
+
+- System neu aufsetzen und ein Backup machen
+  - Partitionsbackup erstellen `dd if=/dev/sda3 | bzip2 -9f > file.img.bz2`
+- `https://archive.archlinux.org/packages/x/xorg-server/xorg-server-1.17.4-2-x86_64.pkg.tar.xz` herunterladen
+  - curl Download `curl -O https://archive.archlinux.org/packages/x/xorg-server/xorg-server-1.17.4-2-x86_64.pkg.tar.xz`
+  - dieses Paket wurde am 01-Nov-2015 um 09:42 hochgeladen
+  - alle Pakete dieses Zeitpunktes sind hier zu finden `https://archive.archlinux.org/repos/2015/11/01/`
+- mit `sudo pacman -U xorg-server-1.17.4-2-x86_64.pkg.tar.xz` installieren
+  - liefert Fehler `xf86-input-evdev and xorg-server are in conflict (xorg-server<1.18.0)`
+- Paket `xf86-input-evdev` liegt im Repository `extra` (siehe `https://www.archlinux.org/packages/?q=xf86-input-evdev`)
+- `https://archive.archlinux.org/repos/2015/11/01/extra/os/x86_64/xf86-input-evdev-2.9.2-1-x86_64.pkg.tar.xz` herunterladen
+- für `xf86-input-evdev-2.9.2-1` will er diese Pakete auch heruntergeladen `libevdev-1.5.2-1` `mtdev-1.1.5-1`
+  - zum oben angegebenen Zeitpunkt waren dieses Pakete aktuell `libevdev-1.4.4-1` `mtdev-1.1.5-1`
+  - `https://archive.archlinux.org/repos/2015/11/01/extra/os/x86_64/libevdev-1.4.4-1-x86_64.pkg.tar.xz` herunterladen und installieren
+- `sudo pacman -U xf86-input-evdev-2.9.2-1-x86_64.pkg.tar.xz`
+- erneuter Installationsversuch von `xorg-server-1.17.4-2` liefert eine Liste mit allen nötigen Abhängigkeiten
+  - für jede Abhängigkeit die Version prüfen und gegebenenfalls downgraden
+  - für die Abhängigkeiten der Abhängigkeiten ebenfalls prüfen
+- ok, das ist zu anstrengend, mal schauen, ob es nach folgender Anleitung klappt
+  - `https://wiki.archlinux.org/index.php/Arch_Linux_Archive#How_to_restore_all_packages_to_a_specific_date`
+  - `Server=https://archive.archlinux.org/repos/2015/11/01/$repo/os/$arch` als einzige Zeile in `/etc/pacman.d/mirrorlist` eintragen
+  - Downgrade-Befehl absetzen `pacman -Syyuu`
+- `sudo pacman xorg-server` absetzen
 
 #### VirtualBox Guest Additions
 

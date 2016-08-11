@@ -108,6 +108,7 @@
 Server = http://catalyst.wirephire.com/repo/catalyst/$arch
 SigLevel = Never
 ```
+- die Catalyst-Datenbank herunterladen `sudo pacman -Syy`
 - das Paket `libgl` installieren
   - mesa-libgl als libgl-Anbieter wählen (Aufgrund eines Abhängigkeitsrings kann man nicht die catalyst-Variante nehmen)
 - das Paket `xorg-server` installieren
@@ -167,6 +168,10 @@ SigLevel = Never
   - `Server=https://archive.archlinux.org/repos/2015/11/01/$repo/os/$arch` als einzige Zeile in `/etc/pacman.d/mirrorlist` eintragen
   - Downgrade-Befehl absetzen `pacman -Syyuu`
 - `sudo pacman xorg-server` absetzen
+
+#### X Server und AMD Treiber (dritter Versuch mit proprietärem Treiber)
+
+- den Treiber herunterladen`http://support.amd.com/de-de/download/desktop?os=Linux%20x86_64`
 
 #### VirtualBox Guest Additions
 

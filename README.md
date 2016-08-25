@@ -380,6 +380,7 @@
 - https://www.blender.org/user-stories/e-interiores-next-generation-interior-design-with-blender/ (Blender-gestützte Innenraumgestalltung)
   - http://www.microvellum.com/products/fluid-designer/
 - https://www.etsy.com/market/majoras_mask (Merchandising)
+- https://www.apkmirror.com/ (Apps als APK)
 
 ```
     NewTab-Bookmark

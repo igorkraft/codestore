@@ -382,6 +382,7 @@
 - https://www.etsy.com/market/majoras_mask (Merchandising)
 - https://www.apkmirror.com/ (Apps als APK)
 - https://de.wikipedia.org/wiki/Puderquastenstrauch
+- http://blog.lebendigeslernen.net/2016/03/03/eduscrum/ (Scrum für Schulen)
 
 ```
     NewTab-Bookmark

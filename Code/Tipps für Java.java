@@ -173,6 +173,9 @@ DateTimeFormat.forStyle("FF").withLocale(Locale.US).print(time);
 • für eine Locale feststellen, ob 12 oder 24 Stunden angezeigt werden
 boolean is24HourView = !DateTimeFormat.patternForStyle("-S", Locale.getDefault()).contains("a");
 
+• prüfen, ob ein Zeitpunkt in einem Zeitraum liegt
+(new Interval(from, to)).containsNow()
+
 • nettes LookAndFeel
 UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 

@@ -383,6 +383,7 @@
 - https://www.apkmirror.com/ (Apps als APK)
 - https://de.wikipedia.org/wiki/Puderquastenstrauch
 - http://blog.lebendigeslernen.net/2016/03/03/eduscrum/ (Scrum für Schulen)
+- http://i3wm.org/ (der etwas bessere Window-Manager)
 
 ```
     NewTab-Bookmark

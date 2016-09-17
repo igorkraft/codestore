@@ -66,3 +66,4 @@
 - `LATEST` kann statt einer Versionsnummer angegeben werden
 - `mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp` generiert interaktiv ein Java-Web-Projekt
 - `mvn install -Dmaven.test.skip=true` überspringt die Tests des Surefire-Plugins
+- `mvn test -Dtest=SomeTestClass -Dmaven.test.skip=false` eine bestimmte Testklasse starten

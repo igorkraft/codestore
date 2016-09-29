@@ -19,3 +19,6 @@
 - Apply
 - Save As -> Dracula copy
 - Size: 14
+
+#### Editor->File Encodings
+- Project Encoding: UTF-8

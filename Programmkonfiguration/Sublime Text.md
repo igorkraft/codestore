@@ -9,8 +9,7 @@
 - neue Pakete können mit dem Befehl `Package Control: Install Package` gefunden und installiert werden
   - `Indent XML` installieren (Formatiert JSON und XML mit `Indent JSON` und `Indent XML`)
   - `Gradle_Language` installieren (Highlighting für Gradle)
-  - `SideBarEnhancements` installieren (erweitert Kontextmenü der Ordner-Sidebar)
-  - `FocusFileOnSidebar` erweitert Befehlssatz um `Focus File on Sidebar`
+  - `SideBarEnhancements` installieren (enthält `Locate`, erweitert Kontextmenü der Ordner-Sidebar)
   - `Markdown Preview` rendert Markdown zu Git flavored HTML
 
 #### Einstellungen

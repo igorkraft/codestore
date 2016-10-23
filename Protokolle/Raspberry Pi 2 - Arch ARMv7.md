@@ -19,6 +19,36 @@
 - in der .bashrc den Prompt anpassen `PS1='\[\033[00;33m\]\u@\h \[\033[00;36m\]\w\n\$ \[\033[03;00m\]'`
 - `pacman -S screen` installieren
 
-#### Apache Webserver
+#### WLAN Access Point einrichten
 
-- siehe `Raspberry Pi - Arch ARMv6.md`
+###### Abhängigkeiten
+
+- `iw`, `dialog`, `wpa_supplicant`, `strip`, `binutils`, `fakeroot`, `iwlist` (könnte unnötig sein), `wireless_tools` (könnte unnötig sein), `patch`, `pkg-config`, `make`, `cc`, `gcc`, `iptables`
+- `git clone https://aur.archlinux.org/hostapd-rtl.git` (könnte unnötig sein)
+- `git clone https://aur.archlinux.org/hostapd-rtl871xdrv.git`
+
+###### Hotspot automatisch nach Boot starten
+
+- als `root` Datei `/usr/local/bin/start_wlan` anlegen (erste Zeile ist zwingend nötig)
+```
+#!/bin/sh
+
+# Access Point starten
+create_ap --no-virt --driver rtl871xdrv wlan0 eth0 some_name some_password
+```
+- die Datei für ihren Besitzer ausführbar machen
+- Datei `/etc/systemd/system/myscript.service` anlegen
+```
+[Unit]
+Description=MyScript
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/start_wlan
+
+[Install]
+WantedBy=multi-user.target
+```
+- `sudo systemctl enable myscript.service` (könnte unnötig sein)

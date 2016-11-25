@@ -255,3 +255,6 @@ Für einen Vergleich muss also erst die vorzeichenfreie Darstellung erzeugt werd
 
 • Java-Download per curl
 curl -L -C - -b "oraclelicense=accept-securebackup-cookie" -O http://download.oracle.com/otn-pub/java/jdk/8u77-b03/jdk-8u77-linux-x64.tar.gz
+
+• Heap-Dump eines Java-Prozesses erzeugen (Prozessorarchitektur von jmap muss zu der des Prozesses passen)
+jmap -dump:live,format=b,file=dump.bin <PID>

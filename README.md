@@ -384,6 +384,7 @@
 - https://de.wikipedia.org/wiki/Puderquastenstrauch
 - http://blog.lebendigeslernen.net/2016/03/03/eduscrum/ (Scrum für Schulen)
 - http://i3wm.org/ (der etwas bessere Window-Manager)
+- https://github.com/ricmoo/aes-js (symmetrische Verschlüsselung mit JavaScript)
 
 ```
     NewTab-Bookmark

@@ -36,6 +36,8 @@
   - `mvn dependency:get`
 - Abhängigkeiten ins target-Verzeichnis laden und auspacken (erfordert pom.xml)
   - `mvn dependency:unpack-dependencies -Dmdep.useSubDirectoryPerArtifact=true`
+- Sources aller Abhängigkeiten ins target-Verzeichnis laden und auspacken (erfordert pom.xml)
+  - `mvn dependency:unpack-dependencies -Dmdep.useSubDirectoryPerArtifact=true -Dclassifier=sources`
 - Abhängigkeiten ins target-Verzeichnis laden (erfordert pom.xml)
   - `mvn dependency:copy-dependencies`
 - Abhängigkeitsbaum anzeigen

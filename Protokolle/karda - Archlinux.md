@@ -171,7 +171,14 @@ SigLevel = Never
 
 #### X Server und AMD Treiber (dritter Versuch mit proprietärem Treiber)
 
-- den Treiber herunterladen`http://support.amd.com/de-de/download/desktop?os=Linux%20x86_64`
+- den Treiber herunterladen `http://support.amd.com/de-de/download/desktop?os=Linux%20x86_64`
+- den Treiber ausführen `sudo .\amd-driver-installer-15.302-x86.x86_64.run`
+  - Fehler: `Detected X Server version 'Xserver _64a' is not supported`
+- Google sagt: `https://bbs.archlinux.org/viewtopic.php?id=193773`
+  - mit der Rollback-Maschine zum letzten unterstützten XServer downgraden
+  - den Treiber installieren
+  - das Repository `http://catalyst.wirephire.com/repo/xorg116/` über `core` in der `pacman.conf` eintragen
+  - das System normal aktualisieren
 
 #### VirtualBox Guest Additions
 

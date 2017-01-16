@@ -6,6 +6,9 @@ import org.apache.commons.lang.ArrayUtils;
 import org.junit.Test;
 
 import javax.swing.*;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousServerSocketChannel;
@@ -146,30 +149,79 @@ public class NioSocketServerTests
 		{
 			try
 			{
+				JOptionPane.showMessageDialog(null,Thread.currentThread().getName());
 				System.out.println(this.content.toString(StandardCharsets.UTF_8.displayName()));
 
-				// Greet the client
-				this.ch.write(ByteBuffer.wrap(ANSWER.getBytes(StandardCharsets.UTF_8)), null, new CompletionHandler<Integer, Object>()
-				{
-					@Override
-					public void completed(Integer result, Object attachment)
-					{
-						// todo Prüfen, ob alle Bytes der Antwort gesendet wurden und gegebenenfalls write() erneut aufrufen
-						IOUtils.closeQuietly(ch);
-					}
+				InputStream outgoingData = new ByteArrayInputStream(ANSWER.getBytes(StandardCharsets.UTF_8));
 
-					@Override
-					public void failed(Throwable exc, Object attachment)
-					{
-						IOUtils.closeQuietly(ch);
-					}
-				});
-
+				(new ChannelWriter(this.ch, 100, outgoingData)).copyStream();
 			}
 			catch (Exception e)
 			{
 				e.printStackTrace();
 			}
+		}
+	}
+
+	public class ChannelWriter
+	{
+		private AsynchronousSocketChannel ch;
+		private ByteBuffer byteBuffer;
+		private InputStream outgoingData;
+		private OutgoingByteHandler outgoingByteHandler;
+
+		public ChannelWriter(AsynchronousSocketChannel ch, int byteBufferCapacity, InputStream outgoingData)
+		{
+			this.ch = ch;
+			this.byteBuffer = ByteBuffer.allocate(byteBufferCapacity);
+			this.outgoingData = outgoingData;
+			this.outgoingByteHandler = new OutgoingByteHandler(this);
+		}
+
+		public void copyStream() throws IOException
+		{
+			this.byteBuffer.clear();
+			byte[] dataChunk = new byte[this.byteBuffer.capacity()];
+			int chunkLength = outgoingData.read(dataChunk);
+			if (chunkLength == -1)
+			{
+				IOUtils.closeQuietly(this.ch);
+				return;
+			}
+			this.byteBuffer.put(dataChunk, 0 , chunkLength);
+			this.byteBuffer.flip();
+
+			// Bytes aus dem Puffer lesen und zum Client senden
+			this.ch.write(this.byteBuffer, null, this.outgoingByteHandler);
+		}
+	}
+
+	public class OutgoingByteHandler implements CompletionHandler<Integer, Object>
+	{
+		private ChannelWriter channelWriter;
+
+		public OutgoingByteHandler(ChannelWriter channelWriter)
+		{
+			this.channelWriter = channelWriter;
+		}
+
+		@Override
+		public void completed(Integer result, Object attachment)
+		{
+			try
+			{
+				this.channelWriter.copyStream();
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void failed(Throwable exc, Object attachment)
+		{
+			exc.printStackTrace();
 		}
 	}
 }

@@ -385,6 +385,9 @@
 - http://blog.lebendigeslernen.net/2016/03/03/eduscrum/ (Scrum für Schulen)
 - http://i3wm.org/ (der etwas bessere Window-Manager)
 - https://github.com/ricmoo/aes-js (symmetrische Verschlüsselung mit JavaScript)
+- Datenbank mit Sicherheits-Exploits
+  - https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2015-3456
+  - https://de.wikipedia.org/wiki/Exploit
 
 ```
     NewTab-Bookmark

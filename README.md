@@ -388,7 +388,9 @@
 - Datenbank mit Sicherheits-Exploits
   - https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2015-3456
   - https://de.wikipedia.org/wiki/Exploit
-  - Sicherheitsalarmmeldungen von Oracle http://www.oracle.com/technetwork/topics/security/alerts-086861.html
+- Sicherheitsalarmmeldungen von Oracle
+  - http://www.oracle.com/technetwork/topics/security/alerts-086861.html
+  - http://www.oracle.com/technetwork/topics/security/cpuapr2015verbose-2365613.html#JAVA
 
 ```
     NewTab-Bookmark

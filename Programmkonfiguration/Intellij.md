@@ -22,3 +22,9 @@
 
 #### Editor->File Encodings
 - Project Encoding: UTF-8
+
+#### Haltepunkt unterbricht nur den Thread
+- irgendwo einen Haltepunkt setzen
+- Kontextmenü des Haltepunkts öffnen (Rechtsklick)
+- `Thread` wählen
+- `Make Default` wählen

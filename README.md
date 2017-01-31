@@ -391,6 +391,7 @@
 - Sicherheitsalarmmeldungen von Oracle
   - http://www.oracle.com/technetwork/topics/security/alerts-086861.html
   - http://www.oracle.com/technetwork/topics/security/cpuapr2015verbose-2365613.html#JAVA
+- https://github.com/guillaumechereau/goxel (blenderbasierter Voxeleditor)
 
 ```
     NewTab-Bookmark

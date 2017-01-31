@@ -28,3 +28,12 @@
 - Kontextmenü des Haltepunkts öffnen (Rechtsklick)
 - `Thread` wählen
 - `Make Default` wählen
+
+#### Editor->General->Auto Import
+- Optimize imports on the fly
+- Add unambiguous imports on the fly
+
+#### Editor->Code Style->Java->Imports
+- Class count to use import with '*': 5000
+- Names count to use static import with '*': 5000
+- für diese Einstellungen wird ein Schema erzeugt, dass für jedes Projekt angewendet werden muss

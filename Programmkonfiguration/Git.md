@@ -13,6 +13,7 @@
   - lässt man Remote-URL und Remote-Zweig weg, dann wird zu dem Zweig gepushed, der mit dem aktuellen lokalen Zweig verbunden ist (Upstream-Verbindung)
   - einen Zweig pushen, der nur lokal existiert `git push -u origin new_branch` (Upstream-Verbindung wird hergestellt)
   - `git branch -vv` zeigt welcher lokale Zweig mit welchem Remote-Zweig verbunden ist (Upstream-Verbindung)
+- der Default-Zweig (wird nach dem Klonen ausgecheckt) kann in der Datei `HEAD` im Remote-Repository eingestellt werden
 
 #### HEAD
 

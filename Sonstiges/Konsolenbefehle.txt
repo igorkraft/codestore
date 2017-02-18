@@ -20,8 +20,8 @@ mkfs.msdos -C imagefile.img 1440
 # genaue Informationen (-F) über Prozess ddclient anzeigen (grep -n gibt Zeilennummern mit aus)
 ps -A -F | grep -i "ddclient"
 
-# Suchen
-find -name "*.deb" -o -name "*.rpm"
+# Suchen (-iname bewirkt case insensitive Suche)
+find -iname "*sequence*"
 
 # nach Dateien suchen, die "Something" beinhalten
 find -exec grep -l "Something" '{}' \;

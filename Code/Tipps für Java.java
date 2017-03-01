@@ -259,3 +259,8 @@ curl -L -C - -b "oraclelicense=accept-securebackup-cookie" -O http://download.or
 • Heap-Dump eines Java-Prozesses erzeugen (Prozessorarchitektur von jmap muss zu der des Prozesses passen)
 jmap -dump:live,format=b,file=dump.hprof <PID>
 Anschließend mit jvisualvm öffnen
+
+• Thread-sichere Collections
+Map m = Collections.synchronizedMap(new HashMap())
+der Wrapper verwendet synchronized(this)-Blöcke (this ist das Wrapper-Objekt)
+zum Thread-sicheren Iterieren muss die Schleife in einen synchronized(m)-Block gehüllt werden!

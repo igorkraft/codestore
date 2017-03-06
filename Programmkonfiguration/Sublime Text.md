@@ -15,12 +15,13 @@
 #### Einstellungen
 - Preferences -> Color Scheme -> Zenburnesque
 
-#### Settings - User
+#### Settings
 - um die Standardeinstellungen zu überschreiben, müssen sie aus `Settings - Default` nach `Settings - User` kopiert und angepasst werden
 - `"draw_white_space": "all",`
 - `"word_wrap": "false",`
 - `"font_size": 13,`
 - `"close_sidebar_if_opened": false,`
+- `"scroll_speed": 0.0,` (keine Verzögerung beim Scrollen)
 
 #### Dateien durchsuchen
 - Verzeichnis öffnen, das durchsucht werden soll

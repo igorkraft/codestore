@@ -7,7 +7,7 @@
 - dir(object) liefert eine Liste aller Attribute von object (Keys des Attribut-Dictionarys)
 - Attribute sind nicht typspezifisch
 - Typ eines Attribut-Wertes ermitteln: type(object.attr_a)
-  - liefert zum Beispiel `<class 'method'> oder <class 'int'>`
+  - liefert zum Beispiel `<class 'method'>` oder `<class 'int'>`
 - Klassennamen eines Objekts ermitteln: `type(x).__name__` oder `x.__class__.__name__`
 - Python-Methoden können mehrere Rückgabewerte liefern
 - `help("modules")` listet alle verfügbaren Module auf
@@ -19,7 +19,7 @@
 
 ##### Analyse von Objekten
 
-```
+```python
 #!/usr/bin/python
 #coding=UTF-8
 
@@ -42,7 +42,7 @@ def list_attributes(self, obj):
 
 ##### MessageBoxen mit GTK
 
-```
+```python
 #!/usr/bin/python
 #coding=UTF-8
 
@@ -54,7 +54,7 @@ dialog.run()
 
 ##### Python-Version anzeigen
 
-```
+```python
 #!/usr/bin/python
 #coding=UTF-8
 
@@ -65,7 +65,7 @@ platform.python_version();
 
 ##### Datei anlegen und schreiben
 
-```
+```python
 #!/usr/bin/python
 #coding=UTF-8
 

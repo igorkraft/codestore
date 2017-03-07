@@ -22,6 +22,8 @@
   - ein Goal kann innerhalb eines Plugins mehrfach konfiguriert werden (die Konfigurationen werden durch IDs unterschieden)
   - setzt voraus, dass eine pom.xml mit einer Goal-Konfiguration vorhanden ist
 - einige Standard-Goals können auch ohne pom.xml ausgeführt werden (z. B. `deploy:deploy` oder `dependency:get`)
+- Informationen zu einem Goal (bzw. Mojo) ausgeben (Standard-Phase, Liste aller Parameter mit Beschreibung)
+  - `mvn help:describe -Ddetail -Dplugin=com.googlecode.maven-download-plugin:download-maven-plugin -Dmojo=wget`
 
 #### Dependency-Plugin
 

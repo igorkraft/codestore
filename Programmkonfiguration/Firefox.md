@@ -4,6 +4,7 @@
 - `JSONView`
 - `Flashblock`
 - `Firebug`
+- `FireFTP`
 
 #### Flash-Plugin
 
@@ -12,4 +13,5 @@
 
 #### about:config
 
-- browser.fixup.alternate.enabled: false (verhindert das  localhost durch www.localhost.com ersetzt wird)
+- browser.fixup.alternate.enabled: false (verhindert dass localhost durch www.localhost.com ersetzt wird)
+- geo.enabled: false (verhindert dass Firefox fragt, ob Google der Standort bekannt gemacht werden soll)

@@ -106,6 +106,8 @@
   - `git log --follow <fso>`
 - alle lokalen Tags pushen
   - `git push origin --tags`
+- ein lokales Tag pushen
+  - `git push origin <tag>`
 
 ##### Befehle zur Modifikation des Stage-Bereichs
 - alle Änderungen und unbeobachtete Dateien in den Stage-Bereich übernehmen

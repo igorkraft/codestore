@@ -5,6 +5,9 @@
 - `Flashblock`
 - `Firebug`
 - `FireFTP`
+- `Custom UserAgent String` von Linder
+  - Domain `mm.web.de` 
+  - UserAgent `Mozilla/5.0 (Android 4.4.2; Tablet; rv:51.0) Gecko/51.0 Firefox/51.0`
 
 #### Flash-Plugin
 

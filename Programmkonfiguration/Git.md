@@ -53,6 +53,9 @@
 
 - leeren Ordner als Git-Projekt initialisieren (Git-Projekt anlegen)
   - `git init --bare --shared=group`
+- unter Windows aus Dateisystem / UNC-Pfad klonen
+  - `git clone file:///d:/project_repo project_clone`
+  - `git clone //host/project_repo`
 - Commit-Id der aktuall ausgecheckten Referenz (Tag oder Branch) anzeigen
   - `git rev-parse HEAD`
 - Commit-IDs der direkten (-n 1) Parents anzeigen (ein Merge erzeugt mehrere direkte Parents)

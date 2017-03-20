@@ -264,3 +264,13 @@ Anschließend mit jvisualvm öffnen
 Map m = Collections.synchronizedMap(new HashMap())
 der Wrapper verwendet synchronized(this)-Blöcke (this ist das Wrapper-Objekt)
 zum Thread-sicheren Iterieren muss die Schleife in einen synchronized(m)-Block gehüllt werden!
+
+• Timeouts für TCP-Kommunikation
+- java.net.Socket
+  - setSoTimeout() (wie lange die read()-Methode auf dem InputStream blockiert)
+  - connect(endpoint, timeout) (legt fest, wie lange ein Verbindungsaufbauversuch dauert darf)
+- org.apache.http.client.config.RequestConfig.Builder
+  - setConnectionRequestTimeout() (so lange wird gewartet, bis der Verbindungs-Manager eine Verbindung liefert)
+  - setSocketTimeout() (wie lange die read()-Methode auf dem InputStream blockiert)
+  - setConnectTimeout() (legt fest, wie lange ein Verbindungsaufbauversuch dauert darf)
+

@@ -14,6 +14,10 @@
   - einen Zweig pushen, der nur lokal existiert `git push -u origin new_branch` (Upstream-Verbindung wird hergestellt)
   - `git branch -vv` zeigt welcher lokale Zweig mit welchem Remote-Zweig verbunden ist (Upstream-Verbindung)
 - der Default-Zweig (wird nach dem Klonen ausgecheckt) kann in der Datei `HEAD` im Remote-Repository eingestellt werden
+- Tag für aktuellen Commit anzeigen
+  - `git describe --tags`
+  - muss nicht das ausgecheckte Tag sein, wenn der Commit mehrere Tags hat
+  - welches Tag man ausgecheckt hat, lässt sich nach dem Auschecken nicht mehr feststellen
 
 #### HEAD
 

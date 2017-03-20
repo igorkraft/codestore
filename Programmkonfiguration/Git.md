@@ -115,6 +115,8 @@
   - `git push origin --tags`
 - ein lokales Tag pushen
   - `git push origin <tag>`
+- zu jeder Zeile einer Datei den zugehörigen Commit ausgeben
+  - `git blame -- <Dateipfad>`
 
 ##### Befehle zur Modifikation des Stage-Bereichs
 - alle Änderungen und unbeobachtete Dateien in den Stage-Bereich übernehmen

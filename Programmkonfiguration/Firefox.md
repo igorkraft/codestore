@@ -18,3 +18,4 @@
 
 - browser.fixup.alternate.enabled: false (verhindert dass localhost durch www.localhost.com ersetzt wird)
 - geo.enabled: false (verhindert dass Firefox fragt, ob Google der Standort bekannt gemacht werden soll)
+- browser.zoom.siteSpecific: false (Zoom wirkt sich nur auf den Tab aus)

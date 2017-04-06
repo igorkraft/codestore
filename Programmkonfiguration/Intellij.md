@@ -1,5 +1,9 @@
 ## Intellij
 
+#### Plugins->Browse repositories...
+- `Markdown support`
+- `Lombok Plugin`
+
 #### JDK zum Ausführen des Android-Studios
 - vor dem Start die Umgebungsvariable setzen: `STUDIO_JDK=$JAVA_HOME`
 
@@ -41,6 +45,5 @@
 - Names count to use static import with '*': 5000
 - für diese Einstellungen wird ein Schema erzeugt, dass für jedes Projekt angewendet werden muss
 
-#### Plugins->Browse repositories...
-- `Markdown support`
-- `Lombok Plugin`
+#### Languages & Frameworks->Markdown
+- in `URI:` `default.css` durch `darcula.css` ersetzen

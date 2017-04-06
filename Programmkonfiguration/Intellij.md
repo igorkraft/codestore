@@ -40,3 +40,7 @@
 - Class count to use import with '*': 5000
 - Names count to use static import with '*': 5000
 - für diese Einstellungen wird ein Schema erzeugt, dass für jedes Projekt angewendet werden muss
+
+#### Plugins->Browse repositories...
+- `Markdown support`
+- `Lombok Plugin`

@@ -217,3 +217,22 @@ ip route
 
 # eine OpenVPN-Verbindung öffnen
 sudo openvpn --config client.ovpn --script-security 2
+
+# virtuelles Dateisystem erzeugen (ext4 mit 10GB)
+dd if=/dev/zero of=/some/destination/v_ext4_fs bs=1M count=10240
+losetup -f # liefert z. B. den freien Platz /dev/loop1
+sudo losetup /dev/loop1 /some/destination/v_ext4_fs
+sudo mkfs.ext4 /dev/loop1
+sudo mkdir /media/v_ext4_fs
+sudo mount -t ext4 /dev/loop1 /media/v_ext4_fs
+sudo chown user:group /media/v_ext4_fs
+
+# virtuelles Dateisystem einhängen
+losetup -f # liefert z. B. den freien Platz /dev/loop1
+sudo losetup /dev/loop1 /some/destination/v_ext4_fs
+sudo mkdir /media/v_ext4_fs
+sudo mount -t ext4 /dev/loop1 /media/v_ext4_fs
+
+# virtuelles Dateisystem aushängen
+sudo umount /media/v_ext4_fs
+sudo losetup -d /dev/loop1

@@ -396,6 +396,8 @@
 - The Spinning Stream
   - http://s7.viastreaming.net/mobile.php?port=7030
   - http://s7.viastreaming.net:7030/played.html
+- https://www.box.com/de-de/pricing/individual
+  - 10GB kostenloser Cloudspeicher mit WebDAV-Schnittstelle
 
 ```
     NewTab-Bookmark

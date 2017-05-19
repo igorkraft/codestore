@@ -47,3 +47,7 @@
 
 #### Languages & Frameworks->Markdown
 - in `URI:` `default.css` durch `darcula.css` ersetzen
+
+#### Appearance & Behavior->System Settings
+- Reopen last project on startup: &#x2610;
+- Open project in new window: &#x2611;

@@ -400,6 +400,7 @@
   - 10GB kostenloser Cloudspeicher mit WebDAV-Schnittstelle
 - http://a16z.com/podcasts/ (Podcasts zu technischen Themen)
 - https://docs.spring.io/spring/docs/current/spring-framework-reference/html/scheduling.html (Cron-Jobs mit Spring)
+  - https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm
 
 ```
     NewTab-Bookmark

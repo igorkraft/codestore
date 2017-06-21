@@ -399,6 +399,7 @@
 - https://www.box.com/de-de/pricing/individual
   - 10GB kostenloser Cloudspeicher mit WebDAV-Schnittstelle
 - http://a16z.com/podcasts/ (Podcasts zu technischen Themen)
+- https://docs.spring.io/spring/docs/current/spring-framework-reference/html/scheduling.html (Cron-Jobs mit Spring)
 
 ```
     NewTab-Bookmark

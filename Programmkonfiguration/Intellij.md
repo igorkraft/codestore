@@ -20,6 +20,7 @@
 #### Editor->General->Appearance
 - Show whitespaces: &#x2611;
 - Show Line Numbers: &#x2611;
+- Show parameter name hints: &#x2610;
 
 #### Editor->Colors and Fonts->Font
 - Scheme: Dracula

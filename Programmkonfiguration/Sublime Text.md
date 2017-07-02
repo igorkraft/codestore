@@ -3,6 +3,8 @@
 #### Allgemeines
 - mit `Shift` + `Strg` + `p` wird die Schnellsuche für Befehle gestartet
 - Pakete die mit Package Control installiert wurden, erweitern den Befehlssatz (normalerweise fangen die Befehle eines Plugins mit dem Namen des Plugins an)
+- `Shift + Strg + p` -> `reveal` öffnet Verzeichnis der aktuellen Datei im FileManager
+- Startparameter `-n` öffnet neues Fenster
 
 #### Package Control
 - für manuelle Installation den Anweisungen hier folgen: https://packagecontrol.io/installation
@@ -35,9 +37,6 @@
 - matcht Zeichen mit Unicode (hier ein `a`): `\x{0061}`
   - matcht zwei aufeinanderfolgende Umbrüche: `\x{000a}\x{000a}`
   - Wagenrückläufe werden beim Laden einer Datei gefiltert, können nach dem Speichern aber vorhanden bleiben
-
-#### Sonstiges
-- `Shift + Strg + p` -> `reveal` öffnet Verzeichnis der aktuellen Datei im FileManager
 
 #### Konsolenbefehle
 - `view.file_name()` Pfad zur aktuellen Datei ausgeben

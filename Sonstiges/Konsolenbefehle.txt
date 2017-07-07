@@ -17,8 +17,11 @@ genisoimage -J -o daten2.iso -R  Delphi7_Personal.zip
 # Diskettenimages erstellen (letzter Parameter ist die Größe in Kilo-Byte)
 mkfs.msdos -C imagefile.img 1440
 
-# genaue Informationen (-F) über Prozess ddclient anzeigen (grep -n gibt Zeilennummern mit aus)
-ps -A -F | grep -i "ddclient"
+# Befehlszeile, IDs und Startzeit für Prozesse ermitteln
+ps -A -F
+
+# Umgebungsvariablen eines Prozesses anzeigen
+xargs --null --max-args=1 < /proc/<pid>/environ
 
 # Suchen (-iname bewirkt case insensitive Suche)
 find -iname "*sequence*"

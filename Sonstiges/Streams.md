@@ -10,3 +10,4 @@
 
 #### Songs
 - https://musescore.com/user/67014/scores/170981 (Earth God's Lyric)
+- Yasunori Mitsuda - Zain, the Floating Continent

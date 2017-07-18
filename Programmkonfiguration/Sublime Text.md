@@ -35,8 +35,10 @@
 - matcht alle Zeilen, die nicht mit einem `c` anfangen: `^((?!c).*)$`
 - matcht alle Umbrüche, die nicht von einem `c` gefolgt sind: `\n(?!c)`
 - matcht Zeichen mit Unicode (hier ein `a`): `\x{0061}`
-  - matcht zwei aufeinanderfolgende Umbrüche: `\x{000a}\x{000a}`
+  - matcht zwei aufeinanderfolgende Umbrüche: `\x{000a}\x{000a}` oder `\n\n`
   - Wagenrückläufe werden beim Laden einer Datei gefiltert, können nach dem Speichern aber vorhanden bleiben
+- in einem Suchergebnis die Inhaltszeilen löschen
+  - `^[ ].*\n` durch Leerstring ersetzen
 
 #### Konsolenbefehle
 - `view.file_name()` Pfad zur aktuellen Datei ausgeben

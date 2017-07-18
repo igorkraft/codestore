@@ -242,3 +242,11 @@ sudo mount -t ext4 /dev/loop1 /media/v_ext4_fs
 # virtuelles Dateisystem aushängen
 sudo umount /media/v_ext4_fs
 sudo losetup -d /dev/loop1
+
+# QR-Code erzeugen (erfordert 'qrencode')
+qrencode -s 4 -m 0 -8 -l H -o image.png
+  -> Pixel werden 4-fach gezoomt, Rand ist 0, Text wird 8 Bit kodiert, hoher Fehlertoleranz-Level
+  -> Text wird per Stream eingegeben (Beenden mit 2x Strg + d)
+
+# QR-Code auslesen (erfordert 'zbar-tools')
+zbarimg --raw -q image.png

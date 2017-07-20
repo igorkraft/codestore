@@ -250,3 +250,6 @@ qrencode -s 4 -m 0 -8 -l H -o image.png
 
 # QR-Code auslesen (erfordert 'zbar-tools')
 zbarimg --raw -q image.png
+
+# in Zwischenablage pipen (erfordert xsel)
+ls | xsel -ib

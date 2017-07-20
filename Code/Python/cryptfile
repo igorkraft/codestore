@@ -86,8 +86,9 @@ def getAssociations(filePath):
 	filePath = os.path.realpath(filePath);
 	for fso in os.listdir("/media"):
 		if (fso.find("crypt_loop") != 0): continue;
-		p=subprocess.Popen(shlex.split("losetup --show /dev/" + fso.replace("crypt_","")),stdout=subprocess.PIPE,stdin=subprocess.PIPE);
-		currentPath = p.stdout.readline().strip().split("(")[1].rstrip(")");
+		p = subprocess.Popen(shlex.split("losetup -l -O BACK-FILE /dev/" + fso.replace("crypt_","")),stdout = subprocess.PIPE,stdin = subprocess.PIPE);
+		p.stdout.readline();
+		currentPath = p.stdout.readline().strip();
 		if (currentPath == filePath):
 			result = Associations();
 			result.mountPoint = "/media/" + fso;
@@ -99,15 +100,14 @@ def getAssociations(filePath):
 def listMountedContainers():
 	for fso in os.listdir("/media"):
 		if (fso.find("crypt_loop") != 0): continue;
-		p=subprocess.Popen(["losetup", "--show", "/dev/" + fso.replace("crypt_","")],stdout=subprocess.PIPE,stdin=subprocess.PIPE);
-		# TODO: was wenn der Pfad mit mehreren schließenden Klammern endet?
-		# TODO: was wenn im Pfad mehrere öffnende Klammern vorkommen?
-		filePath = p.stdout.readline().strip().split("(")[1].rstrip(")");
+		p = subprocess.Popen(["losetup", "-l", "-O", "BACK-FILE", "/dev/" + fso.replace("crypt_","")],stdout = subprocess.PIPE,stdin = subprocess.PIPE);
+		p.stdout.readline();
+		filePath = p.stdout.readline().strip();
 		print "/media/" + fso + " => " + filePath;
 
 def createContainer(container, size):
 
-	p=subprocess.Popen(["losetup", "-f"],stdout=subprocess.PIPE,stdin=subprocess.PIPE);
+	p = subprocess.Popen(["losetup", "-f"],stdout = subprocess.PIPE,stdin = subprocess.PIPE);
 	loopDevice = p.stdout.readline().strip();
 	mapper = "crypt_" + loopDevice.split("/")[2];
 	mountPoint = "/media/" + mapper;
@@ -154,7 +154,7 @@ def createContainer(container, size):
 
 def mountContainer(container):
 	
-	p=subprocess.Popen(["losetup", "-f"],stdout=subprocess.PIPE,stdin=subprocess.PIPE);
+	p = subprocess.Popen(["losetup", "-f"],stdout = subprocess.PIPE,stdin = subprocess.PIPE);
 	loopDevice = p.stdout.readline().strip();
 	mapper = "crypt_" + loopDevice.split("/")[2];
 	mountPoint = "/media/" + mapper;

@@ -44,6 +44,8 @@
   - `mvn dependency:copy-dependencies`
 - Abhängigkeitsbaum anzeigen
   - `mvn dependency:tree`
+- unaufgelösten Abhängigkeitsbaum anzeigen
+  - `mvn dependency:tree -Dverbose=true`
 - Abhängigkeiten mit absoluten Pfaden ausgeben
   - `mvn dependency:build-classpath`
 

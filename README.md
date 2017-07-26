@@ -402,6 +402,7 @@
 - https://docs.spring.io/spring/docs/current/spring-framework-reference/html/scheduling.html (Cron-Jobs mit Spring)
   - http://www.quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger
 - https://wiki.ubuntuusers.de/Clipgrab/ (Video-Downloader für Youtube)
+- https://makershare.com/
 
 ```
     NewTab-Bookmark

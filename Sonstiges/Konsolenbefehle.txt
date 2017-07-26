@@ -253,3 +253,6 @@ zbarimg --raw -q image.png
 
 # in Zwischenablage pipen (erfordert xsel)
 ls | xsel -ib
+
+# UNIX-Zeitstempel ausgeben
+date +%s

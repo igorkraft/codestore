@@ -403,6 +403,10 @@
   - http://www.quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger
 - https://wiki.ubuntuusers.de/Clipgrab/ (Video-Downloader für Youtube)
 - https://makershare.com/
+- verteilte Dateisysteme
+  - https://de.m.wikipedia.org/wiki/Ceph
+  - https://de.m.wikipedia.org/wiki/GlusterFS
+  - https://de.m.wikipedia.org/wiki/Lustre_(Dateisystem)
 
 ```
     NewTab-Bookmark

@@ -408,6 +408,7 @@
   - https://de.m.wikipedia.org/wiki/GlusterFS
   - https://de.m.wikipedia.org/wiki/Lustre_(Dateisystem)
 - http://www.nethack.org/v360/Guidebook.html (Konsolenspiel)
+- http://turnoff.us/ (Dev-Comics)
 
 ```
     NewTab-Bookmark

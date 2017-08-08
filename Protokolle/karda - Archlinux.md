@@ -6,7 +6,7 @@
 
 #### Partitionen
 
-- alle Partitionen mit ihrer Größe auflisten `lsblk`
+- alle Partitionen mit ihrer Größe auflisten `lsblk` oder `lsblk -o NAME,FSTYPE,UUID,SIZE`
 - alle eingehängten Dateisysteme mit ihrem Speicherverbrauch anzeigen `df -h`
 - Swap-Partition aktivieren `swapon /dev/sdxY`
 - Root-Partition und die Boot-Partition einhängen

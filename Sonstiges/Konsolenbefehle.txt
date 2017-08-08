@@ -256,3 +256,6 @@ ls | xsel -ib
 
 # UNIX-Zeitstempel ausgeben
 date +%s
+
+# Informationen zu allen Partitionen ausgeben
+lsblk -o NAME,FSTYPE,UUID,SIZE

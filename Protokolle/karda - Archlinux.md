@@ -41,6 +41,7 @@
 
 - grub-Installationsprogramm und os-prober installieren `pacman -S grub os-prober`
 - grub installieren `grub-install --recheck /dev/sda`
+  - alternative das versuchen `grub-install --target=i386-pc --recheck /dev/sda`
 - grub Konfiguration generieren `grub-mkconfig -o /boot/grub/grub.cfg`
 
 #### Manuelle Netzwerkkonfiguration

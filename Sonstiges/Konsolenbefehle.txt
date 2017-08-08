@@ -259,3 +259,6 @@ date +%s
 
 # Informationen zu allen Partitionen ausgeben
 lsblk -o NAME,FSTYPE,UUID,SIZE
+
+# große Konsolenschriftart setzen (für 4K-Monitore)
+setfont latarcyrheb-sun32

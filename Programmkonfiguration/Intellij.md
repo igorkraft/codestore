@@ -3,6 +3,8 @@
 #### Plugins->Browse repositories...
 - `Markdown support`
 - `Lombok Plugin`
+- `Database Navigator`
+  - für SQLite-Dateien eine Verbindung vom Typ `Custom...` erzeugen
 
 #### JDK zum Ausführen des Android-Studios
 - vor dem Start die Umgebungsvariable setzen: `STUDIO_JDK=$JAVA_HOME`

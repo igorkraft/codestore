@@ -5,6 +5,7 @@
 - `Lombok Plugin`
 - `Database Navigator`
   - für SQLite-Dateien eine Verbindung vom Typ `Custom...` erzeugen
+  - Änderungen werden nur mit aktiviertem `Auto-Commit` gespeichert
 
 #### JDK zum Ausführen des Android-Studios
 - vor dem Start die Umgebungsvariable setzen: `STUDIO_JDK=$JAVA_HOME`

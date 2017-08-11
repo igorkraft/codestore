@@ -410,6 +410,7 @@
 - http://www.nethack.org/v360/Guidebook.html (Konsolenspiel)
 - http://turnoff.us/ (Dev-Comics)
 - http://store.steampowered.com/app/414340/Hellblade_Senuas_Sacrifice/
+- http://nintendo-papercraft.com/category/video-game/zelda/
 
 ```
     NewTab-Bookmark

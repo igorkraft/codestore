@@ -258,7 +258,7 @@ ls | xsel -ib
 date +%s
 
 # Informationen zu allen Partitionen ausgeben
-lsblk -o NAME,FSTYPE,UUID,SIZE
+lsblk -o NAME,FSTYPE,UUID,MOUNTPOINT,SIZE
 
 # große Konsolenschriftart setzen (für 4K-Monitore)
 setfont latarcyrheb-sun32

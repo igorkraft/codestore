@@ -12,3 +12,4 @@
 - https://musescore.com/user/67014/scores/170981 (Earth God's Lyric)
 - Yasunori Mitsuda - Zain, the Floating Continent
 - Dragon Quest IX: Sentinels of the Starry Skies - Come to Our Town
+- I Am Setsuna - Tender Glow

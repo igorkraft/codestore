@@ -262,3 +262,6 @@ lsblk -o NAME,FSTYPE,UUID,MOUNTPOINT,SIZE
 
 # große Konsolenschriftart setzen (für 4K-Monitore)
 setfont latarcyrheb-sun32
+
+# Partitionierung eines Speichergeräts anzeigen (einschließlich Partitionstabelle)
+parted /dev/sdx print

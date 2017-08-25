@@ -1,19 +1,37 @@
 ## Installationsprotokoll
 
-#### Deutsches Tastaturlayout
+#### Vorbereitung
 
-- `loadkeys de-latin1`
+- deutsches Tastaturlayout `loadkeys de-latin1`
+- große Schrift für 4K-Bildschirme `setfont latarcyrheb-sun32`
 
 #### Partitionen
 
-- alle Partitionen mit ihrer Größe auflisten `lsblk` oder `lsblk -o NAME,FSTYPE,UUID,SIZE`
+- alle Partitionen mit ihrer Größe auflisten `lsblk`
+  - `lsblk -o NAME,FSTYPE,UUID,MOUNTPOINT,SIZE`
+- Typ der Partitionstabelle anzeigen (und Partitionierung) `parted /dev/sda print`
 - alle eingehängten Dateisysteme mit ihrem Speicherverbrauch anzeigen `df -h`
+- auf Flash-Geräten das Journal der Root-Partition deaktivieren `mkfs.ext4 -O "^has_journal" /dev/sda2`
 - Swap-Partition aktivieren `swapon /dev/sdxY`
+
+###### BIOS
+
+- Partitionstabelle: `msdos` (Master Boot Record)
+- Boot-Partition: 200 MiB, ext4, Boot-Flag
 - Root-Partition und die Boot-Partition einhängen
   - `mount /dev/sda3 /mnt`
   - `mkdir -p /mnt/boot`
   - `mount /dev/sda1 /mnt/boot`
-  
+
+###### UEFI
+
+- Partitionstabelle: `gpt` (GUID Partition Table)
+- Boot-Partition: 512 MiB, fat32, Boot-Flag
+- Root-Partition und die Boot-Partition einhängen
+  - `mount /dev/sda3 /mnt`
+  - `mkdir -p /mnt/boot/efi`
+  - `mount /dev/sda1 /mnt/boot/efi`
+
 #### Installation des Basissystems
 
 - vor dem Hochfahren ein Netzwerkkabel anschließen
@@ -35,13 +53,19 @@
   - interaktives Programm zum Ermitteln der Zeitzone `tzselect`
     - liefert zum Beispiel `Europe/Berlin`
   - Systemzeitzone setzen `ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime`
+    - `/etc/localtime` löschen, wenn vorhanden
   - Systemzeit auf den UTC-Standard einstellen `hwclock --systohc --utc`
 
 #### Boot loader installieren
 
-- grub-Installationsprogramm und os-prober installieren `pacman -S grub os-prober`
-- grub installieren `grub-install --recheck /dev/sda`
-  - alternative das versuchen `grub-install --target=i386-pc --recheck /dev/sda`
+- grub-Installationsprogramm installieren `pacman -S grub os-prober`
+- für Installation auf Flash-Geräten bei `grub-install` `--removable` hinzufügen
+- BIOS
+  - grub installieren `grub-install --recheck /dev/sda`
+    - alternativ das versuchen `grub-install --target=i386-pc --recheck /dev/sda`
+- UEFI
+  - Bootmanager installieren `pacman -S efibootmgr`
+  - grub installieren `grub-install --target=x86_64-efi --efi-directory=/boot/efi --boot-directory=/boot --bootloader-id=grub --recheck`
 - grub Konfiguration generieren `grub-mkconfig -o /boot/grub/grub.cfg`
 
 #### Manuelle Netzwerkkonfiguration
@@ -204,3 +228,13 @@ Für den zweiten Abschnitt fehlt noch das hier:
 - https://wiki.archlinux.org/index.php/PKGBUILD
 - https://wiki.archlinux.org/index.php/Arch_User_Repository
 - https://wiki.archlinux.org/index.php/AUR_helpers
+
+###### Sonstige TODOs
+
+- nach Erzeugung der fstab das hier beachten: https://wiki.archlinux.org/index.php/Improving_performance#Disabling_journaling_on_the_filesystem
+- bei der Installation von GRUB das beachten: https://wiki.archlinux.org/index.php/Installing_Arch_Linux_on_a_USB_key#GRUB
+- Grub Installationsanleitung: https://wiki.archlinux.org/index.php/GRUB#UEFI_systems
+- Backup and restore partition table: https://wiki.archlinux.org/index.php/Fdisk#Backup_and_restore_partition_table
+- beim Erzeugen der GRUB-Konfiguration nach anderen Systemen suchen und sie auswählbar machen: https://wiki.archlinux.org/index.php/GRUB#Generate_the_main_configuration_file
+- https://wiki.archlinux.org/index.php/Multiboot_USB_drive
+- https://wiki.archlinux.org/index.php/GRUB#Dual-booting

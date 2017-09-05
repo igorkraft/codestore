@@ -7,6 +7,7 @@
 - Startparameter `-n` öffnet neues Fenster
 
 #### Package Control
+- in der Befehlsschnellsuche gibt es ein Eintrag `Install Package Control`
 - für manuelle Installation den Anweisungen hier folgen: https://packagecontrol.io/installation
 - neue Pakete können mit dem Befehl `Package Control: Install Package` gefunden und installiert werden
   - `Indent XML` installieren (Formatiert JSON und XML mit `Indent JSON` und `Indent XML`)
@@ -15,7 +16,7 @@
   - `Markdown Preview` rendert Markdown zu Git flavored HTML
 
 #### Einstellungen
-- Preferences -> Color Scheme -> Zenburnesque
+- Preferences -> Color Scheme -> Monokai
 
 #### Settings
 - um die Standardeinstellungen zu überschreiben, müssen sie aus `Settings - Default` nach `Settings - User` kopiert und angepasst werden

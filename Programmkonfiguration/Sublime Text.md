@@ -14,6 +14,7 @@
   - `Gradle_Language` installieren (Highlighting für Gradle)
   - `SideBarEnhancements` installieren (enthält `Locate`, erweitert Kontextmenü der Ordner-Sidebar)
   - `Markdown Preview` rendert Markdown zu Git flavored HTML
+  - `Sublimerge 3` installieren (enthält Compare-Operationen)
 
 #### Einstellungen
 - Preferences -> Color Scheme -> Monokai

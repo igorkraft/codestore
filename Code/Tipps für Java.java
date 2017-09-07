@@ -62,6 +62,9 @@ List<Character> list = Arrays.asList(new Character[]{'a','b'});
 • 2d Array -> Map
 Map<Object,Object> map = ArrayUtils.toMap(new String[][]{{"abd","123"},{"xyz","789"}});
 
+• Array -> String
+StringUtils.join(new String[]{"a","b"},"|")
+
 • Element (DOM) implementiert Node
 
 • Property-Validator in InitializingBean-Interface

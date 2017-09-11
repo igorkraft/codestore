@@ -15,3 +15,4 @@
 - I Am Setsuna - Tender Glow
 -	Kingdom Hearts II - The Other Promise
 - Legacy of Kain: Soul Reaver - Raziel's Theme (Ozar Midrashim)
+- The Legend of Zelda: Majora's Mask - Pirates' Fortress

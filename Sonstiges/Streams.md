@@ -13,3 +13,4 @@
 - Yasunori Mitsuda - Zain, the Floating Continent
 - Dragon Quest IX: Sentinels of the Starry Skies - Come to Our Town
 - I Am Setsuna - Tender Glow
+-	Kingdom Hearts II - The Other Promise

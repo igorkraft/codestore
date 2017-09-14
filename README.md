@@ -411,7 +411,9 @@
 - http://turnoff.us/ (Dev-Comics)
 - http://store.steampowered.com/app/414340/Hellblade_Senuas_Sacrifice/
 - http://nintendo-papercraft.com/category/video-game/zelda/
-- https://faq.i3wm.org/question/1657/add-friendly-name-to-workspace-but-keep-numbers-for-shortcuts.1.html
+- i3 workspace umbenennen
+  - https://faq.i3wm.org/question/1657/add-friendly-name-to-workspace-but-keep-numbers-for-shortcuts.1.html
+  - https://faq.i3wm.org/question/1018/named-workspaces.1.html
 
 ```
     NewTab-Bookmark

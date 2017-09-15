@@ -411,8 +411,9 @@
 - http://turnoff.us/ (Dev-Comics)
 - http://store.steampowered.com/app/414340/Hellblade_Senuas_Sacrifice/
 - http://nintendo-papercraft.com/category/video-game/zelda/
-- i3 fullscreen within container
-  - https://faq.i3wm.org/question/2242/full-screen-to-container.1.html
+- i3
+  - https://faq.i3wm.org/question/2242/full-screen-to-container.1.html (fullscreen within container)
+  - https://faq.i3wm.org/question/4892/associate-all-displays-to-a-single-i3-workspace/ (one workspace for all displays)
 
 ```
     NewTab-Bookmark

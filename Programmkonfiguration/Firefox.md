@@ -1,6 +1,8 @@
 ## Firefox
 
 #### Erweiterungen
+- `Deutsch (DE) Language Pack`
+- `Deutsches Wörterbuch`
 - `JSONView`
 - `Flashblock`
 - `Firebug`

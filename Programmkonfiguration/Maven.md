@@ -48,6 +48,8 @@
   - `mvn dependency:tree -Dverbose=true`
 - Abhängigkeiten mit absoluten Pfaden ausgeben
   - `mvn dependency:build-classpath`
+- Abhängigkeiten eines Projekts ins lokale Repository kopieren (ermöglicht Offline-Builds)
+  - `mvn dependency:go-offline`
 
 #### BuildPlan-Plugin
 

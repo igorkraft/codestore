@@ -31,9 +31,9 @@
   - `mvn dependency:sources`
   - `mvn dependency:resolve -Dclassifier=javadoc`
 - eine Bibliothek herunterladen und auspacken (keine pom.xml erforderlich)
-  - `mvn dependency:unpack -Dartifact=junit:junit:LATEST:jar -Dproject.basedir=. -DoutputDirectory=.` 
+  - `mvn dependency:unpack -Dartifact=junit:junit:RELEASE:jar -Dproject.basedir=. -DoutputDirectory=. -U` 
 - eine Bibliothek herunterladen (keine pom.xml erforderlich)
-  - `mvn dependency:copy -Dartifact=junit:junit:LATEST:jar -Dproject.basedir=. -DoutputDirectory=.`
+  - `mvn dependency:copy -Dartifact=junit:junit:LATEST:jar -Dproject.basedir=. -DoutputDirectory=. -U`
 - eine Bibliothek mit Abhängigkeiten herunterladen (keine pom.xml erforderlich)
   - `mvn dependency:get`
 - Abhängigkeiten ins target-Verzeichnis laden und auspacken (erfordert pom.xml)

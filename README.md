@@ -415,6 +415,7 @@
   - https://faq.i3wm.org/question/2242/full-screen-to-container.1.html (fullscreen within container)
   - https://faq.i3wm.org/question/4892/associate-all-displays-to-a-single-i3-workspace/ (one workspace for all displays)
   - https://faq.i3wm.org/question/1659/force-one-i3-instanceworkspace-across-multiple-monitors.1.html (display über mehrere Monitor strecken)
+- https://www.youtube.com/watch?v=qpqSjLN3KyQ (Dream On)
 
 ```
     NewTab-Bookmark

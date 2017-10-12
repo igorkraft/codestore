@@ -416,6 +416,7 @@
   - https://faq.i3wm.org/question/4892/associate-all-displays-to-a-single-i3-workspace/ (one workspace for all displays)
   - https://faq.i3wm.org/question/1659/force-one-i3-instanceworkspace-across-multiple-monitors.1.html (display über mehrere Monitor strecken)
 - https://www.youtube.com/watch?v=qpqSjLN3KyQ (Dream On)
+- https://chocolatey.org/packages (Software Paket-Manager für Windows)
 
 ```
     NewTab-Bookmark

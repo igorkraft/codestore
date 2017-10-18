@@ -30,7 +30,7 @@
 - einem `HTTP Request`-Element können mehrere `HTTP Header Manager` hinzugefügt werden
 - ein `Authorization` wird nur übertragen, wenn der `HTTP Request` die `HttpClient4`-Implementierung benutzt
   - bei der Standard-Java-Implementierung wird der Header herausgefiltert
-- um die Mitgabe einer `Content-Length` in POST-Requests kann unterdrückt werden
+- die Mitgabe einer `Content-Length` in POST-Requests kann unterdrückt werden
   - den Header `Transfer-Encoding: chunked ` hinzufügen
   - für den `HTTP Request` die Standard-Java-Implementierung verwenden
 

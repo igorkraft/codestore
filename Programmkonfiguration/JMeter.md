@@ -1,6 +1,7 @@
 ## JMeter
 
 - Options -> Choose Language -> English (damit die Modulnamen zur Doku passen)
+- mit `Strg + t` können Elemente aktiviert/deaktiviert werden
 - BeanShell und andere Funktionen
  - http://jmeter.apache.org/usermanual/functions.html#__BeanShell
  - beschreibt, wie man externe BeanShell-Script in Variablen aufruft
@@ -24,6 +25,14 @@
 - wird einer `Thread Group` hinzugefügt (unter `Config Element`)
 - kann für Basic-Authentication benutzt werden (`HTTP Cookie Manager` wäre auch möglich)
 - bis auf `Username`, `Password` und `Mechanism` können die anderen Felder leer bleiben
+
+##### HTTP Header Manager
+- einem `HTTP Request`-Element können mehrere `HTTP Header Manager` hinzugefügt werden
+- ein `Authorization` wird nur übertragen, wenn der `HTTP Request` die `HttpClient4`-Implementierung benutzt
+  - bei der Standard-Java-Implementierung wird der Header herausgefiltert
+- um die Mitgabe einer `Content-Length` in POST-Requests kann unterdrückt werden
+  - den Header `Transfer-Encoding: chunked ` hinzufügen
+  - für den `HTTP Request` die Standard-Java-Implementierung verwenden
 
 ##### Constant Throughput Timer
 - wird einer `Thread Group` hinzugefügt (unter `Timer`)

@@ -1,5 +1,9 @@
 ## VirtualBox
 
+#### Allgemeines
+
+- Image-UUID mit Zufallswert neu setzen `VBoxManage internalcommands sethduuid image.vdi`
+
 #### Gasterweiterungen installieren
 
 Quelle:http://randomitblog.blogspot.com/2011/04/installing-virtualbox-guest-additions.html

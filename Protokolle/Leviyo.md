@@ -53,12 +53,12 @@
 - Sound einrichten
 - Shortcuts für Bildschirmhelligkeit
 - Shortcut das Umbenennen von workspaces
-- diese Datei sichern
 - Theme von PCManFM anpassen (+Icons)
   - unter `menu://applications/Entwicklung` gibt es einen Icon Browser
 - `SpaceFM` testen
 - einen Weg finden, wie das WLAN zuverlässig nach dem Hochfahren funktioniert (rfkill)
 - NUM-Pad bei Start aktivieren
+- Paketmanager für AUR ausprobieren
 
 #### Bildschirmhelligkeit (als i3-Konfiguration aufnehmen)
 

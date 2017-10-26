@@ -417,6 +417,7 @@
   - https://faq.i3wm.org/question/1659/force-one-i3-instanceworkspace-across-multiple-monitors.1.html (display über mehrere Monitor strecken)
 - https://www.youtube.com/watch?v=qpqSjLN3KyQ (Dream On)
 - https://chocolatey.org/packages (Software Paket-Manager für Windows)
+- http://dwarffortresswiki.org/index.php/Main_Page (Nethack-ähnliches Spiel)
 
 ```
     NewTab-Bookmark

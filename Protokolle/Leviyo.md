@@ -45,6 +45,15 @@
   `sudo mount -t ntfs-3g -o rw /dev/sdc1 /mnt`
 - liefert `makepkg -s` den Fehler `Unbekannter öffentlicher Schlüssel ...` dann
   - `makepkg -s --skippgpcheck` ausführen
+- NTP-Daemon aktivieren
+  - `/etc/systemd/timesyncd.conf` anpassen
+  ```
+  [Time]
+  NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
+  FallbackNTP=0.pool.ntp.org 1.pool.ntp.org
+  ```
+  - `sudo timedatectl set-ntp true` to start and enable
+
 
 #### TODOs
 

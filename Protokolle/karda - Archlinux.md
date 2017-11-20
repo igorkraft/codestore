@@ -8,7 +8,7 @@
 #### Partitionen
 
 - alle Partitionen mit ihrer Größe auflisten `lsblk`
-  - `lsblk -o NAME,FSTYPE,UUID,MOUNTPOINT,SIZE`
+  - `lsblk -o NAME,LABLE,FSTYPE,UUID,MOUNTPOINT,SIZE`
 - Typ der Partitionstabelle anzeigen (und Partitionierung) `parted /dev/sda print`
 - alle eingehängten Dateisysteme mit ihrem Speicherverbrauch anzeigen `df -h`
 - auf Flash-Geräten das Journal der Root-Partition deaktivieren `mkfs.ext4 -O "^has_journal" /dev/sda2`

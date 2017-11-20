@@ -16,7 +16,8 @@
 
 #### Programme installieren
 
-- `rfkill netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g gpicview freerdp remmina`
+- `rfkill netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g gpicview freerdp remmina minetest alsa-utils`
+  - durch minetest wird Sound installiert
 - AUR-Paket für Sublime Text 3 installieren
   - `https://aur.archlinux.org/sublime-text-dev.git` klonen
   - `makepkg -s` (Abhängigkeiten validieren und bauen)
@@ -54,19 +55,19 @@
   ```
   - `sudo timedatectl set-ntp true` to start and enable
 
-
 #### TODOs
 
 - beim Start einen Key-Mode öffnen, in dem Sublime-Fenster auf das Scratchpad gelegt werden
 - Terminal-Schriftart permanent vergrößern
-- Sound einrichten
 - Shortcuts für Bildschirmhelligkeit
-- Shortcut das Umbenennen von workspaces
+- Shortcuts für Lautstärkeregelung
+- Shortcut für Umbenennen von workspaces
 - Theme von PCManFM anpassen (+Icons)
   - unter `menu://applications/Entwicklung` gibt es einen Icon Browser
 - `SpaceFM` testen
 - einen Weg finden, wie das WLAN zuverlässig nach dem Hochfahren funktioniert (rfkill)
 - NUM-Pad bei Start aktivieren
+- Feststelltaste deaktivieren
 - Paketmanager für AUR ausprobieren
 
 #### Bildschirmhelligkeit (als i3-Konfiguration aufnehmen)
@@ -77,4 +78,3 @@
   - `cat /sys/class/backlight/intel_backlight/brightness`
 - Helligkeit setzen
   - `sudo tee /sys/class/backlight/intel_backlight/brightness <<< 300`
-  

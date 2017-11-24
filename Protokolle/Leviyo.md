@@ -9,15 +9,17 @@
 - WLAN aktivieren   `ip link set wlp1s0 up`
 - WLAN deaktivieren `ip link set wlp1s0 down`
   - wenn das die Meldung `RTNETLINK answers: Operation not possible due to RF-kill` bringt, dann
-    - `rfkill unblock all` absetzen (erfordert Paket rfkill)
+    - `rfkill unblock all` absetzen
 - `netctl` installieren und konfigurieren (siehe karda-Protokoll)
   - der Start von netctl schlägt fehl, wenn zuvor das WLAN manuell aktiviert wurde
   - meldet netctl beim Start einen Fehler, dann `rfkill unblock all` absetzen
 
 #### Programme installieren
 
-- `rfkill netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g gpicview freerdp remmina minetest alsa-utils`
+- `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g minetest alsa-utils`
   - durch minetest wird Sound installiert
+- optionale Programme
+  - `gpicview openvpn freerdp remmina gparted dosfstools`
 - AUR-Paket für Sublime Text 3 installieren
   - `https://aur.archlinux.org/sublime-text-dev.git` klonen
   - `makepkg -s` (Abhängigkeiten validieren und bauen)

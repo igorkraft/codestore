@@ -24,6 +24,7 @@
 - `"draw_white_space": "all",`
 - `"word_wrap": "false",`
 - `"font_size": 13,`
+- `"font_face": "Noto Mono",`
 - `"close_sidebar_if_opened": false,`
 - `"scroll_speed": 0.0,` (keine Verzögerung beim Scrollen)
 

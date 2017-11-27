@@ -265,3 +265,6 @@ setfont latarcyrheb-sun32
 
 # Partitionierung eines Speichergeräts anzeigen (einschließlich Partitionstabelle)
 parted /dev/sdx print
+
+# Bildschirm sperren
+i3lock -c 000000 -n -e

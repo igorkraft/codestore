@@ -67,6 +67,13 @@
   - Bootmanager installieren `pacman -S efibootmgr`
   - grub installieren `grub-install --target=x86_64-efi --efi-directory=/boot/efi --boot-directory=/boot --bootloader-id=grub --recheck`
 - grub Konfiguration generieren `grub-mkconfig -o /boot/grub/grub.cfg`
+- Super Grub2 Disk
+  - kann als Alternative zur Installation eines Boot Loaders dienen
+  - Boot-Partition muss dann nicht erzeugt
+  - CD & USB in one für 64 Bit EFI Architekturen (Multiarchitektur-Variante funktioniert nicht)
+    - super_grub2_disk_x86_64_efi_2.02s9.iso
+  - Einhängen der Boot-Partition aus der fstab entfernen falls das System einschließlich Boot-Partition installiert wurde
+    - beim Erststart wird in den Sicherheitsmodus gebootet
 
 #### Manuelle Netzwerkkonfiguration
 
@@ -94,6 +101,7 @@
 
 #### Benutzerkonfiguration
 
+- Passwort für root setzen `passwd`
 - Benutzer mit eingeschränkten Rechten anlegen `useradd -m -s /bin/bash dummy`
   - legt gleichzeitig eine Gruppe dummy an
 - Passwort ändern `passwd dummy`

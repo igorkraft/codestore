@@ -22,3 +22,4 @@
 - geo.enabled: false (verhindert dass Firefox fragt, ob Google der Standort bekannt gemacht werden soll)
 - browser.zoom.siteSpecific: false (Zoom wirkt sich nur auf den Tab aus)
 - flashblock.whitelist: *youtube.com,*vimeo.com,s7.viastreaming.net,cloud.blender.org,*pivotal.io,*kaltura.com
+- media.default_volume: 0.1

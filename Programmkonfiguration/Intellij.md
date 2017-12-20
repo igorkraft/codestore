@@ -55,3 +55,10 @@
 #### Appearance & Behavior->System Settings
 - Reopen last project on startup: &#x2610;
 - Open project in new window: &#x2611;
+
+#### Custom Action mit Ant
+- über das `Tool Window` `Ant Build` eine build.xml mit dem Projekt verknüpfen
+- eine `Ant Target` Run Configuration anlegen
+- `Before Launch` Tasks löschen
+- `Target name` festlegen
+- `Run Configuration` mit `Shift + F10` ausführen (alternativ `Shift + Alt + F10`)

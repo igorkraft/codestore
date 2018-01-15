@@ -13,10 +13,12 @@
 - `netctl` installieren und konfigurieren (siehe karda-Protokoll)
   - der Start von netctl schlägt fehl, wenn zuvor das WLAN manuell aktiviert wurde
   - meldet netctl beim Start einen Fehler, dann `rfkill unblock all` absetzen
+- Wireless Access Point (Hotspot) starten
+  - `sudo create_ap --no-virt wlp1s0 lo some_name some_password`
 
 #### Programme installieren
 
-- `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g minetest alsa-utils`
+- `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g minetest alsa-utils create_ap`
   - durch minetest wird Sound installiert
 - optionale Programme
   - `gpicview openvpn freerdp remmina gparted dosfstools inkscape gimp tk openbsd-netcat`

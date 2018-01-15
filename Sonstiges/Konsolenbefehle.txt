@@ -143,6 +143,13 @@ curl --digest --user <username>:<pwd> --upload-file <file> http://localhost:8080
 # curl mit 1 MB/s Transferrate
 curl --digest --user <user>:<pwd> --limit-rate 1m --upload-file <file> http://localhost:8080 > /dev/null
 
+# Webseite herunterladen (nur Body)
+# -v schreibe auf stdout; -s unterdrücke Fortschrittsanzeige; -L folge Redirects
+curl -vsL https://www.wikipedia.org
+
+# Webseite herunterladen (mit technischen Informationen der Übertragung, wie Zertifikat und Redirects)
+curl -vsL https://www.wikipedia.org 2>&1
+
 # Prozess pausieren (gibt eine Nummer aus [1], die man zum fortfahren braucht)
 # http://wiki.ubuntuusers.de/Shell/Prozesssteuerung
 Strg + z
@@ -258,7 +265,7 @@ ls | xsel -ib
 date +%s
 
 # Informationen zu allen Partitionen ausgeben
-lsblk -o NAME,LABLE,FSTYPE,UUID,MOUNTPOINT,SIZE
+lsblk -o NAME,LABEL,FSTYPE,UUID,MOUNTPOINT,SIZE
 
 # große Konsolenschriftart setzen (für 4K-Monitore)
 setfont latarcyrheb-sun32

@@ -23,7 +23,7 @@
 
 ###### Abhängigkeiten
 
-- `iw`, `dialog`, `wpa_supplicant`, `strip`, `binutils`, `fakeroot`, `iwlist` (könnte unnötig sein), `wireless_tools` (könnte unnötig sein), `patch`, `pkg-config`, `make`, `cc`, `gcc`, `iptables`
+- `iw`, `dialog`, `wpa_supplicant`, `strip`, `binutils`, `fakeroot`, `iwlist` (könnte unnötig sein), `wireless_tools` (könnte unnötig sein), `patch`, `pkg-config`, `make`, `cc`, `gcc`, `iptables`, `create_ap`
 - `git clone https://aur.archlinux.org/hostapd-rtl.git` (könnte unnötig sein)
 - `git clone https://aur.archlinux.org/hostapd-rtl871xdrv.git`
 

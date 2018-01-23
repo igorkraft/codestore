@@ -277,3 +277,5 @@ zum Thread-sicheren Iterieren muss die Schleife in einen synchronized(m)-Block g
   - setSocketTimeout() (wie lange die read()-Methode auf dem InputStream blockiert)
   - setConnectTimeout() (legt fest, wie lange ein Verbindungsaufbauversuch dauert darf)
 
+• Wildcards für Strings prüfen
+import static org.apache.commons.io.FilenameUtils.wildcardMatch;

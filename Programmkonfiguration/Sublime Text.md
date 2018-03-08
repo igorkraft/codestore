@@ -15,6 +15,7 @@
   - `SideBarEnhancements` installieren (enthält `Locate`, erweitert Kontextmenü der Ordner-Sidebar)
   - `Markdown Preview` rendert Markdown zu Git flavored HTML
   - `Sublimerge 3` installieren (enthält Compare-Operationen)
+  - `Asciidoctor` rendert adoc-Dateien
 
 #### Einstellungen
 - Preferences -> Color Scheme -> Monokai

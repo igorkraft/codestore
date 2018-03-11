@@ -34,7 +34,7 @@
 #!/bin/sh
 
 # Access Point starten
-create_ap --no-virt --driver rtl871xdrv wlan0 eth0 some_name some_password
+create_ap --no-virt --driver rtl871xdrv -c 3 wlan0 eth0 some_name some_password
 ```
 - die Datei für ihren Besitzer ausführbar machen
 - Datei `/etc/systemd/system/myscript.service` anlegen

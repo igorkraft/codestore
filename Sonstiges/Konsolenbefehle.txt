@@ -275,3 +275,6 @@ parted /dev/sdx print
 
 # Bildschirm sperren
 i3lock -c 000000 -n -e
+
+# Suchbegriffe nur einfärben ohne zu filtern ($GREP_OPTIONS=--color=always)
+grep -E '(^|pattern)' file

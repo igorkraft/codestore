@@ -278,3 +278,6 @@ i3lock -c 000000 -n -e
 
 # Suchbegriffe nur einfärben ohne zu filtern ($GREP_OPTIONS=--color=always)
 grep -E '(^|pattern)' file
+
+# mit Windows Remote Desktop verbinden
+xfreerdp /g:<gateway-host> /v:<remote-dest> /sec:tls /f

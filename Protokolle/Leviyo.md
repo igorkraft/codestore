@@ -18,10 +18,11 @@
 
 #### Programme installieren
 
-- `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g minetest alsa-utils create_ap`
+- `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g minetest alsa-utils create_ap zip unzip`
   - durch minetest wird Sound installiert
 - optionale Programme
   - `gpicview openvpn freerdp remmina gparted dosfstools inkscape gimp tk openbsd-netcat`
+  - `retroarch retroarch-autoconfig-udev libretro-snes9x`
   - `gitk` ist von `tk` abhängig
 - AUR-Paket für Sublime Text 3 installieren
   - `https://aur.archlinux.org/sublime-text-dev.git` klonen

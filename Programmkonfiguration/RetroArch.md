@@ -1,0 +1,15 @@
+## RetroArch
+
+#### Installation
+
+- `retroarch retroarch-autoconfig-udev libretro-snes9x libretro-mgba` installieren
+
+#### Konfiguration
+
+- `Menu -> Settings -> Driver -> Audio Driver: alsa`
+
+#### Shortcuts
+
+- `http://emulation.gametechwiki.com/index.php/Using_RetroArch#Hotkeys`
+- `F1` Menü öffnen
+- `Backspace` zum übergeordneten Menü wechseln

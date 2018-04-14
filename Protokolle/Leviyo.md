@@ -34,9 +34,6 @@
 
 - `~/.xinitrc` anlegen
   ```
-  # Tastaturlayout auf deutsch stellen
-  setxkbmap de
-
   # Bildschirmauflösung anpassen
   xrandr --newmode 1600x900_60.00 118.25 1600 1696 1856 2112 900 903 908 934 -hsync +vsync
   xrandr --addmode eDP-1 1600x900_60.00
@@ -60,6 +57,10 @@
   FallbackNTP=0.pool.ntp.org 1.pool.ntp.org
   ```
   - `sudo timedatectl set-ntp true` to start and enable
+- verhindern, dass der Bildschirm bei Inaktivität geschwärzt wird
+  - `.bashrc` um `setterm -blank 0` erweitern
+- default keyboard layout für xorg anpassen
+  - `localectl set-x11-keymap de`
 
 #### TODOs
 

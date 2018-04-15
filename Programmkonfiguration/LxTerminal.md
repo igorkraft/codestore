@@ -5,7 +5,7 @@
 #### Konfiguration
 
 - Vordergrundfarbe: `#00FF00`
-- Schrift: `Noto Mono`
+- Schrift: `Noto Mono Regular`
 - Schriftgröße: `12`
 - `Tastenkürzel F10 für das Menü deaktivieren`: `☑`
 - `Tastenkürzel Alt-n zum Wechsel der Reiter deaktivieren`: `☑`

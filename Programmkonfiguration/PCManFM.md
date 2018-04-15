@@ -10,7 +10,7 @@
 - Allgemeine Einstellungen
   - Ansicht: Detailansicht
   - Gelöschte Dateien in den Papierkorb verschieben ...: ☐
-- Ansicht-Einstellungen
+- Anzeige-Einstellungen
   - Backupdateien verbergen: ☐
   - Miniatur-Vorschaubilder für Dateien anzeigen: ☐
   - Vollständige Dateinamen immer anzeigen: ☑

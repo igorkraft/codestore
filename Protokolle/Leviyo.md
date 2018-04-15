@@ -41,9 +41,6 @@
 
   # Window Manager starten
   exec i3
-
-  # Nummernblock aktivieren
-  numlockx on
   ```
 - verhindern, dass der Bildschirm bei Inaktivität geschwärzt wird
   - `/etc/X11/xorg.conf.d/10-monitor.conf` anlegen

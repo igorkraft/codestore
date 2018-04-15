@@ -18,7 +18,7 @@
 
 #### Programme installieren
 
-- `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g minetest alsa-utils create_ap zip unzip`
+- `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g minetest alsa-utils create_ap zip unzip numlockx`
   - durch minetest wird Sound installiert
 - optionale Programme
   - `gpicview openvpn freerdp remmina gparted dosfstools inkscape gimp tk openbsd-netcat`
@@ -41,6 +41,9 @@
 
   # Window Manager starten
   exec i3
+
+  # Nummernblock aktivieren
+  numlockx on
   ```
 - verhindern, dass der Bildschirm bei Inaktivität geschwärzt wird
   - `/etc/X11/xorg.conf.d/10-monitor.conf` anlegen

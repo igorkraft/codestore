@@ -42,6 +42,21 @@
   # Window Manager starten
   exec i3
   ```
+- verhindern, dass der Bildschirm bei Inaktivität geschwärzt wird
+  - `/etc/X11/xorg.conf.d/10-monitor.conf` anlegen
+  ```
+  Section "Monitor"
+      Identifier "LVDS0"
+      Option "DPMS" "false"
+  EndSection
+  Section "ServerLayout"
+      Identifier "ServerLayout0"
+      Option "StandbyTime" "0"
+      Option "SuspendTime" "0"
+      Option "OffTime"     "0"
+      Option "BlankTime"   "0"
+  EndSection
+  ```
 
 #### Sonstiges
 
@@ -57,8 +72,6 @@
   FallbackNTP=0.pool.ntp.org 1.pool.ntp.org
   ```
   - `sudo timedatectl set-ntp true` to start and enable
-- verhindern, dass der Bildschirm bei Inaktivität geschwärzt wird
-  - `.bashrc` um `setterm -blank 0` erweitern
 - default keyboard layout für xorg anpassen
   - `localectl set-x11-keymap de`
 

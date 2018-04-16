@@ -2,12 +2,8 @@ alias ls='ls --color=auto -a'
 alias egrep='egrep --colour=auto'
 alias mvn=/media/Daten/Code/apache-maven-3.1.1/bin/mvn
 alias gradle=/media/Daten/Code/Java/gradle-1.7/bin/gradle
-export PATH="$PATH:/media/Daten/Code/dingoo/mipsel-4.1.2-nopic/bin"
-export MIPSTOOLS='/media/Daten/Code/dingoo/mipsel-4.1.2-nopic'
-export DINGOO_SDK='/media/Daten/Code/dingoo/dingoo_sdk'
+
 export PS1='\[\033[00;33m\]\u@\h \[\033[00;36m\]\w\n\$ \[\033[03;00m\]'
+export PATH="$PATH:/media/Daten/Code/dingoo/mipsel-4.1.2-nopic/bin"
 export JAVA_HOME=/media/Daten/Code/Java/jdk1.8.0_31
 export GRADLE_HOME=/media/Daten/Code/Java/gradle-1.7
-export PATH="$PATH:/media/Daten/Code/adt-bundle-linux-x86-20130522/sdk/platform-tools"
-export PATH="$PATH:/media/Daten/Code/adt-bundle-linux-x86-20130522/sdk/tools"
-export D=~/Arbeitsfläche

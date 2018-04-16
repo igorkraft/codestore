@@ -2,7 +2,7 @@
 # date; while true; do sh Desktop/sound_test.sh; sleep 10; done > /dev/null
 
 # Zeiten in Minuten
-# 17; 5; 20; 4; 1;
+# 17; 5; 20; 4; 1; 2;
 
 speaker-test -c 2 -r 48000 -l 1 -D hw:0,3 ; \
 speaker-test -c 2 -r 48000 -l 1 -D hw:0,3 ; \

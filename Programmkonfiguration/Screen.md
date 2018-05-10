@@ -1,5 +1,14 @@
 ## Screen
 
+#### Konfiguration
+
+- `~/.screenrc` anlegen
+```
+defscrollback 10000
+```
+
+#### Allgemeines
+
 - mehrere Screen-Sitzungen können sowohl nebeneinander, als auch ineinander geöffnet werden (es kann ein Sitzungsbaum entstehen)
  - auf einer Ebene des Baumes kann man nur mit einer Sitzung verbunden sein
  - Wurzel des Baumes ist das Terminal, von dem aus Screen gestartet wurde
@@ -11,6 +20,8 @@
 - beim Öffnen einer Sitzung, wird man automatisch mit der Sitzung verbunden
 - um eine Sitzung zu schließen, verbindet man sich mit ihr und führt `exit` aus
 - für jede neue Sitzung wird ein neuer Prozess gestartet (mit dem Namen `screen`)
+
+#### Verwendung
 
 - eine Screen-Sitzung starten   
 `screen -S [Name der Sitzung]`

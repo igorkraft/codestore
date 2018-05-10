@@ -27,6 +27,10 @@
 - mit einer offenen Sitzung verbinden   
 `screen -r [Name der Sitzung]`
 
+- Copy-Mode öffnen (zum scrollen)
+  - `[Strg]+[a], dann [ESC]`
+  - zum Beenden erneut `[ESC]`
+
 - die .profile anpassen, um nach SSH-Login eine Screen-Session zu starten
 ```sh
 initScreen()

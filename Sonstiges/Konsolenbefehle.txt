@@ -204,7 +204,9 @@ uuidgen
 inkscape img.svg --export-png=img.png --export-dpi=90
 
 # Datei gefüllt mit Nullen erzeugen (bs = Blockgröße; count = Anzahl der Blöcke)
-dd if=/dev/zero of=my_fs bs=1G count=1 status=progress
+dd if=/dev/zero of=my_fs.img bs=1G count=10 status=progress
+truncate -s 10G my_fs.img (für ntfs)
+fallocate -l 10G my_fs.img (allokiert nur, schreib keine Bytes)
 
 # Datei als Laufwerk einhängen
 losetup /dev/loop0 my_fs

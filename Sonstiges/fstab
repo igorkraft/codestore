@@ -15,3 +15,16 @@ UUID=4d733368-5572-46f7-be4e-18d9476544f2 none            swap    sw            
 /media/Daten/Desktop /home/user/Arbeitsfläche none bind 0 0
 /media/Daten/Desktop/.mozilla /home/user/.mozilla none bind 0 0
 ramfs /media/clock ramfs defaults 0 0
+
+# NTFS-Dateisystem einhängen
+# Parameter hinter `defaults` sind nötig, weil NTFS das Unix-Berechtigungssystem nicht unterstützt
+# `nls=utf8` Encoding für Dateinamen
+# `umask=007` Vollzugriff für Besitzer und Gruppenmitglieder, für andere gesperrt
+# `uid=1000` ID des Users, der Besitzer der FSOs sein soll (zu ermitteln mit `getent passwd`)
+# `gid=10` ID der Gruppe, der die FSOs zugeordnet sein sollen (zu ermitteln mit `getent group`)
+# `0` an vorletzter Stelle legt fest, dass `dump` keine Sicherung erzeugen soll
+# `0` an letzter Stelle legt fest, dass keine regelmäßige Dateisystemprüfung stattfinden soll
+UUID=341A21A91A2168D6	/media/win_data	ntfs	defaults,nls=utf8,umask=007,uid=1000,gid=10	0	0
+
+# Dateisystem-Image einhängen
+/media/win_data/data.img	/media/data	ext4	defaults	0	0

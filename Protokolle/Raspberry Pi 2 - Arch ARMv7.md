@@ -4,26 +4,28 @@
 
 - http://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2
 - SD-Karte in zwei Partitionen teilen
-  - Partition 1: 100MB mit fat16 mounten als rp2_boot
+  - Partition 1: 100MB mit fat32 mounten als rp2_boot (beliebiger Ordner)
   - Partition 2: ext4 mounten als rp2_root
 - als root (nicht per sudo!) das Archiv auf rp2_root auspacken:
   - `bsdtar -xpf ArchLinuxARM-rpi-2-latest.tar.gz -C rp2_root`
-- die Dateien im Ordner boot nach rp2_boot verschieben
+- die Dateien im Ordner rp2_root/boot nach rp2_boot verschieben
 
 #### Konfiguration
 
 - initiale Benutzer `root:root` und `alarm:alarm`
 - man kann sich nicht per SSH als root anmelden (mit `su` kann alarm zu root werden)
 - mit `passwd` beide Passwörter ändern
-- `pacman -S screen` installieren
 - in der .bashrc den Prompt anpassen `PS1='\[\033[00;33m\]\u@\h \[\033[00;36m\]\w\n\$ \[\033[03;00m\]'`
 - `pacman -S screen` installieren
+- System aktualisieren `pacman -Syu`
+  - Neustarten, weil sonst kernel module nicht gefunden werden können
 
 #### WLAN Access Point einrichten
 
 ###### Abhängigkeiten
 
-- `iw`, `dialog`, `wpa_supplicant`, `strip`, `binutils`, `fakeroot`, `iwlist` (könnte unnötig sein), `wireless_tools` (könnte unnötig sein), `patch`, `pkg-config`, `make`, `cc`, `gcc`, `iptables`, `create_ap`
+- `binutils fakeroot patch pkg-config make gcc create_ap`
+- `iwlist wireless_tools` (könnten unnötig sein)
 - `git clone https://aur.archlinux.org/hostapd-rtl.git` (könnte unnötig sein)
 - `git clone https://aur.archlinux.org/hostapd-rtl871xdrv.git`
 
@@ -51,4 +53,4 @@ ExecStart=/usr/local/bin/start_wlan
 [Install]
 WantedBy=multi-user.target
 ```
-- `sudo systemctl enable myscript.service` (könnte unnötig sein)
+- `sudo systemctl enable myscript.service`

@@ -419,6 +419,7 @@
 - https://chocolatey.org/packages (Software Paket-Manager für Windows)
 - http://dwarffortresswiki.org/index.php/Main_Page (Nethack-ähnliches Spiel)
 - https://www.youtube.com/watch?v=q260bjSiyq0 (Entwicklerversion to Toto und Afrika)
+- http://www.wegwerfemailadresse.com
 
 ```
     NewTab-Bookmark

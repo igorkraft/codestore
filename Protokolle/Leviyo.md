@@ -58,6 +58,25 @@
   EndSection
   ```
 
+#### Dateisysteme konfigurieren
+
+- fstab
+```
+# NTFS-Dateisystem einhängen
+UUID=341A21A91A2168D6	/media/WinData	ntfs	defaults,nls=utf8,umask=007,uid=1000,gid=10	0	0
+
+# verschlüsseltes Dateisystem-Image einhängen
+/dev/mapper/data_mapper	/media/data	ext4	defaults	0	0
+
+# user home einhängen
+/media/data/user /home/user none bind 0 0
+```
+
+- crypttab
+```
+data_mapper /media/WinData/data.img none luks,retry=1,cipher=aes-xts-plain64:sha512
+```
+
 #### Sonstiges
 
 - NTFS-Dateisysteme mit Schreibberechtigung einhängen 

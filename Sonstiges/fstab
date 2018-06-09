@@ -24,7 +24,13 @@ ramfs /media/clock ramfs defaults 0 0
 # `gid=10` ID der Gruppe, der die FSOs zugeordnet sein sollen (zu ermitteln mit `getent group`)
 # `0` an vorletzter Stelle legt fest, dass `dump` keine Sicherung erzeugen soll
 # `0` an letzter Stelle legt fest, dass keine regelmäßige Dateisystemprüfung stattfinden soll
-UUID=341A21A91A2168D6	/media/win_data	ntfs	defaults,nls=utf8,umask=007,uid=1000,gid=10	0	0
+UUID=341A21A91A2168D6	/media/WinData	ntfs	defaults,nls=utf8,umask=007,uid=1000,gid=10	0	0
 
-# Dateisystem-Image einhängen
-/media/win_data/data.img	/media/data	ext4	defaults	0	0
+# unverschlüsseltes Dateisystem-Image einhängen
+/media/WinData/data.img	/media/data	ext4	defaults	0	0
+
+# verschlüsseltes Dateisystem einhängen (erfordert Anpassung der crypttab)
+/dev/mapper/data_mapper	/media/data	ext4	defaults	0	0
+
+# user home einhängen
+/media/data/user /home/user none bind 0 0

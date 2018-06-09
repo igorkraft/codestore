@@ -1,7 +1,8 @@
 alias ls='ls --color=auto -a'
 alias egrep='egrep --colour=auto'
 alias mvn=/media/Daten/Code/apache-maven-3.1.1/bin/mvn
-alias finish='sudo umount /media/data ; cryptsetup luksClose /dev/mapper/data_mapper ; sudo poweroff'
+alias finish='sudo umount /home/user ; sudo umount /media/data ; cryptsetup luksClose /dev/mapper/data_mapper ; sudo poweroff'
+
 # nur Windows
 alias kraken='~/AppData/Local/gitkraken/app-3.6.1/gitkraken.exe -p . &'
 alias idea='/d/Kram/tools/IntelliJ-2018.1.4/bin/idea.bat ./pom.xml &'
@@ -9,4 +10,3 @@ alias idea='/d/Kram/tools/IntelliJ-2018.1.4/bin/idea.bat ./pom.xml &'
 export PS1='\[\033[00;33m\]\u@\h \[\033[00;36m\]\w\n\$ \[\033[03;00m\]'
 export PATH="$PATH:/media/Daten/Code/dingoo/mipsel-4.1.2-nopic/bin"
 export JAVA_HOME=/media/Daten/Code/Java/jdk1.8.0_31
-export GRADLE_HOME=/media/Daten/Code/Java/gradle-1.7

@@ -1,3 +1,4 @@
 # liegt direkt unter /etc/
 # <target name>	<source device>		<key file>	<options>
 Daten UUID=8e5188f5-7d4e-41e5-b59d-6f1a4b9fa3de none luks,retry=1,cipher=aes-cbc-essiv:sha256
+data_mapper /media/WinData/data.img none luks,retry=1,cipher=aes-xts-plain64:sha512

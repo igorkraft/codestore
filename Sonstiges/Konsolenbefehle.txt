@@ -104,6 +104,9 @@ sudo mount -t davfs https://storage.driveonweb.de/probdav /Mountpunkt
 # Besitzer und Gruppe eines Ordners rekursiv ändern
 sudo chown -R user:group /folder
 
+# Datei ausführbar machen
+chmod +x some_file
+
 # PDF To PNG
 convert -flatten +matte -density 400 IMG_0003.pdf IMG_0003.png
 

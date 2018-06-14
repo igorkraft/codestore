@@ -18,7 +18,8 @@
 
 #### Programme installieren
 
-- `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g minetest alsa-utils create_ap zip unzip numlockx`
+- `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g minetest`
+- `pkgfile alsa-utils create_ap zip unzip numlockx xsel`
   - durch minetest wird Sound installiert
 - optionale Programme
   - `gpicview openvpn freerdp remmina gparted dosfstools inkscape gimp tk openbsd-netcat diffuse`
@@ -94,6 +95,7 @@ data_mapper /media/WinData/data.img none luks,retry=1,cipher=aes-xts-plain64:sha
   - `sudo timedatectl set-ntp true` to start and enable
 - default keyboard layout für xorg anpassen
   - `localectl set-x11-keymap de`
+- `pkgfile --update` um Paket-Datei-Datenbank zu initialisieren
 
 #### TODOs
 

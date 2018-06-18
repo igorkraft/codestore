@@ -46,6 +46,11 @@ alsamixer -c0
 # Festplatten-Images einhängen
 sudo mount -t ntfs -o loop,offset=33280,umask=000 Windows.vdi /mnt/
 
+# Partition eines partitionierten Disk-Images einhängen
+- sudo fdisk -lu sda.img
+- sudo losetup -o <Sektorgröße * Startposition> /dev/loop0 sda.img
+- sudo mount /dev/loop0 /mnt
+
 # Dateien zusammenführen
 cat file1 file2 > ziel.tar.gz [oder] cat xa* > ziel.tar.gz
 

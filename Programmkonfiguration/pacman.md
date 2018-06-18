@@ -16,6 +16,7 @@
 - `/etc/pacman.d/mirrorlist` enthält offizielle Repositories
   - wird in die Konfigurationsdatei inkludiert
   - zusätzliche Repositories können auch direkt in `/etc/pacman.conf` eingetragen werden
+  - sicherstellen, dass ein Server aus Deutschland ganz oben steht
 - `Color` farbige Ausgaben
 - `SigLevel    = Optional TrustAll` behebt Signaturprobleme
 

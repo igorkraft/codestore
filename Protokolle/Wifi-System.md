@@ -67,3 +67,24 @@ UUID=5e98791d-3843-4fb0-a0fd-1c9a55687386 /media/16gbStick ext4 defaults 0 2
 
 - `sudo docker run --name nextcloud --restart=always -d -p 8080:80 -v /media/16gbStick/volumes/nextcloud:/var/www/html nextcloud`
 - `config/config.php` unter Trusted Domains die IP des Hosts hinzufügen
+- Neustarten, dass neue Apps installiert werden könnnen
+- Admin-Konto und Dummy-Konto einrichten
+- unter `Apps` im Abschnitt `Büro & Text` die App `Calendar` installieren
+- Dummy-Konto einrichten
+  - im Kalender unter `Einstellungen & Import` die Zeitzone für Berlin auswählen
+  - in den Profileinstellungen im Abschnitt `Zusätzliche Einstellungen` alle Aktivitäten deaktivieren
+  - in den Einstellungen der `Dateien`-Übersicht `Versteckte Dateien anzeigen` aktivieren
+  - den Kalender `Persönlich` löschen
+  - neue Kalender anlegen (Geburtstage (schwarz), Gemeinsames (blau), usw.)
+
+#### Android-Gerät einrichten
+
+- DavDroid installieren
+  - https://f-droid.org/packages/at.bitfire.davdroid/
+- in DavDroid ein Konto per URL und Benutzernamen anlegen
+  - Adresse steht im Browser unter `Kalender` - `Einstellungen & Import` - `iOS-/OS-X-CalDAV-Adresse`
+    - nicht `Primäre CalDAV-Adresse` verwenden!
+  - Kontakte sind eigene VCards
+- CardDAV-Ordner löschen
+- Checkboxen aller CalDAV-Kalender aktivieren und Synchronisierung starten
+- gegebenenfalls in den Einstellungen der Kalender-App CalDAV-Synchronisierung aktivieren

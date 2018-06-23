@@ -65,8 +65,8 @@ UUID=5e98791d-3843-4fb0-a0fd-1c9a55687386 /media/16gbStick ext4 defaults 0 2
 
 #### NextCloud einrichten
 
-- `sudo docker run --name nextcloud --restart=always -d -p 8080:80 -v /media/16gbStick/volumes/nextcloud:/var/www/html nextcloud`
-- `config/config.php` unter Trusted Domains die IP des Hosts hinzufügen
+- `sudo docker run --name nextcloud --restart=always -d -p 8080:80 -p 8443:443 -v /media/16gbStick/volumes/nextcloud:/var/www/html nextcloud`
+- `config/config.php` unter Trusted Domains die IP des Hosts hinzufügen (für SSL-Port!)
 - Neustarten, dass neue Apps installiert werden könnnen
 - Admin-Konto und Dummy-Konto einrichten
 - unter `Apps` im Abschnitt `Büro & Text` die App `Calendar` installieren
@@ -75,7 +75,22 @@ UUID=5e98791d-3843-4fb0-a0fd-1c9a55687386 /media/16gbStick ext4 defaults 0 2
   - in den Profileinstellungen im Abschnitt `Zusätzliche Einstellungen` alle Aktivitäten deaktivieren
   - in den Einstellungen der `Dateien`-Übersicht `Versteckte Dateien anzeigen` aktivieren
   - den Kalender `Persönlich` löschen
-  - neue Kalender anlegen (Geburtstage (schwarz), Gemeinsames (blau), usw.)
+  - neue Kalender anlegen
+    - U2FsdGVkX189O8huMvT8TlLHQTFRFoAiCkZqN3LrO3X26AKTj0kqdjNL/vIqkcu0pVG4L+Zoh3jfkPiUuDHif2PjM8X8264oiAMMUbcNXnEUdPBBHaN4F3qpm7SepHDsEb3dk+rMw2ZALtdM6aHcDw==
+- SSL konfigurieren
+  - bash öffnen `docker exec -i -t nextcloud /bin/bash`
+  - `cd /etc/apache2`
+  - `mkdir ssl`
+  - `openssl req -x509 -nodes -days 1095 -newkey rsa:2048 -out ssl/server.crt -keyout ssl/server.key`
+    - bei `Common Name` die IP eintragen
+    - alles andere mit Enter übergehen
+  - `cp sites-available/default-ssl.conf sites-available/ssl.conf`
+  - `sed -i 's/\/etc\/ssl\/certs\/ssl-cert-snakeoil.pem/\/etc\/apache2\/ssl\/server.crt/g' sites-available/ssl.conf`
+  - `sed -i 's/\/etc\/ssl\/private\/ssl-cert-snakeoil.key/\/etc\/apache2\/ssl\/server.key/g' sites-available/ssl.conf`
+  - `ln -s /etc/apache2/sites-available/ssl.conf /etc/apache2/sites-enabled/000-ssl.conf`
+    - die absoluten Pfade müssen sein
+  - `a2enmod ssl`
+  - `docker` neustarten
 
 #### Android-Gerät einrichten
 
@@ -87,4 +102,5 @@ UUID=5e98791d-3843-4fb0-a0fd-1c9a55687386 /media/16gbStick ext4 defaults 0 2
   - Kontakte sind eigene VCards
 - CardDAV-Ordner löschen
 - Checkboxen aller CalDAV-Kalender aktivieren und Synchronisierung starten
+- DavDroid so einstellen, dass es nur im heimischen WLAN synchronisiert
 - gegebenenfalls in den Einstellungen der Kalender-App CalDAV-Synchronisierung aktivieren

@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class RandomTests
 {
-	String chars = "+-_!=" + "0123456789" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	String chars = "+-_!=(){}%&~#@*+-_!=(){}%&~#@*" + "0123456789" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	
 	@Test
 	public void randomTest()
@@ -16,9 +16,10 @@ public class RandomTests
 		List<Character> chars = Arrays.asList(ArrayUtils.toObject(this.chars.toCharArray()));
 		Collections.shuffle(chars);
 		
-		for (int i = 0; i < 20; i++)
+		for (int i = 0; i < 12; i++)
 		{
 			System.out.print(chars.get(((int)(Math.random() * 1000)) % chars.size()));
 		}
+		System.out.println();
 	}
 }

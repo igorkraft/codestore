@@ -41,7 +41,6 @@
 - `Make Default` wählen
 
 #### Editor->General->Auto Import
-- Optimize imports on the fly
 - Add unambiguous imports on the fly
 
 #### Editor->Code Style->Java->Imports

@@ -303,3 +303,6 @@ grep -E '(^|pattern)' file
 
 # mit Windows Remote Desktop verbinden
 xfreerdp /g:<gateway-host> /v:<remote-dest> /sec:tls /f
+
+# Youtube-Videos in mp3 konvertieren
+youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 <Video-ID oder URL>

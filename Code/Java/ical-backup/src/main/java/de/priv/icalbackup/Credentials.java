@@ -3,19 +3,16 @@ package de.priv.icalbackup;
 
 import lombok.Cleanup;
 import lombok.Getter;
-import lombok.Setter;
 import org.apache.commons.crypto.stream.CryptoInputStream;
 import org.apache.commons.crypto.stream.CryptoOutputStream;
 import org.apache.commons.io.IOUtils;
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.PostConstruct;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.SecretKeySpec;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -32,6 +29,9 @@ public class Credentials
 	private IvParameterSpec iv;
 	private Map<String, byte[]> credentials;
 
+	@Autowired
+	private Configuration config;
+
 	@Getter
 	private boolean initialized = false;
 
@@ -45,6 +45,14 @@ public class Credentials
 		byte[] bytes = new byte[256];
 		new SecureRandom(){{nextBytes(bytes);}};
 		this.iv = new IvParameterSpec(bytes);
+	}
+
+	private String validate(Map<String, String> credentials)
+	{
+		// alle Kalender einmal exportieren
+		// Backup-Repo klonen
+		// alle Dateien im Git-Repo entschlüsseln und prüfen, ob es iCal-Dateien sind
+		return null;
 	}
 
 	private byte[] encrypt(String data) throws Exception
@@ -69,8 +77,12 @@ public class Credentials
 		return IOUtils.toString(cis,StandardCharsets.UTF_8);
 	}
 
-	public void setCredentials(Map<String, String> credentials) throws Exception
+	public String setCredentials(Map<String, String> credentials) throws Exception
 	{
+		String error = this.validate(credentials);
+
+		if (error != null) return error;
+
 		this.credentials = new HashMap<>();
 
 		for (Map.Entry<String,String> entry : credentials.entrySet())
@@ -79,6 +91,8 @@ public class Credentials
 		}
 
 		this.initialized = true;
+
+		return null;
 	}
 
 }

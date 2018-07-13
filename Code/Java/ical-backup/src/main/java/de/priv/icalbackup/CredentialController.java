@@ -1,5 +1,6 @@
 package de.priv.icalbackup;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -25,8 +26,8 @@ public class CredentialController
 		//TODO alle Credentials testen
 		// trifft der Scheduler auf einen Fehler (Tippfehler in einem der Passwörter), dann muss er
 		// die gecachten Credentials löschen und das initialized flag auf false setzen
-//		credentials.validate(params)
-		credentials.setCredentials(params);
+		String error = credentials.setCredentials(params);
+
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 }

@@ -306,3 +306,6 @@ xfreerdp /g:<gateway-host> /v:<remote-dest> /sec:tls /f
 
 # Youtube-Videos in mp3 konvertieren
 youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 <Video-ID oder URL>
+
+# Datei per curl auf FTP-Server laden (abschließenden '/' in URL nicht vergessen!)
+echo -n "user: " ; read user ; echo -n "password: " ; read -s password ; curl -T "<file_path>" -u $user:$password ftp://host/location/ ; user=0 ; password=0

@@ -1,0 +1,7 @@
+--------------C1652BD3D085C457919F5AE3
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-ID: <${imageId}>
+Content-Disposition: inline
+
+${image}

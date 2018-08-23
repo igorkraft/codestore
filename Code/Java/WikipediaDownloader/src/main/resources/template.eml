@@ -1,0 +1,16 @@
+From: root@mail.de
+To: administrator@mail.de
+Subject: ${subject}
+Message-ID: <${messageId}>
+Date: Wed, 22 Aug 2018 11:55:33 +0200
+MIME-Version: 1.0
+Content-Type: multipart/related;
+ boundary="------------C1652BD3D085C457919F5AE3"
+
+--------------C1652BD3D085C457919F5AE3
+Content-Type: text/html; charset=utf-8
+
+${html}
+
+${images}
+--------------C1652BD3D085C457919F5AE3--

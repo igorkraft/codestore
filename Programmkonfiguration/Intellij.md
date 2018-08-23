@@ -25,10 +25,11 @@
 - Show Line Numbers: &#x2611;
 - Show parameter name hints: &#x2610;
 
-#### Editor->Colors and Fonts->Font
-- Scheme: Dracula
-- Apply
-- Save As -> Dracula copy
+#### Editor -> Color Scheme -> General
+- Dracula-Scheme duplizieren und speichern
+
+#### Editor -> Color Scheme -> Color Scheme Font
+- Use color scheme font instead of the default: &#x2611;
 - Size: 14
 
 #### Editor->File Encodings
@@ -46,7 +47,6 @@
 #### Editor->Code Style->Java->Imports
 - Class count to use import with '*': 5000
 - Names count to use static import with '*': 5000
-- für diese Einstellungen wird ein Schema erzeugt, dass für jedes Projekt angewendet werden muss
 
 #### Languages & Frameworks->Markdown
 - in `URI:` `default.css` durch `darcula.css` ersetzen

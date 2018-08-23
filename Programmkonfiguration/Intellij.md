@@ -1,4 +1,7 @@
-## Intellij
+## IntelliJ
+
+#### Allgemeines
+- Schriftgröße zurück setzen: <Ctl>+<Shift>+a -> Reset Font Size
 
 #### View
 - Toolbar: &#x2611;
@@ -34,7 +37,7 @@
 #### Editor -> Color Scheme -> Color Scheme Font
 - Use color scheme font instead of the default: &#x2611;
 - Font: Source Code Pro
-- Size: 16
+- Size: 15
 
 #### Editor->File Encodings
 - Project Encoding: UTF-8

@@ -1,5 +1,8 @@
 ## Intellij
 
+#### View
+- Toolbar: &#x2611;
+
 #### Plugins->Browse repositories...
 - `Markdown support`
 - `Lombok Plugin`
@@ -30,7 +33,8 @@
 
 #### Editor -> Color Scheme -> Color Scheme Font
 - Use color scheme font instead of the default: &#x2611;
-- Size: 14
+- Font: Source Code Pro
+- Size: 16
 
 #### Editor->File Encodings
 - Project Encoding: UTF-8

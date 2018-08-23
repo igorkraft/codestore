@@ -1,7 +1,7 @@
 ## IntelliJ
 
 #### Allgemeines
-- Schriftgröße zurück setzen: <Ctl>+<Shift>+a -> Reset Font Size
+- Schriftgröße zurück setzen: `<Ctl>+<Shift>+a` -> Reset Font Size
 
 #### View
 - Toolbar: &#x2611;

@@ -37,7 +37,7 @@ public class Application
 		generateEmlFileForTitle(title);
 	}
 
-	private static void generateEmlFileForTitle(String title) throws Exception
+	public static void generateEmlFileForTitle(String title) throws Exception
 	{
 		String url = "https://en.wikipedia.org/w/index.php?title=" + title + "&printable=yes";
 
@@ -97,7 +97,7 @@ public class Application
 		}
 	}
 
-	private static void htmlToEml(String title, Document doc, Map<String, String> imageMap) throws Exception
+	public static void htmlToEml(String title, Document doc, Map<String, String> imageMap) throws Exception
 	{
 		Elements imgs = doc.select("img");
 		String images = "";
@@ -117,7 +117,7 @@ public class Application
 		FileUtils.writeStringToFile(new File(title + ".eml"),mail,StandardCharsets.UTF_8);
 	}
 
-	private static String streamToString(InputStream stream) throws Exception
+	public static String streamToString(InputStream stream) throws Exception
 	{
 		try
 		{
@@ -129,7 +129,7 @@ public class Application
 		}
 	}
 
-	private static byte[] streamToBytes(InputStream stream) throws Exception
+	public static byte[] streamToBytes(InputStream stream) throws Exception
 	{
 		try
 		{
@@ -141,7 +141,7 @@ public class Application
 		}
 	}
 
-	private static void removeQuietly(String query, Document doc)
+	public static void removeQuietly(String query, Document doc)
 	{
 		try
 		{
@@ -150,7 +150,7 @@ public class Application
 		catch (Exception e) {}
 	}
 
-	private static CloseableHttpClient createHttpClient()
+	public static CloseableHttpClient createHttpClient()
 	{
 		try
 		{

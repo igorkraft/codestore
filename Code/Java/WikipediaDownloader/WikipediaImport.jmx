@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="ohne HttpClient" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import java.nio.charset.StandardCharsets;
+import javax.swing.JOptionPane;
+import java.io.File;
+import java.io.FileOutputStream;
+
+JOptionPane.showInputDialog(null,&quot;title&quot;,new String(new byte[]{100,100},StandardCharsets.UTF_8));
+
+new Runnable()
+{
+	public void generateEmlFileForTitle(String title)
+	{
+		javax.swing.JOptionPane.showInputDialog(null,title,props.getClass().getName());
+	}
+	public void run()
+	{
+		generateEmlFileForTitle(&quot;some title3&quot;);
+	}
+}.run();
+
+new Runnable()
+{
+	public void generateEmlFileForTitle(String title)
+	{
+		String html = new String(new byte[]{100,100},StandardCharsets.UTF_8);
+		//JOptionPane.showInputDialog(null,&quot;title&quot;,html);
+		this.writeByteArrayToFile(new File(&quot;/media/data/Freizeit/wikipedia_downloader/content.txt&quot;),new byte[]{100,100});
+	}
+	public void run()
+	{
+		generateEmlFileForTitle(&quot;some title3&quot;);
+	}
+	public void writeByteArrayToFile(File file, byte[] data) 
+	{
+		FileOutputStream out = null;
+		try
+		{
+			out = new FileOutputStream(file);
+			out.write(data);
+			out.close();
+		}
+		catch (Exception e){}
+		finally {try { out.close();} catch (Exception e2){}}
+	}
+}.run();</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="title" elementType="Argument">
+              <stringProp name="Argument.name">title</stringProp>
+              <stringProp name="Argument.value">Lotus_(genus)</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Choose random articel" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">https://en.wikipedia.org/wiki/Special:Random</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Title-Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+            <stringProp name="RegexExtractor.refname">title</stringProp>
+            <stringProp name="RegexExtractor.regex">Location: (.*)/(.*)</stringProp>
+            <stringProp name="RegexExtractor.template">$2$</stringProp>
+            <stringProp name="RegexExtractor.default"></stringProp>
+            <stringProp name="RegexExtractor.match_number"></stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Article" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">https://en.wikipedia.org/w/index.php?title=${title}&amp;printable=yes</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Prepare HTML and Images" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.nio.charset.StandardCharsets;
+import javax.swing.JOptionPane;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+new Runnable()
+{
+	public void run()
+	{
+ 		String htmlBody = new String(data,StandardCharsets.UTF_8);
+		Map sourceMap = new HashMap();
+		int lastEndIndex = 0;
+		
+		while (true)
+		{
+			int srcStartIndex = htmlBody.indexOf(&quot;&lt;img &quot;, lastEndIndex);
+			
+			if (srcStartIndex == -1) break;
+			srcStartIndex = srcStartIndex + 5;
+			int srcEndIndex = htmlBody.indexOf(&quot;&gt;&quot;, srcStartIndex);
+			String imgElement = htmlBody.substring(srcStartIndex,srcEndIndex);
+			
+			String src = this.getSource(imgElement);
+			String imageId = UUID.randomUUID().toString();
+			sourceMap.put(&quot;cid:&quot; + imageId,src);
+
+			lastEndIndex = srcEndIndex;
+		}
+
+		for (Object entryObj : sourceMap.entrySet())
+		{
+			
+			Map.Entry entry = (Map.Entry)entryObj;
+			
+			htmlBody = htmlBody.replace((String)entry.getValue(),(String)entry.getKey());
+			
+			String src = (String)entry.getValue();
+			
+			if (src.startsWith(&quot;//&quot;)) src = src.replace(&quot;//&quot;,&quot;https://&quot;);
+			if (src.startsWith(&quot;/&quot;)) src = src.replace(&quot;/&quot;,&quot;https://en.wikipedia.org/&quot;);
+			entry.setValue(src);
+		}
+		
+		//this.writeByteArrayToFile(new File(&quot;/media/data/Freizeit/wikipedia_downloader/content.txt&quot;),htmlBody.getBytes(StandardCharsets.UTF_8));
+		vars.putObject(&quot;images&quot;,sourceMap);
+		vars.put(&quot;htmlBody&quot;,htmlBody);
+		vars.putObject(&quot;imageCount&quot;,sourceMap.size());
+		//JOptionPane.showInputDialog(null,&quot;e&quot;,vars.entrySet());
+	}
+
+	public String getSource(String imgElement)
+	{
+		int srcStartIndex = imgElement.indexOf(&quot;src=\&quot;&quot;);
+		if (srcStartIndex == -1) return null;
+		srcStartIndex = srcStartIndex + 5;
+		int srcEndIndex = imgElement.indexOf(&quot;\&quot;&quot;, srcStartIndex);
+		String src = imgElement.substring(srcStartIndex,srcEndIndex);
+		return src.length() &gt; 0 ? src : null;
+	}
+	
+	public void writeByteArrayToFile(File file, byte[] data) 
+	{
+		FileOutputStream out = null;
+		try
+		{
+			out = new FileOutputStream(file);
+			out.write(data);
+			out.close();
+		}
+		catch (Exception e){}
+		finally {try { out.close();} catch (Exception e2){}}
+	}
+}.run();</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">${imageCount}</stringProp>
+        </LoopController>
+        <hashTree>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Image URL Setter" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.util.Map;
+import java.util.ArrayList;
+
+int imageIndex = vars.getObject(&quot;__jm__Loop Controller__idx&quot;);
+
+Map sourceMap =vars.getObject(&quot;images&quot;);
+String key = (String)new ArrayList(sourceMap.keySet()).get(imageIndex);
+
+vars.put(&quot;imageId&quot;, key);
+vars.put(&quot;imageUrl&quot;, sourceMap.get(key));</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${imageUrl}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">JOptionPane.showInputDialog(null,&quot;e&quot;,vars.get(&quot;imageId&quot;));</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

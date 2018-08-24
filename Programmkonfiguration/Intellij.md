@@ -54,6 +54,7 @@
 #### Editor->Code Style->Java->Imports
 - Class count to use import with '*': 5000
 - Names count to use static import with '*': 5000
+- Packages to Use Import with '*': <leere Liste>
 
 #### Languages & Frameworks->Markdown
 - in `URI:` `default.css` durch `darcula.css` ersetzen

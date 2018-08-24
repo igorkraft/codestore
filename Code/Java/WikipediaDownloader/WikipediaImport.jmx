@@ -25,56 +25,6 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
-        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="ohne HttpClient" enabled="false">
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="script">import java.nio.charset.StandardCharsets;
-import javax.swing.JOptionPane;
-import java.io.File;
-import java.io.FileOutputStream;
-
-JOptionPane.showInputDialog(null,&quot;title&quot;,new String(new byte[]{100,100},StandardCharsets.UTF_8));
-
-new Runnable()
-{
-	public void generateEmlFileForTitle(String title)
-	{
-		javax.swing.JOptionPane.showInputDialog(null,title,props.getClass().getName());
-	}
-	public void run()
-	{
-		generateEmlFileForTitle(&quot;some title3&quot;);
-	}
-}.run();
-
-new Runnable()
-{
-	public void generateEmlFileForTitle(String title)
-	{
-		String html = new String(new byte[]{100,100},StandardCharsets.UTF_8);
-		//JOptionPane.showInputDialog(null,&quot;title&quot;,html);
-		this.writeByteArrayToFile(new File(&quot;/media/data/Freizeit/wikipedia_downloader/content.txt&quot;),new byte[]{100,100});
-	}
-	public void run()
-	{
-		generateEmlFileForTitle(&quot;some title3&quot;);
-	}
-	public void writeByteArrayToFile(File file, byte[] data) 
-	{
-		FileOutputStream out = null;
-		try
-		{
-			out = new FileOutputStream(file);
-			out.write(data);
-			out.close();
-		}
-		catch (Exception e){}
-		finally {try { out.close();} catch (Exception e2){}}
-	}
-}.run();</stringProp>
-        </BeanShellPreProcessor>
-        <hashTree/>
         <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments">
             <elementProp name="title" elementType="Argument">
@@ -90,7 +40,7 @@ new Runnable()
           <boolProp name="CookieManager.clearEachIteration">false</boolProp>
         </CookieManager>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Choose random articel" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Choose random articel" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -183,8 +133,8 @@ new Runnable()
 			
 			String src = (String)entry.getValue();
 			
-			if (src.startsWith(&quot;//&quot;)) src = src.replace(&quot;//&quot;,&quot;https://&quot;);
-			if (src.startsWith(&quot;/&quot;)) src = src.replace(&quot;/&quot;,&quot;https://en.wikipedia.org/&quot;);
+			if (src.startsWith(&quot;//&quot;)) src = src.replaceFirst(&quot;//&quot;,&quot;https://&quot;);
+			if (src.startsWith(&quot;/&quot;)) src = src.replaceFirst(&quot;/&quot;,&quot;https://en.wikipedia.org/&quot;);
 			entry.setValue(src);
 		}
 		
@@ -192,6 +142,7 @@ new Runnable()
 		vars.putObject(&quot;images&quot;,sourceMap);
 		vars.put(&quot;htmlBody&quot;,htmlBody);
 		vars.putObject(&quot;imageCount&quot;,sourceMap.size());
+		vars.put(&quot;imageBundle&quot;,&quot;&quot;);
 		//JOptionPane.showInputDialog(null,&quot;e&quot;,vars.entrySet());
 	}
 
@@ -221,7 +172,7 @@ new Runnable()
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Image Loop" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">${imageCount}</stringProp>
         </LoopController>
@@ -233,7 +184,7 @@ new Runnable()
             <stringProp name="script">import java.util.Map;
 import java.util.ArrayList;
 
-int imageIndex = vars.getObject(&quot;__jm__Loop Controller__idx&quot;);
+int imageIndex = vars.getObject(&quot;__jm__Image Loop__idx&quot;);
 
 Map sourceMap =vars.getObject(&quot;images&quot;);
 String key = (String)new ArrayList(sourceMap.keySet()).get(imageIndex);
@@ -242,7 +193,7 @@ vars.put(&quot;imageId&quot;, key);
 vars.put(&quot;imageUrl&quot;, sourceMap.get(key));</stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Image Downloader" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -261,15 +212,87 @@ vars.put(&quot;imageUrl&quot;, sourceMap.get(key));</stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Image Template Creator" enabled="true">
               <boolProp name="resetInterpreter">false</boolProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
-              <stringProp name="script">JOptionPane.showInputDialog(null,&quot;e&quot;,vars.get(&quot;imageId&quot;));</stringProp>
+              <stringProp name="script">String imageId = vars.get(&quot;imageId&quot;).replace(&quot;cid:&quot;,&quot;&quot;);
+String image = Base64.getEncoder().encodeToString(data);
+String imageTemplate = &quot;--------------C1652BD3D085C457919F5AE3\nContent-Type: image/png\nContent-Transfer-Encoding: base64\nContent-ID: &lt;${imageId}&gt;\nContent-Disposition: inline\n\n${image}\n&quot;;
+
+imageTemplate = imageTemplate.replace(&quot;${image}&quot;,image);
+imageTemplate = imageTemplate.replace(&quot;${imageId}&quot;,imageId);
+
+String imageBundle = vars.get(&quot;imageBundle&quot;);
+vars.put(&quot;imageBundle&quot;,imageBundle + imageTemplate);
+
+//JOptionPane.showMessageDialog(null,vars.get(&quot;imageBundle&quot;));</stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
         </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Mail Creator" enabled="true">
+          <stringProp name="BeanShellSampler.query">import java.util.UUID;
+
+String imageBundle = vars.get(&quot;imageBundle&quot;).trim();
+String mail = &quot;From: root@mail.de\nTo: administrator@mail.de\nSubject: ${subject}\nMessage-ID: &lt;${messageId}&gt;\nDate: Wed, 22 Aug 2018 11:55:33 +0200\nMIME-Version: 1.0\nContent-Type: multipart/related;\n boundary=\&quot;------------C1652BD3D085C457919F5AE3\&quot;\n\n--------------C1652BD3D085C457919F5AE3\nContent-Type: text/html; charset=utf-8\n\n${html}\n\n${images}\n--------------C1652BD3D085C457919F5AE3--\n&quot;;
+
+mail = mail.replace(&quot;${subject}&quot;,vars.get(&quot;title&quot;));
+mail = mail.replace(&quot;${messageId}&quot;,UUID.randomUUID().toString());
+mail = mail.replace(&quot;${html}&quot;,vars.get(&quot;htmlBody&quot;));
+mail = mail.replace(&quot;${images}&quot;,imageBundle);
+
+vars.put(&quot;mail&quot;,mail);
+
+vars.put(&quot;imageBundle&quot;,&quot;&quot;);
+vars.put(&quot;htmlBody&quot;,&quot;&quot;);
+vars.putObject(&quot;images&quot;,null);
+vars.put(&quot;imageId&quot;, &quot;&quot;);
+vars.put(&quot;imageUrl&quot;, &quot;&quot;);</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Save Result Sampler" enabled="true">
+          <stringProp name="BeanShellSampler.query">import java.nio.charset.StandardCharsets;
+import javax.swing.JOptionPane;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+new Runnable()
+{
+	public void run()
+	{
+		String output = vars.get(&quot;mail&quot;);
+		//JOptionPane.showMessageDialog(null,imageBundle);
+		String path = &quot;/media/data/Freizeit/wikipedia_downloader/&quot; + vars.get(&quot;title&quot;) + &quot;.eml&quot;;
+		this.writeByteArrayToFile(new File(path),output.getBytes(StandardCharsets.UTF_8));
+		//JOptionPane.showMessageDialog(null,imageBundle);
+		//JOptionPane.showInputDialog(null,&quot;title&quot;,vars.entrySet());
+	}
+	
+	public void writeByteArrayToFile(File file, byte[] data) 
+	{
+		FileOutputStream out = null;
+		try
+		{
+			out = new FileOutputStream(file);
+			out.write(data);
+			out.close();
+		}
+		catch (Exception e){}
+		finally {try { out.close();} catch (Exception e2){}}
+	}
+}.run();</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>

@@ -1,7 +1,5 @@
 package org.tests;
 
-//import org.apache.commons.lang3.StringUtils;
-
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.junit.Test;
@@ -22,6 +20,15 @@ public class SimpleTests
 		String url = "https://en.wikipedia.org/w/index.php?title=" + title + "&printable=yes";
 
 		String htmlBody = Application.streamToString(client.execute(new HttpGet(url)).getEntity().getContent());
+
+		htmlBody = this.cutOffUnimportantContent(htmlBody, "a", "\"mw-jump-link\"");
+		htmlBody = this.cutOffUnimportantContent(htmlBody, "a", "\"mw-jump-link\"");
+		htmlBody = this.cutOffUnimportantContent(htmlBody, "div", "\"siteSub\"");
+		htmlBody = this.cutOffUnimportantContent(htmlBody, "div", "\"mw-navigation\"");
+		htmlBody = this.cutOffUnimportantContent(htmlBody, "div", "\"footer\"");
+		htmlBody = this.cutOffUnimportantContent(htmlBody, "div", "\"printfooter\"");
+		htmlBody = this.cutOffUnimportantContent(htmlBody, "div", "\"catlinks\"");
+		htmlBody = this.cutOffUnimportantContent(htmlBody, "div", "\"mw-hidden-catlinks\"");
 
 		Map sourceMap = new HashMap();
 		int lastEndIndex = 0;
@@ -47,12 +54,43 @@ public class SimpleTests
 			if (src.startsWith("//")) src = src.replace("//","https://");
 			if (src.startsWith("/")) src = src.replace("/","https://en.wikipedia.org/");
 			entry.setValue(src);
-			System.out.println(src);
 		}
 
+		System.out.println(htmlBody);
+	}
 
+	public String cutOffUnimportantContent(String htmlBody, String tag, String id)
+	{
+		try
+		{
+			int startIndex = htmlBody.lastIndexOf("<", htmlBody.indexOf(id));
+			int endIndex = this.getEndIndex(htmlBody, tag, startIndex, 0);
 
-//		System.out.println(htmlBody);
+			return htmlBody.replace(htmlBody.substring(startIndex, endIndex), "");
+		}
+		catch (Exception e)
+		{
+			return htmlBody;
+		}
+	}
+
+	public int getEndIndex(String htmlBody, String tag, int lastStartIndex, int depth)
+	{
+		if (lastStartIndex == -1) return -1;
+
+		String startTag = "<" + tag + " ";//todo Leerzeichen oder schließende Klammer
+		String endTag = "</" + tag + ">";
+
+		int nextStartIndex = htmlBody.indexOf(startTag, lastStartIndex);
+		int nextEndIndex = htmlBody.indexOf(endTag, lastStartIndex);
+
+		if (nextStartIndex == -1) nextStartIndex = htmlBody.length();
+
+		if (nextStartIndex < nextEndIndex) return this.getEndIndex(htmlBody, tag, nextStartIndex + 1, depth + 1);
+
+		if (depth != 1) return this.getEndIndex(htmlBody, tag, nextEndIndex + 1, depth - 1);
+
+		return nextEndIndex + endTag.length();
 	}
 
 	public String getSource(String imgElement)

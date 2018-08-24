@@ -105,6 +105,16 @@ new Runnable()
 	public void run()
 	{
  		String htmlBody = new String(data,StandardCharsets.UTF_8);
+ 		
+ 		htmlBody = this.cutOffUnimportantContent(htmlBody, &quot;a&quot;, &quot;\&quot;mw-jump-link\&quot;&quot;);
+		htmlBody = this.cutOffUnimportantContent(htmlBody, &quot;a&quot;, &quot;\&quot;mw-jump-link\&quot;&quot;);
+		htmlBody = this.cutOffUnimportantContent(htmlBody, &quot;div&quot;, &quot;\&quot;siteSub\&quot;&quot;);
+		htmlBody = this.cutOffUnimportantContent(htmlBody, &quot;div&quot;, &quot;\&quot;mw-navigation\&quot;&quot;);
+		htmlBody = this.cutOffUnimportantContent(htmlBody, &quot;div&quot;, &quot;\&quot;footer\&quot;&quot;);
+		htmlBody = this.cutOffUnimportantContent(htmlBody, &quot;div&quot;, &quot;\&quot;printfooter\&quot;&quot;);
+		htmlBody = this.cutOffUnimportantContent(htmlBody, &quot;div&quot;, &quot;\&quot;catlinks\&quot;&quot;);
+		htmlBody = this.cutOffUnimportantContent(htmlBody, &quot;div&quot;, &quot;\&quot;mw-hidden-catlinks\&quot;&quot;);
+ 		
 		Map sourceMap = new HashMap();
 		int lastEndIndex = 0;
 		
@@ -138,12 +148,44 @@ new Runnable()
 			entry.setValue(src);
 		}
 		
-		//this.writeByteArrayToFile(new File(&quot;/media/data/Freizeit/wikipedia_downloader/content.txt&quot;),htmlBody.getBytes(StandardCharsets.UTF_8));
 		vars.putObject(&quot;images&quot;,sourceMap);
 		vars.put(&quot;htmlBody&quot;,htmlBody);
 		vars.putObject(&quot;imageCount&quot;,sourceMap.size());
 		vars.put(&quot;imageBundle&quot;,&quot;&quot;);
-		//JOptionPane.showInputDialog(null,&quot;e&quot;,vars.entrySet());
+	}
+
+	public String cutOffUnimportantContent(String htmlBody, String tag, String id)
+	{
+		try
+		{
+			int startIndex = htmlBody.lastIndexOf(&quot;&lt;&quot;, htmlBody.indexOf(id));
+			int endIndex = this.getEndIndex(htmlBody, tag, startIndex, 0);
+
+			return htmlBody.replace(htmlBody.substring(startIndex, endIndex), &quot;&quot;);
+		}
+		catch (Exception e)
+		{
+			return htmlBody;
+		}
+	}
+
+	public int getEndIndex(String htmlBody, String tag, int lastStartIndex, int depth)
+	{
+		if (lastStartIndex == -1) return -1;
+
+		String startTag = &quot;&lt;&quot; + tag + &quot; &quot;;//todo Leerzeichen oder schließende Klammer
+		String endTag = &quot;&lt;/&quot; + tag + &quot;&gt;&quot;;
+
+		int nextStartIndex = htmlBody.indexOf(startTag, lastStartIndex);
+		int nextEndIndex = htmlBody.indexOf(endTag, lastStartIndex);
+
+		if (nextStartIndex == -1) nextStartIndex = htmlBody.length();
+
+		if (nextStartIndex &lt; nextEndIndex) return this.getEndIndex(htmlBody, tag, nextStartIndex + 1, depth + 1);
+
+		if (depth != 1) return this.getEndIndex(htmlBody, tag, nextEndIndex + 1, depth - 1);
+
+		return nextEndIndex + endTag.length();
 	}
 
 	public String getSource(String imgElement)
@@ -154,19 +196,6 @@ new Runnable()
 		int srcEndIndex = imgElement.indexOf(&quot;\&quot;&quot;, srcStartIndex);
 		String src = imgElement.substring(srcStartIndex,srcEndIndex);
 		return src.length() &gt; 0 ? src : null;
-	}
-	
-	public void writeByteArrayToFile(File file, byte[] data) 
-	{
-		FileOutputStream out = null;
-		try
-		{
-			out = new FileOutputStream(file);
-			out.write(data);
-			out.close();
-		}
-		catch (Exception e){}
-		finally {try { out.close();} catch (Exception e2){}}
 	}
 }.run();</stringProp>
           </BeanShellPostProcessor>
@@ -224,9 +253,7 @@ imageTemplate = imageTemplate.replace(&quot;${image}&quot;,image);
 imageTemplate = imageTemplate.replace(&quot;${imageId}&quot;,imageId);
 
 String imageBundle = vars.get(&quot;imageBundle&quot;);
-vars.put(&quot;imageBundle&quot;,imageBundle + imageTemplate);
-
-//JOptionPane.showMessageDialog(null,vars.get(&quot;imageBundle&quot;));</stringProp>
+vars.put(&quot;imageBundle&quot;,imageBundle + imageTemplate);</stringProp>
             </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
@@ -268,11 +295,11 @@ new Runnable()
 	public void run()
 	{
 		String output = vars.get(&quot;mail&quot;);
-		//JOptionPane.showMessageDialog(null,imageBundle);
+		//JOptionPane.showMessageDialog(null,System.getProperty(&quot;user.dir&quot;));
 		String path = &quot;/media/data/Freizeit/wikipedia_downloader/&quot; + vars.get(&quot;title&quot;) + &quot;.eml&quot;;
 		this.writeByteArrayToFile(new File(path),output.getBytes(StandardCharsets.UTF_8));
 		//JOptionPane.showMessageDialog(null,imageBundle);
-		//JOptionPane.showInputDialog(null,&quot;title&quot;,vars.entrySet());
+		//JOptionPane.showInputDialog(null,&quot;title&quot;,Label.toString());
 	}
 	
 	public void writeByteArrayToFile(File file, byte[] data) 

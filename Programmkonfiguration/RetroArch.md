@@ -8,6 +8,7 @@
 
 - `Menu -> Settings -> Driver -> Audio Driver: alsa`
 - `Menu -> Settings -> User Interface -> Appearance -> Menu Icon Theme`
+- bei bedarft in der `/home/<user>/.config/retroarch/retroarch.cfg` für `video_driver` `gdi` eintragen
 
 
 #### Shortcuts

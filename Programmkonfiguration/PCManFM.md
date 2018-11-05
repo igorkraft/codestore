@@ -4,6 +4,7 @@
 - alles ist per Tastatur steuerbar (siehe Hilfe)
 - mit `F4` kann ein Terminal im aktuellen Ordner geöffnet werden
 - mit `Shift`+`Strg`+`F` wird Dateisuche gestartet
+- eigene `Öffnen mit ...`-Befehle werden in `~/.local/share/applications` als Desktop Dateien gespeichert
 
 #### Konfiguration
 

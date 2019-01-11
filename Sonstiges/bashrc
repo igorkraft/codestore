@@ -2,6 +2,8 @@ alias ls='ls --color=auto -a'
 alias egrep='egrep --colour=auto'
 alias mvn=/media/Daten/Code/apache-maven-3.1.1/bin/mvn
 alias finish='sudo umount /home/user ; sudo umount /media/data ; cryptsetup luksClose /dev/mapper/data_mapper ; sudo poweroff'
+alias idea='nohup sh /media/data/Programme/IntelliJ-2018.2.2/bin/idea.sh ./pom.xml > /dev/null &'
+alias lsblk='lsblk -o NAME,LABEL,FSTYPE,UUID,MOUNTPOINT,SIZE'
 
 # nur Windows
 alias kraken='~/AppData/Local/gitkraken/app-3.6.1/gitkraken.exe -p . &'

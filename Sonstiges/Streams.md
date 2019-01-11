@@ -7,6 +7,8 @@
   - http://s7.viastreaming.net/cgi-bin/scproxy.cgi?port=7030
 - http://stream.rpgamers.net:8000/rpgn
   - http://stream.rpgamers.net:8000
+- http://direct.zeldaxtreme.com:8000/stream
+  - https://www.zeldaxtreme.com/radio/
 
 #### Songs
 - https://musescore.com/user/67014/scores/170981 (Earth God's Lyric)

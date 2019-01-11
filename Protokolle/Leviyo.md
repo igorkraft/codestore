@@ -19,10 +19,11 @@
 #### Programme installieren
 
 - `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g minetest`
-- `pkgfile alsa-utils create_ap zip unzip numlockx xsel xpra`
+- `pkgfile alsa-utils create_ap zip unzip numlockx xsel xpra feh`
   - durch minetest wird Sound installiert
+  - `feh` setzt ein Hintergrundbild
 - optionale Programme
-  - `gpicview openvpn freerdp remmina gparted dosfstools inkscape gimp tk openbsd-netcat diffuse`
+  - `gpicview openvpn freerdp remmina gparted dosfstools inkscape gimp tk openbsd-netcat diffuse libreoffice-fresh-de`
   - `retroarch retroarch-autoconfig-udev libretro-snes9x`
   - `https://aur.archlinux.org/packages/libretro-mednafen-supergrafx-git/`
   - `gitk` ist von `tk` abhängig
@@ -40,6 +41,9 @@
   xrandr --newmode 1600x900_60.00 118.25 1600 1696 1856 2112 900 903 908 934 -hsync +vsync
   xrandr --addmode eDP-1 1600x900_60.00
   xrandr --output eDP-1 --mode 1600x900_60.00
+
+# Hintergrundbild setzen
+feh --bg-max /path/to/image
 
   # Window Manager starten
   exec i3

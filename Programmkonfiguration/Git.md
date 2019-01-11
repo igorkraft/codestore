@@ -102,7 +102,7 @@
 - alle Änderungen beobachteter FSOs commiten
   - `git commit -a -m "commit all"`
 - Änderungen im Stage-Bereich commiten
-  - `git commit -m "commit message"`
+  - `git commit -m "commit message" --author="Name <email>"`
 - unbeobachtete FSOs löschen
   - `git clean -f -d`
 - nur ignorierte FSOs löschen

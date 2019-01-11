@@ -14,6 +14,9 @@ import java.util.Map;
 @Controller
 public class CredentialController
 {
+	@Autowired
+	Password password;
+
 	@RequestMapping(value = "/credentials", method = RequestMethod.GET)
 	public String getCredentials()
 	{
@@ -21,12 +24,12 @@ public class CredentialController
 	}
 
 	@RequestMapping(value = "/credentials", method = RequestMethod.POST)
-	public ResponseEntity<String> setCredentials(Credentials credentials, @RequestParam Map<String,String> params) throws Exception
+	public ResponseEntity<String> setCredentials(@RequestParam Map<String,String> params) throws Exception
 	{
 		//TODO alle Credentials testen
 		// trifft der Scheduler auf einen Fehler (Tippfehler in einem der Passwörter), dann muss er
 		// die gecachten Credentials löschen und das initialized flag auf false setzen
-		String error = credentials.setCredentials(params);
+		String error = this.password.setPassword(params.get("password"));
 
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}

@@ -1,6 +1,7 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
-application.yml
+config.b64
+/backups/
 
 ### STS ###
 .apt_generated

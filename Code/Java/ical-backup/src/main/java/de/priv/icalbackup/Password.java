@@ -6,7 +6,11 @@ import lombok.Getter;
 import org.apache.commons.crypto.stream.CryptoInputStream;
 import org.apache.commons.crypto.stream.CryptoOutputStream;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -23,17 +27,14 @@ import java.util.Map;
 import java.util.Properties;
 
 @Component
-public class Credentials
+public class Password
 {
 	private SecretKey key;
 	private IvParameterSpec iv;
-	private Map<String, byte[]> credentials;
+	@Getter private byte[] password;
 
-	@Autowired
-	private Configuration config;
-
-	@Getter
-	private boolean initialized = false;
+	@Value("file:config.b64")
+	private Resource config;
 
 	@PostConstruct
 	private void generateSecretKey() throws Exception
@@ -47,12 +48,28 @@ public class Credentials
 		this.iv = new IvParameterSpec(bytes);
 	}
 
-	private String validate(Map<String, String> credentials)
+	private String validate(String password)
 	{
-		// alle Kalender einmal exportieren
-		// Backup-Repo klonen
-		// alle Dateien im Git-Repo entschlüsseln und prüfen, ob es iCal-Dateien sind
-		return null;
+		try
+		{
+			if (!this.config.exists()) return "config.b64 not found!";
+
+
+
+//			Resource configB64 = this.resourceLoader.getResource("config.b64");
+//
+//			credentials.delete(0, credentials.length());
+//			credentials.append(":");
+//			Request request = new Request.Builder().url("https://192.168.0.5:8443/remote.php/dav/principals/users/backupper/").build();
+//			Response response = this.client.newCall(request).execute();
+//			System.out.println(response.code() + " : \n" + StringUtils.replace(response.body().string(), "\r\n" , ", "));
+
+			return null;
+		}
+		catch (Exception e)
+		{
+			return ExceptionUtils.getMessage(e);
+		}
 	}
 
 	private byte[] encrypt(String data) throws Exception
@@ -77,20 +94,13 @@ public class Credentials
 		return IOUtils.toString(cis,StandardCharsets.UTF_8);
 	}
 
-	public String setCredentials(Map<String, String> credentials) throws Exception
+	public String setPassword(String password) throws Exception
 	{
-		String error = this.validate(credentials);
+		String error = this.validate(password);
 
 		if (error != null) return error;
 
-		this.credentials = new HashMap<>();
-
-		for (Map.Entry<String,String> entry : credentials.entrySet())
-		{
-			this.credentials.put(entry.getKey(), this.encrypt(entry.getValue()));
-		}
-
-		this.initialized = true;
+		this.password = this.encrypt(password);
 
 		return null;
 	}

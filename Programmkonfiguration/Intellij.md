@@ -51,6 +51,11 @@
 #### Editor->General->Auto Import
 - Add unambiguous imports on the fly
 
+#### Editor->Code Style->Java->Tabs and Indents
+- Use tab character: &#x2611;
+- Tab size: 2
+- Indent: 2
+
 #### Editor->Code Style->Java->Imports
 - Class count to use import with '*': 5000
 - Names count to use static import with '*': 5000

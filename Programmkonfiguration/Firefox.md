@@ -1,5 +1,7 @@
 ## Firefox
 
+- Add-ons -> Themes -> Dunkel -> Aktivieren
+
 #### Erweiterungen
 - `Deutsch (DE) Language Pack`
 - `Deutsches Wörterbuch`
@@ -23,3 +25,20 @@
 - browser.zoom.siteSpecific: false (Zoom wirkt sich nur auf den Tab aus)
 - flashblock.whitelist: *youtube.com,*vimeo.com,s7.viastreaming.net,cloud.blender.org,*pivotal.io,*kaltura.com
 - media.default_volume: 0.1
+
+#### Shortcuts
+
+- `F6`
+  - Fokus auf Seite setzen (von Adresszeile)
+- `F7`
+  - Cursor aktivieren/deaktivieren (Caret Browsing)
+- `Strg` + `B`
+  - Lesezeichen Sidebar öffnen
+- `Strg` + `Shift` + `T`
+  - geschlossenen Tab wiederherstellen
+- `Strg` + `L`, dann `Alt` + `Enter`
+  - Tab duplizieren/klonen
+- `Strg` + `Shift` + `Bild ↑`
+  - Tab nach links schieben
+- `Strg` + `L`, dann 2x `Shift` + `Tab`, dann `Context`
+  - Kontextmenü des aktuellen Tabs öffnen

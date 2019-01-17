@@ -164,6 +164,25 @@
 [init]
 	templatedir = d:/git_template
 ```
+#### .gitignore
+
+- `*` bezieht sich nur auf Datei- oder Verzeichnisnamen
+- `**` bezieht sich auf den ganzen Pfad einer Datei (beliebige Verzeichnistiefe)
+
+```
+# alles was einem target-Verzeichnis liegt
+**/target/**
+
+# die Datei track_me.md trotz der ignor-Klausel beachten
+!/target/track_me.md
+
+# alles was einem .idea-Verzeichnis liegt
+**/.idea/**
+
+# alle iml Dateien
+*.iml
+```
+
 #### Alias
 
 - globale Aliase werden in der `$HOME/.gitconfig` gespeichert

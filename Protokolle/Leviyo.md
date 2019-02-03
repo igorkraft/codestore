@@ -40,7 +40,7 @@
   # Bildschirmauflösung anpassen
   xrandr --newmode 1600x900_60.00 118.25 1600 1696 1856 2112 900 903 908 934 -hsync +vsync
   xrandr --addmode eDP-1 1600x900_60.00
-  xrandr --output eDP-1 --mode 1600x900_60.00
+  xrandr --output eDP-1 --mode 1600x900_60.00 --output DP-1 --left-of eDP-1 --primary
 
 # Hintergrundbild setzen
 feh --bg-max /path/to/image

@@ -24,5 +24,12 @@
 - Quelle: https://redis.io/commands/
 - `set foo 100`
   - erzeugt einen Eintrag mit dem Schlüssel `foo` und dem Wert `100`
-- `get foo`
-  - gibt den Wert des Eintrags `foo` aus
+- `get <key>`
+  - gibt den Wert des Eintrags `<key>` aus
+- `type <key>`
+  - liefert den Typ des Werts (z. B. `string`, `hash`, `set` usw.)
+- `keys '*'`
+  - listet alles Schlüssel der Datenbank auf
+- `redis-cli keys '*' | xargs redis-cli del`
+  - Datenbank leeren
+  - wird in der Unix-Bash ausgeführt

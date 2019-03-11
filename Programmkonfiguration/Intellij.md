@@ -14,6 +14,7 @@
   - Änderungen werden nur mit aktiviertem `Auto-Commit` gespeichert
 - `Maven Helper`
 - `Docker integration`
+- `DeltaHex Editor`
 
 #### JDK zum Ausführen des Android-Studios
 - vor dem Start die Umgebungsvariable setzen: `STUDIO_JDK=$JAVA_HOME`

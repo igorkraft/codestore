@@ -18,7 +18,7 @@
 
 #### Programme installieren
 
-- `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi pcmanfm firefox ntfs-3g minetest`
+- `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi thunar zenity firefox ntfs-3g minetest`
 - `pkgfile alsa-utils create_ap zip unzip numlockx xsel xpra feh`
   - durch minetest wird Sound installiert
   - `feh` setzt ein Hintergrundbild
@@ -104,16 +104,10 @@ data_mapper /media/WinData/data.img none luks,retry=1,cipher=aes-xts-plain64:sha
 
 #### TODOs
 
-- beim Start einen Key-Mode öffnen, in dem Sublime-Fenster auf das Scratchpad gelegt werden
-- Terminal-Schriftart permanent vergrößern
 - Shortcuts für Bildschirmhelligkeit
 - Shortcuts für Lautstärkeregelung
 - Shortcut für Umbenennen von workspaces
-- Theme von PCManFM anpassen (+Icons)
-  - unter `menu://applications/Entwicklung` gibt es einen Icon Browser
-- `SpaceFM` testen
 - einen Weg finden, wie das WLAN zuverlässig nach dem Hochfahren funktioniert (rfkill)
-- NUM-Pad bei Start aktivieren
 - Feststelltaste deaktivieren
 - Paketmanager für AUR ausprobieren
 

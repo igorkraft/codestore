@@ -47,6 +47,14 @@
   # Hintergrundbild setzen
   feh --bg-max /path/to/image
 
+  if [ `date +%a` == "Mo" ]; then
+    feh --bg-max /path/to/image_Mo
+  fi
+
+  if [ `date +%a` == "Sa" -o `date +%a` == "So" ]; then
+    feh --bg-max /path/to/image_We
+  fi
+
   # Window Manager starten
   exec i3
   ```

@@ -283,8 +283,23 @@ zbarimg --raw -q image.png
 # in Zwischenablage pipen (erfordert xsel)
 ls | xsel -ib
 
-# UNIX-Zeitstempel ausgeben
-date +%s
+# Kurzname des Wochentages
+date +%a
+
+# Zeitpunkt in Zeitstempel umwandeln
+date +%s --date='1970-01-01 00:00:01 UTC'
+
+# Zeitstempel formatiert ausgeben
+TZ='UTC' date --date='@1557129631' date --date='@1557129631' +'%Y-%m-%d %H:%M:%S %Z'
+
+# Angabe der Zeitzone
+TZ='Europe/Berlin'
+TZ='CEST'
+TZ='America/Los_Angeles'
+TZ='PDT'
+
+# Englischer Wochentagsname (Angabe der Locale)
+LANG='en_US.UTF-8' TZ='CEST' date +%A
 
 # Informationen zu allen Partitionen ausgeben
 lsblk -o NAME,LABEL,FSTYPE,UUID,MOUNTPOINT,SIZE

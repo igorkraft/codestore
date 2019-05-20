@@ -6,6 +6,9 @@
 - die Cores `libretro-snes9x` und `libretro-mgba` hätten auch mit dem internen `Online Updaten` heruntergeladen werden können
   - im `Main Menu`
   - funktioniert, wie ein anwendungsinterner Paketmanager
+- AUR Cores
+  - `libretro-tgbdual-git`
+  - `libretro-mednafen-supergrafx-git`
 
 #### Konfiguration
 
@@ -16,10 +19,13 @@
     - weitere Werte `"gdi", "xvideo", "sdl", "d3d"`
 - mit `-c` eine Config-Datei angeben, die einzelne Eigenschaften überschreibt
   - retroarch ergänzt fehlende Eigenschaften mit den Defaults
+- Core-spezifische Konfigurationsdatei `retroarch-core-options.cfg`
+  - wird im selben Verzeichnis erwartet, wie die Konfigurationsdatei
+  - Properties haben ihren Core aus Präfix
 
 ##### Start mit ROM-spezifischer Konfiguration
 
-```
+```bash
 #! /bin/bash
 
 SHADER=~/.config/retroarch/shaders/shaders_glsl/handheld/gb-palette-dmg.glslp
@@ -45,6 +51,41 @@ retroarch -L /usr/lib/libretro/mgba_libretro.so \
 
 rm content_history.lpl
 rm config.cfg
+```
+
+```bash
+#! /bin/bash
+
+echo -n "
+pause_nonactive = \"false\"
+audio_driver = \"alsa\"
+input_toggle_fast_forward = \"nul\"
+input_player1_a = \"c\"
+input_player1_b = \"x\"
+input_player2_a = \"b\"
+input_player2_b = \"v\"
+input_player2_up = \"z\"
+input_player2_left = \"d\"
+input_player2_down = \"g\"
+input_player2_right = \"j\"
+user_language = \"0\"
+video_driver = \"gl\"
+" > config.cfg
+
+echo -n "
+tgbdual_gblink_enable = \"enabled\"
+" > retroarch-core-options.cfg
+
+retroarch -L /usr/lib/libretro/tgbdual_libretro.so \
+-c config.cfg \
+/path/to/rom.gbc
+
+# nach dem Start über das Hauptmenü unter "Load 2 Player Game Boy Link" die beiden Spiele-ROMs laden
+# den Menüeintrag dazu mehrfach auswählen
+
+rm content_history.lpl
+rm config.cfg
+rm retroarch-core-options.cfg
 ```
 
 #### Shortcuts

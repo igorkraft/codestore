@@ -10,6 +10,9 @@
 - WLAN deaktivieren `ip link set wlp1s0 down`
   - wenn das die Meldung `RTNETLINK answers: Operation not possible due to RF-kill` bringt, dann
     - `rfkill unblock all` absetzen
+  - wenn der WLAN-Start nicht klappt und
+    - `systemctl status netctl@some_wifi.service` den Fehler `The interface of network profile 'some_wifi' is already up` liefert
+    - dann `ip link set wlp1s0 down` absetzen und WLAN erneut starten
 - `netctl` installieren und konfigurieren (siehe karda-Protokoll)
   - der Start von netctl schlägt fehl, wenn zuvor das WLAN manuell aktiviert wurde
   - meldet netctl beim Start einen Fehler, dann `rfkill unblock all` absetzen
@@ -19,19 +22,18 @@
 #### Programme installieren
 
 - `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi thunar zenity firefox ntfs-3g minetest`
-- `pkgfile alsa-utils create_ap zip unzip numlockx xsel xpra feh`
+- `pkgfile alsa-utils create_ap zip unzip numlockx xsel xpra feh p7zip`
   - durch minetest wird Sound installiert
   - `feh` setzt ein Hintergrundbild
 - optionale Programme
   - `gpicview openvpn freerdp remmina gparted dosfstools inkscape gimp tk openbsd-netcat diffuse libreoffice-fresh-de`
-  - `retroarch retroarch-autoconfig-udev libretro-snes9x`
-  - `https://aur.archlinux.org/packages/libretro-mednafen-supergrafx-git/`
+  - `retroarch retroarch-autoconfig-udev libretro-snes9x libretro-mgba`
   - `gitk` ist von `tk` abhängig
-- AUR-Paket für Sublime Text 3 installieren
-  - `https://aur.archlinux.org/sublime-text-dev.git` klonen
-  - `makepkg -s` (Abhängigkeiten validieren und bauen)
-  - `makepkg -i` (Paket installieren)
-- AUR-Paket `i3-wm-iconpatch` installieren
+
+#### AUR Pakete installieren
+
+- `i3-wm-iconpatch sublime-text-dev libretro-tgbdual-git p7zip-gui libretro-mednafen-supergrafx-git`
+- `makepkg -sri`
 
 #### X-Server
 

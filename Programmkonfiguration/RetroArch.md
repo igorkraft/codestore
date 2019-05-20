@@ -17,6 +17,8 @@
   - `user_language = "0"` Menüsprache ist Englisch
   - `video_driver = "gl"` OpenGL für das Rendering verwenden
     - weitere Werte `"gdi", "xvideo", "sdl", "d3d"`
+  - `pause_nonactive = "false"` ROM läuft ohne Fensterfokus weiter
+  - `joypad_autoconfig_dir = "/usr/share/retroarch/autoconfig"` automatisch Game-Controller verwenden
 - mit `-c` eine Config-Datei angeben, die einzelne Eigenschaften überschreibt
   - retroarch ergänzt fehlende Eigenschaften mit den Defaults
 - Core-spezifische Konfigurationsdatei `retroarch-core-options.cfg`
@@ -41,6 +43,7 @@ input_player1_a = \"c\"
 input_player1_b = \"x\"
 user_language = \"0\"
 video_driver = \"gl\"
+joypad_autoconfig_dir = \"/usr/share/retroarch/autoconfig\"
 " > config.cfg
 
 (sleep 1 ; i3-msg border pixel 0 ; i3-msg floating toggle) &

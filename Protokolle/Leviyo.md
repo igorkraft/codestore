@@ -22,7 +22,7 @@
 #### Programme installieren
 
 - `mc git dialog wpa_supplicant netctl xorg xorg-xinit i3 lxterminal rofi thunar zenity firefox ntfs-3g minetest`
-- `pkgfile alsa-utils create_ap zip unzip numlockx xsel xpra feh p7zip`
+- `pkgfile alsa-utils create_ap zip unzip numlockx xsel xpra feh p7zip sshfs`
   - durch minetest wird Sound installiert
   - `feh` setzt ein Hintergrundbild
 - optionale Programme
@@ -38,7 +38,7 @@
 #### X-Server
 
 - `~/.xinitrc` anlegen
-  ```
+  ```bash
   # Bildschirmauflösung anpassen
   xrandr --newmode 1600x900_60.00 118.25 1600 1696 1856 2112 900 903 908 934 -hsync +vsync
   xrandr --addmode eDP-1 1600x900_60.00
@@ -47,12 +47,12 @@
   # Hintergrundbild setzen
   feh --bg-max /path/to/image
 
-  if [ `date +%a` == "Mo" ]; then
-    feh --bg-max /path/to/image_Mo
-  fi
+  #if [ `date +%a` == "Sa" -o `date +%a` == "So" ]; then
+  #	feh --bg-max /media/data/Bilder/night.jpg
+  #fi
 
-  if [ `date +%a` == "Sa" -o `date +%a` == "So" ]; then
-    feh --bg-max /path/to/image_We
+  if [ "$((`date +%j`%2))" == "1" ]; then
+  	feh --bg-max /media/data/Bilder/night.jpg
   fi
 
   # Window Manager starten

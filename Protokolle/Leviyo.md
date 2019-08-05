@@ -27,7 +27,7 @@
   - `feh` setzt ein Hintergrundbild
 - optionale Programme
   - `gpicview openvpn freerdp remmina gparted dosfstools inkscape gimp tk openbsd-netcat diffuse libreoffice-fresh-de`
-  - `retroarch retroarch-autoconfig-udev libretro-snes9x libretro-mgba`
+  - `retroarch retroarch-autoconfig-udev libretro-snes9x libretro-mgba libretro-blastem`
   - `gitk` ist von `tk` abhängig
 
 #### AUR Pakete installieren

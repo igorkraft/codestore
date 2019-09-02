@@ -97,8 +97,8 @@ data_mapper /media/WinData/data.img none luks,retry=1,cipher=aes-xts-plain64:sha
 
 - NTFS-Dateisysteme mit Schreibberechtigung einhängen 
   `sudo mount -t ntfs-3g -o rw /dev/sdc1 /mnt`
-- liefert `makepkg -s` den Fehler `Unbekannter öffentlicher Schlüssel ...` dann
-  - `makepkg -s --skippgpcheck` ausführen
+- liefert `makepkg -sri` den Fehler `Unbekannter öffentlicher Schlüssel ...` dann
+  - `makepkg -sri --skippgpcheck --skipchecksums --skipinteg` ausführen
 - NTP-Daemon aktivieren
   - `/etc/systemd/timesyncd.conf` anpassen
   ```

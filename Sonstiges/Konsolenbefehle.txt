@@ -37,6 +37,15 @@ nc -q0 169.254.154.61 17176 < anFile.txt (Datei unkomprimiert)
 nc -lp 17176 | gunzip | tar -x (Verzeichnis komprimiert)
 nc -lp 17176 > otherFile.txt (Datei unkomprimiert)
 
+# *.tar.gz Dateien im Arbeitsverzeichnis auspacken (e[x]tract [z]ipped [f]ile)
+tar -xzf
+
+# Verzeichnis zu Zip-Datei (die Erweiterung von <file> kann weggelassen werden)
+zip -r <file> <dir>
+
+# *.zip Datei im Arbeitsverzeichnis auspacken
+unzip <file>
+
 # Video zu MP3 konvertieren
 mencoder input.mp4 -ovc frameno -oac mp3lame -of rawaudio -lameopts cbr:br=128 -o output.mp3
 
@@ -114,12 +123,6 @@ chmod +x some_file
 
 # PDF To PNG
 convert -flatten +matte -density 400 IMG_0003.pdf IMG_0003.png
-
-# Textausgabe
-zenity --info --text "HUHU"
-
-# Befehle verketten
-T="Ofen ausschalten" ; sleep $((60*60*2)) ; zenity --info --text "$T" ; 
 
 # Notification einblenden (für 10 Minuten)
 notify-send -t $((1000*60*10)) "Ofen ausschalten"
@@ -300,6 +303,14 @@ TZ='PDT'
 
 # Englischer Wochentagsname (Angabe der Locale)
 LANG='en_US.UTF-8' TZ='CEST' date +%A
+
+# Textausgabe
+zenity --info --text "HUHU"
+
+# Befehle verketten
+T="Ofen ausschalten" ; sleep $((60*60*2)) ; zenity --info --text "$T" ; 
+sleep $((`date +%s --date='09:28'`-`date +%s`)) ; zenity --info --text "Wäsche aufhängen"
+sleep $((`date +%s --date='2020-10-31 11:55:00'`-`date +%s`)) ; zenity --info --text "Mittag essen"
 
 # Informationen zu allen Partitionen ausgeben
 lsblk -o NAME,LABEL,FSTYPE,UUID,MOUNTPOINT,SIZE

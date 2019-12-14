@@ -29,6 +29,9 @@ public class WebController implements InitializingBean
 	@Value("${url}")
 	private String url;
 
+	@Value("${mouseMoveDistance:230}")
+	private String mouseMoveDistance;
+
 	@RequestMapping("/")
 	public String root()
 	{
@@ -149,7 +152,7 @@ public class WebController implements InitializingBean
 				{
 					if (!active) return;
 					// auf 230 setzen
-					client.newCall(new Request.Builder().url(url + "/mouse/0/230").build()).execute();
+					client.newCall(new Request.Builder().url(url + "/mouse/0/" + mouseMoveDistance).build()).execute();
 					Thread.sleep(500);
 					// E drücken
 					client.newCall(new Request.Builder().url(url + "/pressE").build()).execute();

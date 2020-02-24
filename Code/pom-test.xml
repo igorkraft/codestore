@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+<!--
+mkdir -p src/main/java/zork/maze ; mkdir -p src/main/resources ; \
+mkdir -p src/test/java ; mkdir -p src/test/resources ; \
+printf "package zork.maze;\n\npublic class App\n{\n"\
+"\tpublic static void main(String[] args)\n\t{\n\t\t\n\t}\n}" \
+> src/main/java/zork/maze/App.java
+-->
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>zork.maze</groupId>
+	<artifactId>test</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<name>${project.artifactId}</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<skipTests>true</skipTests>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+	</build>
+
+</project>

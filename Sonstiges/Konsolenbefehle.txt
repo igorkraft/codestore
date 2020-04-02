@@ -331,7 +331,7 @@ grep -E '(^|pattern)' file
 xfreerdp /g:<gateway-host> /v:<remote-dest> /sec:tls /f
 
 # mit Linux Remote Desktop (xrdp) verbinden (erfordert xfreerdp Version 2.0.0-rc1)
-xfreerdp /g:<gateway-host> /gu:<domain>\\<user> /v:<remote-dest> /u:<local-user> /f -clipboard
+xfreerdp /g:<gateway-host> /gu:<domain>\\<user> /v:<remote-dest> /u:<local-user> /cert-tofu /f -clipboard /drive:tmp,/tmp/tmp
 
 # Youtube-Videos in mp3 konvertieren
 youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 <Video-ID oder URL>
